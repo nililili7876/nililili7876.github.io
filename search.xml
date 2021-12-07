@@ -435,26 +435,6 @@ for (int i = 0; i &lt; n; i++)
       </tags>
   </entry>
   <entry>
-    <title>序言</title>
-    <url>/2021/12/05/hello-world/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
-<p>截断测试</p>
-<span id="more"></span>
-
-<p>图片测试：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
-<p>数学公式测试</p>
-<p><img src="http://latex.codecogs.com/gif.latex?%5CT(n">=\sum_i C_{opi} * C_i(n)</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>algorithm01</title>
     <url>/2021/12/06/algorithm01/</url>
     <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
@@ -475,6 +455,26 @@ for (int i = 0; i &lt; n; i++)
       </categories>
       <tags>
         <tag>SWJTU_ALGORITHM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/12/05/hello-world/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
+<p>截断测试</p>
+<span id="more"></span>
+
+<p>图片测试：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
+<p>数学公式测试</p>
+<p><img src="http://latex.codecogs.com/gif.latex?%5CT(n">=\sum_i C_{opi} * C_i(n)</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
       </tags>
   </entry>
 </search>
