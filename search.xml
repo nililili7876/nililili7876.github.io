@@ -119,49 +119,6 @@ for (int i = 0; i &lt; n; i++)
       </tags>
   </entry>
   <entry>
-    <title>序言</title>
-    <url>/2021/12/05/hello-world/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
-<p>截断测试</p>
-<span id="more"></span>
-
-<p>图片测试：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
-<p>数学公式测试</p>
-<p><img src="http://latex.codecogs.com/gif.latex?%5CT(n">=\sum_i C_{opi} * C_i(n)</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>algorithm01</title>
-    <url>/2021/12/06/algorithm01/</url>
-    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
-
-<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
-<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
-<li>自然语言描述</li>
-<li>流程描述</li>
-<li>伪代码描述</li>
-</ul>
-<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
-<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
-<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>SWJTU_ALGORITHM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -475,6 +432,49 @@ for (int i = 0; i &lt; n; i++)
       </categories>
       <tags>
         <tag>nanteS5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/12/05/hello-world/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
+<p>截断测试</p>
+<span id="more"></span>
+
+<p>图片测试：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
+<p>数学公式测试</p>
+<p><img src="http://latex.codecogs.com/gif.latex?%5CT(n">=\sum_i C_{opi} * C_i(n)</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>algorithm01</title>
+    <url>/2021/12/06/algorithm01/</url>
+    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
+
+<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
+<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
+<li>自然语言描述</li>
+<li>流程描述</li>
+<li>伪代码描述</li>
+</ul>
+<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
+<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
+<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>SWJTU_ALGORITHM</tag>
       </tags>
   </entry>
 </search>
