@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ALGORITHM-Prem</title>
+    <url>/2021/12/06/ALGORITHM-Prem/</url>
+    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
+<span id="more"></span>
+<p>1.DFS(来自啊哈算法一书)</p>
+<pre><code>void dfs(int step , int n ,int book[] , int a[])
+&#123;
+    if (step == n )//排到第n个数，排列完成
+    &#123;
+        print(a,n);
+        return;//【返回之前一步，很重要】
+    &#125;
+
+//每一步的操作
+for (int i = 0; i &lt; n; i++)
+&#123;
+    if (!book[i])//还没有排
+    &#123;
+        a[step] = i+1;
+        book[i] = 1;
+
+        //开始排下一个了
+        dfs(step+1,n,book,a);
+
+
+        book[i] = 0;//排序完成，回收本次数【！！！】
+    &#125;
+&#125;
+
+    return;
+&#125;
+</code></pre><p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
+<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>SWJTU_ALGORITHM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -201,119 +244,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ALGORITHM-Prem</title>
-    <url>/2021/12/06/ALGORITHM-Prem/</url>
-    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
-<span id="more"></span>
-<p>1.DFS(来自啊哈算法一书)</p>
-<pre><code>void dfs(int step , int n ,int book[] , int a[])
-&#123;
-    if (step == n )//排到第n个数，排列完成
-    &#123;
-        print(a,n);
-        return;//【返回之前一步，很重要】
-    &#125;
-
-//每一步的操作
-for (int i = 0; i &lt; n; i++)
-&#123;
-    if (!book[i])//还没有排
-    &#123;
-        a[step] = i+1;
-        book[i] = 1;
-
-        //开始排下一个了
-        dfs(step+1,n,book,a);
-
-
-        book[i] = 0;//排序完成，回收本次数【！！！】
-    &#125;
-&#125;
-
-    return;
-&#125;
-</code></pre><p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
-<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>SWJTU_ALGORITHM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ALGORITHM02</title>
-    <url>/2021/12/06/ALGORITHM02/</url>
-    <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
-<span id="more"></span>
-<p>目的是为了设计和选择更好的算法</p>
-<h3 id="（1）时间效率"><a href="#（1）时间效率" class="headerlink" title="（1）时间效率"></a>（1）时间效率</h3><p><strong>时间效率：</strong>设输入的元素个数为n,执行该算法的第i步操作记为op（i）,该步骤执行的次数为Cop(i)，则该算法的总执行时间为：</p>
-<script type="math/tex; mode=display">
-T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#（2）时间复杂性" class="headerlink" title="（2）时间复杂性"></a>（2）时间复杂性</h3><p><strong>时间复杂性：</strong>指执行算法所消耗或占用时间资源的量<strong>【程序步数】</strong></p>
-<p>​                        在最坏、最好、平均三种情况下的时间复杂度</p>
-<h3 id="（3）例题"><a href="#（3）例题" class="headerlink" title="（3）例题"></a>（3）例题</h3><p><strong>1.非递归程序</strong>顺序检索：在具有n个元素的数组a[1……n]中找出值等于x的元素的位置</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;class Type&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">seqSearch</span><span class="params">(Type *a, <span class="keyword">int</span> n, Type x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	  <span class="keyword">if</span> (a[i]==x) <span class="keyword">return</span> i;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最坏：T(n) = n</p>
-<p>最好：T(n) = 1</p>
-<p>平均：Tavg（n）=sum[p(I)T(I)]</p>
-<p>变式：设计一个尽可能高效的算法，在长度为n的一维数组a[n]中查找值最大的元素max和最小的元素min，并分析算法的最好、最坏和平均时间复杂度。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MaxMin</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> &amp;max,<span class="keyword">int</span> &amp;min)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> I;</span><br><span class="line">  max=min=a[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">     <span class="keyword">if</span>(a[i]&gt;max) max=a[i];</span><br><span class="line">     <span class="keyword">else</span> <span class="keyword">if</span>(a[i]&lt;min) min=a[i];<span class="comment">//【要特别注意这的else！！！】</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>最好：是一个递增的，n-1</p>
-<p>最坏：递减，2*（n-1）</p>
-<p>平均：假设a中有一半元素比max大，a[i]&gt;max执行n-1次，else语句执行（n-1）/2次———&gt;平均3*（n-1）/2次</p>
-<p><strong>2.递归程序的时间复杂性分析</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">RSum</span><span class="params">(<span class="keyword">float</span> <span class="built_in">list</span>[],<span class="keyword">const</span> <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n)	<span class="comment">//1</span></span><br><span class="line">    &#123;</span><br><span class="line">       <span class="keyword">return</span> RSum(<span class="built_in">list</span>,n<span class="number">-1</span>)+<span class="built_in">list</span>[n<span class="number">-1</span>];	<span class="comment">//?</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>T(n) = T(n-1)+2[T(0)=2]</p>
-<blockquote>
-<p><em>程序步骤不能确切反映程序运行的实际时间</em></p>
-</blockquote>
-<h2 id="2-渐进"><a href="#2-渐进" class="headerlink" title="2.渐进"></a>2.渐进</h2><p>定义：只关心f(n)的阶</p>
-<p><strong>大O表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≤c×f(n)，则称f(n)是T(n)的上界，记为：T(n)=O(f(n))                        </p>
-<p><strong>大Ω表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≥c×g(n)，则称g(n)是T(n)的下界，记为：T(n)= Ω(g(n)</p>
-<p><strong>Θ表示法：</strong>若存在三个正的常数c1、c2和n0，对于任意n≥n0都有c1×f(n)≥T(n)≥c2×f(n)，则称f(n)与T(n)同阶，记为：T(n)=Θ(f(n))      </p>
-<p>求解方法：</p>
-<script type="math/tex; mode=display">
-\lim_n {t(n)\over g(n)}=0\mbox{\quad \quad t(n)的增长次数比g(n)小}\\
-\lim_n {t(n)\over g(n)}=c>0\mbox{\quad \quad t(n)的增长次数和g(n)相同}\\
-\lim_n {t(n)\over g(n)}=\infty\mbox{\quad \quad t(n)的增长次数比g(n)大}</script><p>为0时，大O；为无穷时，大Ω；c为Θ</p>
-<h2 id="3-时间复杂度"><a href="#3-时间复杂度" class="headerlink" title="3.时间复杂度"></a>3.时间复杂度</h2><p>定义：针对指定基本运算，计数算法所做运算次数</p>
-<p>例：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">         <span class="keyword">for</span>(j=<span class="number">1</span> ; j&lt;=i; j++)</span><br><span class="line">            <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=j; k++)</span><br><span class="line">               x++;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>执行次数为：</p>
-<script type="math/tex; mode=display">
-\sum^n_{i=1}\sum^i_{j=1}\sum^j_{k=1}1=\sum^n_{i=1}\sum^i_{j=1}j=\sum^n_{i=1}{i(i+1)\over2}=[n(n+1)(2n+1)/6+n(n+1)/2]/2 \\
-={n^3+3n^2+2n\over6}</script><p>时间复杂度T(n) = O(n^3)</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206221539.png" alt="img"></p>
-<h2 id="4-递归的高阶方程的数学分析"><a href="#4-递归的高阶方程的数学分析" class="headerlink" title="4.递归的高阶方程的数学分析"></a>4.递归的高阶方程的数学分析</h2><p>先化简再计算</p>
-<p><strong>例：</strong></p>
-<p>1.汉诺塔问题的递归算法的复杂度分析</p>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Hanoi</span><span class="params">(<span class="keyword">int</span> n , A ,B,C)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)MoveOne(n,A,B);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , A ,C , B);</span><br><span class="line">		MoveOne(n,A,C);</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , B , A , C);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>M(n) = 2M(n-1)+1</p>
-<p>M(n) = Θ(2^n)</p>
-<p>2.斐波那契</p>
-<p>代码：</p>
-<p>1.递归实现</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci1</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> (n);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> Fibonacci1(n<span class="number">-1</span>)+Fibonacci1(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>A(n) = A(n-1)+A(n-2)+1</p>
-<p>2.迭代法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci2</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> F[n+<span class="number">1</span>];</span><br><span class="line">	F[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	F[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">		F[i] = F[i<span class="number">-1</span>] + F[i - <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">return</span> F[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度低但空间资源浪费高</p>
-<p>A(n) = n - 1 = Θ(n)</p>
-<p>3.最优解法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci3</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> F , Fa , Fb;</span><br><span class="line">    Fa = <span class="number">0</span> ; Fb = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        F = Fa + Fb;</span><br><span class="line">        Fb = Fa;</span><br><span class="line">        Fa = F;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>SWJTU_ALGORITHM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SSTEM01</title>
     <url>/2021/12/06/SSTEM01/</url>
     <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
@@ -400,6 +330,76 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>ALGORITHM02</title>
+    <url>/2021/12/06/ALGORITHM02/</url>
+    <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
+<span id="more"></span>
+<p>目的是为了设计和选择更好的算法</p>
+<h3 id="（1）时间效率"><a href="#（1）时间效率" class="headerlink" title="（1）时间效率"></a>（1）时间效率</h3><p><strong>时间效率：</strong>设输入的元素个数为n,执行该算法的第i步操作记为op（i）,该步骤执行的次数为Cop(i)，则该算法的总执行时间为：</p>
+<script type="math/tex; mode=display">
+T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#（2）时间复杂性" class="headerlink" title="（2）时间复杂性"></a>（2）时间复杂性</h3><p><strong>时间复杂性：</strong>指执行算法所消耗或占用时间资源的量<strong>【程序步数】</strong></p>
+<p>​                        在最坏、最好、平均三种情况下的时间复杂度</p>
+<h3 id="（3）例题"><a href="#（3）例题" class="headerlink" title="（3）例题"></a>（3）例题</h3><p><strong>1.非递归程序</strong>顺序检索：在具有n个元素的数组a[1……n]中找出值等于x的元素的位置</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;class Type&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">seqSearch</span><span class="params">(Type *a, <span class="keyword">int</span> n, Type x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	  <span class="keyword">if</span> (a[i]==x) <span class="keyword">return</span> i;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最坏：T(n) = n</p>
+<p>最好：T(n) = 1</p>
+<p>平均：Tavg（n）=sum[p(I)T(I)]</p>
+<p>变式：设计一个尽可能高效的算法，在长度为n的一维数组a[n]中查找值最大的元素max和最小的元素min，并分析算法的最好、最坏和平均时间复杂度。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MaxMin</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> &amp;max,<span class="keyword">int</span> &amp;min)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> I;</span><br><span class="line">  max=min=a[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">     <span class="keyword">if</span>(a[i]&gt;max) max=a[i];</span><br><span class="line">     <span class="keyword">else</span> <span class="keyword">if</span>(a[i]&lt;min) min=a[i];<span class="comment">//【要特别注意这的else！！！】</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>最好：是一个递增的，n-1</p>
+<p>最坏：递减，2*（n-1）</p>
+<p>平均：假设a中有一半元素比max大，a[i]&gt;max执行n-1次，else语句执行（n-1）/2次———&gt;平均3*（n-1）/2次</p>
+<p><strong>2.递归程序的时间复杂性分析</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">RSum</span><span class="params">(<span class="keyword">float</span> <span class="built_in">list</span>[],<span class="keyword">const</span> <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n)	<span class="comment">//1</span></span><br><span class="line">    &#123;</span><br><span class="line">       <span class="keyword">return</span> RSum(<span class="built_in">list</span>,n<span class="number">-1</span>)+<span class="built_in">list</span>[n<span class="number">-1</span>];	<span class="comment">//?</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>T(n) = T(n-1)+2[T(0)=2]</p>
+<blockquote>
+<p><em>程序步骤不能确切反映程序运行的实际时间</em></p>
+</blockquote>
+<h2 id="2-渐进"><a href="#2-渐进" class="headerlink" title="2.渐进"></a>2.渐进</h2><p>定义：只关心f(n)的阶</p>
+<p><strong>大O表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≤c×f(n)，则称f(n)是T(n)的上界，记为：T(n)=O(f(n))                        </p>
+<p><strong>大Ω表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≥c×g(n)，则称g(n)是T(n)的下界，记为：T(n)= Ω(g(n)</p>
+<p><strong>Θ表示法：</strong>若存在三个正的常数c1、c2和n0，对于任意n≥n0都有c1×f(n)≥T(n)≥c2×f(n)，则称f(n)与T(n)同阶，记为：T(n)=Θ(f(n))      </p>
+<p>求解方法：</p>
+<script type="math/tex; mode=display">
+\lim_n {t(n)\over g(n)}=0\mbox{\quad \quad t(n)的增长次数比g(n)小}\\
+\lim_n {t(n)\over g(n)}=c>0\mbox{\quad \quad t(n)的增长次数和g(n)相同}\\
+\lim_n {t(n)\over g(n)}=\infty\mbox{\quad \quad t(n)的增长次数比g(n)大}</script><p>为0时，大O；为无穷时，大Ω；c为Θ</p>
+<h2 id="3-时间复杂度"><a href="#3-时间复杂度" class="headerlink" title="3.时间复杂度"></a>3.时间复杂度</h2><p>定义：针对指定基本运算，计数算法所做运算次数</p>
+<p>例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">         <span class="keyword">for</span>(j=<span class="number">1</span> ; j&lt;=i; j++)</span><br><span class="line">            <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=j; k++)</span><br><span class="line">               x++;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>执行次数为：</p>
+<script type="math/tex; mode=display">
+\sum^n_{i=1}\sum^i_{j=1}\sum^j_{k=1}1=\sum^n_{i=1}\sum^i_{j=1}j=\sum^n_{i=1}{i(i+1)\over2}=[n(n+1)(2n+1)/6+n(n+1)/2]/2 \\
+={n^3+3n^2+2n\over6}</script><p>时间复杂度T(n) = O(n^3)</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206221539.png" alt="img"></p>
+<h2 id="4-递归的高阶方程的数学分析"><a href="#4-递归的高阶方程的数学分析" class="headerlink" title="4.递归的高阶方程的数学分析"></a>4.递归的高阶方程的数学分析</h2><p>先化简再计算</p>
+<p><strong>例：</strong></p>
+<p>1.汉诺塔问题的递归算法的复杂度分析</p>
+<p>代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Hanoi</span><span class="params">(<span class="keyword">int</span> n , A ,B,C)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)MoveOne(n,A,B);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , A ,C , B);</span><br><span class="line">		MoveOne(n,A,C);</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , B , A , C);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>M(n) = 2M(n-1)+1</p>
+<p>M(n) = Θ(2^n)</p>
+<p>2.斐波那契</p>
+<p>代码：</p>
+<p>1.递归实现</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci1</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> (n);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> Fibonacci1(n<span class="number">-1</span>)+Fibonacci1(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A(n) = A(n-1)+A(n-2)+1</p>
+<p>2.迭代法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci2</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> F[n+<span class="number">1</span>];</span><br><span class="line">	F[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	F[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">		F[i] = F[i<span class="number">-1</span>] + F[i - <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">return</span> F[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度低但空间资源浪费高</p>
+<p>A(n) = n - 1 = Θ(n)</p>
+<p>3.最优解法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci3</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> F , Fa , Fb;</span><br><span class="line">    Fa = <span class="number">0</span> ; Fb = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        F = Fa + Fb;</span><br><span class="line">        Fb = Fa;</span><br><span class="line">        Fa = F;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>SWJTU_ALGORITHM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>algorithm01</title>
     <url>/2021/12/06/algorithm01/</url>
     <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
@@ -430,8 +430,7 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
 <p>图片测试：</p>
 <p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
 <p>数学公式测试</p>
-<p>T(n)=\sum_i C_{opi} * C_i(n)</p>
-<p>公式测试2</p>
+<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
 <script type="math/tex; mode=display">
 T(n)=\sum_i C_{opi} * C_i(n)</script><p>end</p>
 ]]></content>
