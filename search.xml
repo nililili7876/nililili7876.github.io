@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ALGORITHM-Prem</title>
+    <url>/2021/12/06/ALGORITHM-Prem/</url>
+    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
+<span id="more"></span>
+
+<p>1.DFS(来自啊哈算法一书)</p>
+<pre><code>void dfs(int step , int n ,int book[] , int a[])
+&#123;
+    if (step == n )//排到第n个数，排列完成
+    &#123;
+        print(a,n);
+        return;//【返回之前一步，很重要】
+    &#125;
+
+//每一步的操作
+for (int i = 0; i &lt; n; i++)
+&#123;
+    if (!book[i])//还没有排
+    &#123;
+        a[step] = i+1;
+        book[i] = 1;
+
+        //开始排下一个了
+        dfs(step+1,n,book,a);
+
+
+        book[i] = 0;//排序完成，回收本次数【！！！】
+    &#125;
+&#125;
+
+    return;
+&#125;
+</code></pre>
+<p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
+<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>SWJTU_ALGORITHM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -293,51 +338,6 @@
 <p>3.最优解法</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci3</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> F , Fa , Fb;</span><br><span class="line">    Fa = <span class="number">0</span> ; Fb = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        F = Fa + Fb;</span><br><span class="line">        Fb = Fa;</span><br><span class="line">        Fa = F;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>SWJTU_ALGORITHM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ALGORITHM-Prem</title>
-    <url>/2021/12/06/ALGORITHM-Prem/</url>
-    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
-<span id="more"></span>
-
-<p>1.DFS(来自啊哈算法一书)</p>
-<pre><code>void dfs(int step , int n ,int book[] , int a[])
-&#123;
-    if (step == n )//排到第n个数，排列完成
-    &#123;
-        print(a,n);
-        return;//【返回之前一步，很重要】
-    &#125;
-
-//每一步的操作
-for (int i = 0; i &lt; n; i++)
-&#123;
-    if (!book[i])//还没有排
-    &#123;
-        a[step] = i+1;
-        book[i] = 1;
-
-        //开始排下一个了
-        dfs(step+1,n,book,a);
-
-
-        book[i] = 0;//排序完成，回收本次数【！！！】
-    &#125;
-&#125;
-
-    return;
-&#125;
-</code></pre>
-<p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
-<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
 ]]></content>
       <categories>
         <category>ALGORITHM</category>
