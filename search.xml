@@ -201,50 +201,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ALGORITHM-Prem</title>
-    <url>/2021/12/06/ALGORITHM-Prem/</url>
-    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
-<span id="more"></span>
-<p>1.DFS(来自啊哈算法一书)</p>
-<pre><code>void dfs(int step , int n ,int book[] , int a[])
-&#123;
-    if (step == n )//排到第n个数，排列完成
-    &#123;
-        print(a,n);
-        return;//【返回之前一步，很重要】
-    &#125;
-
-//每一步的操作
-for (int i = 0; i &lt; n; i++)
-&#123;
-    if (!book[i])//还没有排
-    &#123;
-        a[step] = i+1;
-        book[i] = 1;
-
-        //开始排下一个了
-        dfs(step+1,n,book,a);
-
-
-        book[i] = 0;//排序完成，回收本次数【！！！】
-    &#125;
-&#125;
-
-    return;
-&#125;
-</code></pre><p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
-<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>全排列</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ALGORITHM-算法效率</title>
     <url>/2021/12/06/ALGORITHM02/</url>
     <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
@@ -313,6 +269,50 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       <tags>
         <tag>ALGORITHM</tag>
         <tag>算法基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ALGORITHM-Prem</title>
+    <url>/2021/12/06/ALGORITHM-Prem/</url>
+    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
+<span id="more"></span>
+<p>1.DFS(来自啊哈算法一书)</p>
+<pre><code>void dfs(int step , int n ,int book[] , int a[])
+&#123;
+    if (step == n )//排到第n个数，排列完成
+    &#123;
+        print(a,n);
+        return;//【返回之前一步，很重要】
+    &#125;
+
+//每一步的操作
+for (int i = 0; i &lt; n; i++)
+&#123;
+    if (!book[i])//还没有排
+    &#123;
+        a[step] = i+1;
+        book[i] = 1;
+
+        //开始排下一个了
+        dfs(step+1,n,book,a);
+
+
+        book[i] = 0;//排序完成，回收本次数【！！！】
+    &#125;
+&#125;
+
+    return;
+&#125;
+</code></pre><p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
+<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>全排列</tag>
       </tags>
   </entry>
   <entry>
@@ -403,29 +403,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>algorithm-绪论</title>
-    <url>/2021/12/06/algorithm01/</url>
-    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
-<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
-<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
-<li>自然语言描述</li>
-<li>流程描述</li>
-<li>伪代码描述</li>
-</ul>
-<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
-<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
-<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>算法基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>序言</title>
     <url>/2021/12/05/hello-world/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
@@ -494,6 +471,29 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
       </categories>
       <tags>
         <tag>Paris</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>algorithm-绪论</title>
+    <url>/2021/12/06/algorithm01/</url>
+    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
+<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
+<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
+<li>自然语言描述</li>
+<li>流程描述</li>
+<li>伪代码描述</li>
+</ul>
+<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
+<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
+<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>算法基础</tag>
       </tags>
   </entry>
 </search>
