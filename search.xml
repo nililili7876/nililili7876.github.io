@@ -1,6 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ALGORITHM-Prem</title>
+    <url>/2021/12/06/ALGORITHM-Prem/</url>
+    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
+<span id="more"></span>
+<p>1.DFS(来自啊哈算法一书)</p>
+<pre><code>void dfs(int step , int n ,int book[] , int a[])
+&#123;
+    if (step == n )//排到第n个数，排列完成
+    &#123;
+        print(a,n);
+        return;//【返回之前一步，很重要】
+    &#125;
+
+//每一步的操作
+for (int i = 0; i &lt; n; i++)
+&#123;
+    if (!book[i])//还没有排
+    &#123;
+        a[step] = i+1;
+        book[i] = 1;
+
+        //开始排下一个了
+        dfs(step+1,n,book,a);
+
+
+        book[i] = 0;//排序完成，回收本次数【！！！】
+    &#125;
+&#125;
+
+    return;
+&#125;
+</code></pre><p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
+<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>全排列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ALGORITHM-算法效率</title>
+    <url>/2021/12/06/ALGORITHM02/</url>
+    <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
+<span id="more"></span>
+<p>目的是为了设计和选择更好的算法</p>
+<h3 id="（1）时间效率"><a href="#（1）时间效率" class="headerlink" title="（1）时间效率"></a>（1）时间效率</h3><p><strong>时间效率：</strong>设输入的元素个数为n,执行该算法的第i步操作记为op（i）,该步骤执行的次数为Cop(i)，则该算法的总执行时间为：</p>
+<script type="math/tex; mode=display">
+T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#（2）时间复杂性" class="headerlink" title="（2）时间复杂性"></a>（2）时间复杂性</h3><p><strong>时间复杂性：</strong>指执行算法所消耗或占用时间资源的量<strong>【程序步数】</strong></p>
+<p>​                        在最坏、最好、平均三种情况下的时间复杂度</p>
+<h3 id="（3）例题"><a href="#（3）例题" class="headerlink" title="（3）例题"></a>（3）例题</h3><p><strong>1.非递归程序</strong>顺序检索：在具有n个元素的数组a[1……n]中找出值等于x的元素的位置</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;class Type&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">seqSearch</span><span class="params">(Type *a, <span class="keyword">int</span> n, Type x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	  <span class="keyword">if</span> (a[i]==x) <span class="keyword">return</span> i;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最坏：T(n) = n</p>
+<p>最好：T(n) = 1</p>
+<p>平均：Tavg（n）=sum[p(I)T(I)]</p>
+<p>变式：设计一个尽可能高效的算法，在长度为n的一维数组a[n]中查找值最大的元素max和最小的元素min，并分析算法的最好、最坏和平均时间复杂度。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MaxMin</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> &amp;max,<span class="keyword">int</span> &amp;min)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> I;</span><br><span class="line">  max=min=a[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">     <span class="keyword">if</span>(a[i]&gt;max) max=a[i];</span><br><span class="line">     <span class="keyword">else</span> <span class="keyword">if</span>(a[i]&lt;min) min=a[i];<span class="comment">//【要特别注意这的else！！！】</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>最好：是一个递增的，n-1</p>
+<p>最坏：递减，2*（n-1）</p>
+<p>平均：假设a中有一半元素比max大，a[i]&gt;max执行n-1次，else语句执行（n-1）/2次———&gt;平均3*（n-1）/2次</p>
+<p><strong>2.递归程序的时间复杂性分析</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">RSum</span><span class="params">(<span class="keyword">float</span> <span class="built_in">list</span>[],<span class="keyword">const</span> <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n)	<span class="comment">//1</span></span><br><span class="line">    &#123;</span><br><span class="line">       <span class="keyword">return</span> RSum(<span class="built_in">list</span>,n<span class="number">-1</span>)+<span class="built_in">list</span>[n<span class="number">-1</span>];	<span class="comment">//?</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>T(n) = T(n-1)+2[T(0)=2]</p>
+<blockquote>
+<p><em>程序步骤不能确切反映程序运行的实际时间</em></p>
+</blockquote>
+<h2 id="2-渐进"><a href="#2-渐进" class="headerlink" title="2.渐进"></a>2.渐进</h2><p>定义：只关心f(n)的阶</p>
+<p><strong>大O表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≤c×f(n)，则称f(n)是T(n)的上界，记为：T(n)=O(f(n))                        </p>
+<p><strong>大Ω表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≥c×g(n)，则称g(n)是T(n)的下界，记为：T(n)= Ω(g(n)</p>
+<p><strong>Θ表示法：</strong>若存在三个正的常数c1、c2和n0，对于任意n≥n0都有c1×f(n)≥T(n)≥c2×f(n)，则称f(n)与T(n)同阶，记为：T(n)=Θ(f(n))      </p>
+<p>求解方法：</p>
+<script type="math/tex; mode=display">
+\lim_n {t(n)\over g(n)}=0\mbox{\quad \quad t(n)的增长次数比g(n)小}\\
+\lim_n {t(n)\over g(n)}=c>0\mbox{\quad \quad t(n)的增长次数和g(n)相同}\\
+\lim_n {t(n)\over g(n)}=\infty\mbox{\quad \quad t(n)的增长次数比g(n)大}</script><p>为0时，大O；为无穷时，大Ω；c为Θ</p>
+<h2 id="3-时间复杂度"><a href="#3-时间复杂度" class="headerlink" title="3.时间复杂度"></a>3.时间复杂度</h2><p>定义：针对指定基本运算，计数算法所做运算次数</p>
+<p>例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">         <span class="keyword">for</span>(j=<span class="number">1</span> ; j&lt;=i; j++)</span><br><span class="line">            <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=j; k++)</span><br><span class="line">               x++;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>执行次数为：</p>
+<script type="math/tex; mode=display">
+\sum^n_{i=1}\sum^i_{j=1}\sum^j_{k=1}1=\sum^n_{i=1}\sum^i_{j=1}j=\sum^n_{i=1}{i(i+1)\over2}=[n(n+1)(2n+1)/6+n(n+1)/2]/2 \\
+={n^3+3n^2+2n\over6}</script><p>时间复杂度T(n) = O(n^3)</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206221539.png" alt="img"></p>
+<h2 id="4-递归的高阶方程的数学分析"><a href="#4-递归的高阶方程的数学分析" class="headerlink" title="4.递归的高阶方程的数学分析"></a>4.递归的高阶方程的数学分析</h2><p>先化简再计算</p>
+<p><strong>例：</strong></p>
+<p>1.汉诺塔问题的递归算法的复杂度分析</p>
+<p>代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Hanoi</span><span class="params">(<span class="keyword">int</span> n , A ,B,C)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)MoveOne(n,A,B);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , A ,C , B);</span><br><span class="line">		MoveOne(n,A,C);</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , B , A , C);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>M(n) = 2M(n-1)+1</p>
+<p>M(n) = Θ(2^n)</p>
+<p>2.斐波那契</p>
+<p>代码：</p>
+<p>1.递归实现</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci1</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> (n);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> Fibonacci1(n<span class="number">-1</span>)+Fibonacci1(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A(n) = A(n-1)+A(n-2)+1</p>
+<p>2.迭代法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci2</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> F[n+<span class="number">1</span>];</span><br><span class="line">	F[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	F[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">		F[i] = F[i<span class="number">-1</span>] + F[i - <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">return</span> F[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度低但空间资源浪费高</p>
+<p>A(n) = n - 1 = Θ(n)</p>
+<p>3.最优解法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci3</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> F , Fa , Fb;</span><br><span class="line">    Fa = <span class="number">0</span> ; Fb = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        F = Fa + Fb;</span><br><span class="line">        Fb = Fa;</span><br><span class="line">        Fa = F;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>算法基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSTEM01</title>
+    <url>/2021/12/06/SSTEM01/</url>
+    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
+<span id="more"></span>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
+<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
+<p>But pour cet TD: Analyse externe d’un systèmes</p>
+<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
+<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
+<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
+<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
+<p><strong>Exemples:</strong></p>
+<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
+<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
+<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
+<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
+<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
+<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
+<p><strong>Exemples:</strong></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
+</li>
+<li><p><strong>Faire un diagramme de bloc</strong></p>
+<p>Le système est placé au centre du <u>schéma</u>.</p>
+<p>Il est relié aux parties prenantes.</p>
+<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
+</li>
+<li><p>Le Système est représenté comme <em>un bloc</em></p>
+</li>
+<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
+</li>
+<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
+<p>2 types: extend, include(<u>obligatoirement</u>).</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
+</li>
+<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
+</li>
+<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
+</li>
+</ul>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
+<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
+<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
+<p>Radio-réveil:收音机闹钟</p>
+<p>Sert:服务、帮助</p>
+<p>Apporte：带来，提供</p>
+<p>Mise:安装</p>
+<p>oeuvre:工作</p>
+<p>Diffuser:扩散、传播</p>
+<p>Schéma:图解、提纲</p>
+<p>Figurer:画出、代表</p>
+<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
+<p>Flux:流动</p>
+<p>Obligatoirement：必须的</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
+<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
+<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
+<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
+<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
+<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
+]]></content>
+      <categories>
+        <category>nanteS5</category>
+        <category>SSTEM</category>
+      </categories>
+      <tags>
+        <tag>SysML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>algorithm-绪论</title>
+    <url>/2021/12/06/algorithm01/</url>
+    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
+<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
+<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
+<li>自然语言描述</li>
+<li>流程描述</li>
+<li>伪代码描述</li>
+</ul>
+<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
+<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
+<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>算法基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Voyage-Paris</title>
+    <url>/2021/12/08/Voyage-Paris/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
+<span id="more"></span>
+<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
+<p>铁塔上看的夕阳</p>
+<p>超好看！</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
+<p>顺便打卡盗梦空间的桥</p>
+<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
+<p>未来的日子永远爱跳跳虎</p>
+<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
+<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
+<p>雕塑真的好厉害。</p>
+<p>伊斯兰教的艺术印象蛮深。</p>
+<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
+<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
+<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
+<p>梵高好看</p>
+<p>莫奈也好好看</p>
+<p>还有个点彩画派</p>
+<p>很喜欢的画买了明信片但忘记画家了T^T</p>
+<p>出来时的公园，好看到分不清是不是在画中</p>
+<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
+<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
+<p>外面比里面好看</p>
+<p>只记得里面的钟摆了</p>
+<p>看到了一群穿正装的未来大佬们</p>
+<p>听说隔壁是很法国很厉害的大学</p>
+<p>站在那里真的会有</p>
+<p>一种学术的</p>
+<p>很厉害的感觉</p>
+<p>听说建筑仿的是意大利的万神庙</p>
+<p>那就正好</p>
+<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>插图太费劲了，之后补</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>Voyage</category>
+      </categories>
+      <tags>
+        <tag>Paris</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/12/05/hello-world/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
+<p>截断测试</p>
+<span id="more"></span>
+<p>图片测试：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
+<p>数学公式测试</p>
+<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
+<script type="math/tex; mode=display">
+T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
+<p>侧边栏多级分类</p>
+<p>FLUID整理</p>
+<p>Pro20整理</p>
+<p>SSTEM一周一记</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -198,302 +494,6 @@
       </categories>
       <tags>
         <tag>ALGORITHM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ALGORITHM-算法效率</title>
-    <url>/2021/12/06/ALGORITHM02/</url>
-    <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
-<span id="more"></span>
-<p>目的是为了设计和选择更好的算法</p>
-<h3 id="（1）时间效率"><a href="#（1）时间效率" class="headerlink" title="（1）时间效率"></a>（1）时间效率</h3><p><strong>时间效率：</strong>设输入的元素个数为n,执行该算法的第i步操作记为op（i）,该步骤执行的次数为Cop(i)，则该算法的总执行时间为：</p>
-<script type="math/tex; mode=display">
-T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#（2）时间复杂性" class="headerlink" title="（2）时间复杂性"></a>（2）时间复杂性</h3><p><strong>时间复杂性：</strong>指执行算法所消耗或占用时间资源的量<strong>【程序步数】</strong></p>
-<p>​                        在最坏、最好、平均三种情况下的时间复杂度</p>
-<h3 id="（3）例题"><a href="#（3）例题" class="headerlink" title="（3）例题"></a>（3）例题</h3><p><strong>1.非递归程序</strong>顺序检索：在具有n个元素的数组a[1……n]中找出值等于x的元素的位置</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;class Type&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">seqSearch</span><span class="params">(Type *a, <span class="keyword">int</span> n, Type x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	  <span class="keyword">if</span> (a[i]==x) <span class="keyword">return</span> i;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最坏：T(n) = n</p>
-<p>最好：T(n) = 1</p>
-<p>平均：Tavg（n）=sum[p(I)T(I)]</p>
-<p>变式：设计一个尽可能高效的算法，在长度为n的一维数组a[n]中查找值最大的元素max和最小的元素min，并分析算法的最好、最坏和平均时间复杂度。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MaxMin</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> &amp;max,<span class="keyword">int</span> &amp;min)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> I;</span><br><span class="line">  max=min=a[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">     <span class="keyword">if</span>(a[i]&gt;max) max=a[i];</span><br><span class="line">     <span class="keyword">else</span> <span class="keyword">if</span>(a[i]&lt;min) min=a[i];<span class="comment">//【要特别注意这的else！！！】</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>最好：是一个递增的，n-1</p>
-<p>最坏：递减，2*（n-1）</p>
-<p>平均：假设a中有一半元素比max大，a[i]&gt;max执行n-1次，else语句执行（n-1）/2次———&gt;平均3*（n-1）/2次</p>
-<p><strong>2.递归程序的时间复杂性分析</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">RSum</span><span class="params">(<span class="keyword">float</span> <span class="built_in">list</span>[],<span class="keyword">const</span> <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n)	<span class="comment">//1</span></span><br><span class="line">    &#123;</span><br><span class="line">       <span class="keyword">return</span> RSum(<span class="built_in">list</span>,n<span class="number">-1</span>)+<span class="built_in">list</span>[n<span class="number">-1</span>];	<span class="comment">//?</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>T(n) = T(n-1)+2[T(0)=2]</p>
-<blockquote>
-<p><em>程序步骤不能确切反映程序运行的实际时间</em></p>
-</blockquote>
-<h2 id="2-渐进"><a href="#2-渐进" class="headerlink" title="2.渐进"></a>2.渐进</h2><p>定义：只关心f(n)的阶</p>
-<p><strong>大O表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≤c×f(n)，则称f(n)是T(n)的上界，记为：T(n)=O(f(n))                        </p>
-<p><strong>大Ω表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≥c×g(n)，则称g(n)是T(n)的下界，记为：T(n)= Ω(g(n)</p>
-<p><strong>Θ表示法：</strong>若存在三个正的常数c1、c2和n0，对于任意n≥n0都有c1×f(n)≥T(n)≥c2×f(n)，则称f(n)与T(n)同阶，记为：T(n)=Θ(f(n))      </p>
-<p>求解方法：</p>
-<script type="math/tex; mode=display">
-\lim_n {t(n)\over g(n)}=0\mbox{\quad \quad t(n)的增长次数比g(n)小}\\
-\lim_n {t(n)\over g(n)}=c>0\mbox{\quad \quad t(n)的增长次数和g(n)相同}\\
-\lim_n {t(n)\over g(n)}=\infty\mbox{\quad \quad t(n)的增长次数比g(n)大}</script><p>为0时，大O；为无穷时，大Ω；c为Θ</p>
-<h2 id="3-时间复杂度"><a href="#3-时间复杂度" class="headerlink" title="3.时间复杂度"></a>3.时间复杂度</h2><p>定义：针对指定基本运算，计数算法所做运算次数</p>
-<p>例：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">         <span class="keyword">for</span>(j=<span class="number">1</span> ; j&lt;=i; j++)</span><br><span class="line">            <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=j; k++)</span><br><span class="line">               x++;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>执行次数为：</p>
-<script type="math/tex; mode=display">
-\sum^n_{i=1}\sum^i_{j=1}\sum^j_{k=1}1=\sum^n_{i=1}\sum^i_{j=1}j=\sum^n_{i=1}{i(i+1)\over2}=[n(n+1)(2n+1)/6+n(n+1)/2]/2 \\
-={n^3+3n^2+2n\over6}</script><p>时间复杂度T(n) = O(n^3)</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206221539.png" alt="img"></p>
-<h2 id="4-递归的高阶方程的数学分析"><a href="#4-递归的高阶方程的数学分析" class="headerlink" title="4.递归的高阶方程的数学分析"></a>4.递归的高阶方程的数学分析</h2><p>先化简再计算</p>
-<p><strong>例：</strong></p>
-<p>1.汉诺塔问题的递归算法的复杂度分析</p>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Hanoi</span><span class="params">(<span class="keyword">int</span> n , A ,B,C)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)MoveOne(n,A,B);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , A ,C , B);</span><br><span class="line">		MoveOne(n,A,C);</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , B , A , C);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>M(n) = 2M(n-1)+1</p>
-<p>M(n) = Θ(2^n)</p>
-<p>2.斐波那契</p>
-<p>代码：</p>
-<p>1.递归实现</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci1</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> (n);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> Fibonacci1(n<span class="number">-1</span>)+Fibonacci1(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>A(n) = A(n-1)+A(n-2)+1</p>
-<p>2.迭代法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci2</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> F[n+<span class="number">1</span>];</span><br><span class="line">	F[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	F[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">		F[i] = F[i<span class="number">-1</span>] + F[i - <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">return</span> F[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度低但空间资源浪费高</p>
-<p>A(n) = n - 1 = Θ(n)</p>
-<p>3.最优解法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci3</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> F , Fa , Fb;</span><br><span class="line">    Fa = <span class="number">0</span> ; Fb = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        F = Fa + Fb;</span><br><span class="line">        Fb = Fa;</span><br><span class="line">        Fa = F;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>算法基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ALGORITHM-Prem</title>
-    <url>/2021/12/06/ALGORITHM-Prem/</url>
-    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
-<span id="more"></span>
-<p>1.DFS(来自啊哈算法一书)</p>
-<pre><code>void dfs(int step , int n ,int book[] , int a[])
-&#123;
-    if (step == n )//排到第n个数，排列完成
-    &#123;
-        print(a,n);
-        return;//【返回之前一步，很重要】
-    &#125;
-
-//每一步的操作
-for (int i = 0; i &lt; n; i++)
-&#123;
-    if (!book[i])//还没有排
-    &#123;
-        a[step] = i+1;
-        book[i] = 1;
-
-        //开始排下一个了
-        dfs(step+1,n,book,a);
-
-
-        book[i] = 0;//排序完成，回收本次数【！！！】
-    &#125;
-&#125;
-
-    return;
-&#125;
-</code></pre><p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
-<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>全排列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SSTEM01</title>
-    <url>/2021/12/06/SSTEM01/</url>
-    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
-<span id="more"></span>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
-<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
-<p>But pour cet TD: Analyse externe d’un systèmes</p>
-<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
-<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
-<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
-<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
-<p><strong>Exemples:</strong></p>
-<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
-<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
-<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
-<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
-<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
-<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
-<p><strong>Exemples:</strong></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
-</li>
-<li><p><strong>Faire un diagramme de bloc</strong></p>
-<p>Le système est placé au centre du <u>schéma</u>.</p>
-<p>Il est relié aux parties prenantes.</p>
-<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
-</li>
-<li><p>Le Système est représenté comme <em>un bloc</em></p>
-</li>
-<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
-</li>
-<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
-<p>2 types: extend, include(<u>obligatoirement</u>).</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
-</li>
-<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
-</li>
-<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
-</li>
-</ul>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
-<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
-<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
-<p>Radio-réveil:收音机闹钟</p>
-<p>Sert:服务、帮助</p>
-<p>Apporte：带来，提供</p>
-<p>Mise:安装</p>
-<p>oeuvre:工作</p>
-<p>Diffuser:扩散、传播</p>
-<p>Schéma:图解、提纲</p>
-<p>Figurer:画出、代表</p>
-<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
-<p>Flux:流动</p>
-<p>Obligatoirement：必须的</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
-<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
-<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
-<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
-<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
-<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
-]]></content>
-      <categories>
-        <category>nanteS5</category>
-        <category>SSTEM</category>
-      </categories>
-      <tags>
-        <tag>SysML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>序言</title>
-    <url>/2021/12/05/hello-world/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
-<p>截断测试</p>
-<span id="more"></span>
-<p>图片测试：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
-<p>数学公式测试</p>
-<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
-<script type="math/tex; mode=display">
-T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
-<p>侧边栏多级分类</p>
-<p>FLUID整理</p>
-<p>Pro20整理</p>
-<p>SSTEM一周一记</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Voyage-Paris</title>
-    <url>/2021/12/08/Voyage-Paris/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
-<span id="more"></span>
-<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
-<p>铁塔上看的夕阳</p>
-<p>超好看！</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
-<p>顺便打卡盗梦空间的桥</p>
-<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
-<p>未来的日子永远爱跳跳虎</p>
-<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
-<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
-<p>雕塑真的好厉害。</p>
-<p>伊斯兰教的艺术印象蛮深。</p>
-<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
-<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
-<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
-<p>梵高好看</p>
-<p>莫奈也好好看</p>
-<p>还有个点彩画派</p>
-<p>很喜欢的画买了明信片但忘记画家了T^T</p>
-<p>出来时的公园，好看到分不清是不是在画中</p>
-<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
-<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
-<p>外面比里面好看</p>
-<p>只记得里面的钟摆了</p>
-<p>看到了一群穿正装的未来大佬们</p>
-<p>听说隔壁是很法国很厉害的大学</p>
-<p>站在那里真的会有</p>
-<p>一种学术的</p>
-<p>很厉害的感觉</p>
-<p>听说建筑仿的是意大利的万神庙</p>
-<p>那就正好</p>
-<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>插图太费劲了，之后补</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
-      </categories>
-      <tags>
-        <tag>Paris</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>algorithm-绪论</title>
-    <url>/2021/12/06/algorithm01/</url>
-    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
-<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
-<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
-<li>自然语言描述</li>
-<li>流程描述</li>
-<li>伪代码描述</li>
-</ul>
-<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
-<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
-<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>算法基础</tag>
       </tags>
   </entry>
 </search>
