@@ -45,6 +45,376 @@ for (int i = 0; i &lt; n; i++)
       </tags>
   </entry>
   <entry>
+    <title>ALGORITHM-算法效率</title>
+    <url>/2021/12/06/ALGORITHM02/</url>
+    <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
+<span id="more"></span>
+<p>目的是为了设计和选择更好的算法</p>
+<h3 id="（1）时间效率"><a href="#（1）时间效率" class="headerlink" title="（1）时间效率"></a>（1）时间效率</h3><p><strong>时间效率：</strong>设输入的元素个数为n,执行该算法的第i步操作记为op（i）,该步骤执行的次数为Cop(i)，则该算法的总执行时间为：</p>
+<script type="math/tex; mode=display">
+T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#（2）时间复杂性" class="headerlink" title="（2）时间复杂性"></a>（2）时间复杂性</h3><p><strong>时间复杂性：</strong>指执行算法所消耗或占用时间资源的量<strong>【程序步数】</strong></p>
+<p>​                        在最坏、最好、平均三种情况下的时间复杂度</p>
+<h3 id="（3）例题"><a href="#（3）例题" class="headerlink" title="（3）例题"></a>（3）例题</h3><p><strong>1.非递归程序</strong>顺序检索：在具有n个元素的数组a[1……n]中找出值等于x的元素的位置</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;class Type&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">seqSearch</span><span class="params">(Type *a, <span class="keyword">int</span> n, Type x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	  <span class="keyword">if</span> (a[i]==x) <span class="keyword">return</span> i;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最坏：T(n) = n</p>
+<p>最好：T(n) = 1</p>
+<p>平均：Tavg（n）=sum[p(I)T(I)]</p>
+<p>变式：设计一个尽可能高效的算法，在长度为n的一维数组a[n]中查找值最大的元素max和最小的元素min，并分析算法的最好、最坏和平均时间复杂度。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MaxMin</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> &amp;max,<span class="keyword">int</span> &amp;min)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> I;</span><br><span class="line">  max=min=a[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">     <span class="keyword">if</span>(a[i]&gt;max) max=a[i];</span><br><span class="line">     <span class="keyword">else</span> <span class="keyword">if</span>(a[i]&lt;min) min=a[i];<span class="comment">//【要特别注意这的else！！！】</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>最好：是一个递增的，n-1</p>
+<p>最坏：递减，2*（n-1）</p>
+<p>平均：假设a中有一半元素比max大，a[i]&gt;max执行n-1次，else语句执行（n-1）/2次———&gt;平均3*（n-1）/2次</p>
+<p><strong>2.递归程序的时间复杂性分析</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">RSum</span><span class="params">(<span class="keyword">float</span> <span class="built_in">list</span>[],<span class="keyword">const</span> <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n)	<span class="comment">//1</span></span><br><span class="line">    &#123;</span><br><span class="line">       <span class="keyword">return</span> RSum(<span class="built_in">list</span>,n<span class="number">-1</span>)+<span class="built_in">list</span>[n<span class="number">-1</span>];	<span class="comment">//?</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>T(n) = T(n-1)+2[T(0)=2]</p>
+<blockquote>
+<p><em>程序步骤不能确切反映程序运行的实际时间</em></p>
+</blockquote>
+<h2 id="2-渐进"><a href="#2-渐进" class="headerlink" title="2.渐进"></a>2.渐进</h2><p>定义：只关心f(n)的阶</p>
+<p><strong>大O表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≤c×f(n)，则称f(n)是T(n)的上界，记为：T(n)=O(f(n))                        </p>
+<p><strong>大Ω表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≥c×g(n)，则称g(n)是T(n)的下界，记为：T(n)= Ω(g(n)</p>
+<p><strong>Θ表示法：</strong>若存在三个正的常数c1、c2和n0，对于任意n≥n0都有c1×f(n)≥T(n)≥c2×f(n)，则称f(n)与T(n)同阶，记为：T(n)=Θ(f(n))      </p>
+<p>求解方法：</p>
+<script type="math/tex; mode=display">
+\lim_n {t(n)\over g(n)}=0\mbox{\quad \quad t(n)的增长次数比g(n)小}\\
+\lim_n {t(n)\over g(n)}=c>0\mbox{\quad \quad t(n)的增长次数和g(n)相同}\\
+\lim_n {t(n)\over g(n)}=\infty\mbox{\quad \quad t(n)的增长次数比g(n)大}</script><p>为0时，大O；为无穷时，大Ω；c为Θ</p>
+<h2 id="3-时间复杂度"><a href="#3-时间复杂度" class="headerlink" title="3.时间复杂度"></a>3.时间复杂度</h2><p>定义：针对指定基本运算，计数算法所做运算次数</p>
+<p>例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">         <span class="keyword">for</span>(j=<span class="number">1</span> ; j&lt;=i; j++)</span><br><span class="line">            <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=j; k++)</span><br><span class="line">               x++;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>执行次数为：</p>
+<script type="math/tex; mode=display">
+\sum^n_{i=1}\sum^i_{j=1}\sum^j_{k=1}1=\sum^n_{i=1}\sum^i_{j=1}j=\sum^n_{i=1}{i(i+1)\over2}=[n(n+1)(2n+1)/6+n(n+1)/2]/2 \\
+={n^3+3n^2+2n\over6}</script><p>时间复杂度T(n) = O(n^3)</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206221539.png" alt="img"></p>
+<h2 id="4-递归的高阶方程的数学分析"><a href="#4-递归的高阶方程的数学分析" class="headerlink" title="4.递归的高阶方程的数学分析"></a>4.递归的高阶方程的数学分析</h2><p>先化简再计算</p>
+<p><strong>例：</strong></p>
+<p>1.汉诺塔问题的递归算法的复杂度分析</p>
+<p>代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Hanoi</span><span class="params">(<span class="keyword">int</span> n , A ,B,C)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)MoveOne(n,A,B);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , A ,C , B);</span><br><span class="line">		MoveOne(n,A,C);</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , B , A , C);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>M(n) = 2M(n-1)+1</p>
+<p>M(n) = Θ(2^n)</p>
+<p>2.斐波那契</p>
+<p>代码：</p>
+<p>1.递归实现</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci1</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> (n);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> Fibonacci1(n<span class="number">-1</span>)+Fibonacci1(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A(n) = A(n-1)+A(n-2)+1</p>
+<p>2.迭代法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci2</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> F[n+<span class="number">1</span>];</span><br><span class="line">	F[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	F[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">		F[i] = F[i<span class="number">-1</span>] + F[i - <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">return</span> F[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度低但空间资源浪费高</p>
+<p>A(n) = n - 1 = Θ(n)</p>
+<p>3.最优解法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci3</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> F , Fa , Fb;</span><br><span class="line">    Fa = <span class="number">0</span> ; Fb = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        F = Fa + Fb;</span><br><span class="line">        Fb = Fa;</span><br><span class="line">        Fa = F;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>算法基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSTEM01</title>
+    <url>/2021/12/06/SSTEM01/</url>
+    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
+<span id="more"></span>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
+<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
+<p>But pour cet TD: Analyse externe d’un systèmes</p>
+<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
+<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
+<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
+<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
+<p><strong>Exemples:</strong></p>
+<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
+<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
+<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
+<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
+<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
+<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
+<p><strong>Exemples:</strong></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
+</li>
+<li><p><strong>Faire un diagramme de bloc</strong></p>
+<p>Le système est placé au centre du <u>schéma</u>.</p>
+<p>Il est relié aux parties prenantes.</p>
+<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
+</li>
+<li><p>Le Système est représenté comme <em>un bloc</em></p>
+</li>
+<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
+</li>
+<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
+<p>2 types: extend, include(<u>obligatoirement</u>).</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
+</li>
+<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
+</li>
+<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
+</li>
+</ul>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
+<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
+<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
+<p>Radio-réveil:收音机闹钟</p>
+<p>Sert:服务、帮助</p>
+<p>Apporte：带来，提供</p>
+<p>Mise:安装</p>
+<p>oeuvre:工作</p>
+<p>Diffuser:扩散、传播</p>
+<p>Schéma:图解、提纲</p>
+<p>Figurer:画出、代表</p>
+<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
+<p>Flux:流动</p>
+<p>Obligatoirement：必须的</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
+<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
+<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
+<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
+<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
+<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
+]]></content>
+      <categories>
+        <category>nanteS5</category>
+        <category>SSTEM</category>
+      </categories>
+      <tags>
+        <tag>SysML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSTEM_DS</title>
+    <url>/2022/01/27/SSTEM-DS/</url>
+    <content><![CDATA[<h1 id="SSTEM期末自救"><a href="#SSTEM期末自救" class="headerlink" title="SSTEM期末自救"></a><centre>SSTEM期末自救<centre></h1><span id="more"></span>
+<h2 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h2><h3 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h3><h3 id="Question-Apres-avoir-defini-les-differentes-parties-prenantes-du-Systeme-identifiez-les-differentes-utilisations-et-modelisez-les-sous-forme-d’un-diagramme-des-cas-d’utilisation"><a href="#Question-Apres-avoir-defini-les-differentes-parties-prenantes-du-Systeme-identifiez-les-differentes-utilisations-et-modelisez-les-sous-forme-d’un-diagramme-des-cas-d’utilisation" class="headerlink" title="Question: Après avoir défini les différentes parties prenantes du Système, identifiez les différentes utilisations et modélisez les sous forme d’un diagramme des cas d’utilisation"></a>Question: Après avoir <strong>défini les différentes parties prenantes</strong> du Système, identifiez les différentes utilisations et modélisez les sous forme d’<strong>un diagramme des cas d’utilisation</strong></h3><p>Diagramme des cas d’utilisation 的 étape:</p>
+<ol>
+<li><p>Finalité,Missions,Objectifs(套话)</p>
+<p>Finalité: <strong><em>Assurer le fonctionnement des systèmes d</em></strong>‘information de réseau ferroviaire.</p>
+<p>Missions:具体任务，得在问题中找，可能用到的词：définir,assurer,informer</p>
+<p>Objectifs: <strong><em>Pendre des dispositions raisonnable pour tous les</em></strong> trains grace <strong><em>à la coopération mutuelle entre</em></strong> [……]</p>
+</li>
+<li><p>Les parties prenantes</p>
+<p>找实体，可以画个方框图</p>
+<p>comme ca：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127160428.png" alt="img"></p>
+</li>
+<li><p>Les cas d’utilisation</p>
+<p>画小人图</p>
+<p>一些值得注意的点：方框+标题，拓展的include和extend(都是虚箭头画的)</p>
+<p>include: Celles qui sont incluses dans une action existante —-&gt;obligatoirement,一定被执行</p>
+<p>​                1.任务与子任务</p>
+<p>​                2.小人的任务与任务间</p>
+<p>extend: Celles qui étendent une action existante—&gt;éventuellement,可能被执行</p>
+</li>
+<li><p>Les interfaces</p>
+<p>随缘</p>
+</li>
+</ol>
+<h3 id="TD2"><a href="#TD2" class="headerlink" title="TD2"></a>TD2</h3><p>Question:</p>
+<h4 id="1-Identifier-les-parties-prenantes-et-leur-role-dans-ce-processus"><a href="#1-Identifier-les-parties-prenantes-et-leur-role-dans-ce-processus" class="headerlink" title="1.Identifier les parties prenantes et leur rôle dans ce processus"></a>1.Identifier les parties prenantes et leur rôle dans ce processus</h4><p>关键是区分<strong>ACTEUR</strong> OU <strong>COLLABORATEUR</strong>—&gt;看是否有开启或者终止活动</p>
+<p>然后在行为中找出触发事件(<strong>Délencheur</strong>)和终止事件(<strong>Final</strong>)</p>
+<p>可能用到的一些词：envoyer,refuse,annulation,verifier</p>
+<h4 id="2-Modeliser-ce-processus-en-BPMN"><a href="#2-Modeliser-ce-processus-en-BPMN" class="headerlink" title="2. Modéliser ce processus en BPMN"></a>2. Modéliser ce processus en BPMN</h4><p>表示判断：sinon,valide</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127162932.png" alt="img"></p>
+<p>表示发信：envoyer,demande</p>
+<p>表示收信：recevoir</p>
+<p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220127163018343.png" alt="image-20220127163018343"></p>
+<p>终止和起始：都是空心圆但终止的要粗一点</p>
+<h3 id="TD3"><a href="#TD3" class="headerlink" title="TD3"></a>TD3</h3><p>Question:</p>
+<h4 id="1-Concevoir-le-diagramme-Entites-Associations-de-ce-systeme"><a href="#1-Concevoir-le-diagramme-Entites-Associations-de-ce-systeme" class="headerlink" title="1.Concevoir le diagramme Entités-Associations de ce système."></a>1.Concevoir le diagramme Entités-Associations de ce système.</h4><p>​        画<strong><em>ER</em></strong>图等价于画<strong><em>MCD</em></strong>: Modèle Conceptuel des Données(概念模型)</p>
+<p>ER(MCD):主体+关系+实体与关系的比</p>
+<ol>
+<li><p>objet &lt;=&gt;entité</p>
+<p>Propriété &lt;=&gt;attribut，属性，列</p>
+<p>没有外键</p>
+</li>
+<li><p>lien &lt;=&gt;association</p>
+<p>记得加比例，关于比例—&gt;est le lien entre l’entité et l’association</p>
+<p>是minimum+maximum</p>
+<p>minimum:0:peut ne pas apparaître</p>
+<p>​                   1:doit apparaître</p>
+<p>maximum:1:ne peut pas apparaître plus d’une fois</p>
+<p>​                     n:peut apparaître plusieurs fois</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127170205.png" alt="img"></p>
+<p>一些典型的关系及其比例：être: chefdegare和être是1:1，être和personne是0:1</p>
+<p>​                                              detype: salle和detype是1:1,detype和typedesalle是0:n</p>
+<p>TD3的2到5题是对ER的评价和补充，暂时不想展开看（TO BE ADDED）</p>
+<h3 id="TD4"><a href="#TD4" class="headerlink" title="TD4"></a>TD4</h3><p>Question: Cet exercice s’appuie sur la modélisation de gestion de réseau ferroviaire mis en place lors des TDs précédents. Il a pour but de pratiquer SQL à travers l’écriture d’un certain nombre de requêtes. Le MCD utilisé est joint ci-dessous.</p>
+<h4 id="1-A-partir-du-MCD-mettre-en-oeuvre-le-modele-physique-de-la-base-de-donnees-MPD"><a href="#1-A-partir-du-MCD-mettre-en-oeuvre-le-modele-physique-de-la-base-de-donnees-MPD" class="headerlink" title="1.À partir du MCD, mettre en oeuvre le modèle physique de la base de données (MPD)"></a>1.À partir du MCD, mettre en oeuvre le modèle physique de la base de données (MPD)</h4><p>逻辑模型<strong><em>MLD</em></strong>: Modèle logiques与物理模型<strong><em>MPD</em></strong>: Modèle physiques：物理模型有数据类型</p>
+<p>MPD:含实体的外键+箭头+数据类型</p>
+<ol>
+<li><p>实体</p>
+<p>标出主键（PK）与<strong>外键</strong>（FK）</p>
+</li>
+<li><p>箭头</p>
+<p>箭头指向：从表指向主表的外键所在的位置</p>
+<p>从表：以主表的主键（primary key）值为外键 (Foreign Key)的表，可以通过外键与主表进行关联查询。从表与主表通过外键进行关联查询.<br>箭头：从表外键➡️主表</p>
+</li>
+<li><p>数据类型</p>
+<p>integer/float</p>
+<p>character varying(256/128)</p>
+<p>date/datetime/timestamp</p>
+</li>
+</ol>
+<h4 id="2-查询"><a href="#2-查询" class="headerlink" title="2.查询"></a>2.查询</h4><p>基本语句：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">DISTINCT</span>) 列名 </span><br><span class="line"><span class="keyword">FROM</span> 表名 <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span>: <span class="number">1.</span><span class="built_in">UPPER</span>(Nom) <span class="keyword">LIKE</span> <span class="string">&#x27;%TER%&#x27;</span></span><br><span class="line">	   <span class="number">2.</span><span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span><span class="operator">/</span><span class="keyword">MONTH</span><span class="operator">/</span>DOW<span class="operator">/</span><span class="keyword">HOUR</span><span class="operator">/</span>MINUTES  <span class="keyword">FROM</span> 表名)<span class="operator">=</span>……</span><br></pre></td></tr></table></figure>
+<h3 id="TD5"><a href="#TD5" class="headerlink" title="TD5"></a>TD5</h3><h4 id="1-表的创建"><a href="#1-表的创建" class="headerlink" title="1.表的创建"></a>1.表的创建</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line">(</span><br><span class="line">    列名  数据类型  <span class="keyword">PRIMARY</span> KEY<span class="operator">/</span><span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="operator">/</span>或其他</span><br><span class="line">    </span><br><span class="line">    <span class="comment">--联合主键</span></span><br><span class="line">    <span class="keyword">CONSTRAINT</span> 约束名 <span class="keyword">PRIMARY</span> KEY(列名<span class="number">1</span>,列名<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">--外键约束</span></span><br><span class="line">    <span class="keyword">CONSTRAINT</span> 约束名</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY(外键名)</span><br><span class="line">    <span class="keyword">REFERENCES</span> 表名(外键名)</span><br><span class="line">    <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> ACTION</span><br><span class="line">    <span class="keyword">ON</span> UPDATE CASCADE</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="2-表的增删改"><a href="#2-表的增删改" class="headerlink" title="2.表的增删改"></a>2.表的增删改</h4><ol>
+<li><p>INSERT</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span> (<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="comment">--若插入的列为空，写NULL</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DELETE</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line"><span class="comment">--where里面写查询</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--EXMPLE</span></span><br><span class="line"><span class="keyword">WHERE</span> trajet_id <span class="keyword">in</span> </span><br><span class="line">			(<span class="keyword">SELECT</span> trajet_id <span class="keyword">FROM</span> arret </span><br><span class="line"> 			<span class="keyword">WHERE</span> <span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">=</span> <span class="number">2016</span> <span class="keyword">AND</span> </span><br><span class="line"> 			<span class="built_in">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">=</span> <span class="number">2</span> <span class="keyword">AND</span> </span><br><span class="line"> 			<span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">&lt;</span> <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>UPDATE</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">UPDATE 表名</span><br><span class="line"><span class="keyword">SET</span> 列名</span><br><span class="line"><span class="keyword">WHERE</span> ……</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h2><h3 id="TP1"><a href="#TP1" class="headerlink" title="TP1"></a>TP1</h3><p>查询工作SELECT</p>
+<p>1.UNION SELECT: Donner la/les fonction(s) de Yvon Manac’h</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;Mecanicien&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Mecanicien <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;Agent&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Agent <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;Conducteur&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Conducteur <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;ChefDeGare&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> ChefDeGare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>2.嵌套查询:Donner les horaires en gare de Nantes, pour les trains qui relient Nantes à Lyon pour la journée de demain. En pratique, on regardera quels trajets s’arrêtent à Nantes et Lyon. Attention, les gares de Lyon ne s’appellent pas ‘Gare de Lyon’ mais comporte Lyon dans leur nom.</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> train_id,trajet_id,arret_horaireprevu</span><br><span class="line"><span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line"><span class="keyword">WHERE</span> trajet_id <span class="keyword">IN</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> trajet_id</span><br><span class="line">	<span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line">	<span class="keyword">WHERE</span> arret_horaireprevu <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-12-21 00:00:00&#x27;</span> <span class="keyword">AND</span> <span class="string">&#x27;2021-12-21 23:59:59&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">	  	  <span class="built_in">UPPER</span>(gare_abrege) <span class="keyword">LIKE</span> <span class="string">&#x27;%NANTES%&#x27;</span></span><br><span class="line">	<span class="keyword">INTERSECT</span> <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> trajet_id</span><br><span class="line">			  <span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line">			  <span class="keyword">WHERE</span> arret_horaireprevu <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-12-21 00:00:00&#x27;</span> <span class="keyword">AND</span> <span class="string">&#x27;2021-12-21 23:59:59&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">					<span class="built_in">UPPER</span>(gare_abrege) <span class="keyword">LIKE</span> <span class="string">&#x27;%LYON%&#x27;</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> arret_horaireprevu</span><br><span class="line"></span><br><span class="line"><span class="comment">--关于intersect:取交集--&gt;并集：union,差集：except</span></span><br></pre></td></tr></table></figure>
+<h3 id="TP2"><a href="#TP2" class="headerlink" title="TP2"></a>TP2</h3><p>继续写select(聚集函数)</p>
+<p>1.Combien y a-t-il de conducteurs dans la base ? </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="comment">--COUNT(*)拿来统计列</span></span><br><span class="line"><span class="keyword">FROM</span> conducteur</span><br></pre></td></tr></table></figure>
+<p>2.De combien de gare chaque chef de gare est-il responsable? </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> personne_nom,personne_prenom,personne_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> gare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> chefdegare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> personne <span class="keyword">GROUP</span> <span class="keyword">BY</span> personne_nom,personne_prenom,personne_id </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> count</span><br></pre></td></tr></table></figure>
+<p>注意点：GROUP BY上写除函数之外的所有的select,聚集函数后可以直接命名，comme ca</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127180520.png" alt="img"></p>
+<p>3.MAX、AVG</p>
+<h3 id="TP3"><a href="#TP3" class="headerlink" title="TP3"></a>TP3</h3><p>SELECT + 导出PDF</p>
+<p>Générez un document, nommé rapport05.pdf, avec la liste des 5 propriétaires possédant les plus grandes superficies,<br>triés en ordre décroissant des sommes de superficie de terrain qu’ils possèdent. On utilisera pour cela la fonction <strong>ST_AREA</strong>（算面积使用）</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> personne_nom,<span class="built_in">SUM</span>(ST_AREA(parcelle_geometry)) <span class="keyword">AS</span> area,<span class="built_in">COUNT</span>(parcelle_id)</span><br><span class="line"><span class="keyword">FROM</span> culture <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> parcelle <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> appartient <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> personne</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> personne_nom</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> area <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<h2 id="PROJECT"><a href="#PROJECT" class="headerlink" title="PROJECT"></a>PROJECT</h2><p>TD6&amp;7 et TP 4&amp;5</p>
+]]></content>
+      <categories>
+        <category>nanteS5</category>
+        <category>SSTEM</category>
+      </categories>
+      <tags>
+        <tag>DS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Voyage-Italie</title>
+    <url>/2022/02/01/Voyage-Italie/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>马耳他$\longrightarrow$罗马$\longrightarrow$米兰</p>
+<span id="more"></span>
+<h1 id="马耳他"><a href="#马耳他" class="headerlink" title="马耳他"></a>马耳他</h1><p>好看！</p>
+<p>看到海就真的超级开心</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231830.png"height="200">
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231634.png" height="200">
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231445.png" height="200">
+    </div>
+
+
+<p>能在这个岛上过暑假的小孩应该很幸福吧</p>
+<p>但就是住的好远（晕车真的难顶</p>
+<p>体验了壁炉和烤鸡</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231721.png"height="200">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201232158.png" height="200">
+</div>
+
+
+<p>还有偷偷摘下来的仙人掌的果</p>
+<p>整体风格蛮中东的</p>
+<p>但又特别电影</p>
+<p>穷途末路的英雄的流浪故事</p>
+<p>碰到的司机大叔也人超级好</p>
+<p>希望这两年间能再去一次</p>
+<p>带着夏企和橘子汽水</p>
+<p>想念夏天</p>
+<h1 id="罗马"><a href="#罗马" class="headerlink" title="罗马"></a>罗马</h1><p>西班牙台阶$\longrightarrow$总统府（？maybe）$\longrightarrow$圣天使堡$\longrightarrow$梵蒂冈$\longrightarrow$万神庙$\longrightarrow$斗兽场$\longrightarrow$什么祭坛</p>
+<h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h2><p>西班牙台阶，总统府和一个喷泉</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234600.png"height="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234616.png" height="200"/>
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234815.png" height="200"/>
+    </div>
+
+
+<p>夕阳好看！</p>
+<p>龙虾意面好吃！</p>
+<p>冰淇淋好吃！</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234928.png"height="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234943.png" height="200"/>
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234958.png" height="200"/>
+    </div>
+
+
+<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h2><p>圣天使堡+法院+梵蒂冈+万神庙</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235138.png"width="200">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235129.png" width="200">
+     <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235447.png" width="200">
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235151.png" width="200">
+    </div>
+
+
+<p>夕阳好看！</p>
+<p>在梵蒂冈被骗了10欧QAQ</p>
+<p>但暴走了两次不亏！（Cappella Sistina</p>
+<p>看到了前前前手机壁纸，开心</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235204.png" alt="img"></p>
+<h2 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h2><p>斗兽场+祭坛</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235423.png"height="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235732.png" height="200"/>
+</div>
+
+
+<p>中餐好吃！</p>
+<p>臭鸟拉屎（猖狂到当地老太太会打伞的程度，可恶</p>
+<h1 id="米兰"><a href="#米兰" class="headerlink" title="米兰"></a>米兰</h1><p>个人不官方的宣布</p>
+<p>米兰就是旅游荒漠</p>
+<p>只就去了大教堂，然后有猥琐的偷偷喂鸽子</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230627.png"height="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230643.png" height="200"/>
+</div>
+
+
+
+
+<p>但是！</p>
+<p>米兰火锅！好好吃！店名：“巴倒辣”。人生建议：不能点中辣不能点中辣不能点中辣！（上次被辣成瓜娃子还是在重庆的时候了</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230545.png" alt="img"></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>虽然没去佛罗伦萨和威尼斯，但得歇一段时间不看人文类风光啦~</p>
+<p>意大利再见﻿ε≡٩(๑&gt;₃&lt;)۶ </p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230618.png" alt="img"></p>
+]]></content>
+      <tags>
+        <tag>生活区</tag>
+        <tag>Voyage</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -245,370 +615,6 @@ for (int i = 0; i &lt; n; i++)
       </tags>
   </entry>
   <entry>
-    <title>SSTEM_DS</title>
-    <url>/2022/01/27/SSTEM-DS/</url>
-    <content><![CDATA[<h1 id="SSTEM期末自救"><a href="#SSTEM期末自救" class="headerlink" title="SSTEM期末自救"></a><centre>SSTEM期末自救<centre></h1><span id="more"></span>
-<h2 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h2><h3 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h3><h3 id="Question-Apres-avoir-defini-les-differentes-parties-prenantes-du-Systeme-identifiez-les-differentes-utilisations-et-modelisez-les-sous-forme-d’un-diagramme-des-cas-d’utilisation"><a href="#Question-Apres-avoir-defini-les-differentes-parties-prenantes-du-Systeme-identifiez-les-differentes-utilisations-et-modelisez-les-sous-forme-d’un-diagramme-des-cas-d’utilisation" class="headerlink" title="Question: Après avoir défini les différentes parties prenantes du Système, identifiez les différentes utilisations et modélisez les sous forme d’un diagramme des cas d’utilisation"></a>Question: Après avoir <strong>défini les différentes parties prenantes</strong> du Système, identifiez les différentes utilisations et modélisez les sous forme d’<strong>un diagramme des cas d’utilisation</strong></h3><p>Diagramme des cas d’utilisation 的 étape:</p>
-<ol>
-<li><p>Finalité,Missions,Objectifs(套话)</p>
-<p>Finalité: <strong><em>Assurer le fonctionnement des systèmes d</em></strong>‘information de réseau ferroviaire.</p>
-<p>Missions:具体任务，得在问题中找，可能用到的词：définir,assurer,informer</p>
-<p>Objectifs: <strong><em>Pendre des dispositions raisonnable pour tous les</em></strong> trains grace <strong><em>à la coopération mutuelle entre</em></strong> [……]</p>
-</li>
-<li><p>Les parties prenantes</p>
-<p>找实体，可以画个方框图</p>
-<p>comme ca：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127160428.png" alt="img"></p>
-</li>
-<li><p>Les cas d’utilisation</p>
-<p>画小人图</p>
-<p>一些值得注意的点：方框+标题，拓展的include和extend(都是虚箭头画的)</p>
-<p>include: Celles qui sont incluses dans une action existante —-&gt;obligatoirement,一定被执行</p>
-<p>​                1.任务与子任务</p>
-<p>​                2.小人的任务与任务间</p>
-<p>extend: Celles qui étendent une action existante—&gt;éventuellement,可能被执行</p>
-</li>
-<li><p>Les interfaces</p>
-<p>随缘</p>
-</li>
-</ol>
-<h3 id="TD2"><a href="#TD2" class="headerlink" title="TD2"></a>TD2</h3><p>Question:</p>
-<h4 id="1-Identifier-les-parties-prenantes-et-leur-role-dans-ce-processus"><a href="#1-Identifier-les-parties-prenantes-et-leur-role-dans-ce-processus" class="headerlink" title="1.Identifier les parties prenantes et leur rôle dans ce processus"></a>1.Identifier les parties prenantes et leur rôle dans ce processus</h4><p>关键是区分<strong>ACTEUR</strong> OU <strong>COLLABORATEUR</strong>—&gt;看是否有开启或者终止活动</p>
-<p>然后在行为中找出触发事件(<strong>Délencheur</strong>)和终止事件(<strong>Final</strong>)</p>
-<p>可能用到的一些词：envoyer,refuse,annulation,verifier</p>
-<h4 id="2-Modeliser-ce-processus-en-BPMN"><a href="#2-Modeliser-ce-processus-en-BPMN" class="headerlink" title="2. Modéliser ce processus en BPMN"></a>2. Modéliser ce processus en BPMN</h4><p>表示判断：sinon,valide</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127162932.png" alt="img"></p>
-<p>表示发信：envoyer,demande</p>
-<p>表示收信：recevoir</p>
-<p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220127163018343.png" alt="image-20220127163018343"></p>
-<p>终止和起始：都是空心圆但终止的要粗一点</p>
-<h3 id="TD3"><a href="#TD3" class="headerlink" title="TD3"></a>TD3</h3><p>Question:</p>
-<h4 id="1-Concevoir-le-diagramme-Entites-Associations-de-ce-systeme"><a href="#1-Concevoir-le-diagramme-Entites-Associations-de-ce-systeme" class="headerlink" title="1.Concevoir le diagramme Entités-Associations de ce système."></a>1.Concevoir le diagramme Entités-Associations de ce système.</h4><p>​        画<strong><em>ER</em></strong>图等价于画<strong><em>MCD</em></strong>: Modèle Conceptuel des Données(概念模型)</p>
-<p>ER(MCD):主体+关系+实体与关系的比</p>
-<ol>
-<li><p>objet &lt;=&gt;entité</p>
-<p>Propriété &lt;=&gt;attribut，属性，列</p>
-<p>没有外键</p>
-</li>
-<li><p>lien &lt;=&gt;association</p>
-<p>记得加比例，关于比例—&gt;est le lien entre l’entité et l’association</p>
-<p>是minimum+maximum</p>
-<p>minimum:0:peut ne pas apparaître</p>
-<p>​                   1:doit apparaître</p>
-<p>maximum:1:ne peut pas apparaître plus d’une fois</p>
-<p>​                     n:peut apparaître plusieurs fois</p>
-</li>
-</ol>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127170205.png" alt="img"></p>
-<p>一些典型的关系及其比例：être: chefdegare和être是1:1，être和personne是0:1</p>
-<p>​                                              detype: salle和detype是1:1,detype和typedesalle是0:n</p>
-<p>TD3的2到5题是对ER的评价和补充，暂时不想展开看（TO BE ADDED）</p>
-<h3 id="TD4"><a href="#TD4" class="headerlink" title="TD4"></a>TD4</h3><p>Question: Cet exercice s’appuie sur la modélisation de gestion de réseau ferroviaire mis en place lors des TDs précédents. Il a pour but de pratiquer SQL à travers l’écriture d’un certain nombre de requêtes. Le MCD utilisé est joint ci-dessous.</p>
-<h4 id="1-A-partir-du-MCD-mettre-en-oeuvre-le-modele-physique-de-la-base-de-donnees-MPD"><a href="#1-A-partir-du-MCD-mettre-en-oeuvre-le-modele-physique-de-la-base-de-donnees-MPD" class="headerlink" title="1.À partir du MCD, mettre en oeuvre le modèle physique de la base de données (MPD)"></a>1.À partir du MCD, mettre en oeuvre le modèle physique de la base de données (MPD)</h4><p>逻辑模型<strong><em>MLD</em></strong>: Modèle logiques与物理模型<strong><em>MPD</em></strong>: Modèle physiques：物理模型有数据类型</p>
-<p>MPD:含实体的外键+箭头+数据类型</p>
-<ol>
-<li><p>实体</p>
-<p>标出主键（PK）与<strong>外键</strong>（FK）</p>
-</li>
-<li><p>箭头</p>
-<p>箭头指向：从表指向主表的外键所在的位置</p>
-<p>从表：以主表的主键（primary key）值为外键 (Foreign Key)的表，可以通过外键与主表进行关联查询。从表与主表通过外键进行关联查询.<br>箭头：从表外键➡️主表</p>
-</li>
-<li><p>数据类型</p>
-<p>integer/float</p>
-<p>character varying(256/128)</p>
-<p>date/datetime/timestamp</p>
-</li>
-</ol>
-<h4 id="2-查询"><a href="#2-查询" class="headerlink" title="2.查询"></a>2.查询</h4><p>基本语句：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">DISTINCT</span>) 列名 </span><br><span class="line"><span class="keyword">FROM</span> 表名 <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span>: <span class="number">1.</span><span class="built_in">UPPER</span>(Nom) <span class="keyword">LIKE</span> <span class="string">&#x27;%TER%&#x27;</span></span><br><span class="line">	   <span class="number">2.</span><span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span><span class="operator">/</span><span class="keyword">MONTH</span><span class="operator">/</span>DOW<span class="operator">/</span><span class="keyword">HOUR</span><span class="operator">/</span>MINUTES  <span class="keyword">FROM</span> 表名)<span class="operator">=</span>……</span><br></pre></td></tr></table></figure>
-<h3 id="TD5"><a href="#TD5" class="headerlink" title="TD5"></a>TD5</h3><h4 id="1-表的创建"><a href="#1-表的创建" class="headerlink" title="1.表的创建"></a>1.表的创建</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line">(</span><br><span class="line">    列名  数据类型  <span class="keyword">PRIMARY</span> KEY<span class="operator">/</span><span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="operator">/</span>或其他</span><br><span class="line">    </span><br><span class="line">    <span class="comment">--联合主键</span></span><br><span class="line">    <span class="keyword">CONSTRAINT</span> 约束名 <span class="keyword">PRIMARY</span> KEY(列名<span class="number">1</span>,列名<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">--外键约束</span></span><br><span class="line">    <span class="keyword">CONSTRAINT</span> 约束名</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY(外键名)</span><br><span class="line">    <span class="keyword">REFERENCES</span> 表名(外键名)</span><br><span class="line">    <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> ACTION</span><br><span class="line">    <span class="keyword">ON</span> UPDATE CASCADE</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h4 id="2-表的增删改"><a href="#2-表的增删改" class="headerlink" title="2.表的增删改"></a>2.表的增删改</h4><ol>
-<li><p>INSERT</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span> (<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="comment">--若插入的列为空，写NULL</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DELETE</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line"><span class="comment">--where里面写查询</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--EXMPLE</span></span><br><span class="line"><span class="keyword">WHERE</span> trajet_id <span class="keyword">in</span> </span><br><span class="line">			(<span class="keyword">SELECT</span> trajet_id <span class="keyword">FROM</span> arret </span><br><span class="line"> 			<span class="keyword">WHERE</span> <span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">=</span> <span class="number">2016</span> <span class="keyword">AND</span> </span><br><span class="line"> 			<span class="built_in">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">=</span> <span class="number">2</span> <span class="keyword">AND</span> </span><br><span class="line"> 			<span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">&lt;</span> <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>UPDATE</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">UPDATE 表名</span><br><span class="line"><span class="keyword">SET</span> 列名</span><br><span class="line"><span class="keyword">WHERE</span> ……</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h2><h3 id="TP1"><a href="#TP1" class="headerlink" title="TP1"></a>TP1</h3><p>查询工作SELECT</p>
-<p>1.UNION SELECT: Donner la/les fonction(s) de Yvon Manac’h</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;Mecanicien&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Mecanicien <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;Agent&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Agent <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;Conducteur&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Conducteur <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;ChefDeGare&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> ChefDeGare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>2.嵌套查询:Donner les horaires en gare de Nantes, pour les trains qui relient Nantes à Lyon pour la journée de demain. En pratique, on regardera quels trajets s’arrêtent à Nantes et Lyon. Attention, les gares de Lyon ne s’appellent pas ‘Gare de Lyon’ mais comporte Lyon dans leur nom.</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> train_id,trajet_id,arret_horaireprevu</span><br><span class="line"><span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line"><span class="keyword">WHERE</span> trajet_id <span class="keyword">IN</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> trajet_id</span><br><span class="line">	<span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line">	<span class="keyword">WHERE</span> arret_horaireprevu <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-12-21 00:00:00&#x27;</span> <span class="keyword">AND</span> <span class="string">&#x27;2021-12-21 23:59:59&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">	  	  <span class="built_in">UPPER</span>(gare_abrege) <span class="keyword">LIKE</span> <span class="string">&#x27;%NANTES%&#x27;</span></span><br><span class="line">	<span class="keyword">INTERSECT</span> <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> trajet_id</span><br><span class="line">			  <span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line">			  <span class="keyword">WHERE</span> arret_horaireprevu <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-12-21 00:00:00&#x27;</span> <span class="keyword">AND</span> <span class="string">&#x27;2021-12-21 23:59:59&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">					<span class="built_in">UPPER</span>(gare_abrege) <span class="keyword">LIKE</span> <span class="string">&#x27;%LYON%&#x27;</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> arret_horaireprevu</span><br><span class="line"></span><br><span class="line"><span class="comment">--关于intersect:取交集--&gt;并集：union,差集：except</span></span><br></pre></td></tr></table></figure>
-<h3 id="TP2"><a href="#TP2" class="headerlink" title="TP2"></a>TP2</h3><p>继续写select(聚集函数)</p>
-<p>1.Combien y a-t-il de conducteurs dans la base ? </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="comment">--COUNT(*)拿来统计列</span></span><br><span class="line"><span class="keyword">FROM</span> conducteur</span><br></pre></td></tr></table></figure>
-<p>2.De combien de gare chaque chef de gare est-il responsable? </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> personne_nom,personne_prenom,personne_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> gare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> chefdegare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> personne <span class="keyword">GROUP</span> <span class="keyword">BY</span> personne_nom,personne_prenom,personne_id </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> count</span><br></pre></td></tr></table></figure>
-<p>注意点：GROUP BY上写除函数之外的所有的select,聚集函数后可以直接命名，comme ca</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127180520.png" alt="img"></p>
-<p>3.MAX、AVG</p>
-<h3 id="TP3"><a href="#TP3" class="headerlink" title="TP3"></a>TP3</h3><p>SELECT + 导出PDF</p>
-<p>Générez un document, nommé rapport05.pdf, avec la liste des 5 propriétaires possédant les plus grandes superficies,<br>triés en ordre décroissant des sommes de superficie de terrain qu’ils possèdent. On utilisera pour cela la fonction <strong>ST_AREA</strong>（算面积使用）</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> personne_nom,<span class="built_in">SUM</span>(ST_AREA(parcelle_geometry)) <span class="keyword">AS</span> area,<span class="built_in">COUNT</span>(parcelle_id)</span><br><span class="line"><span class="keyword">FROM</span> culture <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> parcelle <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> appartient <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> personne</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> personne_nom</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> area <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
-<h2 id="PROJECT"><a href="#PROJECT" class="headerlink" title="PROJECT"></a>PROJECT</h2><p>TD6&amp;7 et TP 4&amp;5</p>
-]]></content>
-      <categories>
-        <category>nanteS5</category>
-        <category>SSTEM</category>
-      </categories>
-      <tags>
-        <tag>DS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ALGORITHM-算法效率</title>
-    <url>/2021/12/06/ALGORITHM02/</url>
-    <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
-<span id="more"></span>
-<p>目的是为了设计和选择更好的算法</p>
-<h3 id="（1）时间效率"><a href="#（1）时间效率" class="headerlink" title="（1）时间效率"></a>（1）时间效率</h3><p><strong>时间效率：</strong>设输入的元素个数为n,执行该算法的第i步操作记为op（i）,该步骤执行的次数为Cop(i)，则该算法的总执行时间为：</p>
-<script type="math/tex; mode=display">
-T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#（2）时间复杂性" class="headerlink" title="（2）时间复杂性"></a>（2）时间复杂性</h3><p><strong>时间复杂性：</strong>指执行算法所消耗或占用时间资源的量<strong>【程序步数】</strong></p>
-<p>​                        在最坏、最好、平均三种情况下的时间复杂度</p>
-<h3 id="（3）例题"><a href="#（3）例题" class="headerlink" title="（3）例题"></a>（3）例题</h3><p><strong>1.非递归程序</strong>顺序检索：在具有n个元素的数组a[1……n]中找出值等于x的元素的位置</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;class Type&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">seqSearch</span><span class="params">(Type *a, <span class="keyword">int</span> n, Type x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	  <span class="keyword">if</span> (a[i]==x) <span class="keyword">return</span> i;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最坏：T(n) = n</p>
-<p>最好：T(n) = 1</p>
-<p>平均：Tavg（n）=sum[p(I)T(I)]</p>
-<p>变式：设计一个尽可能高效的算法，在长度为n的一维数组a[n]中查找值最大的元素max和最小的元素min，并分析算法的最好、最坏和平均时间复杂度。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MaxMin</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n,<span class="keyword">int</span> &amp;max,<span class="keyword">int</span> &amp;min)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> I;</span><br><span class="line">  max=min=a[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">     <span class="keyword">if</span>(a[i]&gt;max) max=a[i];</span><br><span class="line">     <span class="keyword">else</span> <span class="keyword">if</span>(a[i]&lt;min) min=a[i];<span class="comment">//【要特别注意这的else！！！】</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>最好：是一个递增的，n-1</p>
-<p>最坏：递减，2*（n-1）</p>
-<p>平均：假设a中有一半元素比max大，a[i]&gt;max执行n-1次，else语句执行（n-1）/2次———&gt;平均3*（n-1）/2次</p>
-<p><strong>2.递归程序的时间复杂性分析</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">RSum</span><span class="params">(<span class="keyword">float</span> <span class="built_in">list</span>[],<span class="keyword">const</span> <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n)	<span class="comment">//1</span></span><br><span class="line">    &#123;</span><br><span class="line">       <span class="keyword">return</span> RSum(<span class="built_in">list</span>,n<span class="number">-1</span>)+<span class="built_in">list</span>[n<span class="number">-1</span>];	<span class="comment">//?</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>T(n) = T(n-1)+2[T(0)=2]</p>
-<blockquote>
-<p><em>程序步骤不能确切反映程序运行的实际时间</em></p>
-</blockquote>
-<h2 id="2-渐进"><a href="#2-渐进" class="headerlink" title="2.渐进"></a>2.渐进</h2><p>定义：只关心f(n)的阶</p>
-<p><strong>大O表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≤c×f(n)，则称f(n)是T(n)的上界，记为：T(n)=O(f(n))                        </p>
-<p><strong>大Ω表示法：</strong>若存在两个正的常数c和n0，对于任意n≥n0，都有T(n)≥c×g(n)，则称g(n)是T(n)的下界，记为：T(n)= Ω(g(n)</p>
-<p><strong>Θ表示法：</strong>若存在三个正的常数c1、c2和n0，对于任意n≥n0都有c1×f(n)≥T(n)≥c2×f(n)，则称f(n)与T(n)同阶，记为：T(n)=Θ(f(n))      </p>
-<p>求解方法：</p>
-<script type="math/tex; mode=display">
-\lim_n {t(n)\over g(n)}=0\mbox{\quad \quad t(n)的增长次数比g(n)小}\\
-\lim_n {t(n)\over g(n)}=c>0\mbox{\quad \quad t(n)的增长次数和g(n)相同}\\
-\lim_n {t(n)\over g(n)}=\infty\mbox{\quad \quad t(n)的增长次数比g(n)大}</script><p>为0时，大O；为无穷时，大Ω；c为Θ</p>
-<h2 id="3-时间复杂度"><a href="#3-时间复杂度" class="headerlink" title="3.时间复杂度"></a>3.时间复杂度</h2><p>定义：针对指定基本运算，计数算法所做运算次数</p>
-<p>例：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">x=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">         <span class="keyword">for</span>(j=<span class="number">1</span> ; j&lt;=i; j++)</span><br><span class="line">            <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=j; k++)</span><br><span class="line">               x++;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>执行次数为：</p>
-<script type="math/tex; mode=display">
-\sum^n_{i=1}\sum^i_{j=1}\sum^j_{k=1}1=\sum^n_{i=1}\sum^i_{j=1}j=\sum^n_{i=1}{i(i+1)\over2}=[n(n+1)(2n+1)/6+n(n+1)/2]/2 \\
-={n^3+3n^2+2n\over6}</script><p>时间复杂度T(n) = O(n^3)</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206221539.png" alt="img"></p>
-<h2 id="4-递归的高阶方程的数学分析"><a href="#4-递归的高阶方程的数学分析" class="headerlink" title="4.递归的高阶方程的数学分析"></a>4.递归的高阶方程的数学分析</h2><p>先化简再计算</p>
-<p><strong>例：</strong></p>
-<p>1.汉诺塔问题的递归算法的复杂度分析</p>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Hanoi</span><span class="params">(<span class="keyword">int</span> n , A ,B,C)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)MoveOne(n,A,B);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , A ,C , B);</span><br><span class="line">		MoveOne(n,A,C);</span><br><span class="line">		Hanoi(n<span class="number">-1</span> , B , A , C);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>M(n) = 2M(n-1)+1</p>
-<p>M(n) = Θ(2^n)</p>
-<p>2.斐波那契</p>
-<p>代码：</p>
-<p>1.递归实现</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci1</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> (n);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> Fibonacci1(n<span class="number">-1</span>)+Fibonacci1(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>A(n) = A(n-1)+A(n-2)+1</p>
-<p>2.迭代法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci2</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> F[n+<span class="number">1</span>];</span><br><span class="line">	F[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	F[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">		F[i] = F[i<span class="number">-1</span>] + F[i - <span class="number">2</span>];</span><br><span class="line">	<span class="keyword">return</span> F[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度低但空间资源浪费高</p>
-<p>A(n) = n - 1 = Θ(n)</p>
-<p>3.最优解法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci3</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> F , Fa , Fb;</span><br><span class="line">    Fa = <span class="number">0</span> ; Fb = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        F = Fa + Fb;</span><br><span class="line">        Fb = Fa;</span><br><span class="line">        Fa = F;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>算法基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SSTEM01</title>
-    <url>/2021/12/06/SSTEM01/</url>
-    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
-<span id="more"></span>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
-<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
-<p>But pour cet TD: Analyse externe d’un systèmes</p>
-<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
-<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
-<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
-<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
-<p><strong>Exemples:</strong></p>
-<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
-<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
-<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
-<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
-<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
-<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
-<p><strong>Exemples:</strong></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
-</li>
-<li><p><strong>Faire un diagramme de bloc</strong></p>
-<p>Le système est placé au centre du <u>schéma</u>.</p>
-<p>Il est relié aux parties prenantes.</p>
-<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
-</li>
-<li><p>Le Système est représenté comme <em>un bloc</em></p>
-</li>
-<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
-</li>
-<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
-<p>2 types: extend, include(<u>obligatoirement</u>).</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
-</li>
-<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
-</li>
-<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
-</li>
-</ul>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
-<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
-<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
-<p>Radio-réveil:收音机闹钟</p>
-<p>Sert:服务、帮助</p>
-<p>Apporte：带来，提供</p>
-<p>Mise:安装</p>
-<p>oeuvre:工作</p>
-<p>Diffuser:扩散、传播</p>
-<p>Schéma:图解、提纲</p>
-<p>Figurer:画出、代表</p>
-<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
-<p>Flux:流动</p>
-<p>Obligatoirement：必须的</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
-<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
-<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
-<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
-<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
-<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
-]]></content>
-      <categories>
-        <category>nanteS5</category>
-        <category>SSTEM</category>
-      </categories>
-      <tags>
-        <tag>SysML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Voyage-Italie</title>
-    <url>/2022/02/01/Voyage-Italie/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>马耳他$\longrightarrow$罗马$\longrightarrow$米兰</p>
-<span id="more"></span>
-<h1 id="马耳他"><a href="#马耳他" class="headerlink" title="马耳他"></a>马耳他</h1><p>好看！</p>
-<p>看到海就真的超级开心</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231830.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231558.png" width="200"/>
-      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231634.png" width="200"/>
-      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231445.png" width="200"/>
-    </center>
-
-<p>能在这个岛上过暑假的小孩应该很幸福吧</p>
-<p>但就是住的好远（晕车真的难顶</p>
-<p>体验了壁炉和烤鸡</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231721.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201232158.png" width="200"/>
-</center>
-
-<p>还有偷偷摘下来的仙人掌的果</p>
-<p>整体风格蛮中东的</p>
-<p>但又特别电影</p>
-<p>穷途末路的英雄的流浪故事</p>
-<p>碰到的司机大叔也人超级好</p>
-<p>希望这两年间能再去一次</p>
-<p>带着夏企和橘子汽水</p>
-<p>想念夏天</p>
-<h1 id="罗马"><a href="#罗马" class="headerlink" title="罗马"></a>罗马</h1><p>西班牙台阶$\longrightarrow$总统府（？maybe）$\longrightarrow$圣天使堡$\longrightarrow$梵蒂冈$\longrightarrow$万神庙$\longrightarrow$斗兽场$\longrightarrow$什么祭坛</p>
-<h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h2><p>西班牙台阶，总统府和一个喷泉</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234600.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234616.png" width="200"/>
-      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234815.png" width="200"/>
-    </center>
-
-<p>夕阳好看！</p>
-<p>龙虾意面好吃！</p>
-<p>冰淇淋好吃！</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234928.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234943.png" width="200"/>
-      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234958.png" width="200"/>
-    </center>
-
-<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h2><p>圣天使堡+法院+梵蒂冈+万神庙</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235138.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235129.png" width="200"/>
-     <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235447.png" width="200"/>
-      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235151.png" width="200"/>
-    </center>
-
-<p>夕阳好看！</p>
-<p>在梵蒂冈被骗了10欧QAQ</p>
-<p>但暴走了两次不亏！（Cappella Sistina</p>
-<p>看到了前前前手机壁纸，开心</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235204.png" alt="img"></p>
-<h2 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h2><p>斗兽场+祭坛</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235423.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235732.png" width="200"/>
-</center>
-
-<p>中餐好吃！</p>
-<p>臭鸟拉屎（猖狂到当地老太太会打伞的程度，可恶</p>
-<h1 id="米兰"><a href="#米兰" class="headerlink" title="米兰"></a>米兰</h1><p>个人不官方的宣布</p>
-<p>米兰就是旅游荒漠</p>
-<p>只就去了大教堂，然后有猥琐的偷偷喂鸽子</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230627.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230643.png" width="200"/>
-</center>
-
-
-
-<p>但是！</p>
-<p>米兰火锅！好好吃！店名：“巴倒辣”。人生建议：不能点中辣不能点中辣不能点中辣！（上次被辣成瓜娃子还是在重庆的时候了</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230545.png" alt="img"></p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>虽然没去佛罗伦萨和威尼斯，但得歇一段时间不看人文类风光啦~</p>
-<p>意大利再见﻿ε≡٩(๑&gt;₃&lt;)۶ </p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230618.png" alt="img"></p>
-]]></content>
-      <tags>
-        <tag>生活区</tag>
-        <tag>Voyage</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>algorithm-绪论</title>
     <url>/2021/12/06/algorithm01/</url>
     <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
@@ -629,31 +635,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       <tags>
         <tag>ALGORITHM</tag>
         <tag>算法基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>序言</title>
-    <url>/2021/12/05/hello-world/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
-<p>截断测试</p>
-<span id="more"></span>
-<p>图片测试：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
-<p>数学公式测试</p>
-<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
-<script type="math/tex; mode=display">
-T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
-<p>侧边栏多级分类</p>
-<p>FLUID整理</p>
-<p>Pro20整理</p>
-<p>SSTEM一周一记</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -734,5 +715,30 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
         <category>生活区</category>
         <category>杂谈</category>
       </categories>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/12/05/hello-world/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
+<p>截断测试</p>
+<span id="more"></span>
+<p>图片测试：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
+<p>数学公式测试</p>
+<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
+<script type="math/tex; mode=display">
+T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
+<p>侧边栏多级分类</p>
+<p>FLUID整理</p>
+<p>Pro20整理</p>
+<p>SSTEM一周一记</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
   </entry>
 </search>
