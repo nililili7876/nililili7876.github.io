@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ALGORITHM-Prem</title>
-    <url>/2021/12/06/ALGORITHM-Prem/</url>
-    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
-<span id="more"></span>
-<p>1.DFS(来自啊哈算法一书)</p>
-<pre><code>void dfs(int step , int n ,int book[] , int a[])
-&#123;
-    if (step == n )//排到第n个数，排列完成
-    &#123;
-        print(a,n);
-        return;//【返回之前一步，很重要】
-    &#125;
-
-//每一步的操作
-for (int i = 0; i &lt; n; i++)
-&#123;
-    if (!book[i])//还没有排
-    &#123;
-        a[step] = i+1;
-        book[i] = 1;
-
-        //开始排下一个了
-        dfs(step+1,n,book,a);
-
-
-        book[i] = 0;//排序完成，回收本次数【！！！】
-    &#125;
-&#125;
-
-    return;
-&#125;
-</code></pre><p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
-<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
-]]></content>
-      <categories>
-        <category>ALGORITHM</category>
-        <category>SWJTU</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>全排列</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -245,6 +201,166 @@ for (int i = 0; i &lt; n; i++)
       </tags>
   </entry>
   <entry>
+    <title>ALGORITHM-Prem</title>
+    <url>/2021/12/06/ALGORITHM-Prem/</url>
+    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
+<span id="more"></span>
+<p>1.DFS(来自啊哈算法一书)</p>
+<pre><code>void dfs(int step , int n ,int book[] , int a[])
+&#123;
+    if (step == n )//排到第n个数，排列完成
+    &#123;
+        print(a,n);
+        return;//【返回之前一步，很重要】
+    &#125;
+
+//每一步的操作
+for (int i = 0; i &lt; n; i++)
+&#123;
+    if (!book[i])//还没有排
+    &#123;
+        a[step] = i+1;
+        book[i] = 1;
+
+        //开始排下一个了
+        dfs(step+1,n,book,a);
+
+
+        book[i] = 0;//排序完成，回收本次数【！！！】
+    &#125;
+&#125;
+
+    return;
+&#125;
+</code></pre><p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
+<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
+]]></content>
+      <categories>
+        <category>ALGORITHM</category>
+        <category>SWJTU</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>全排列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSTEM_DS</title>
+    <url>/2022/01/27/SSTEM-DS/</url>
+    <content><![CDATA[<h1 id="SSTEM期末自救"><a href="#SSTEM期末自救" class="headerlink" title="SSTEM期末自救"></a><centre>SSTEM期末自救<centre></h1><span id="more"></span>
+<h2 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h2><h3 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h3><h3 id="Question-Apres-avoir-defini-les-differentes-parties-prenantes-du-Systeme-identifiez-les-differentes-utilisations-et-modelisez-les-sous-forme-d’un-diagramme-des-cas-d’utilisation"><a href="#Question-Apres-avoir-defini-les-differentes-parties-prenantes-du-Systeme-identifiez-les-differentes-utilisations-et-modelisez-les-sous-forme-d’un-diagramme-des-cas-d’utilisation" class="headerlink" title="Question: Après avoir défini les différentes parties prenantes du Système, identifiez les différentes utilisations et modélisez les sous forme d’un diagramme des cas d’utilisation"></a>Question: Après avoir <strong>défini les différentes parties prenantes</strong> du Système, identifiez les différentes utilisations et modélisez les sous forme d’<strong>un diagramme des cas d’utilisation</strong></h3><p>Diagramme des cas d’utilisation 的 étape:</p>
+<ol>
+<li><p>Finalité,Missions,Objectifs(套话)</p>
+<p>Finalité: <strong><em>Assurer le fonctionnement des systèmes d</em></strong>‘information de réseau ferroviaire.</p>
+<p>Missions:具体任务，得在问题中找，可能用到的词：définir,assurer,informer</p>
+<p>Objectifs: <strong><em>Pendre des dispositions raisonnable pour tous les</em></strong> trains grace <strong><em>à la coopération mutuelle entre</em></strong> [……]</p>
+</li>
+<li><p>Les parties prenantes</p>
+<p>找实体，可以画个方框图</p>
+<p>comme ca：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127160428.png" alt="img"></p>
+</li>
+<li><p>Les cas d’utilisation</p>
+<p>画小人图</p>
+<p>一些值得注意的点：方框+标题，拓展的include和extend(都是虚箭头画的)</p>
+<p>include: Celles qui sont incluses dans une action existante —-&gt;obligatoirement,一定被执行</p>
+<p>​                1.任务与子任务</p>
+<p>​                2.小人的任务与任务间</p>
+<p>extend: Celles qui étendent une action existante—&gt;éventuellement,可能被执行</p>
+</li>
+<li><p>Les interfaces</p>
+<p>随缘</p>
+</li>
+</ol>
+<h3 id="TD2"><a href="#TD2" class="headerlink" title="TD2"></a>TD2</h3><p>Question:</p>
+<h4 id="1-Identifier-les-parties-prenantes-et-leur-role-dans-ce-processus"><a href="#1-Identifier-les-parties-prenantes-et-leur-role-dans-ce-processus" class="headerlink" title="1.Identifier les parties prenantes et leur rôle dans ce processus"></a>1.Identifier les parties prenantes et leur rôle dans ce processus</h4><p>关键是区分<strong>ACTEUR</strong> OU <strong>COLLABORATEUR</strong>—&gt;看是否有开启或者终止活动</p>
+<p>然后在行为中找出触发事件(<strong>Délencheur</strong>)和终止事件(<strong>Final</strong>)</p>
+<p>可能用到的一些词：envoyer,refuse,annulation,verifier</p>
+<h4 id="2-Modeliser-ce-processus-en-BPMN"><a href="#2-Modeliser-ce-processus-en-BPMN" class="headerlink" title="2. Modéliser ce processus en BPMN"></a>2. Modéliser ce processus en BPMN</h4><p>表示判断：sinon,valide</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127162932.png" alt="img"></p>
+<p>表示发信：envoyer,demande</p>
+<p>表示收信：recevoir</p>
+<p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220127163018343.png" alt="image-20220127163018343"></p>
+<p>终止和起始：都是空心圆但终止的要粗一点</p>
+<h3 id="TD3"><a href="#TD3" class="headerlink" title="TD3"></a>TD3</h3><p>Question:</p>
+<h4 id="1-Concevoir-le-diagramme-Entites-Associations-de-ce-systeme"><a href="#1-Concevoir-le-diagramme-Entites-Associations-de-ce-systeme" class="headerlink" title="1.Concevoir le diagramme Entités-Associations de ce système."></a>1.Concevoir le diagramme Entités-Associations de ce système.</h4><p>​        画<strong><em>ER</em></strong>图等价于画<strong><em>MCD</em></strong>: Modèle Conceptuel des Données(概念模型)</p>
+<p>ER(MCD):主体+关系+实体与关系的比</p>
+<ol>
+<li><p>objet &lt;=&gt;entité</p>
+<p>Propriété &lt;=&gt;attribut，属性，列</p>
+<p>没有外键</p>
+</li>
+<li><p>lien &lt;=&gt;association</p>
+<p>记得加比例，关于比例—&gt;est le lien entre l’entité et l’association</p>
+<p>是minimum+maximum</p>
+<p>minimum:0:peut ne pas apparaître</p>
+<p>​                   1:doit apparaître</p>
+<p>maximum:1:ne peut pas apparaître plus d’une fois</p>
+<p>​                     n:peut apparaître plusieurs fois</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127170205.png" alt="img"></p>
+<p>一些典型的关系及其比例：être: chefdegare和être是1:1，être和personne是0:1</p>
+<p>​                                              detype: salle和detype是1:1,detype和typedesalle是0:n</p>
+<p>TD3的2到5题是对ER的评价和补充，暂时不想展开看（TO BE ADDED）</p>
+<h3 id="TD4"><a href="#TD4" class="headerlink" title="TD4"></a>TD4</h3><p>Question: Cet exercice s’appuie sur la modélisation de gestion de réseau ferroviaire mis en place lors des TDs précédents. Il a pour but de pratiquer SQL à travers l’écriture d’un certain nombre de requêtes. Le MCD utilisé est joint ci-dessous.</p>
+<h4 id="1-A-partir-du-MCD-mettre-en-oeuvre-le-modele-physique-de-la-base-de-donnees-MPD"><a href="#1-A-partir-du-MCD-mettre-en-oeuvre-le-modele-physique-de-la-base-de-donnees-MPD" class="headerlink" title="1.À partir du MCD, mettre en oeuvre le modèle physique de la base de données (MPD)"></a>1.À partir du MCD, mettre en oeuvre le modèle physique de la base de données (MPD)</h4><p>逻辑模型<strong><em>MLD</em></strong>: Modèle logiques与物理模型<strong><em>MPD</em></strong>: Modèle physiques：物理模型有数据类型</p>
+<p>MPD:含实体的外键+箭头+数据类型</p>
+<ol>
+<li><p>实体</p>
+<p>标出主键（PK）与<strong>外键</strong>（FK）</p>
+</li>
+<li><p>箭头</p>
+<p>箭头指向：从表指向主表的外键所在的位置</p>
+<p>从表：以主表的主键（primary key）值为外键 (Foreign Key)的表，可以通过外键与主表进行关联查询。从表与主表通过外键进行关联查询.<br>箭头：从表外键➡️主表</p>
+</li>
+<li><p>数据类型</p>
+<p>integer/float</p>
+<p>character varying(256/128)</p>
+<p>date/datetime/timestamp</p>
+</li>
+</ol>
+<h4 id="2-查询"><a href="#2-查询" class="headerlink" title="2.查询"></a>2.查询</h4><p>基本语句：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">DISTINCT</span>) 列名 </span><br><span class="line"><span class="keyword">FROM</span> 表名 <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span>: <span class="number">1.</span><span class="built_in">UPPER</span>(Nom) <span class="keyword">LIKE</span> <span class="string">&#x27;%TER%&#x27;</span></span><br><span class="line">	   <span class="number">2.</span><span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span><span class="operator">/</span><span class="keyword">MONTH</span><span class="operator">/</span>DOW<span class="operator">/</span><span class="keyword">HOUR</span><span class="operator">/</span>MINUTES  <span class="keyword">FROM</span> 表名)<span class="operator">=</span>……</span><br></pre></td></tr></table></figure>
+<h3 id="TD5"><a href="#TD5" class="headerlink" title="TD5"></a>TD5</h3><h4 id="1-表的创建"><a href="#1-表的创建" class="headerlink" title="1.表的创建"></a>1.表的创建</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line">(</span><br><span class="line">    列名  数据类型  <span class="keyword">PRIMARY</span> KEY<span class="operator">/</span><span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="operator">/</span>或其他</span><br><span class="line">    </span><br><span class="line">    <span class="comment">--联合主键</span></span><br><span class="line">    <span class="keyword">CONSTRAINT</span> 约束名 <span class="keyword">PRIMARY</span> KEY(列名<span class="number">1</span>,列名<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">--外键约束</span></span><br><span class="line">    <span class="keyword">CONSTRAINT</span> 约束名</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY(外键名)</span><br><span class="line">    <span class="keyword">REFERENCES</span> 表名(外键名)</span><br><span class="line">    <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> ACTION</span><br><span class="line">    <span class="keyword">ON</span> UPDATE CASCADE</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="2-表的增删改"><a href="#2-表的增删改" class="headerlink" title="2.表的增删改"></a>2.表的增删改</h4><ol>
+<li><p>INSERT</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span> (<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="comment">--若插入的列为空，写NULL</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DELETE</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line"><span class="comment">--where里面写查询</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--EXMPLE</span></span><br><span class="line"><span class="keyword">WHERE</span> trajet_id <span class="keyword">in</span> </span><br><span class="line">			(<span class="keyword">SELECT</span> trajet_id <span class="keyword">FROM</span> arret </span><br><span class="line"> 			<span class="keyword">WHERE</span> <span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">=</span> <span class="number">2016</span> <span class="keyword">AND</span> </span><br><span class="line"> 			<span class="built_in">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">=</span> <span class="number">2</span> <span class="keyword">AND</span> </span><br><span class="line"> 			<span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">&lt;</span> <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>UPDATE</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">UPDATE 表名</span><br><span class="line"><span class="keyword">SET</span> 列名</span><br><span class="line"><span class="keyword">WHERE</span> ……</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h2><h3 id="TP1"><a href="#TP1" class="headerlink" title="TP1"></a>TP1</h3><p>查询工作SELECT</p>
+<p>1.UNION SELECT: Donner la/les fonction(s) de Yvon Manac’h</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;Mecanicien&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Mecanicien <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;Agent&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Agent <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;Conducteur&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Conducteur <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;ChefDeGare&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> ChefDeGare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>2.嵌套查询:Donner les horaires en gare de Nantes, pour les trains qui relient Nantes à Lyon pour la journée de demain. En pratique, on regardera quels trajets s’arrêtent à Nantes et Lyon. Attention, les gares de Lyon ne s’appellent pas ‘Gare de Lyon’ mais comporte Lyon dans leur nom.</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> train_id,trajet_id,arret_horaireprevu</span><br><span class="line"><span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line"><span class="keyword">WHERE</span> trajet_id <span class="keyword">IN</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> trajet_id</span><br><span class="line">	<span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line">	<span class="keyword">WHERE</span> arret_horaireprevu <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-12-21 00:00:00&#x27;</span> <span class="keyword">AND</span> <span class="string">&#x27;2021-12-21 23:59:59&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">	  	  <span class="built_in">UPPER</span>(gare_abrege) <span class="keyword">LIKE</span> <span class="string">&#x27;%NANTES%&#x27;</span></span><br><span class="line">	<span class="keyword">INTERSECT</span> <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> trajet_id</span><br><span class="line">			  <span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line">			  <span class="keyword">WHERE</span> arret_horaireprevu <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-12-21 00:00:00&#x27;</span> <span class="keyword">AND</span> <span class="string">&#x27;2021-12-21 23:59:59&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">					<span class="built_in">UPPER</span>(gare_abrege) <span class="keyword">LIKE</span> <span class="string">&#x27;%LYON%&#x27;</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> arret_horaireprevu</span><br><span class="line"></span><br><span class="line"><span class="comment">--关于intersect:取交集--&gt;并集：union,差集：except</span></span><br></pre></td></tr></table></figure>
+<h3 id="TP2"><a href="#TP2" class="headerlink" title="TP2"></a>TP2</h3><p>继续写select(聚集函数)</p>
+<p>1.Combien y a-t-il de conducteurs dans la base ? </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="comment">--COUNT(*)拿来统计列</span></span><br><span class="line"><span class="keyword">FROM</span> conducteur</span><br></pre></td></tr></table></figure>
+<p>2.De combien de gare chaque chef de gare est-il responsable? </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> personne_nom,personne_prenom,personne_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> gare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> chefdegare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> personne <span class="keyword">GROUP</span> <span class="keyword">BY</span> personne_nom,personne_prenom,personne_id </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> count</span><br></pre></td></tr></table></figure>
+<p>注意点：GROUP BY上写除函数之外的所有的select,聚集函数后可以直接命名，comme ca</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127180520.png" alt="img"></p>
+<p>3.MAX、AVG</p>
+<h3 id="TP3"><a href="#TP3" class="headerlink" title="TP3"></a>TP3</h3><p>SELECT + 导出PDF</p>
+<p>Générez un document, nommé rapport05.pdf, avec la liste des 5 propriétaires possédant les plus grandes superficies,<br>triés en ordre décroissant des sommes de superficie de terrain qu’ils possèdent. On utilisera pour cela la fonction <strong>ST_AREA</strong>（算面积使用）</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> personne_nom,<span class="built_in">SUM</span>(ST_AREA(parcelle_geometry)) <span class="keyword">AS</span> area,<span class="built_in">COUNT</span>(parcelle_id)</span><br><span class="line"><span class="keyword">FROM</span> culture <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> parcelle <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> appartient <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> personne</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> personne_nom</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> area <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<h2 id="PROJECT"><a href="#PROJECT" class="headerlink" title="PROJECT"></a>PROJECT</h2><p>TD6&amp;7 et TP 4&amp;5</p>
+]]></content>
+      <categories>
+        <category>nanteS5</category>
+        <category>SSTEM</category>
+      </categories>
+      <tags>
+        <tag>DS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGORITHM-算法效率</title>
     <url>/2021/12/06/ALGORITHM02/</url>
     <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
@@ -403,165 +519,92 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>SSTEM_DS</title>
-    <url>/2022/01/27/SSTEM-DS/</url>
-    <content><![CDATA[<h1 id="SSTEM期末自救"><a href="#SSTEM期末自救" class="headerlink" title="SSTEM期末自救"></a><centre>SSTEM期末自救<centre></h1><span id="more"></span>
-<h2 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h2><h3 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h3><h3 id="Question-Apres-avoir-defini-les-differentes-parties-prenantes-du-Systeme-identifiez-les-differentes-utilisations-et-modelisez-les-sous-forme-d’un-diagramme-des-cas-d’utilisation"><a href="#Question-Apres-avoir-defini-les-differentes-parties-prenantes-du-Systeme-identifiez-les-differentes-utilisations-et-modelisez-les-sous-forme-d’un-diagramme-des-cas-d’utilisation" class="headerlink" title="Question: Après avoir défini les différentes parties prenantes du Système, identifiez les différentes utilisations et modélisez les sous forme d’un diagramme des cas d’utilisation"></a>Question: Après avoir <strong>défini les différentes parties prenantes</strong> du Système, identifiez les différentes utilisations et modélisez les sous forme d’<strong>un diagramme des cas d’utilisation</strong></h3><p>Diagramme des cas d’utilisation 的 étape:</p>
-<ol>
-<li><p>Finalité,Missions,Objectifs(套话)</p>
-<p>Finalité: <strong><em>Assurer le fonctionnement des systèmes d</em></strong>‘information de réseau ferroviaire.</p>
-<p>Missions:具体任务，得在问题中找，可能用到的词：définir,assurer,informer</p>
-<p>Objectifs: <strong><em>Pendre des dispositions raisonnable pour tous les</em></strong> trains grace <strong><em>à la coopération mutuelle entre</em></strong> [……]</p>
-</li>
-<li><p>Les parties prenantes</p>
-<p>找实体，可以画个方框图</p>
-<p>comme ca：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127160428.png" alt="img"></p>
-</li>
-<li><p>Les cas d’utilisation</p>
-<p>画小人图</p>
-<p>一些值得注意的点：方框+标题，拓展的include和extend(都是虚箭头画的)</p>
-<p>include: Celles qui sont incluses dans une action existante —-&gt;obligatoirement,一定被执行</p>
-<p>​                1.任务与子任务</p>
-<p>​                2.小人的任务与任务间</p>
-<p>extend: Celles qui étendent une action existante—&gt;éventuellement,可能被执行</p>
-</li>
-<li><p>Les interfaces</p>
-<p>随缘</p>
-</li>
-</ol>
-<h3 id="TD2"><a href="#TD2" class="headerlink" title="TD2"></a>TD2</h3><p>Question:</p>
-<h4 id="1-Identifier-les-parties-prenantes-et-leur-role-dans-ce-processus"><a href="#1-Identifier-les-parties-prenantes-et-leur-role-dans-ce-processus" class="headerlink" title="1.Identifier les parties prenantes et leur rôle dans ce processus"></a>1.Identifier les parties prenantes et leur rôle dans ce processus</h4><p>关键是区分<strong>ACTEUR</strong> OU <strong>COLLABORATEUR</strong>—&gt;看是否有开启或者终止活动</p>
-<p>然后在行为中找出触发事件(<strong>Délencheur</strong>)和终止事件(<strong>Final</strong>)</p>
-<p>可能用到的一些词：envoyer,refuse,annulation,verifier</p>
-<h4 id="2-Modeliser-ce-processus-en-BPMN"><a href="#2-Modeliser-ce-processus-en-BPMN" class="headerlink" title="2. Modéliser ce processus en BPMN"></a>2. Modéliser ce processus en BPMN</h4><p>表示判断：sinon,valide</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127162932.png" alt="img"></p>
-<p>表示发信：envoyer,demande</p>
-<p>表示收信：recevoir</p>
-<p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220127163018343.png" alt="image-20220127163018343"></p>
-<p>终止和起始：都是空心圆但终止的要粗一点</p>
-<h3 id="TD3"><a href="#TD3" class="headerlink" title="TD3"></a>TD3</h3><p>Question:</p>
-<h4 id="1-Concevoir-le-diagramme-Entites-Associations-de-ce-systeme"><a href="#1-Concevoir-le-diagramme-Entites-Associations-de-ce-systeme" class="headerlink" title="1.Concevoir le diagramme Entités-Associations de ce système."></a>1.Concevoir le diagramme Entités-Associations de ce système.</h4><p>​        画<strong><em>ER</em></strong>图等价于画<strong><em>MCD</em></strong>: Modèle Conceptuel des Données(概念模型)</p>
-<p>ER(MCD):主体+关系+实体与关系的比</p>
-<ol>
-<li><p>objet &lt;=&gt;entité</p>
-<p>Propriété &lt;=&gt;attribut，属性，列</p>
-<p>没有外键</p>
-</li>
-<li><p>lien &lt;=&gt;association</p>
-<p>记得加比例，关于比例—&gt;est le lien entre l’entité et l’association</p>
-<p>是minimum+maximum</p>
-<p>minimum:0:peut ne pas apparaître</p>
-<p>​                   1:doit apparaître</p>
-<p>maximum:1:ne peut pas apparaître plus d’une fois</p>
-<p>​                     n:peut apparaître plusieurs fois</p>
-</li>
-</ol>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127170205.png" alt="img"></p>
-<p>一些典型的关系及其比例：être: chefdegare和être是1:1，être和personne是0:1</p>
-<p>​                                              detype: salle和detype是1:1,detype和typedesalle是0:n</p>
-<p>TD3的2到5题是对ER的评价和补充，暂时不想展开看（TO BE ADDED）</p>
-<h3 id="TD4"><a href="#TD4" class="headerlink" title="TD4"></a>TD4</h3><p>Question: Cet exercice s’appuie sur la modélisation de gestion de réseau ferroviaire mis en place lors des TDs précédents. Il a pour but de pratiquer SQL à travers l’écriture d’un certain nombre de requêtes. Le MCD utilisé est joint ci-dessous.</p>
-<h4 id="1-A-partir-du-MCD-mettre-en-oeuvre-le-modele-physique-de-la-base-de-donnees-MPD"><a href="#1-A-partir-du-MCD-mettre-en-oeuvre-le-modele-physique-de-la-base-de-donnees-MPD" class="headerlink" title="1.À partir du MCD, mettre en oeuvre le modèle physique de la base de données (MPD)"></a>1.À partir du MCD, mettre en oeuvre le modèle physique de la base de données (MPD)</h4><p>逻辑模型<strong><em>MLD</em></strong>: Modèle logiques与物理模型<strong><em>MPD</em></strong>: Modèle physiques：物理模型有数据类型</p>
-<p>MPD:含实体的外键+箭头+数据类型</p>
-<ol>
-<li><p>实体</p>
-<p>标出主键（PK）与<strong>外键</strong>（FK）</p>
-</li>
-<li><p>箭头</p>
-<p>箭头指向：从表指向主表的外键所在的位置</p>
-<p>从表：以主表的主键（primary key）值为外键 (Foreign Key)的表，可以通过外键与主表进行关联查询。从表与主表通过外键进行关联查询.<br>箭头：从表外键➡️主表</p>
-</li>
-<li><p>数据类型</p>
-<p>integer/float</p>
-<p>character varying(256/128)</p>
-<p>date/datetime/timestamp</p>
-</li>
-</ol>
-<h4 id="2-查询"><a href="#2-查询" class="headerlink" title="2.查询"></a>2.查询</h4><p>基本语句：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">DISTINCT</span>) 列名 </span><br><span class="line"><span class="keyword">FROM</span> 表名 <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span>: <span class="number">1.</span><span class="built_in">UPPER</span>(Nom) <span class="keyword">LIKE</span> <span class="string">&#x27;%TER%&#x27;</span></span><br><span class="line">	   <span class="number">2.</span><span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span><span class="operator">/</span><span class="keyword">MONTH</span><span class="operator">/</span>DOW<span class="operator">/</span><span class="keyword">HOUR</span><span class="operator">/</span>MINUTES  <span class="keyword">FROM</span> 表名)<span class="operator">=</span>……</span><br></pre></td></tr></table></figure>
-<h3 id="TD5"><a href="#TD5" class="headerlink" title="TD5"></a>TD5</h3><h4 id="1-表的创建"><a href="#1-表的创建" class="headerlink" title="1.表的创建"></a>1.表的创建</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名</span><br><span class="line">(</span><br><span class="line">    列名  数据类型  <span class="keyword">PRIMARY</span> KEY<span class="operator">/</span><span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="operator">/</span>或其他</span><br><span class="line">    </span><br><span class="line">    <span class="comment">--联合主键</span></span><br><span class="line">    <span class="keyword">CONSTRAINT</span> 约束名 <span class="keyword">PRIMARY</span> KEY(列名<span class="number">1</span>,列名<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">--外键约束</span></span><br><span class="line">    <span class="keyword">CONSTRAINT</span> 约束名</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY(外键名)</span><br><span class="line">    <span class="keyword">REFERENCES</span> 表名(外键名)</span><br><span class="line">    <span class="keyword">ON</span> <span class="keyword">DELETE</span> <span class="keyword">NO</span> ACTION</span><br><span class="line">    <span class="keyword">ON</span> UPDATE CASCADE</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h4 id="2-表的增删改"><a href="#2-表的增删改" class="headerlink" title="2.表的增删改"></a>2.表的增删改</h4><ol>
-<li><p>INSERT</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span> (<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="comment">--若插入的列为空，写NULL</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DELETE</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line"><span class="comment">--where里面写查询</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--EXMPLE</span></span><br><span class="line"><span class="keyword">WHERE</span> trajet_id <span class="keyword">in</span> </span><br><span class="line">			(<span class="keyword">SELECT</span> trajet_id <span class="keyword">FROM</span> arret </span><br><span class="line"> 			<span class="keyword">WHERE</span> <span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">=</span> <span class="number">2016</span> <span class="keyword">AND</span> </span><br><span class="line"> 			<span class="built_in">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">=</span> <span class="number">2</span> <span class="keyword">AND</span> </span><br><span class="line"> 			<span class="built_in">EXTRACT</span>(<span class="keyword">YEAR</span> <span class="keyword">FROM</span> arret_horaireprevu) <span class="operator">&lt;</span> <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>UPDATE</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">UPDATE 表名</span><br><span class="line"><span class="keyword">SET</span> 列名</span><br><span class="line"><span class="keyword">WHERE</span> ……</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h2><h3 id="TP1"><a href="#TP1" class="headerlink" title="TP1"></a>TP1</h3><p>查询工作SELECT</p>
-<p>1.UNION SELECT: Donner la/les fonction(s) de Yvon Manac’h</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;Mecanicien&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Mecanicien <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;Agent&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Agent <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;Conducteur&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> Conducteur <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span> </span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="string">&#x27;ChefDeGare&#x27;</span> </span><br><span class="line"><span class="keyword">FROM</span> ChefDeGare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> Personne</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">UPPER</span>(Personne_Nom) <span class="operator">=</span> <span class="string">&#x27;MANAC&#x27;&#x27;H&#x27;</span> <span class="keyword">AND</span> <span class="built_in">UPPER</span>(Personne_Prenom) <span class="operator">=</span> <span class="string">&#x27;YVON&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>2.嵌套查询:Donner les horaires en gare de Nantes, pour les trains qui relient Nantes à Lyon pour la journée de demain. En pratique, on regardera quels trajets s’arrêtent à Nantes et Lyon. Attention, les gares de Lyon ne s’appellent pas ‘Gare de Lyon’ mais comporte Lyon dans leur nom.</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> train_id,trajet_id,arret_horaireprevu</span><br><span class="line"><span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line"><span class="keyword">WHERE</span> trajet_id <span class="keyword">IN</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> trajet_id</span><br><span class="line">	<span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line">	<span class="keyword">WHERE</span> arret_horaireprevu <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-12-21 00:00:00&#x27;</span> <span class="keyword">AND</span> <span class="string">&#x27;2021-12-21 23:59:59&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">	  	  <span class="built_in">UPPER</span>(gare_abrege) <span class="keyword">LIKE</span> <span class="string">&#x27;%NANTES%&#x27;</span></span><br><span class="line">	<span class="keyword">INTERSECT</span> <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> trajet_id</span><br><span class="line">			  <span class="keyword">FROM</span> train <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> trajet <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> arret</span><br><span class="line">			  <span class="keyword">WHERE</span> arret_horaireprevu <span class="keyword">BETWEEN</span> <span class="string">&#x27;2021-12-21 00:00:00&#x27;</span> <span class="keyword">AND</span> <span class="string">&#x27;2021-12-21 23:59:59&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">					<span class="built_in">UPPER</span>(gare_abrege) <span class="keyword">LIKE</span> <span class="string">&#x27;%LYON%&#x27;</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> arret_horaireprevu</span><br><span class="line"></span><br><span class="line"><span class="comment">--关于intersect:取交集--&gt;并集：union,差集：except</span></span><br></pre></td></tr></table></figure>
-<h3 id="TP2"><a href="#TP2" class="headerlink" title="TP2"></a>TP2</h3><p>继续写select(聚集函数)</p>
-<p>1.Combien y a-t-il de conducteurs dans la base ? </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="comment">--COUNT(*)拿来统计列</span></span><br><span class="line"><span class="keyword">FROM</span> conducteur</span><br></pre></td></tr></table></figure>
-<p>2.De combien de gare chaque chef de gare est-il responsable? </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> personne_nom,personne_prenom,personne_id,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> gare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> chefdegare <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> personne <span class="keyword">GROUP</span> <span class="keyword">BY</span> personne_nom,personne_prenom,personne_id </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> count</span><br></pre></td></tr></table></figure>
-<p>注意点：GROUP BY上写除函数之外的所有的select,聚集函数后可以直接命名，comme ca</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220127180520.png" alt="img"></p>
-<p>3.MAX、AVG</p>
-<h3 id="TP3"><a href="#TP3" class="headerlink" title="TP3"></a>TP3</h3><p>SELECT + 导出PDF</p>
-<p>Générez un document, nommé rapport05.pdf, avec la liste des 5 propriétaires possédant les plus grandes superficies,<br>triés en ordre décroissant des sommes de superficie de terrain qu’ils possèdent. On utilisera pour cela la fonction <strong>ST_AREA</strong>（算面积使用）</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> personne_nom,<span class="built_in">SUM</span>(ST_AREA(parcelle_geometry)) <span class="keyword">AS</span> area,<span class="built_in">COUNT</span>(parcelle_id)</span><br><span class="line"><span class="keyword">FROM</span> culture <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> parcelle <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> appartient <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> personne</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> personne_nom</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> area <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
-<h2 id="PROJECT"><a href="#PROJECT" class="headerlink" title="PROJECT"></a>PROJECT</h2><p>TD6&amp;7 et TP 4&amp;5</p>
+    <title>Voyage-Italie</title>
+    <url>/2022/02/01/Voyage-Italie/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>马耳他$\longrightarrow$罗马$\longrightarrow$米兰</p>
+<h1 id="马耳他"><a href="#马耳他" class="headerlink" title="马耳他"></a>马耳他</h1><p>好看！</p>
+<p>看到海就真的超级开心</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231830.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231558.png" width="200"/>
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231634.png" width="200"/>
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231445.png" width="200"/>
+    </center>
+
+<p>能在这个岛上过暑假的小孩应该很幸福吧</p>
+<p>但就是住的好远（晕车真的难顶</p>
+<p>体验了壁炉和烤鸡</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201231721.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201232158.png" width="200"/>
+</center>
+
+<p>还有偷偷摘下来的仙人掌的果</p>
+<p>整体风格蛮中东的</p>
+<p>但又特别电影</p>
+<p>穷途末路的英雄的流浪故事</p>
+<p>碰到的司机大叔也人超级好</p>
+<p>希望这两年间能再去一次</p>
+<p>带着夏企和橘子汽水</p>
+<p>想念夏天</p>
+<h1 id="罗马"><a href="#罗马" class="headerlink" title="罗马"></a>罗马</h1><p>西班牙台阶$\longrightarrow$总统府（？maybe）$\longrightarrow$圣天使堡$\longrightarrow$梵蒂冈$\longrightarrow$万神庙$\longrightarrow$斗兽场$\longrightarrow$什么祭坛</p>
+<h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h2><p>西班牙台阶，总统府和一个喷泉</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234600.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234616.png" width="200"/>
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234815.png" width="200"/>
+    </center>
+
+<p>夕阳好看！</p>
+<p>龙虾意面好吃！</p>
+<p>冰淇淋好吃！</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234928.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234943.png" width="200"/>
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201234958.png" width="200"/>
+    </center>
+
+<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h2><p>圣天使堡+法院+梵蒂冈+万神庙</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235138.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235129.png" width="200"/>
+     <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235447.png" width="200"/>
+      <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235151.png" width="200"/>
+    </center>
+
+<p>夕阳好看！</p>
+<p>在梵蒂冈被骗了10欧QAQ</p>
+<p>但暴走了两次不亏！（Cappella Sistina</p>
+<p>看到了前前前手机壁纸，开心</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235204.png" alt="img"></p>
+<h2 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h2><p>斗兽场+祭坛</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235423.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201235732.png" width="200"/>
+</center>
+
+<p>中餐好吃！</p>
+<p>臭鸟拉屎（猖狂到当地老太太会打伞的程度，可恶</p>
+<h1 id="米兰"><a href="#米兰" class="headerlink" title="米兰"></a>米兰</h1><p>个人不官方的宣布</p>
+<p>米兰就是旅游荒漠</p>
+<p>只就去了大教堂，然后有猥琐的偷偷喂鸽子</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230627.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230643.png" width="200"/>
+</center>
+
+
+
+<p>但是！</p>
+<p>米兰火锅！好好吃！店名：“巴倒辣”。人生建议：不能点中辣不能点中辣不能点中辣！（上次被辣成瓜娃子还是在重庆的时候了</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230545.png" alt="img"></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>虽然没去佛罗伦萨和威尼斯，但得歇一段时间不看人文类风光啦~</p>
+<p>意大利再见﻿ε≡٩(๑&gt;₃&lt;)۶ </p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230618.png" alt="img"></p>
 ]]></content>
-      <categories>
-        <category>nanteS5</category>
-        <category>SSTEM</category>
-      </categories>
       <tags>
-        <tag>DS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Voyage-Paris</title>
-    <url>/2021/12/08/Voyage-Paris/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
-<span id="more"></span>
-<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
-<p>铁塔上看的夕阳</p>
-<p>超好看！</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
-<p>顺便打卡盗梦空间的桥</p>
-<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
-<p>未来的日子永远爱跳跳虎</p>
-<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
-<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
-<p>雕塑真的好厉害。</p>
-<p>伊斯兰教的艺术印象蛮深。</p>
-<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
-<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
-<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
-<p>梵高好看</p>
-<p>莫奈也好好看</p>
-<p>还有个点彩画派</p>
-<p>很喜欢的画买了明信片但忘记画家了T^T</p>
-<p>出来时的公园，好看到分不清是不是在画中</p>
-<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
-<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
-<p>外面比里面好看</p>
-<p>只记得里面的钟摆了</p>
-<p>看到了一群穿正装的未来大佬们</p>
-<p>听说隔壁是很法国很厉害的大学</p>
-<p>站在那里真的会有</p>
-<p>一种学术的</p>
-<p>很厉害的感觉</p>
-<p>听说建筑仿的是意大利的万神庙</p>
-<p>那就正好</p>
-<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>插图太费劲了，之后补</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
-      </categories>
-      <tags>
-        <tag>Paris</tag>
+        <tag>生活区</tag>
+        <tag>Voyage</tag>
       </tags>
   </entry>
   <entry>
@@ -588,6 +631,85 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>Voyage-Paris</title>
+    <url>/2021/12/08/Voyage-Paris/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
+<span id="more"></span>
+<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
+<p>铁塔上看的夕阳</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224029.png" alt="img"></p>
+<p>超好看！</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
+<p>顺便打卡盗梦空间的桥</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223509.png" alt="img"></p>
+<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223552.png" alt="img"></p>
+<p>未来的日子永远爱跳跳虎</p>
+<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
+<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
+<p>雕塑真的好厉害。</p>
+<p>伊斯兰教的艺术印象蛮深。</p>
+<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223807.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223713.png" width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223655.png" width="200"/>
+</center>
+
+
+
+<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
+<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
+<p>梵高好看</p>
+<p>莫奈也好好看</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223903.png" alt="img"></p>
+<p>还有个点彩画派</p>
+<p>很喜欢的画买了明信片但忘记画家了T^T</p>
+<p>出来时的公园，好看到分不清是不是在画中</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223951.png" alt="img"></p>
+<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
+<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
+<p>外面比里面好看</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224001.png" alt="img"></p>
+<p>只记得里面的钟摆了</p>
+<p>看到了一群穿正装的未来大佬们</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224010.png" alt="img"></p>
+<p>听说隔壁是很法国很厉害的大学</p>
+<p>站在那里真的会有</p>
+<p>一种学术的</p>
+<p>很厉害的感觉</p>
+<p>听说建筑仿的是意大利的万神庙</p>
+<p>那就正好</p>
+<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224046.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224018.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>Voyage</category>
+      </categories>
+      <tags>
+        <tag>Paris</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>那些细碎而美好的存在</title>
+    <url>/2022/02/01/%E7%BB%86%E7%A2%8E%E8%80%8C%E7%BE%8E%E5%A5%BD/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>一个持续更新的日常记录</p>
+<span id="more"></span>
+<h1 id="2022-2-1"><a href="#2022-2-1" class="headerlink" title="2022_2_1"></a>2022_2_1</h1><p>我画画真好看，嘿嘿</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221428.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221611.png" alt="img"></p>
+<p>以及，新的学期新的摸鱼</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221742.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>序言</title>
     <url>/2021/12/05/hello-world/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
@@ -611,21 +733,5 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
       <tags>
         <tag>测试</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>那些细碎而美好的存在</title>
-    <url>/2022/02/01/%E7%BB%86%E7%A2%8E%E8%80%8C%E7%BE%8E%E5%A5%BD/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>一个持续更新的日常记录</p>
-<span id="more"></span>
-<h1 id="2022-2-1"><a href="#2022-2-1" class="headerlink" title="2022_2_1"></a>2022_2_1</h1><p>我画画真好看，嘿嘿</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221428.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221611.png" alt="img"></p>
-<p>以及，新的学期新的摸鱼</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221742.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
   </entry>
 </search>
