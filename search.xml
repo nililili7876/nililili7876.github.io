@@ -116,6 +116,19 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>CCUBE_Chapitre1</title>
+    <url>/2022/02/04/CCUBE-01/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
+<span id="more"></span>
+<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220204024706.png" alt="img"></p>
+<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>CCUBE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -424,7 +437,7 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
 <h2 id="PROJECT"><a href="#PROJECT" class="headerlink" title="PROJECT"></a>PROJECT</h2><p>TD6&amp;7 et TP 4&amp;5</p>
 ]]></content>
       <categories>
-        <category>nanteS5</category>
+        <category>NANTE_S5</category>
         <category>SSTEM</category>
       </categories>
       <tags>
@@ -511,7 +524,7 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
 <p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
 ]]></content>
       <categories>
-        <category>nanteS5</category>
+        <category>NANTE_S5</category>
         <category>SSTEM</category>
       </categories>
       <tags>
@@ -673,26 +686,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>那些细碎而美好的存在</title>
-    <url>/2022/02/01/%E7%BB%86%E7%A2%8E%E8%80%8C%E7%BE%8E%E5%A5%BD/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>一个持续更新的日常记录</p>
-<span id="more"></span>
-<h1 id="2022-2-1"><a href="#2022-2-1" class="headerlink" title="2022_2_1"></a>2022_2_1</h1><p>我画画真好看，嘿嘿</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221428.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221611.png" alt="img"></p>
-<p>以及，新的学期新的摸鱼</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221742.png" alt="img"></p>
-<h1 id="2022-2-2"><a href="#2022-2-2" class="headerlink" title="2022_2_2"></a>2022_2_2</h1><p>-经过一天的讨论，滑雪假兜兜转转起起伏伏，最终成为了和学长一起的法国自驾游（开心期待</p>
-<p>-希望快点长大到可以开着车向着随机方向选择随机地点随机停留的那天</p>
-<p>-莫名其妙的去测了MBTI，第三次了吧，真的好神奇，还是INFJ，从高考填志愿到大一再到今天，前辈们留下的东西是真的太厉害了。</p>
-<div align="center">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220202235702.png"height="200">    </div>]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>algorithm-绪论</title>
     <url>/2021/12/06/algorithm01/</url>
     <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
@@ -739,5 +732,29 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
       <tags>
         <tag>测试</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>那些细碎而美好的存在</title>
+    <url>/2022/02/01/%E7%BB%86%E7%A2%8E%E8%80%8C%E7%BE%8E%E5%A5%BD/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>一个持续更新的日常记录</p>
+<span id="more"></span>
+<h1 id="2022-2-1"><a href="#2022-2-1" class="headerlink" title="2022_2_1"></a>2022_2_1</h1><p>我画画真好看，嘿嘿</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221428.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221611.png" alt="img"></p>
+<p>以及，新的学期新的摸鱼</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221742.png" alt="img"></p>
+<h1 id="2022-2-2"><a href="#2022-2-2" class="headerlink" title="2022_2_2"></a>2022_2_2</h1><p>-经过一天的讨论，滑雪假兜兜转转起起伏伏，最终成为了和学长一起的法国自驾游（开心期待</p>
+<p>-希望快点长大到可以开着车向着随机方向选择随机地点随机停留的那天</p>
+<p>-莫名其妙的去测了MBTI，第三次了吧，真的好神奇，还是INFJ，从高考填志愿到大一再到今天，前辈们留下的东西是真的太厉害了。</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220202235702.png"height="200">    </div>
+
+<h1 id="2022-2-4"><a href="#2022-2-4" class="headerlink" title="2022_2_4"></a>2022_2_4</h1><p>很难不记录</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220204154934.png"height="200">    </div>]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
   </entry>
 </search>
