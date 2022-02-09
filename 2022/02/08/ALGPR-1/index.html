@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-12-07%20220027.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-12-07%20220027.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nililili7876.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="序第一周的算法课都讲了什么T.T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ALGPR-1">
+<meta property="og:url" content="http://nililili7876.cn/2022/02/08/ALGPR-1/index.html">
+<meta property="og:site_name" content="Bienvenue en Planète 7876">
+<meta property="og:description" content="序第一周的算法课都讲了什么T.T">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220209020654.png">
+<meta property="article:published_time" content="2022-02-08T22:55:08.000Z">
+<meta property="article:modified_time" content="2022-02-09T01:51:25.072Z">
+<meta property="article:author" content="7876">
+<meta property="article:tag" content="ALGORITHM">
+<meta property="article:tag" content="KMP">
+<meta property="article:tag" content="string">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220209020654.png">
+
+<link rel="canonical" href="http://nililili7876.cn/2022/02/08/ALGPR-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>ALGPR-1 | Bienvenue en Planète 7876</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bienvenue en Planète 7876</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives<span class="badge">14</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://nililili7876.cn/2022/02/08/ALGPR-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gitee.com/nililili7876/blog_nantes/raw/master/png/微信图片_2021120417470915.png">
+      <meta itemprop="name" content="7876">
+      <meta itemprop="description" content="别怕别想别后退">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bienvenue en Planète 7876">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ALGPR-1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-08 23:55:08" itemprop="dateCreated datePublished" datetime="2022-02-08T23:55:08+01:00">2022-02-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-09 02:51:25" itemprop="dateModified" datetime="2022-02-09T02:51:25+01:00">2022-02-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NANTE-S6/" itemprop="url" rel="index"><span itemprop="name">NANTE_S6</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NANTE-S6/ALGORITHM/" itemprop="url" rel="index"><span itemprop="name">ALGORITHM</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/02/08/ALGPR-1/" class="post-meta-item leancloud_visitors" data-flag-title="ALGPR-1" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/02/08/ALGPR-1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/02/08/ALGPR-1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第一周的算法课都讲了什么T.T</p>
+<span id="more"></span>
+<h1 id="CM1"><a href="#CM1" class="headerlink" title="CM1"></a>CM1</h1><h1 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h1><p>从字符的匹配开始讲的，说了蛮多伪代码的东西，真难看(bushi</p>
+<h2 id="字符的匹配"><a href="#字符的匹配" class="headerlink" title="字符的匹配"></a>字符的匹配</h2><p>貌似没啥，就是熟悉一下子法语书写的伪代码</p>
+<h3 id="L"><a href="#L" class="headerlink" title="L"></a>L</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Variables://定义变量</span><br><span class="line">	Caractère:courant//串，定义为字符类型</span><br><span class="line">	Entier:nbL//拿来计数的int</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbL &lt;- 0</span><br><span class="line">	courant &lt;- lire()//这里的读是一个个读</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27;) </span><br><span class="line">			nbL &lt;- nbL+1</span><br><span class="line">		finsi</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbL)//输出</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="LE"><a href="#LE" class="headerlink" title="LE"></a>LE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:courant,précédent</span><br><span class="line">	Entier:nbLE</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	précédent &lt;- &#x27;.&#x27;</span><br><span class="line">	courant &lt;- lire()</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27; ET courant = &#x27;E&#x27;) </span><br><span class="line">			nbLE &lt;- nbLE+1</span><br><span class="line">		finsi</span><br><span class="line">		précédent &lt;- courant</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="ELLE"><a href="#ELLE" class="headerlink" title="ELLE"></a>ELLE</h3><p>就是把子串固定，然后拿courant去做匹配</p>
+<p>以ELELLELLLLEL找ELLE为例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Chaine de caractère:courant,motif//motif是子串</span><br><span class="line">	Caractère: c</span><br><span class="line">	Entier: nbMotif	</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbMotif &lt;- 0</span><br><span class="line">	afficher(&quot;quel est le motif cherché?&quot;)</span><br><span class="line">	motif &lt;- lire()</span><br><span class="line">	//初始化串为...courant[0]</span><br><span class="line">	pour i de 0 à taille(motif)-2</span><br><span class="line">		courant[i] &lt;- &#x27;.&#x27;</span><br><span class="line">	finpour</span><br><span class="line">	c &lt;- lire()</span><br><span class="line">	courant[taille(motif)-1] &lt;- c</span><br><span class="line">	</span><br><span class="line">	//串变成了...E</span><br><span class="line">	</span><br><span class="line">	tantque(c != &#x27;.&#x27;)</span><br><span class="line">		si (courant = motif)</span><br><span class="line">			nbMotif &lt;- nbMotif+1</span><br><span class="line">		finsi</span><br><span class="line">		//从后往前移</span><br><span class="line">		pour i de 0 à taille(motif)-2</span><br><span class="line">			courant[i] &lt;- courant[i+1]</span><br><span class="line">		finpour</span><br><span class="line">		c &lt;- lire()</span><br><span class="line">		courant[taille(motif)-1] &lt;- c</span><br><span class="line">	fintanque</span><br><span class="line">	</span><br><span class="line">	afficher(nbMotif)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>妙的！时间复杂度的话N*n，可能比用想的的find函数要好哎</p>
+<p>实际写的好艰难,string里面真的好多东西哦:(</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nbMotif=<span class="number">0</span>;</span><br><span class="line">   string courant,motif;</span><br><span class="line">   cin&gt;&gt;courant;</span><br><span class="line">   cin&gt;&gt;motif;</span><br><span class="line">   <span class="keyword">size_t</span> p=<span class="number">0</span>;<span class="comment">//注意返回类型</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>((p = courant.<span class="built_in">find</span>(motif,p)) != courant.npos)</span><br><span class="line">    &#123;</span><br><span class="line">        nbMotif++;</span><br><span class="line">        p += motif.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;nbMotif&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="老师的奇妙方法"><a href="#老师的奇妙方法" class="headerlink" title="老师的奇妙方法"></a>老师的奇妙方法</h3><p>用矩阵还是图的知识来实现匹配(example:LE</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:c</span><br><span class="line">	Entier: s,ss,x,nbLE</span><br><span class="line">	Tableau d&#x27;Entiers m &lt;- &#123;&#123;0,1,0,2&#125;,&#123;0,1,0,2&#125;&#125;</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	s &lt;- 0</span><br><span class="line">	tantque(s != 2)</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">		x &lt;- 0</span><br><span class="line">		si(c == &#x27;L&#x27;) alors x &lt;- 1	finsi</span><br><span class="line">		si(c == &#x27;E&#x27;) alors x &lt;- 2	finsi</span><br><span class="line">		si(c == &#x27;.&#x27;) alors x &lt;- 3	finsi</span><br><span class="line">		</span><br><span class="line">		ss &lt;- m(s,x)</span><br><span class="line">		si (s = 1 ET x = 2) alors nbLE &lt;- nbLE+1 finsi</span><br><span class="line">		s&lt;- ss</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>时间复杂度的话应该有两部分，一是在写m矩阵那里，然后是主程序。主程序的时间复杂度的话，有个逐个读的n，然后剩下的话我感觉有m^2。—-&gt; ?</p>
+<p>矩阵长这样</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220209020654.png" alt="img" style="zoom:50%;" /></p>
+<p>好像是在用s和x来表示前后两次的匹配的结果</p>
+<p>但感觉就是时间也多了，空间也给浪费了嘛(；′⌒`)</p>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><p>“肘，再逝一次”</p>
+<h2 id="TD题"><a href="#TD题" class="headerlink" title="TD题"></a>TD题</h2><h3 id="题"><a href="#题" class="headerlink" title="题"></a>题</h3><p>1.1 Points et polygone (enregistrement)<br>On souhaite calculer quelques propri´et´es d’un polygone quelconque (p´erim etre, longueur<br>moyenne des arˆetes, boite englobante). La boite englobante est un rectangle englobant le<br>polygone de cˆot´es paralleles aux axes. Les sommets du polygone sont donn´es (dans l’ordre<br>de parcours du p´erimetre) par leurs coordonn´ees r´eelles dans un plan et le nom du point<br>(caractere).<br>La liste de coordonn´ees est suppos´ee correcte et n’est lue qu’une seule fois. Exemple de<br>fichier a lire :<br>— 1,5 3,7 A<br>— 6,4 4,6 B<br>— 5,8 8,3 C<br>— …<br>— 1,5 3,7 A (dernier sommet a ne pas ajouter dans la structure de donn´ees)<br>Les coordonn´ees du dernier sommet sont ´egales a celles du premier. Ce sommet permet<br>uniquement de d´etecter la fermeture du polygone. Il ne faut pas rentrer ce sommet dans la<br>structure de donn´ees.<br>— Proposez une structure de donn´ee pour stocker le polygone,<br>— Ecrivez l’algorithme principal pour lire le fichier contenant les points du polygone, ´<br>appeler les fonctions permettant de calculer les propri´et´es demand´ees et afficher les<br>r´esultats a l’´ecran,<br>— Ecrivez les fonctions secondaires pour calculer la longueur du p´erim`etre, calculer la ´<br>longueur moyenne des arˆetes et d´elimiter la boite englobante.</p>
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Types//应该是在定义结构体</span><br><span class="line">	point: enregistrement</span><br><span class="line">		caratère: nom</span><br><span class="line">		réel: x</span><br><span class="line">		réel: y</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">	tabPoint: tableau de point</span><br><span class="line"></span><br><span class="line">Algorithme principal Polygone</span><br><span class="line">Variables://定义变量</span><br><span class="line">	tabPoint polygone,boiteEnglobante</span><br><span class="line">	réel périmètre, longMoy</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	polygone &lt;- lirePolygone(&quot;data.txt&quot;)//读文件</span><br><span class="line">	périmètre &lt;- calcuPérimètre(polygone)//周长</span><br><span class="line">	longMoy &lt;- périmètre/taille(polygone)//棱边数</span><br><span class="line">	boiteEnglobante &lt;- calculBoite(polygone)</span><br><span class="line">Fin Algorithme</span><br></pre></td></tr></table></figure>
+<h3 id="我想的C"><a href="#我想的C" class="headerlink" title="我想的C++"></a>我想的C++</h3><p>不知道能不能成</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> Nom;</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    <span class="keyword">float</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">distance</span><span class="params">(Point A, Point B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygone</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    vecter&lt;Point&gt; PonitsDePolygone;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="comment">//构造函数</span></span><br><span class="line">    	<span class="built_in">Polygone</span>(Point A)&#123;PonitsDePolygone.<span class="built_in">push</span>(A);&#125;</span><br><span class="line">    	<span class="comment">//拷贝构造 ou 析构？？？？</span></span><br><span class="line">    	<span class="keyword">float</span> périmè<span class="built_in">tre</span>();</span><br><span class="line">    	<span class="function"><span class="keyword">int</span> <span class="title">longMoy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>KMP,CM和未完成的C++就是明天一定</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/ALGORITHM/" rel="tag"><i class="fa fa-tag"></i> ALGORITHM</a>
+              <a href="/tags/KMP/" rel="tag"><i class="fa fa-tag"></i> KMP</a>
+              <a href="/tags/string/" rel="tag"><i class="fa fa-tag"></i> string</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/07/PRO20/" rel="prev" title="PRO20">
+      <i class="fa fa-chevron-left"></i> PRO20
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CM1"><span class="nav-number">2.</span> <span class="nav-text">CM1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TD1"><span class="nav-number">3.</span> <span class="nav-text">TD1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%9A%84%E5%8C%B9%E9%85%8D"><span class="nav-number">3.1.</span> <span class="nav-text">字符的匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L"><span class="nav-number">3.1.1.</span> <span class="nav-text">L</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LE"><span class="nav-number">3.1.2.</span> <span class="nav-text">LE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ELLE"><span class="nav-number">3.1.3.</span> <span class="nav-text">ELLE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%81%E5%B8%88%E7%9A%84%E5%A5%87%E5%A6%99%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.4.</span> <span class="nav-text">老师的奇妙方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KMP"><span class="nav-number">3.1.5.</span> <span class="nav-text">KMP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TD%E9%A2%98"><span class="nav-number">3.2.</span> <span class="nav-text">TD题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98"><span class="nav-number">3.2.1.</span> <span class="nav-text">题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3"><span class="nav-number">3.2.2.</span> <span class="nav-text">解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E6%83%B3%E7%9A%84C"><span class="nav-number">3.2.3.</span> <span class="nav-text">我想的C++</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="7876"
+      src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/微信图片_2021120417470915.png">
+  <p class="site-author-name" itemprop="name">7876</p>
+  <div class="site-description" itemprop="description">别怕别想别后退</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/lilili_7876" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;lilili_7876" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://littlewuuu.com/" title="http:&#x2F;&#x2F;littlewuuu.com&#x2F;" rel="noopener" target="_blank">WZL</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">7876</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">21k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">19 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.6/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '91j0YOhNsJ3dVCsvMn06SGEM-MdYXbMMI',
+      appKey     : 'YET3dXX87AXEbAsskLm60b0j',
+      placeholder: "yeah!",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://91j0YOhN.api.lncldglobal.com'
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
