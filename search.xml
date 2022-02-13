@@ -220,6 +220,31 @@
       </tags>
   </entry>
   <entry>
+    <title>ANG-01</title>
+    <url>/2022/02/06/ANG-01/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>Welcome to the ‘metaverse’.(From BBC 6 Minute English)</p>
+<p>Links：<a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2022/ep-220106">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2022/ep-220106</a></p>
+<span id="more"></span>
+<h1 id="1-5-minutes的introduction"><a href="#1-5-minutes的introduction" class="headerlink" title="1.5 minutes的introduction"></a>1.5 minutes的introduction</h1><p>The topic I chose to talk about is &lt;&lt;<em>Welcome to the ‘metaverse’</em>&gt;&gt;. </p>
+<p>So to begin with, what is metavers? According to the video, metaverse means a virtual-reality space in which users can interact with a computer-generated environment and other users. Recently, Facebook announced that it was hiring ten thousand new workers to develop <strong>VR</strong> for the ‘metaverse’, according to  Mark Zuckerberg, the Facebook boss,” in the future we’ll all spend much of our time living and working in the ‘metaverse’ “. But people hold different opinions about it.</p>
+<p>Some supporters think it can make a great difference to our living world. They believe that with the technology of  metaverse,  everything that we do on our phone today can be done in 3-D. </p>
+<p>But there are also some negative opinions. For example,some people called VR ‘ vomity reality ’,because wearing the headset of VR makes them feel sick, maybe because it’s so <strong>unwieldy</strong> .</p>
+<p>From my perspective, I hold a supportive attitude towards this new technology as it seems so cool which can make our world more convenient .</p>
+<h1 id="2-new-keywords"><a href="#2-new-keywords" class="headerlink" title="2 new keywords"></a>2 new keywords</h1><p>VR: virtual-reality,a hypothetical three-dimensional visual world created by a computer; user wears special goggles and fiber optic gloves etc., and can enter and move about in this world and interact with objects as if inside it</p>
+<p>unwieldy: difficult to move or carry because it’s so heavy, large or strangely shaped</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>所以元宇宙就是VR? VR OU AR ?</p>
+<p>看了一些科普，就是有比较像头号玩家那种世界（或许赛博朋克的那种？。感觉就是，元宇宙感觉是个画大饼的不太实的概念（</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ANG</category>
+      </categories>
+      <tags>
+        <tag>metaverse</tag>
+        <tag>PRE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGPR-1</title>
     <url>/2022/02/08/ALGPR-1/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第一周的算法课都讲了什么T.T</p>
@@ -327,211 +352,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       <tags>
         <tag>ALGORITHM</tag>
         <tag>算法基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ALGPR-2</title>
-    <url>/2022/02/09/ALGPR-2/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第二周的算法课都讲了什么T.T</p>
-<span id="more"></span>
-<h1 id="TD2"><a href="#TD2" class="headerlink" title="TD2"></a>TD2</h1><p>尝试在课上直接记blog的第一天</p>
-<h2 id="Recursivite"><a href="#Recursivite" class="headerlink" title="Récursivité"></a>Récursivité</h2><h3 id="calcule-la-puissance-d’un-nombre"><a href="#calcule-la-puissance-d’un-nombre" class="headerlink" title="calcule la puissance d’un nombre"></a>calcule la puissance d’un nombre</h3><p>principe_1: calcul récursif pour n != 0,et puissance(x,0)=1</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">entier puissance(entier x,entier n):</span><br><span class="line">Début</span><br><span class="line">	si (n = 0) alors retourner 1//结束递归的跳出条件</span><br><span class="line">	sinon retourner x * pusissance(x,n-1)//递归</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>principe_2: par la méthod “diviser pour régner”,et puissance(x,0)=1,et puissance(x,1)=x div étant la division entiere</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Début</span><br><span class="line">	//结束递归的跳出条件</span><br><span class="line">	si (n = 0) </span><br><span class="line">		alors retourner 1</span><br><span class="line">	finsi</span><br><span class="line">	si (n = 1) </span><br><span class="line">		alors retourner x</span><br><span class="line">	finsi</span><br><span class="line">	</span><br><span class="line">	//本质还是在所递归，有减少一些递归的次数</span><br><span class="line">	entier y = puiss2(x, (n div 2))</span><br><span class="line">	si (n mod 2 = 0 ) </span><br><span class="line">		alors retourner y*y</span><br><span class="line">	sinon</span><br><span class="line">		alors retourner x*y*y</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>——&gt;<strong>堆栈！</strong></p>
-<h3 id="L’ordre-inverse"><a href="#L’ordre-inverse" class="headerlink" title="L’ordre inversé"></a>L’ordre inversé</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">affiche_1(vecteur&lt;entier&gt; w)</span><br><span class="line">Début</span><br><span class="line">	pour i de 0 à taille(w) -1 faire</span><br><span class="line">		écrire(w[i]+&#x27;&#x27;)</span><br><span class="line">	fin_pour</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">affiche_2(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut &lt; taille(w)) alors</span><br><span class="line">		écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">		affiche_2(w,debut+1)</span><br><span class="line">    fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">entier debut = taille(w) -1</span><br><span class="line">affiche_inv(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut = -1) exit(0) fin_si</span><br><span class="line">	écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">	affiche_inv(w,debut-1)</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//可以初始化为0，先递归再输出[妙！]</span><br><span class="line">affiche_inv(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut &lt; taille(w)) alors</span><br><span class="line">		affiche_inv(w,debut-1)</span><br><span class="line">		écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="String的palidrome"><a href="#String的palidrome" class="headerlink" title="String的palidrome"></a>String的palidrome</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Algorithm palindrome</span><br><span class="line">	booléen &lt;- palindrome(string s,int decal)</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	si(decal &lt; (taille(s)-1)/2)</span><br><span class="line">		si(s[decal] != s[taille(s)-1-decal]) </span><br><span class="line">			retourner FAUX </span><br><span class="line">		sinon</span><br><span class="line">			palindrome(s,decal+1)</span><br><span class="line">		sinon </span><br><span class="line">			retourner VRAI</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>—&gt;用<strong>stack</strong>来实现</p>
-<h2 id="Reine-et-pions-八皇后！"><a href="#Reine-et-pions-八皇后！" class="headerlink" title="Reine et pions(八皇后！)"></a>Reine et pions(八皇后！)</h2><p>题有点怪</p>
-<p>先写题</p>
-<p>On considère un échiquier de huit cases sur huit comportant huit pions et une reine. Les positions des pions et de la reine sont données dans un fichier sous un format que vous devez définir(selon la structure de données que vous choisissez). La reine peut se déplacer sur les lignes(diagonales; verticale et horizontale) sur lesquelles elle se trouve. On souhaite savoir combien de pions sont en prise(i.e. pouvant êrte pris par la reine). Si deux pions ou plus sont sur la même ligne(diagonale, verticale , horizontale), seul le premier est en prise.</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">DFS</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> res[<span class="number">9</span>]</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">if</span>(step &gt; <span class="number">8</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++) cout&lt;&lt;res[i];</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//尝试每一种可能 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">     &#123;</span><br><span class="line">         继续下一步 <span class="built_in">dfs</span>(step + <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> ;   </span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="CM2"><a href="#CM2" class="headerlink" title="CM2"></a>CM2</h1><h2 id="Gestion-de-la-memoire-内存管理"><a href="#Gestion-de-la-memoire-内存管理" class="headerlink" title="Gestion de la mémoire//内存管理"></a>Gestion de la mémoire//内存管理</h2><p>Possible de stocker un lien vers une case mémoire</p>
-<p>Utile pour :</p>
-<p>​            Structures de données (<strong>listes chainées, arbres</strong>)</p>
-<p>​            Passage de paramètres：传递参数<br>​            Allocation de mémoire：配置、地址分配</p>
-<p>像是在讲指针的样子</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utilisation &#x27;lien&#x27; :</span><br><span class="line">ExempleLienEntier</span><br><span class="line">variables</span><br><span class="line">	lien entier lienEnt//声明一个lien</span><br><span class="line">	entier ent</span><br><span class="line">Début</span><br><span class="line">	lienEnt ← lien(ent)</span><br><span class="line">	contenu(lienEnt) ← 5</span><br><span class="line">	reçoit la valeur 5//接受</span><br><span class="line">	afficher(ent)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>关于lien和contenu</p>
-<ul>
-<li>lien:创造或声明链接</li>
-<li>contenu：访问链接的内容</li>
-</ul>
-<h2 id="Structures-de-donnees-composees"><a href="#Structures-de-donnees-composees" class="headerlink" title="Structures de données composées"></a>Structures de données composées</h2><ul>
-<li>Stockage de plusieurs données dans une seule structure pour：Structurer les données，Faciliter les traitements</li>
-<li>Données de même type : listes et arbres//树和表<br>Données de type quelconque : enregistrements(记录登记)</li>
-</ul>
-<h3 id="Enregistrements"><a href="#Enregistrements" class="headerlink" title="Enregistrements"></a>Enregistrements</h3><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210110243.png" alt="img" style="zoom:50%;" /></p>
-<p>应该是结构体</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">types</span><br><span class="line">	article : Enregistrement</span><br><span class="line">		entier : référence</span><br><span class="line">		réel : prix</span><br><span class="line">		chaine de caractère : libellé</span><br><span class="line">		entier : quantité</span><br><span class="line">	Fin enregistrement</span><br><span class="line">vectArticles : tableau d’article</span><br><span class="line"></span><br><span class="line">variables</span><br><span class="line">article artCour // article courant</span><br><span class="line">entier valeurStock</span><br><span class="line"></span><br><span class="line">artCour.prix &lt;-- lire ()</span><br><span class="line">artCour.libellé &lt;-- lire ()</span><br><span class="line">artCour.quantité &lt;-- lire ()</span><br><span class="line">valeurStock &lt;-- artCour.prix * artCour.quantité</span><br><span class="line">écrire (&quot;La valeur du stock de &quot;, artCour.libellé, &quot; est de : &quot;,valeurStock, &quot; euros&quot;)</span><br></pre></td></tr></table></figure>
-<h3 id="Structures-lineaires"><a href="#Structures-lineaires" class="headerlink" title="Structures linéaires"></a>Structures linéaires</h3><h4 id="Listes"><a href="#Listes" class="headerlink" title="Listes"></a>Listes</h4><h5 id="Definition"><a href="#Definition" class="headerlink" title="Définition"></a>Définition</h5><p>Ensemble d’éléments de même type liés par une relation de séquentialité</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210110621.png" alt="img" style="zoom:50%;" /></p>
-<p>注意一下名字： prédécesseur， successeur</p>
-<p>一些关于表的基本操作:插入、删除、测试表是否为空、测表长</p>
-<h5 id="Tableaux表"><a href="#Tableaux表" class="headerlink" title="Tableaux表"></a>Tableaux表</h5><p>Accès direct à un élément à l’aide de son indice(下标)</p>
-<p>目标算法: Somme(求和), Tris(排序), Présence d’élément(?)</p>
-<p>Exemple de définition de types composés </p>
-<ul>
-<li>tabEnt : Tableau d’entiers </li>
-<li>matReels : Tableau de dimension 2 de réels </li>
-<li>tab4DEnt : tableau d’entiers de dimension 4</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//检查是否正序</span><br><span class="line">variables</span><br><span class="line">	tabEnt tab</span><br><span class="line">	entier n</span><br><span class="line">	booléen trie</span><br><span class="line"></span><br><span class="line">&#123;n, tab&#125; &lt;- lire ()</span><br><span class="line">trie &lt;- VRAI</span><br><span class="line">pour i &lt;- 0 à n-2 faire</span><br><span class="line">	si ( tab[i] &gt; tab[i+1] ) alors</span><br><span class="line">    	trie FAUX</span><br><span class="line">    fin si</span><br><span class="line">fin pour</span><br><span class="line">si ( non trie ) alors</span><br><span class="line">	écrire (&quot;le tableau n’est pas trié&quot;)</span><br><span class="line">fin si</span><br><span class="line"></span><br><span class="line">//一般函数</span><br><span class="line">variables</span><br><span class="line">	vectArticles tabArt//?结构体的vector？</span><br><span class="line">	réel valStock</span><br><span class="line">	entier n</span><br><span class="line">Début</span><br><span class="line">&#123;n, tabArt&#125; &lt;-- lire (&quot;data.txt&quot;)</span><br><span class="line">valStock &lt;-- 0</span><br><span class="line">pour i 0 à n-1 faire</span><br><span class="line">	valStock valStock + tabArt[i].prix * tabArt[i].quantité</span><br><span class="line">fin pour</span><br><span class="line">écrire (&quot;La valeur du stock des &quot;, n, &quot; articles est de : &quot;,valStock, &quot; euros&quot;)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>所以说就是表的元素可以是结构体的意思？</p>
-<h5 id="Liste-chainee链表"><a href="#Liste-chainee链表" class="headerlink" title="Liste chainée链表"></a>Liste chainée链表</h5><h6 id="单向-successeur"><a href="#单向-successeur" class="headerlink" title="单向 successeur"></a>单向 successeur</h6><p>链表的定义(值与指向下一元素的指针)：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210112853.png" alt="img" style="zoom:50%;" /></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">type</span><br><span class="line">	elementEntier : Enregistrement</span><br><span class="line">		entier valeur,</span><br><span class="line">		lien elementEntier suivant, // lien vers l’élément suivant</span><br><span class="line">	Fin enregistrement</span><br><span class="line"></span><br><span class="line">variables</span><br><span class="line">	elementEntier elementUn, elementDeux, ..., elementSix</span><br><span class="line">...</span><br><span class="line">	elementUn.valeur 12</span><br><span class="line">	elementUn.suivant lien(elementDeux)</span><br><span class="line">	elementDeux.valeur 99</span><br><span class="line">	elementDeux.suivant lien(elementTrois)</span><br><span class="line">	...</span><br><span class="line">	elementCinq.suivant lien(elementSix)</span><br><span class="line">	elementSix.valeur 16</span><br><span class="line">	elementSix.suivant VIDE</span><br></pre></td></tr></table></figure>
-<h6 id="双向"><a href="#双向" class="headerlink" title="双向"></a>双向</h6><p>要同时定义前置和后置指针</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210113415.png" alt="img" style="zoom:50%;" /></p>
-<p>Calcul de la longueur d’une liste（递归）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fonction : longueur calculLongueur(lienDébutListe)</span><br><span class="line">paramètres : lien elementEntier lienDébutListe</span><br><span class="line">résultats : entier longueur</span><br><span class="line">Début</span><br><span class="line"> si ( lienDébutListe est VIDE ) alors</span><br><span class="line">  	longueur 0</span><br><span class="line"> sinon</span><br><span class="line">  	longueur 1 + calculLongueur(lienD´ebutListe-&gt;suivant)</span><br><span class="line"> fin si</span><br><span class="line"> retourner longueur</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>Recherche d’un élément dans une liste（递归）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fonction : présence chercherElement(lienDébutListe, val)</span><br><span class="line">	paramètres : lien élémentEntier lienDébutListe,</span><br><span class="line">				entier val</span><br><span class="line">	résultats : booléen présence</span><br><span class="line">Début</span><br><span class="line">	si ( lienDébutListe est VIDE ) alors//链表为空退出</span><br><span class="line">		présence FAUX</span><br><span class="line">	sinon</span><br><span class="line">  		si ( lienDébutListe-&gt;valeur = val ) alors</span><br><span class="line"> 			présence VRAI</span><br><span class="line">		sinon</span><br><span class="line"> 			présence chercherElement(lienDébutListe-&gt;suivant, val)</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line"> retourner présence</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>就是链表本质就是结构体+数组吗？</p>
-<h5 id="Liste-chainee和tableau时间复杂度的比较"><a href="#Liste-chainee和tableau时间复杂度的比较" class="headerlink" title="Liste chainée和tableau时间复杂度的比较"></a>Liste chainée和tableau时间复杂度的比较</h5><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210114750.png" alt="img" style="zoom:50%;" /></p>
-<p>查找，添加/删除头(位)</p>
-<h4 id="Piles"><a href="#Piles" class="headerlink" title="Piles"></a>Piles</h4><p>存储结构讲表与链表，然后栈、队列是特殊的线性表（？）</p>
-<p>LIFO:栈，先入后出</p>
-<p>基本操作： ajoute(push),delete(pop),Test de pile vide</p>
-<h4 id="File-d’attente"><a href="#File-d’attente" class="headerlink" title="File d’attente"></a>File d’attente</h4><p>FIFO：队列，先入先出</p>
-<h3 id="Structures-arborescentes"><a href="#Structures-arborescentes" class="headerlink" title="Structures arborescentes"></a>Structures arborescentes</h3><p>​    Extension du concept de liste avec plusieurs successeurs pour un élément(一个节点后面可以接多个节点)</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ALGORITHM</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CCUBE_Chapitre1</title>
-    <url>/2022/02/04/CCUBE-01/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
-<span id="more"></span>
-<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220204024706.png" alt="img"></p>
-<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h3 id="教学目标："><a href="#教学目标：" class="headerlink" title="教学目标："></a>教学目标：</h3><p>— échantillonner un signal 信号采样;<br>— en faire une analyse de Fourier 傅里叶分析;<br>— modéliser un système physique continu par le langage des fonctions de transfert 用transfert函数给系统建模;<br>— modéliser un système physique continu par le langage de l’espace d’état 用l’’espace d’état给系统建模;<br>— lier les phénomènes physiques aux paramètres de ces représentations (temps de réponse, stabilité) ;<br>— interfacer le temps continu et le temps discret(离散) ;<br>— simuler(模拟) ces représentations à l’aide de logiciels adaptés.</p>
-<h3 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h3><p>使用Matlab的Simulink完成：</p>
-<p>1.la reconstruction d’une partition à partir de l’enregistrement audio-phonique ;</p>
-<p>2.le pilotage en simulation d’une navette spatiale, version très simplifiée d’un contrat avec l’agence spatiale</p>
-<h3 id="前置数学知识"><a href="#前置数学知识" class="headerlink" title="前置数学知识"></a>前置数学知识</h3><p>— les nombres complexes 复数;<br>— la dérivation et l’intégration d’une fonction d’une <strong>variable réelle</strong>（？） à <strong>valeur réelle</strong>（？） 积分求导;<br>— les suites de nombres réels ou complexes ;<br>on n’a pas à craindre les quelques calculs élémentaires de séries ;<br>— le calcul matriciel 矩阵 ;<br>— les valeurs et vecteurs propres, la diagonalisation d’une matrice carrée特征值；</p>
-<p>—LTI linéaire temporellement invariant线性时间不变</p>
-<h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>CCUBE</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ANG-01</title>
-    <url>/2022/02/06/ANG-01/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>Welcome to the ‘metaverse’.(From BBC 6 Minute English)</p>
-<p>Links：<a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2022/ep-220106">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2022/ep-220106</a></p>
-<span id="more"></span>
-<h1 id="1-5-minutes的introduction"><a href="#1-5-minutes的introduction" class="headerlink" title="1.5 minutes的introduction"></a>1.5 minutes的introduction</h1><p>The topic I chose to talk about is &lt;&lt;<em>Welcome to the ‘metaverse’</em>&gt;&gt;. </p>
-<p>So to begin with, what is metavers? According to the video, metaverse means a virtual-reality space in which users can interact with a computer-generated environment and other users. Recently, Facebook announced that it was hiring ten thousand new workers to develop <strong>VR</strong> for the ‘metaverse’, according to  Mark Zuckerberg, the Facebook boss,” in the future we’ll all spend much of our time living and working in the ‘metaverse’ “. But people hold different opinions about it.</p>
-<p>Some supporters think it can make a great difference to our living world. They believe that with the technology of  metaverse,  everything that we do on our phone today can be done in 3-D. </p>
-<p>But there are also some negative opinions. For example,some people called VR ‘ vomity reality ’,because wearing the headset of VR makes them feel sick, maybe because it’s so <strong>unwieldy</strong> .</p>
-<p>From my perspective, I hold a supportive attitude towards this new technology as it seems so cool which can make our world more convenient .</p>
-<h1 id="2-new-keywords"><a href="#2-new-keywords" class="headerlink" title="2 new keywords"></a>2 new keywords</h1><p>VR: virtual-reality,a hypothetical three-dimensional visual world created by a computer; user wears special goggles and fiber optic gloves etc., and can enter and move about in this world and interact with objects as if inside it</p>
-<p>unwieldy: difficult to move or carry because it’s so heavy, large or strangely shaped</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>所以元宇宙就是VR? VR OU AR ?</p>
-<p>看了一些科普，就是有比较像头号玩家那种世界（或许赛博朋克的那种？。感觉就是，元宇宙感觉是个画大饼的不太实的概念（</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ANG</category>
-      </categories>
-      <tags>
-        <tag>metaverse</tag>
-        <tag>PRE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SSTEM01</title>
-    <url>/2021/12/06/SSTEM01/</url>
-    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
-<span id="more"></span>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
-<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
-<p>But pour cet TD: Analyse externe d’un systèmes</p>
-<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
-<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
-<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
-<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
-<p><strong>Exemples:</strong></p>
-<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
-<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
-<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
-<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
-<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
-<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
-<p><strong>Exemples:</strong></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
-</li>
-<li><p><strong>Faire un diagramme de bloc</strong></p>
-<p>Le système est placé au centre du <u>schéma</u>.</p>
-<p>Il est relié aux parties prenantes.</p>
-<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
-</li>
-<li><p>Le Système est représenté comme <em>un bloc</em></p>
-</li>
-<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
-</li>
-<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
-<p>2 types: extend, include(<u>obligatoirement</u>).</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
-</li>
-<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
-</li>
-<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
-</li>
-</ul>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
-<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
-<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
-<p>Radio-réveil:收音机闹钟</p>
-<p>Sert:服务、帮助</p>
-<p>Apporte：带来，提供</p>
-<p>Mise:安装</p>
-<p>oeuvre:工作</p>
-<p>Diffuser:扩散、传播</p>
-<p>Schéma:图解、提纲</p>
-<p>Figurer:画出、代表</p>
-<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
-<p>Flux:流动</p>
-<p>Obligatoirement：必须的</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
-<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
-<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
-<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
-<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
-<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
-]]></content>
-      <categories>
-        <category>NANTE_S5</category>
-        <category>SSTEM</category>
-      </categories>
-      <tags>
-        <tag>SysML</tag>
       </tags>
   </entry>
   <entry>
@@ -651,67 +471,78 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>Voyage-Paris</title>
-    <url>/2021/12/08/Voyage-Paris/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
+    <title>ALGPR-2</title>
+    <url>/2022/02/09/ALGPR-2/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第二周的算法课都讲了什么T.T</p>
 <span id="more"></span>
-<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
-<p>铁塔上看的夕阳</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224029.png" alt="img"></p>
-<p>超好看！</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
-<p>顺便打卡盗梦空间的桥</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223509.png" alt="img"></p>
-<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223552.png" alt="img"></p>
-<p>未来的日子永远爱跳跳虎</p>
-<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
-<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
-<p>雕塑真的好厉害。</p>
-<p>伊斯兰教的艺术印象蛮深。</p>
-<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223807.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223713.png" width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223655.png" width="200"/>
-</center>
-
-
-
-<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
-<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
-<p>梵高好看</p>
-<p>莫奈也好好看</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223903.png" alt="img"></p>
-<p>还有个点彩画派</p>
-<p>很喜欢的画买了明信片但忘记画家了T^T</p>
-<p>出来时的公园，好看到分不清是不是在画中</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223951.png" alt="img"></p>
-<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
-<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
-<p>外面比里面好看</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224001.png" alt="img"></p>
-<p>只记得里面的钟摆了</p>
-<p>看到了一群穿正装的未来大佬们</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224010.png" alt="img"></p>
-<p>听说隔壁是很法国很厉害的大学</p>
-<p>站在那里真的会有</p>
-<p>一种学术的</p>
-<p>很厉害的感觉</p>
-<p>听说建筑仿的是意大利的万神庙</p>
-<p>那就正好</p>
-<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224046.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224018.png" alt="img"></p>
+<h1 id="TD2"><a href="#TD2" class="headerlink" title="TD2"></a>TD2</h1><p>尝试在课上直接记blog的第一天</p>
+<h2 id="Recursivite"><a href="#Recursivite" class="headerlink" title="Récursivité"></a>Récursivité</h2><h3 id="calcule-la-puissance-d’un-nombre"><a href="#calcule-la-puissance-d’un-nombre" class="headerlink" title="calcule la puissance d’un nombre"></a>calcule la puissance d’un nombre</h3><p>principe_1: calcul récursif pour n != 0,et puissance(x,0)=1</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">entier puissance(entier x,entier n):</span><br><span class="line">Début</span><br><span class="line">	si (n = 0) alors retourner 1//结束递归的跳出条件</span><br><span class="line">	sinon retourner x * pusissance(x,n-1)//递归</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>principe_2: par la méthod “diviser pour régner”,et puissance(x,0)=1,et puissance(x,1)=x div étant la division entiere</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Début</span><br><span class="line">	//结束递归的跳出条件</span><br><span class="line">	si (n = 0) </span><br><span class="line">		alors retourner 1</span><br><span class="line">	finsi</span><br><span class="line">	si (n = 1) </span><br><span class="line">		alors retourner x</span><br><span class="line">	finsi</span><br><span class="line">	</span><br><span class="line">	//本质还是在所递归，有减少一些递归的次数</span><br><span class="line">	entier y = puiss2(x, (n div 2))</span><br><span class="line">	si (n mod 2 = 0 ) </span><br><span class="line">		alors retourner y*y</span><br><span class="line">	sinon</span><br><span class="line">		alors retourner x*y*y</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>——&gt;<strong>堆栈！</strong></p>
+<h3 id="L’ordre-inverse"><a href="#L’ordre-inverse" class="headerlink" title="L’ordre inversé"></a>L’ordre inversé</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">affiche_1(vecteur&lt;entier&gt; w)</span><br><span class="line">Début</span><br><span class="line">	pour i de 0 à taille(w) -1 faire</span><br><span class="line">		écrire(w[i]+&#x27;&#x27;)</span><br><span class="line">	fin_pour</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">affiche_2(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut &lt; taille(w)) alors</span><br><span class="line">		écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">		affiche_2(w,debut+1)</span><br><span class="line">    fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">entier debut = taille(w) -1</span><br><span class="line">affiche_inv(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut = -1) exit(0) fin_si</span><br><span class="line">	écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">	affiche_inv(w,debut-1)</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//可以初始化为0，先递归再输出[妙！]</span><br><span class="line">affiche_inv(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut &lt; taille(w)) alors</span><br><span class="line">		affiche_inv(w,debut-1)</span><br><span class="line">		écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="String的palidrome"><a href="#String的palidrome" class="headerlink" title="String的palidrome"></a>String的palidrome</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Algorithm palindrome</span><br><span class="line">	booléen &lt;- palindrome(string s,int decal)</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	si(decal &lt; (taille(s)-1)/2)</span><br><span class="line">		si(s[decal] != s[taille(s)-1-decal]) </span><br><span class="line">			retourner FAUX </span><br><span class="line">		sinon</span><br><span class="line">			palindrome(s,decal+1)</span><br><span class="line">		sinon </span><br><span class="line">			retourner VRAI</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>—&gt;用<strong>stack</strong>来实现</p>
+<h2 id="Reine-et-pions-八皇后！"><a href="#Reine-et-pions-八皇后！" class="headerlink" title="Reine et pions(八皇后！)"></a>Reine et pions(八皇后！)</h2><p>题有点怪</p>
+<p>先写题</p>
+<p>On considère un échiquier de huit cases sur huit comportant huit pions et une reine. Les positions des pions et de la reine sont données dans un fichier sous un format que vous devez définir(selon la structure de données que vous choisissez). La reine peut se déplacer sur les lignes(diagonales; verticale et horizontale) sur lesquelles elle se trouve. On souhaite savoir combien de pions sont en prise(i.e. pouvant êrte pris par la reine). Si deux pions ou plus sont sur la même ligne(diagonale, verticale , horizontale), seul le premier est en prise.</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">DFS</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> res[<span class="number">9</span>]</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">if</span>(step &gt; <span class="number">8</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++) cout&lt;&lt;res[i];</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//尝试每一种可能 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">     &#123;</span><br><span class="line">         继续下一步 <span class="built_in">dfs</span>(step + <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> ;   </span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="CM2"><a href="#CM2" class="headerlink" title="CM2"></a>CM2</h1><h2 id="Gestion-de-la-memoire-内存管理"><a href="#Gestion-de-la-memoire-内存管理" class="headerlink" title="Gestion de la mémoire//内存管理"></a>Gestion de la mémoire//内存管理</h2><p>Possible de stocker un lien vers une case mémoire</p>
+<p>Utile pour :</p>
+<p>​            Structures de données (<strong>listes chainées, arbres</strong>)</p>
+<p>​            Passage de paramètres：传递参数<br>​            Allocation de mémoire：配置、地址分配</p>
+<p>像是在讲指针的样子</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">utilisation &#x27;lien&#x27; :</span><br><span class="line">ExempleLienEntier</span><br><span class="line">variables</span><br><span class="line">	lien entier lienEnt//声明一个lien</span><br><span class="line">	entier ent</span><br><span class="line">Début</span><br><span class="line">	lienEnt ← lien(ent)</span><br><span class="line">	contenu(lienEnt) ← 5</span><br><span class="line">	reçoit la valeur 5//接受</span><br><span class="line">	afficher(ent)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>关于lien和contenu</p>
+<ul>
+<li>lien:创造或声明链接</li>
+<li>contenu：访问链接的内容</li>
+</ul>
+<h2 id="Structures-de-donnees-composees"><a href="#Structures-de-donnees-composees" class="headerlink" title="Structures de données composées"></a>Structures de données composées</h2><ul>
+<li>Stockage de plusieurs données dans une seule structure pour：Structurer les données，Faciliter les traitements</li>
+<li>Données de même type : listes et arbres//树和表<br>Données de type quelconque : enregistrements(记录登记)</li>
+</ul>
+<h3 id="Enregistrements"><a href="#Enregistrements" class="headerlink" title="Enregistrements"></a>Enregistrements</h3><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210110243.png" alt="img" style="zoom:50%;" /></p>
+<p>应该是结构体</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">types</span><br><span class="line">	article : Enregistrement</span><br><span class="line">		entier : référence</span><br><span class="line">		réel : prix</span><br><span class="line">		chaine de caractère : libellé</span><br><span class="line">		entier : quantité</span><br><span class="line">	Fin enregistrement</span><br><span class="line">vectArticles : tableau d’article</span><br><span class="line"></span><br><span class="line">variables</span><br><span class="line">article artCour // article courant</span><br><span class="line">entier valeurStock</span><br><span class="line"></span><br><span class="line">artCour.prix &lt;-- lire ()</span><br><span class="line">artCour.libellé &lt;-- lire ()</span><br><span class="line">artCour.quantité &lt;-- lire ()</span><br><span class="line">valeurStock &lt;-- artCour.prix * artCour.quantité</span><br><span class="line">écrire (&quot;La valeur du stock de &quot;, artCour.libellé, &quot; est de : &quot;,valeurStock, &quot; euros&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="Structures-lineaires"><a href="#Structures-lineaires" class="headerlink" title="Structures linéaires"></a>Structures linéaires</h3><h4 id="Listes"><a href="#Listes" class="headerlink" title="Listes"></a>Listes</h4><h5 id="Definition"><a href="#Definition" class="headerlink" title="Définition"></a>Définition</h5><p>Ensemble d’éléments de même type liés par une relation de séquentialité</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210110621.png" alt="img" style="zoom:50%;" /></p>
+<p>注意一下名字： prédécesseur， successeur</p>
+<p>一些关于表的基本操作:插入、删除、测试表是否为空、测表长</p>
+<h5 id="Tableaux表"><a href="#Tableaux表" class="headerlink" title="Tableaux表"></a>Tableaux表</h5><p>Accès direct à un élément à l’aide de son indice(下标)</p>
+<p>目标算法: Somme(求和), Tris(排序), Présence d’élément(?)</p>
+<p>Exemple de définition de types composés </p>
+<ul>
+<li>tabEnt : Tableau d’entiers </li>
+<li>matReels : Tableau de dimension 2 de réels </li>
+<li>tab4DEnt : tableau d’entiers de dimension 4</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//检查是否正序</span><br><span class="line">variables</span><br><span class="line">	tabEnt tab</span><br><span class="line">	entier n</span><br><span class="line">	booléen trie</span><br><span class="line"></span><br><span class="line">&#123;n, tab&#125; &lt;- lire ()</span><br><span class="line">trie &lt;- VRAI</span><br><span class="line">pour i &lt;- 0 à n-2 faire</span><br><span class="line">	si ( tab[i] &gt; tab[i+1] ) alors</span><br><span class="line">    	trie FAUX</span><br><span class="line">    fin si</span><br><span class="line">fin pour</span><br><span class="line">si ( non trie ) alors</span><br><span class="line">	écrire (&quot;le tableau n’est pas trié&quot;)</span><br><span class="line">fin si</span><br><span class="line"></span><br><span class="line">//一般函数</span><br><span class="line">variables</span><br><span class="line">	vectArticles tabArt//?结构体的vector？</span><br><span class="line">	réel valStock</span><br><span class="line">	entier n</span><br><span class="line">Début</span><br><span class="line">&#123;n, tabArt&#125; &lt;-- lire (&quot;data.txt&quot;)</span><br><span class="line">valStock &lt;-- 0</span><br><span class="line">pour i 0 à n-1 faire</span><br><span class="line">	valStock valStock + tabArt[i].prix * tabArt[i].quantité</span><br><span class="line">fin pour</span><br><span class="line">écrire (&quot;La valeur du stock des &quot;, n, &quot; articles est de : &quot;,valStock, &quot; euros&quot;)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>所以说就是表的元素可以是结构体的意思？</p>
+<h5 id="Liste-chainee链表"><a href="#Liste-chainee链表" class="headerlink" title="Liste chainée链表"></a>Liste chainée链表</h5><h6 id="单向-successeur"><a href="#单向-successeur" class="headerlink" title="单向 successeur"></a>单向 successeur</h6><p>链表的定义(值与指向下一元素的指针)：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210112853.png" alt="img" style="zoom:50%;" /></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">type</span><br><span class="line">	elementEntier : Enregistrement</span><br><span class="line">		entier valeur,</span><br><span class="line">		lien elementEntier suivant, // lien vers l’élément suivant</span><br><span class="line">	Fin enregistrement</span><br><span class="line"></span><br><span class="line">variables</span><br><span class="line">	elementEntier elementUn, elementDeux, ..., elementSix</span><br><span class="line">...</span><br><span class="line">	elementUn.valeur 12</span><br><span class="line">	elementUn.suivant lien(elementDeux)</span><br><span class="line">	elementDeux.valeur 99</span><br><span class="line">	elementDeux.suivant lien(elementTrois)</span><br><span class="line">	...</span><br><span class="line">	elementCinq.suivant lien(elementSix)</span><br><span class="line">	elementSix.valeur 16</span><br><span class="line">	elementSix.suivant VIDE</span><br></pre></td></tr></table></figure>
+<h6 id="双向"><a href="#双向" class="headerlink" title="双向"></a>双向</h6><p>要同时定义前置和后置指针</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210113415.png" alt="img" style="zoom:50%;" /></p>
+<p>Calcul de la longueur d’une liste（递归）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fonction : longueur calculLongueur(lienDébutListe)</span><br><span class="line">paramètres : lien elementEntier lienDébutListe</span><br><span class="line">résultats : entier longueur</span><br><span class="line">Début</span><br><span class="line"> si ( lienDébutListe est VIDE ) alors</span><br><span class="line">  	longueur 0</span><br><span class="line"> sinon</span><br><span class="line">  	longueur 1 + calculLongueur(lienD´ebutListe-&gt;suivant)</span><br><span class="line"> fin si</span><br><span class="line"> retourner longueur</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>Recherche d’un élément dans une liste（递归）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fonction : présence chercherElement(lienDébutListe, val)</span><br><span class="line">	paramètres : lien élémentEntier lienDébutListe,</span><br><span class="line">				entier val</span><br><span class="line">	résultats : booléen présence</span><br><span class="line">Début</span><br><span class="line">	si ( lienDébutListe est VIDE ) alors//链表为空退出</span><br><span class="line">		présence FAUX</span><br><span class="line">	sinon</span><br><span class="line">  		si ( lienDébutListe-&gt;valeur = val ) alors</span><br><span class="line"> 			présence VRAI</span><br><span class="line">		sinon</span><br><span class="line"> 			présence chercherElement(lienDébutListe-&gt;suivant, val)</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line"> retourner présence</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>就是链表本质就是结构体+数组吗？</p>
+<h5 id="Liste-chainee和tableau时间复杂度的比较"><a href="#Liste-chainee和tableau时间复杂度的比较" class="headerlink" title="Liste chainée和tableau时间复杂度的比较"></a>Liste chainée和tableau时间复杂度的比较</h5><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220210114750.png" alt="img" style="zoom:50%;" /></p>
+<p>查找，添加/删除头(位)</p>
+<h4 id="Piles"><a href="#Piles" class="headerlink" title="Piles"></a>Piles</h4><p>存储结构讲表与链表，然后栈、队列是特殊的线性表（？）</p>
+<p>LIFO:栈，先入后出</p>
+<p>基本操作： ajoute(push),delete(pop),Test de pile vide</p>
+<h4 id="File-d’attente"><a href="#File-d’attente" class="headerlink" title="File d’attente"></a>File d’attente</h4><p>FIFO：队列，先入先出</p>
+<h3 id="Structures-arborescentes"><a href="#Structures-arborescentes" class="headerlink" title="Structures arborescentes"></a>Structures arborescentes</h3><p>​    Extension du concept de liste avec plusieurs successeurs pour un élément(一个节点后面可以接多个节点)</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
 ]]></content>
       <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
       </categories>
-      <tags>
-        <tag>Paris</tag>
-      </tags>
   </entry>
   <entry>
     <title>Voyage-Italie</title>
@@ -797,33 +628,10 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
 <p>意大利再见﻿ε≡٩(๑&gt;₃&lt;)۶ </p>
 <p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201230618.png" alt="img"></p>
 ]]></content>
-      <tags>
-        <tag>生活区</tag>
-        <tag>Voyage</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>algorithm-绪论</title>
-    <url>/2021/12/06/algorithm01/</url>
-    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
-<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
-<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
-<li>自然语言描述</li>
-<li>流程描述</li>
-<li>伪代码描述</li>
-</ul>
-<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
-<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
-<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
-]]></content>
       <categories>
-        <category>SWJTU</category>
-        <category>ALGORITHM</category>
+        <category>生活区</category>
+        <category>Voyage</category>
       </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>算法基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>PRO20</title>
@@ -887,28 +695,195 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>序言</title>
-    <url>/2021/12/05/hello-world/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
-<p>截断测试</p>
+    <title>CCUBE_Chapitre1</title>
+    <url>/2022/02/04/CCUBE-01/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
 <span id="more"></span>
-<p>图片测试：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
-<p>数学公式测试</p>
-<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
-<script type="math/tex; mode=display">
-T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
-<p>侧边栏多级分类</p>
-<p>FLUID整理</p>
-<p>Pro20整理</p>
-<p>SSTEM一周一记</p>
+<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220204024706.png" alt="img"></p>
+<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h3 id="教学目标："><a href="#教学目标：" class="headerlink" title="教学目标："></a>教学目标：</h3><p>— échantillonner un signal 信号采样;<br>— en faire une analyse de Fourier 傅里叶分析;<br>— modéliser un système physique continu par le langage des fonctions de transfert 用transfert函数给系统建模;<br>— modéliser un système physique continu par le langage de l’espace d’état 用l’’espace d’état给系统建模;<br>— lier les phénomènes physiques aux paramètres de ces représentations (temps de réponse, stabilité) ;<br>— interfacer le temps continu et le temps discret(离散) ;<br>— simuler(模拟) ces représentations à l’aide de logiciels adaptés.</p>
+<h3 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h3><p>使用Matlab的Simulink完成：</p>
+<p>1.la reconstruction d’une partition à partir de l’enregistrement audio-phonique ;</p>
+<p>2.le pilotage en simulation d’une navette spatiale, version très simplifiée d’un contrat avec l’agence spatiale</p>
+<h3 id="前置数学知识"><a href="#前置数学知识" class="headerlink" title="前置数学知识"></a>前置数学知识</h3><p>— les nombres complexes 复数;<br>— la dérivation et l’intégration d’une fonction d’une <strong>variable réelle</strong>（？） à <strong>valeur réelle</strong>（？） 积分求导;<br>— les suites de nombres réels ou complexes ;<br>on n’a pas à craindre les quelques calculs élémentaires de séries ;<br>— le calcul matriciel 矩阵 ;<br>— les valeurs et vecteurs propres, la diagonalisation d’une matrice carrée特征值；</p>
+<p>—LTI linéaire temporellement invariant线性时间不变</p>
+<h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>CCUBE</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SSTEM01</title>
+    <url>/2021/12/06/SSTEM01/</url>
+    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
+<span id="more"></span>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
+<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
+<p>But pour cet TD: Analyse externe d’un systèmes</p>
+<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
+<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
+<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
+<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
+<p><strong>Exemples:</strong></p>
+<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
+<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
+<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
+<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
+<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
+<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
+<p><strong>Exemples:</strong></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
+</li>
+<li><p><strong>Faire un diagramme de bloc</strong></p>
+<p>Le système est placé au centre du <u>schéma</u>.</p>
+<p>Il est relié aux parties prenantes.</p>
+<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
+</li>
+<li><p>Le Système est représenté comme <em>un bloc</em></p>
+</li>
+<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
+</li>
+<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
+<p>2 types: extend, include(<u>obligatoirement</u>).</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
+</li>
+<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
+</li>
+<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
+</li>
+</ul>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
+<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
+<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
+<p>Radio-réveil:收音机闹钟</p>
+<p>Sert:服务、帮助</p>
+<p>Apporte：带来，提供</p>
+<p>Mise:安装</p>
+<p>oeuvre:工作</p>
+<p>Diffuser:扩散、传播</p>
+<p>Schéma:图解、提纲</p>
+<p>Figurer:画出、代表</p>
+<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
+<p>Flux:流动</p>
+<p>Obligatoirement：必须的</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
+<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
+<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
+<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
+<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
+<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
+]]></content>
+      <categories>
+        <category>NANTE_S5</category>
+        <category>SSTEM</category>
+      </categories>
+      <tags>
+        <tag>SysML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Voyage-Paris</title>
+    <url>/2021/12/08/Voyage-Paris/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
+<span id="more"></span>
+<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
+<p>铁塔上看的夕阳</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224029.png" alt="img"></p>
+<p>超好看！</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
+<p>顺便打卡盗梦空间的桥</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223509.png" alt="img"></p>
+<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223552.png" alt="img"></p>
+<p>未来的日子永远爱跳跳虎</p>
+<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
+<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
+<p>雕塑真的好厉害。</p>
+<p>伊斯兰教的艺术印象蛮深。</p>
+<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223807.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223713.png" width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223655.png" width="200"/>
+</center>
+
+
+
+<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
+<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
+<p>梵高好看</p>
+<p>莫奈也好好看</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223903.png" alt="img"></p>
+<p>还有个点彩画派</p>
+<p>很喜欢的画买了明信片但忘记画家了T^T</p>
+<p>出来时的公园，好看到分不清是不是在画中</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223951.png" alt="img"></p>
+<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
+<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
+<p>外面比里面好看</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224001.png" alt="img"></p>
+<p>只记得里面的钟摆了</p>
+<p>看到了一群穿正装的未来大佬们</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224010.png" alt="img"></p>
+<p>听说隔壁是很法国很厉害的大学</p>
+<p>站在那里真的会有</p>
+<p>一种学术的</p>
+<p>很厉害的感觉</p>
+<p>听说建筑仿的是意大利的万神庙</p>
+<p>那就正好</p>
+<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224046.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224018.png" alt="img"></p>
 ]]></content>
       <categories>
         <category>生活区</category>
-        <category>杂谈</category>
+        <category>Voyage</category>
       </categories>
       <tags>
-        <tag>测试</tag>
+        <tag>Paris</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>algorithm-绪论</title>
+    <url>/2021/12/06/algorithm01/</url>
+    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
+<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
+<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
+<li>自然语言描述</li>
+<li>流程描述</li>
+<li>伪代码描述</li>
+</ul>
+<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
+<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
+<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
+]]></content>
+      <categories>
+        <category>SWJTU</category>
+        <category>ALGORITHM</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>算法基础</tag>
       </tags>
   </entry>
   <entry>
@@ -968,5 +943,30 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
         <category>生活区</category>
         <category>杂谈</category>
       </categories>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/12/05/hello-world/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
+<p>截断测试</p>
+<span id="more"></span>
+<p>图片测试：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
+<p>数学公式测试</p>
+<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
+<script type="math/tex; mode=display">
+T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
+<p>侧边栏多级分类</p>
+<p>FLUID整理</p>
+<p>Pro20整理</p>
+<p>SSTEM一周一记</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
   </entry>
 </search>
