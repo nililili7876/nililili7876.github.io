@@ -220,6 +220,45 @@
       </tags>
   </entry>
   <entry>
+    <title>ALGPR-1</title>
+    <url>/2022/02/08/ALGPR-1/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第一周的算法课都讲了什么T.T</p>
+<span id="more"></span>
+<h1 id="CM1"><a href="#CM1" class="headerlink" title="CM1"></a>CM1</h1><h1 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h1><p>从字符的匹配开始讲的，说了蛮多伪代码的东西，真难看(bushi</p>
+<h2 id="字符的匹配"><a href="#字符的匹配" class="headerlink" title="字符的匹配"></a>字符的匹配</h2><p>貌似没啥，就是熟悉一下子法语书写的伪代码</p>
+<h3 id="L"><a href="#L" class="headerlink" title="L"></a>L</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables://定义变量</span><br><span class="line">	Caractère:courant//串，定义为字符类型</span><br><span class="line">	Entier:nbL//拿来计数的int</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbL &lt;- 0</span><br><span class="line">	courant &lt;- lire()//这里的读是一个个读</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27;) </span><br><span class="line">			nbL &lt;- nbL+1</span><br><span class="line">		finsi</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbL)//输出</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="LE"><a href="#LE" class="headerlink" title="LE"></a>LE</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:courant,précédent</span><br><span class="line">	Entier:nbLE</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	précédent &lt;- &#x27;.&#x27;</span><br><span class="line">	courant &lt;- lire()</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27; ET courant = &#x27;E&#x27;) </span><br><span class="line">			nbLE &lt;- nbLE+1</span><br><span class="line">		finsi</span><br><span class="line">		précédent &lt;- courant</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="ELLE"><a href="#ELLE" class="headerlink" title="ELLE"></a>ELLE</h3><p>就是把子串固定，然后拿courant去做匹配</p>
+<p>以ELELLELLLLEL找ELLE为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Chaine de caractère:courant,motif//motif是子串</span><br><span class="line">	Caractère: c</span><br><span class="line">	Entier: nbMotif	</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbMotif &lt;- 0</span><br><span class="line">	afficher(&quot;quel est le motif cherché?&quot;)</span><br><span class="line">	motif &lt;- lire()</span><br><span class="line">	//初始化串为...courant[0]</span><br><span class="line">	pour i de 0 à taille(motif)-2</span><br><span class="line">		courant[i] &lt;- &#x27;.&#x27;</span><br><span class="line">	finpour</span><br><span class="line">	c &lt;- lire()</span><br><span class="line">	courant[taille(motif)-1] &lt;- c</span><br><span class="line">	</span><br><span class="line">	//串变成了...E</span><br><span class="line">	</span><br><span class="line">	tantque(c != &#x27;.&#x27;)</span><br><span class="line">		si (courant = motif)</span><br><span class="line">			nbMotif &lt;- nbMotif+1</span><br><span class="line">		finsi</span><br><span class="line">		//从后往前移</span><br><span class="line">		pour i de 0 à taille(motif)-2</span><br><span class="line">			courant[i] &lt;- courant[i+1]</span><br><span class="line">		finpour</span><br><span class="line">		c &lt;- lire()</span><br><span class="line">		courant[taille(motif)-1] &lt;- c</span><br><span class="line">	fintanque</span><br><span class="line">	</span><br><span class="line">	afficher(nbMotif)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>妙的！时间复杂度的话N*n，可能比用想的的find函数要好哎</p>
+<p>实际写的好艰难,string里面真的好多东西哦:(</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nbMotif=<span class="number">0</span>;</span><br><span class="line">   string courant,motif;</span><br><span class="line">   cin&gt;&gt;courant;</span><br><span class="line">   cin&gt;&gt;motif;</span><br><span class="line">   <span class="keyword">size_t</span> p=<span class="number">0</span>;<span class="comment">//注意返回类型</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>((p = courant.<span class="built_in">find</span>(motif,p)) != courant.npos)</span><br><span class="line">    &#123;</span><br><span class="line">        nbMotif++;</span><br><span class="line">        p += motif.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;nbMotif&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="老师的奇妙方法"><a href="#老师的奇妙方法" class="headerlink" title="老师的奇妙方法"></a>老师的奇妙方法</h3><p>用矩阵还是图的知识来实现匹配(example:LE</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:c</span><br><span class="line">	Entier: s,ss,x,nbLE</span><br><span class="line">	Tableau d&#x27;Entiers m &lt;- &#123;&#123;0,1,0,2&#125;,&#123;0,1,0,2&#125;&#125;</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	s &lt;- 0</span><br><span class="line">	tantque(s != 2)</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">		x &lt;- 0</span><br><span class="line">		si(c == &#x27;L&#x27;) alors x &lt;- 1	finsi</span><br><span class="line">		si(c == &#x27;E&#x27;) alors x &lt;- 2	finsi</span><br><span class="line">		si(c == &#x27;.&#x27;) alors x &lt;- 3	finsi</span><br><span class="line">		</span><br><span class="line">		ss &lt;- m(s,x)</span><br><span class="line">		si (s = 1 ET x = 2) alors nbLE &lt;- nbLE+1 finsi</span><br><span class="line">		s&lt;- ss</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>时间复杂度的话应该有两部分，一是在写m矩阵那里，然后是主程序。主程序的时间复杂度的话，有个逐个读的n，然后剩下的话我感觉有m^2。—-&gt; ?</p>
+<p>矩阵长这样</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220209020654.png" alt="img" style="zoom:50%;" /></p>
+<p>好像是在用s和x来表示前后两次的匹配的结果</p>
+<p>但感觉就是时间也多了，空间也给浪费了嘛(；′⌒`)</p>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><p>“肘，再逝一次”</p>
+<h2 id="TD题"><a href="#TD题" class="headerlink" title="TD题"></a>TD题</h2><h3 id="题"><a href="#题" class="headerlink" title="题"></a>题</h3><p>1.1 Points et polygone (enregistrement)<br>On souhaite calculer quelques propri´et´es d’un polygone quelconque (p´erim etre, longueur<br>moyenne des arˆetes, boite englobante). La boite englobante est un rectangle englobant le<br>polygone de cˆot´es paralleles aux axes. Les sommets du polygone sont donn´es (dans l’ordre<br>de parcours du p´erimetre) par leurs coordonn´ees r´eelles dans un plan et le nom du point<br>(caractere).<br>La liste de coordonn´ees est suppos´ee correcte et n’est lue qu’une seule fois. Exemple de<br>fichier a lire :<br>— 1,5 3,7 A<br>— 6,4 4,6 B<br>— 5,8 8,3 C<br>— …<br>— 1,5 3,7 A (dernier sommet a ne pas ajouter dans la structure de donn´ees)<br>Les coordonn´ees du dernier sommet sont ´egales a celles du premier. Ce sommet permet<br>uniquement de d´etecter la fermeture du polygone. Il ne faut pas rentrer ce sommet dans la<br>structure de donn´ees.<br>— Proposez une structure de donn´ee pour stocker le polygone,<br>— Ecrivez l’algorithme principal pour lire le fichier contenant les points du polygone, ´<br>appeler les fonctions permettant de calculer les propri´et´es demand´ees et afficher les<br>r´esultats a l’´ecran,<br>— Ecrivez les fonctions secondaires pour calculer la longueur du p´erim`etre, calculer la ´<br>longueur moyenne des arˆetes et d´elimiter la boite englobante.</p>
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types//应该是在定义结构体</span><br><span class="line">	point: enregistrement</span><br><span class="line">		caratère: nom</span><br><span class="line">		réel: x</span><br><span class="line">		réel: y</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">	tabPoint: tableau de point</span><br><span class="line"></span><br><span class="line">Algorithme principal Polygone</span><br><span class="line">Variables://定义变量</span><br><span class="line">	tabPoint polygone,boiteEnglobante</span><br><span class="line">	réel périmètre, longMoy</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	polygone &lt;- lirePolygone(&quot;data.txt&quot;)//读文件</span><br><span class="line">	périmètre &lt;- calcuPérimètre(polygone)//周长</span><br><span class="line">	longMoy &lt;- périmètre/taille(polygone)//棱边数</span><br><span class="line">	boiteEnglobante &lt;- calculBoite(polygone)</span><br><span class="line">Fin Algorithme</span><br></pre></td></tr></table></figure>
+<h3 id="我想的C"><a href="#我想的C" class="headerlink" title="我想的C++"></a>我想的C++</h3><p>不知道能不能成</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> Nom;</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    <span class="keyword">float</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">distance</span><span class="params">(Point A, Point B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygone</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    vecter&lt;Point&gt; PonitsDePolygone;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="comment">//构造函数</span></span><br><span class="line">    	<span class="built_in">Polygone</span>(Point A)&#123;PonitsDePolygone.<span class="built_in">push</span>(A);&#125;</span><br><span class="line">    	<span class="comment">//拷贝构造 ou 析构？？？？</span></span><br><span class="line">    	<span class="keyword">float</span> périmè<span class="built_in">tre</span>();</span><br><span class="line">    	<span class="function"><span class="keyword">int</span> <span class="title">longMoy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>KMP,CM和未完成的C++就是明天一定</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>KMP</tag>
+        <tag>string</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGORITHM-算法效率</title>
     <url>/2021/12/06/ALGORITHM02/</url>
     <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
@@ -365,6 +404,25 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </categories>
   </entry>
   <entry>
+    <title>CCUBE_Chapitre1</title>
+    <url>/2022/02/04/CCUBE-01/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
+<span id="more"></span>
+<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220204024706.png" alt="img"></p>
+<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h3 id="教学目标："><a href="#教学目标：" class="headerlink" title="教学目标："></a>教学目标：</h3><p>— échantillonner un signal 信号采样;<br>— en faire une analyse de Fourier 傅里叶分析;<br>— modéliser un système physique continu par le langage des fonctions de transfert 用transfert函数给系统建模;<br>— modéliser un système physique continu par le langage de l’espace d’état 用l’’espace d’état给系统建模;<br>— lier les phénomènes physiques aux paramètres de ces représentations (temps de réponse, stabilité) ;<br>— interfacer le temps continu et le temps discret(离散) ;<br>— simuler(模拟) ces représentations à l’aide de logiciels adaptés.</p>
+<h3 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h3><p>使用Matlab的Simulink完成：</p>
+<p>1.la reconstruction d’une partition à partir de l’enregistrement audio-phonique ;</p>
+<p>2.le pilotage en simulation d’une navette spatiale, version très simplifiée d’un contrat avec l’agence spatiale</p>
+<h3 id="前置数学知识"><a href="#前置数学知识" class="headerlink" title="前置数学知识"></a>前置数学知识</h3><p>— les nombres complexes 复数;<br>— la dérivation et l’intégration d’une fonction d’une <strong>variable réelle</strong>（？） à <strong>valeur réelle</strong>（？） 积分求导;<br>— les suites de nombres réels ou complexes ;<br>on n’a pas à craindre les quelques calculs élémentaires de séries ;<br>— le calcul matriciel 矩阵 ;<br>— les valeurs et vecteurs propres, la diagonalisation d’une matrice carrée特征值；</p>
+<p>—LTI linéaire temporellement invariant线性时间不变</p>
+<h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>CCUBE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>ANG-01</title>
     <url>/2022/02/06/ANG-01/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>Welcome to the ‘metaverse’.(From BBC 6 Minute English)</p>
@@ -390,61 +448,90 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>CCUBE_Chapitre1</title>
-    <url>/2022/02/04/CCUBE-01/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
+    <title>SSTEM01</title>
+    <url>/2021/12/06/SSTEM01/</url>
+    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
 <span id="more"></span>
-<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220204024706.png" alt="img"></p>
-<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h3 id="教学目标："><a href="#教学目标：" class="headerlink" title="教学目标："></a>教学目标：</h3><p>— échantillonner un signal 信号采样;<br>— en faire une analyse de Fourier 傅里叶分析;<br>— modéliser un système physique continu par le langage des fonctions de transfert 用transfert函数给系统建模;<br>— modéliser un système physique continu par le langage de l’espace d’état 用l’’espace d’état给系统建模;<br>— lier les phénomènes physiques aux paramètres de ces représentations (temps de réponse, stabilité) ;<br>— interfacer le temps continu et le temps discret(离散) ;<br>— simuler(模拟) ces représentations à l’aide de logiciels adaptés.</p>
-<h3 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h3><p>使用Matlab的Simulink完成：</p>
-<p>1.la reconstruction d’une partition à partir de l’enregistrement audio-phonique ;</p>
-<p>2.le pilotage en simulation d’une navette spatiale, version très simplifiée d’un contrat avec l’agence spatiale</p>
-<h3 id="前置数学知识"><a href="#前置数学知识" class="headerlink" title="前置数学知识"></a>前置数学知识</h3><p>— les nombres complexes 复数;<br>— la dérivation et l’intégration d’une fonction d’une <strong>variable réelle</strong>（？） à <strong>valeur réelle</strong>（？） 积分求导;<br>— les suites de nombres réels ou complexes ;<br>on n’a pas à craindre les quelques calculs élémentaires de séries ;<br>— le calcul matriciel 矩阵 ;<br>— les valeurs et vecteurs propres, la diagonalisation d’une matrice carrée特征值；</p>
-<p>—LTI linéaire temporellement invariant线性时间不变</p>
-<h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
+<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
+<p>But pour cet TD: Analyse externe d’un systèmes</p>
+<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
+<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
+<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
+<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
+<p><strong>Exemples:</strong></p>
+<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
+<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
+<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
+<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
+<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
+<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
+<p><strong>Exemples:</strong></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
+</li>
+<li><p><strong>Faire un diagramme de bloc</strong></p>
+<p>Le système est placé au centre du <u>schéma</u>.</p>
+<p>Il est relié aux parties prenantes.</p>
+<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
+</li>
+<li><p>Le Système est représenté comme <em>un bloc</em></p>
+</li>
+<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
+</li>
+<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
+<p>2 types: extend, include(<u>obligatoirement</u>).</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
+</li>
+<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
+</li>
+<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
+</li>
+</ul>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
+<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
+<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
+<p>Radio-réveil:收音机闹钟</p>
+<p>Sert:服务、帮助</p>
+<p>Apporte：带来，提供</p>
+<p>Mise:安装</p>
+<p>oeuvre:工作</p>
+<p>Diffuser:扩散、传播</p>
+<p>Schéma:图解、提纲</p>
+<p>Figurer:画出、代表</p>
+<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
+<p>Flux:流动</p>
+<p>Obligatoirement：必须的</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
+<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
+<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
+<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
+<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
+<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
 ]]></content>
       <categories>
-        <category>NANTE_S6</category>
-        <category>CCUBE</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ALGPR-1</title>
-    <url>/2022/02/08/ALGPR-1/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第一周的算法课都讲了什么T.T</p>
-<span id="more"></span>
-<h1 id="CM1"><a href="#CM1" class="headerlink" title="CM1"></a>CM1</h1><h1 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h1><p>从字符的匹配开始讲的，说了蛮多伪代码的东西，真难看(bushi</p>
-<h2 id="字符的匹配"><a href="#字符的匹配" class="headerlink" title="字符的匹配"></a>字符的匹配</h2><p>貌似没啥，就是熟悉一下子法语书写的伪代码</p>
-<h3 id="L"><a href="#L" class="headerlink" title="L"></a>L</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables://定义变量</span><br><span class="line">	Caractère:courant//串，定义为字符类型</span><br><span class="line">	Entier:nbL//拿来计数的int</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbL &lt;- 0</span><br><span class="line">	courant &lt;- lire()//这里的读是一个个读</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27;) </span><br><span class="line">			nbL &lt;- nbL+1</span><br><span class="line">		finsi</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbL)//输出</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="LE"><a href="#LE" class="headerlink" title="LE"></a>LE</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:courant,précédent</span><br><span class="line">	Entier:nbLE</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	précédent &lt;- &#x27;.&#x27;</span><br><span class="line">	courant &lt;- lire()</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27; ET courant = &#x27;E&#x27;) </span><br><span class="line">			nbLE &lt;- nbLE+1</span><br><span class="line">		finsi</span><br><span class="line">		précédent &lt;- courant</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="ELLE"><a href="#ELLE" class="headerlink" title="ELLE"></a>ELLE</h3><p>就是把子串固定，然后拿courant去做匹配</p>
-<p>以ELELLELLLLEL找ELLE为例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Chaine de caractère:courant,motif//motif是子串</span><br><span class="line">	Caractère: c</span><br><span class="line">	Entier: nbMotif	</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbMotif &lt;- 0</span><br><span class="line">	afficher(&quot;quel est le motif cherché?&quot;)</span><br><span class="line">	motif &lt;- lire()</span><br><span class="line">	//初始化串为...courant[0]</span><br><span class="line">	pour i de 0 à taille(motif)-2</span><br><span class="line">		courant[i] &lt;- &#x27;.&#x27;</span><br><span class="line">	finpour</span><br><span class="line">	c &lt;- lire()</span><br><span class="line">	courant[taille(motif)-1] &lt;- c</span><br><span class="line">	</span><br><span class="line">	//串变成了...E</span><br><span class="line">	</span><br><span class="line">	tantque(c != &#x27;.&#x27;)</span><br><span class="line">		si (courant = motif)</span><br><span class="line">			nbMotif &lt;- nbMotif+1</span><br><span class="line">		finsi</span><br><span class="line">		//从后往前移</span><br><span class="line">		pour i de 0 à taille(motif)-2</span><br><span class="line">			courant[i] &lt;- courant[i+1]</span><br><span class="line">		finpour</span><br><span class="line">		c &lt;- lire()</span><br><span class="line">		courant[taille(motif)-1] &lt;- c</span><br><span class="line">	fintanque</span><br><span class="line">	</span><br><span class="line">	afficher(nbMotif)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>妙的！时间复杂度的话N*n，可能比用想的的find函数要好哎</p>
-<p>实际写的好艰难,string里面真的好多东西哦:(</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nbMotif=<span class="number">0</span>;</span><br><span class="line">   string courant,motif;</span><br><span class="line">   cin&gt;&gt;courant;</span><br><span class="line">   cin&gt;&gt;motif;</span><br><span class="line">   <span class="keyword">size_t</span> p=<span class="number">0</span>;<span class="comment">//注意返回类型</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>((p = courant.<span class="built_in">find</span>(motif,p)) != courant.npos)</span><br><span class="line">    &#123;</span><br><span class="line">        nbMotif++;</span><br><span class="line">        p += motif.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;nbMotif&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="老师的奇妙方法"><a href="#老师的奇妙方法" class="headerlink" title="老师的奇妙方法"></a>老师的奇妙方法</h3><p>用矩阵还是图的知识来实现匹配(example:LE</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:c</span><br><span class="line">	Entier: s,ss,x,nbLE</span><br><span class="line">	Tableau d&#x27;Entiers m &lt;- &#123;&#123;0,1,0,2&#125;,&#123;0,1,0,2&#125;&#125;</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	s &lt;- 0</span><br><span class="line">	tantque(s != 2)</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">		x &lt;- 0</span><br><span class="line">		si(c == &#x27;L&#x27;) alors x &lt;- 1	finsi</span><br><span class="line">		si(c == &#x27;E&#x27;) alors x &lt;- 2	finsi</span><br><span class="line">		si(c == &#x27;.&#x27;) alors x &lt;- 3	finsi</span><br><span class="line">		</span><br><span class="line">		ss &lt;- m(s,x)</span><br><span class="line">		si (s = 1 ET x = 2) alors nbLE &lt;- nbLE+1 finsi</span><br><span class="line">		s&lt;- ss</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>时间复杂度的话应该有两部分，一是在写m矩阵那里，然后是主程序。主程序的时间复杂度的话，有个逐个读的n，然后剩下的话我感觉有m^2。—-&gt; ?</p>
-<p>矩阵长这样</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220209020654.png" alt="img" style="zoom:50%;" /></p>
-<p>好像是在用s和x来表示前后两次的匹配的结果</p>
-<p>但感觉就是时间也多了，空间也给浪费了嘛(；′⌒`)</p>
-<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><p>“肘，再逝一次”</p>
-<h2 id="TD题"><a href="#TD题" class="headerlink" title="TD题"></a>TD题</h2><h3 id="题"><a href="#题" class="headerlink" title="题"></a>题</h3><p>1.1 Points et polygone (enregistrement)<br>On souhaite calculer quelques propri´et´es d’un polygone quelconque (p´erim etre, longueur<br>moyenne des arˆetes, boite englobante). La boite englobante est un rectangle englobant le<br>polygone de cˆot´es paralleles aux axes. Les sommets du polygone sont donn´es (dans l’ordre<br>de parcours du p´erimetre) par leurs coordonn´ees r´eelles dans un plan et le nom du point<br>(caractere).<br>La liste de coordonn´ees est suppos´ee correcte et n’est lue qu’une seule fois. Exemple de<br>fichier a lire :<br>— 1,5 3,7 A<br>— 6,4 4,6 B<br>— 5,8 8,3 C<br>— …<br>— 1,5 3,7 A (dernier sommet a ne pas ajouter dans la structure de donn´ees)<br>Les coordonn´ees du dernier sommet sont ´egales a celles du premier. Ce sommet permet<br>uniquement de d´etecter la fermeture du polygone. Il ne faut pas rentrer ce sommet dans la<br>structure de donn´ees.<br>— Proposez une structure de donn´ee pour stocker le polygone,<br>— Ecrivez l’algorithme principal pour lire le fichier contenant les points du polygone, ´<br>appeler les fonctions permettant de calculer les propri´et´es demand´ees et afficher les<br>r´esultats a l’´ecran,<br>— Ecrivez les fonctions secondaires pour calculer la longueur du p´erim`etre, calculer la ´<br>longueur moyenne des arˆetes et d´elimiter la boite englobante.</p>
-<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types//应该是在定义结构体</span><br><span class="line">	point: enregistrement</span><br><span class="line">		caratère: nom</span><br><span class="line">		réel: x</span><br><span class="line">		réel: y</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">	tabPoint: tableau de point</span><br><span class="line"></span><br><span class="line">Algorithme principal Polygone</span><br><span class="line">Variables://定义变量</span><br><span class="line">	tabPoint polygone,boiteEnglobante</span><br><span class="line">	réel périmètre, longMoy</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	polygone &lt;- lirePolygone(&quot;data.txt&quot;)//读文件</span><br><span class="line">	périmètre &lt;- calcuPérimètre(polygone)//周长</span><br><span class="line">	longMoy &lt;- périmètre/taille(polygone)//棱边数</span><br><span class="line">	boiteEnglobante &lt;- calculBoite(polygone)</span><br><span class="line">Fin Algorithme</span><br></pre></td></tr></table></figure>
-<h3 id="我想的C"><a href="#我想的C" class="headerlink" title="我想的C++"></a>我想的C++</h3><p>不知道能不能成</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> Nom;</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    <span class="keyword">float</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">distance</span><span class="params">(Point A, Point B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygone</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    vecter&lt;Point&gt; PonitsDePolygone;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="comment">//构造函数</span></span><br><span class="line">    	<span class="built_in">Polygone</span>(Point A)&#123;PonitsDePolygone.<span class="built_in">push</span>(A);&#125;</span><br><span class="line">    	<span class="comment">//拷贝构造 ou 析构？？？？</span></span><br><span class="line">    	<span class="keyword">float</span> périmè<span class="built_in">tre</span>();</span><br><span class="line">    	<span class="function"><span class="keyword">int</span> <span class="title">longMoy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>KMP,CM和未完成的C++就是明天一定</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ALGORITHM</category>
+        <category>NANTE_S5</category>
+        <category>SSTEM</category>
       </categories>
       <tags>
-        <tag>ALGORITHM</tag>
-        <tag>KMP</tag>
-        <tag>string</tag>
+        <tag>SysML</tag>
       </tags>
   </entry>
   <entry>
@@ -564,151 +651,66 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>SSTEM01</title>
-    <url>/2021/12/06/SSTEM01/</url>
-    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
+    <title>Voyage-Paris</title>
+    <url>/2021/12/08/Voyage-Paris/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
 <span id="more"></span>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
-<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
-<p>But pour cet TD: Analyse externe d’un systèmes</p>
-<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
-<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
-<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
-<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
-<p><strong>Exemples:</strong></p>
-<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
-<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
-<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
-<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
-<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
-<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
-<p><strong>Exemples:</strong></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
-</li>
-<li><p><strong>Faire un diagramme de bloc</strong></p>
-<p>Le système est placé au centre du <u>schéma</u>.</p>
-<p>Il est relié aux parties prenantes.</p>
-<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
-</li>
-<li><p>Le Système est représenté comme <em>un bloc</em></p>
-</li>
-<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
-</li>
-<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
-<p>2 types: extend, include(<u>obligatoirement</u>).</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
-</li>
-<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
-</li>
-<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
-</li>
-</ul>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
-<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
-<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
-<p>Radio-réveil:收音机闹钟</p>
-<p>Sert:服务、帮助</p>
-<p>Apporte：带来，提供</p>
-<p>Mise:安装</p>
-<p>oeuvre:工作</p>
-<p>Diffuser:扩散、传播</p>
-<p>Schéma:图解、提纲</p>
-<p>Figurer:画出、代表</p>
-<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
-<p>Flux:流动</p>
-<p>Obligatoirement：必须的</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
-<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
-<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
-<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
-<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
-<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
+<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
+<p>铁塔上看的夕阳</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224029.png" alt="img"></p>
+<p>超好看！</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
+<p>顺便打卡盗梦空间的桥</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223509.png" alt="img"></p>
+<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223552.png" alt="img"></p>
+<p>未来的日子永远爱跳跳虎</p>
+<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
+<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
+<p>雕塑真的好厉害。</p>
+<p>伊斯兰教的艺术印象蛮深。</p>
+<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223807.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223713.png" width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223655.png" width="200"/>
+</center>
+
+
+
+<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
+<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
+<p>梵高好看</p>
+<p>莫奈也好好看</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223903.png" alt="img"></p>
+<p>还有个点彩画派</p>
+<p>很喜欢的画买了明信片但忘记画家了T^T</p>
+<p>出来时的公园，好看到分不清是不是在画中</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223951.png" alt="img"></p>
+<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
+<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
+<p>外面比里面好看</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224001.png" alt="img"></p>
+<p>只记得里面的钟摆了</p>
+<p>看到了一群穿正装的未来大佬们</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224010.png" alt="img"></p>
+<p>听说隔壁是很法国很厉害的大学</p>
+<p>站在那里真的会有</p>
+<p>一种学术的</p>
+<p>很厉害的感觉</p>
+<p>听说建筑仿的是意大利的万神庙</p>
+<p>那就正好</p>
+<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224046.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224018.png" alt="img"></p>
 ]]></content>
       <categories>
-        <category>NANTE_S5</category>
-        <category>SSTEM</category>
+        <category>生活区</category>
+        <category>Voyage</category>
       </categories>
       <tags>
-        <tag>SysML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PRO20</title>
-    <url>/2022/02/07/PRO20/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>趁着可能对P2E有点用处的东风，把上学期一个很有意思的softskill给整理了。</p>
-<span id="more"></span>
-<h1 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h1><p>就是一个教怎么组织项目的课，具体实例是建养鸡场，选址、选鸡蛋品种（bio或者非bio）、然后风险评估啥的。以下是一些有趣的概念的大略整理。</p>
-<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Définitions"></a>Définitions</h2><p>Project: Un ensemble de tâches coordonnées accomplies par des personnes utilisant des moyens dans le but de répondre au besoin<br>du client avec la qualité demandée en temps et coûts maitrisés</p>
-<p>Gestion de projet: La Gestion de projet s’assure du déroulement opérationnel prévu dans la planification. Elle reporte à la fonction de pilotage de projet sur l’avancement, elle sollicite des prises de décisions et remonte des alertes</p>
-<p>Management de projet: Direction + Gestion = Management</p>
-<h2 id="Cadrage-框架-du-Project"><a href="#Cadrage-框架-du-Project" class="headerlink" title="Cadrage(框架) du Project"></a>Cadrage(框架) du Project</h2><ul>
-<li><p>L’identité du client</p>
-</li>
-<li><p>Les objectifs du projet</p>
-<p>目标应该满足的原则：S(Spécifique)M(Mesurable)A(Atteignable)R(Réaliste)T(Temporel)</p>
-</li>
-<li><p>Les délais à respecter</p>
-</li>
-<li><p>Les limites du budget à investir</p>
-</li>
-<li><p>L’utilité du projet</p>
-</li>
-<li><p>La rentabilité escomptée du projet</p>
-</li>
-</ul>
-<h2 id="Decomposer-le-projet"><a href="#Decomposer-le-projet" class="headerlink" title="Décomposer le projet"></a>Décomposer le projet</h2><h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><p>WBS : Work Breakdown Structure. Décomposition hiérarchique, axée sur les livrables, du travail que l’équipe de projet doit exécuter pour atteindre les objectifs du projet et produire les livrables souhaités.</p>
-<p>做法：</p>
-<ul>
-<li>Spécifier les objectifs du projet</li>
-<li>Identifier spécifiquement les produits, services ou résultats </li>
-<li>Identifier les travaux</li>
-<li>Subdiviser les éléments jusqu’au niveau qui permet la<br>planification et le contrôle</li>
-</ul>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153543.png" alt="img"></p>
-<h3 id="PBS"><a href="#PBS" class="headerlink" title="PBS"></a>PBS</h3><p>Product Breakdown Structure</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207215522.png" alt="img" style="zoom:80%;" /></p>
-<p>注：当时好像是上课没咋讲这个，后来是按照网上(ZHIHU)的文章说，WBS是以项目结果为导向的工作过程的结构分解，PBS是项目交付结果本身为对象进行的层级结构分解来做的。具体到这道题，就是，WBS包含整个项目管理，PBS只是按照养鸡场本身按照地基、外部建筑、内部建筑、服务设施这样子分级。</p>
-<h2 id="Diagramme-de-Gantt"><a href="#Diagramme-de-Gantt" class="headerlink" title="Diagramme de Gantt"></a>Diagramme de Gantt</h2><p>C’est un outil que peut aider à définir un planning réaliste.</p>
-<p>貌似就是一个项目的时间的进程表，找出要做的事情，然后分析发生的先后或者并行关系，搞成条状表就行了。</p>
-<p>Exemple(红色表示关键事件) : </p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153744.png" alt="img"></p>
-<h2 id="PERT"><a href="#PERT" class="headerlink" title="PERT"></a>PERT</h2><p>C’est un outil souvent utilisée pour la gestion de projets  importants et à long terme. </p>
-<p>PERT = Program Evaluation and Review Technic (ou CPM: Critical Path Method)</p>
-<p>就是把上面那个Gantt图给这样子表示，然后往里面写时间就行，然后选时间最大的那条线（不是我说，这好像算法里面的那个啥图</p>
-<p>Exemple:</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154725.png" alt="img"></p>
-<h2 id="Les-risques"><a href="#Les-risques" class="headerlink" title="Les risques"></a>Les risques</h2><p>Principaux risques  incluent  Risques financiers, Risques marchés, Risques technologiques, Risques liés à l’équipe.</p>
-<p> Pour gestion des risques, on peut utiliser le table comme ça,</p>
-<p>就是两部分：严重程度+发生概率</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154820.png" alt="img"></p>
-<p>对，记得当时有个文化shock还蛮有趣的小点就是，当时有个风险是员工absent，然后写应对措施，我说搞时刻表，然后其他人：推迟上班的时间或者改变工作环境。</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>其实这个项目还有超级多的东西，当时TD课第一节课搞WBS、PBS和GANTT的图，第二节课搞投资和收益计算，第三节课是风险评估，参与程度递减，到最后一节课就除了汇报叭叭两句就完全没太参与进去，不知道在干嘛了T^T</p>
-<p>反正最后结论就是要养bio的鸡，唔。</p>
-]]></content>
-      <categories>
-        <category>NANTE_S5</category>
-        <category>PRO20</category>
-      </categories>
-      <tags>
-        <tag>SOFTSKILLS</tag>
+        <tag>Paris</tag>
       </tags>
   </entry>
   <entry>
@@ -824,106 +826,65 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>Voyage-Paris</title>
-    <url>/2021/12/08/Voyage-Paris/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
+    <title>PRO20</title>
+    <url>/2022/02/07/PRO20/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>趁着可能对P2E有点用处的东风，把上学期一个很有意思的softskill给整理了。</p>
 <span id="more"></span>
-<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
-<p>铁塔上看的夕阳</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224029.png" alt="img"></p>
-<p>超好看！</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
-<p>顺便打卡盗梦空间的桥</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223509.png" alt="img"></p>
-<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223552.png" alt="img"></p>
-<p>未来的日子永远爱跳跳虎</p>
-<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
-<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
-<p>雕塑真的好厉害。</p>
-<p>伊斯兰教的艺术印象蛮深。</p>
-<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223807.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223713.png" width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223655.png" width="200"/>
-</center>
-
-
-
-<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
-<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
-<p>梵高好看</p>
-<p>莫奈也好好看</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223903.png" alt="img"></p>
-<p>还有个点彩画派</p>
-<p>很喜欢的画买了明信片但忘记画家了T^T</p>
-<p>出来时的公园，好看到分不清是不是在画中</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223951.png" alt="img"></p>
-<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
-<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
-<p>外面比里面好看</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224001.png" alt="img"></p>
-<p>只记得里面的钟摆了</p>
-<p>看到了一群穿正装的未来大佬们</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224010.png" alt="img"></p>
-<p>听说隔壁是很法国很厉害的大学</p>
-<p>站在那里真的会有</p>
-<p>一种学术的</p>
-<p>很厉害的感觉</p>
-<p>听说建筑仿的是意大利的万神庙</p>
-<p>那就正好</p>
-<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224046.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224018.png" alt="img"></p>
+<h1 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h1><p>就是一个教怎么组织项目的课，具体实例是建养鸡场，选址、选鸡蛋品种（bio或者非bio）、然后风险评估啥的。以下是一些有趣的概念的大略整理。</p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Définitions"></a>Définitions</h2><p>Project: Un ensemble de tâches coordonnées accomplies par des personnes utilisant des moyens dans le but de répondre au besoin<br>du client avec la qualité demandée en temps et coûts maitrisés</p>
+<p>Gestion de projet: La Gestion de projet s’assure du déroulement opérationnel prévu dans la planification. Elle reporte à la fonction de pilotage de projet sur l’avancement, elle sollicite des prises de décisions et remonte des alertes</p>
+<p>Management de projet: Direction + Gestion = Management</p>
+<h2 id="Cadrage-框架-du-Project"><a href="#Cadrage-框架-du-Project" class="headerlink" title="Cadrage(框架) du Project"></a>Cadrage(框架) du Project</h2><ul>
+<li><p>L’identité du client</p>
+</li>
+<li><p>Les objectifs du projet</p>
+<p>目标应该满足的原则：S(Spécifique)M(Mesurable)A(Atteignable)R(Réaliste)T(Temporel)</p>
+</li>
+<li><p>Les délais à respecter</p>
+</li>
+<li><p>Les limites du budget à investir</p>
+</li>
+<li><p>L’utilité du projet</p>
+</li>
+<li><p>La rentabilité escomptée du projet</p>
+</li>
+</ul>
+<h2 id="Decomposer-le-projet"><a href="#Decomposer-le-projet" class="headerlink" title="Décomposer le projet"></a>Décomposer le projet</h2><h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><p>WBS : Work Breakdown Structure. Décomposition hiérarchique, axée sur les livrables, du travail que l’équipe de projet doit exécuter pour atteindre les objectifs du projet et produire les livrables souhaités.</p>
+<p>做法：</p>
+<ul>
+<li>Spécifier les objectifs du projet</li>
+<li>Identifier spécifiquement les produits, services ou résultats </li>
+<li>Identifier les travaux</li>
+<li>Subdiviser les éléments jusqu’au niveau qui permet la<br>planification et le contrôle</li>
+</ul>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153543.png" alt="img"></p>
+<h3 id="PBS"><a href="#PBS" class="headerlink" title="PBS"></a>PBS</h3><p>Product Breakdown Structure</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207215522.png" alt="img" style="zoom:80%;" /></p>
+<p>注：当时好像是上课没咋讲这个，后来是按照网上(ZHIHU)的文章说，WBS是以项目结果为导向的工作过程的结构分解，PBS是项目交付结果本身为对象进行的层级结构分解来做的。具体到这道题，就是，WBS包含整个项目管理，PBS只是按照养鸡场本身按照地基、外部建筑、内部建筑、服务设施这样子分级。</p>
+<h2 id="Diagramme-de-Gantt"><a href="#Diagramme-de-Gantt" class="headerlink" title="Diagramme de Gantt"></a>Diagramme de Gantt</h2><p>C’est un outil que peut aider à définir un planning réaliste.</p>
+<p>貌似就是一个项目的时间的进程表，找出要做的事情，然后分析发生的先后或者并行关系，搞成条状表就行了。</p>
+<p>Exemple(红色表示关键事件) : </p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153744.png" alt="img"></p>
+<h2 id="PERT"><a href="#PERT" class="headerlink" title="PERT"></a>PERT</h2><p>C’est un outil souvent utilisée pour la gestion de projets  importants et à long terme. </p>
+<p>PERT = Program Evaluation and Review Technic (ou CPM: Critical Path Method)</p>
+<p>就是把上面那个Gantt图给这样子表示，然后往里面写时间就行，然后选时间最大的那条线（不是我说，这好像算法里面的那个啥图</p>
+<p>Exemple:</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154725.png" alt="img"></p>
+<h2 id="Les-risques"><a href="#Les-risques" class="headerlink" title="Les risques"></a>Les risques</h2><p>Principaux risques  incluent  Risques financiers, Risques marchés, Risques technologiques, Risques liés à l’équipe.</p>
+<p> Pour gestion des risques, on peut utiliser le table comme ça,</p>
+<p>就是两部分：严重程度+发生概率</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154820.png" alt="img"></p>
+<p>对，记得当时有个文化shock还蛮有趣的小点就是，当时有个风险是员工absent，然后写应对措施，我说搞时刻表，然后其他人：推迟上班的时间或者改变工作环境。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>其实这个项目还有超级多的东西，当时TD课第一节课搞WBS、PBS和GANTT的图，第二节课搞投资和收益计算，第三节课是风险评估，参与程度递减，到最后一节课就除了汇报叭叭两句就完全没太参与进去，不知道在干嘛了T^T</p>
+<p>反正最后结论就是要养bio的鸡，唔。</p>
 ]]></content>
       <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
+        <category>NANTE_S5</category>
+        <category>PRO20</category>
       </categories>
       <tags>
-        <tag>Paris</tag>
+        <tag>SOFTSKILLS</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>那些细碎而美好的存在</title>
-    <url>/2022/02/01/%E7%BB%86%E7%A2%8E%E8%80%8C%E7%BE%8E%E5%A5%BD/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>一个持续更新的日常记录</p>
-<span id="more"></span>
-<h1 id="2022-2-1"><a href="#2022-2-1" class="headerlink" title="2022_2_1"></a>2022_2_1</h1><p>我画画真好看，嘿嘿</p>
-<div align="center">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221428.png"height="200"><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221611.png" height="200">
-    </div>
-
-
-
-<p>以及，新的学期新的摸鱼</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221742.png" alt="img"></p>
-<h1 id="2022-2-2"><a href="#2022-2-2" class="headerlink" title="2022_2_2"></a>2022_2_2</h1><p>-经过一天的讨论，滑雪假兜兜转转起起伏伏，最终成为了和学长一起的法国自驾游（开心期待</p>
-<p>-希望快点长大到可以开着车向着随机方向选择随机地点随机停留的那天</p>
-<p>-莫名其妙的去测了MBTI，第三次了吧，真的好神奇，还是INFJ，从高考填志愿到大一再到今天，前辈们留下的东西是真的太厉害了。</p>
-<div align="center">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220202235702.png"height="200">    </div>
-# 2022_2_3
-
-安然给的国家爸爸发的大白兔，四舍五入我也收到大使馆的春节礼物啦
-
-<div align="center">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207223907.png"height="200">    </div>
-
-<h1 id="2022-2-4"><a href="#2022-2-4" class="headerlink" title="2022_2_4"></a>2022_2_4</h1><p>很难不记录</p>
-<div align="center">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220204154934.png"height="200">    </div>
-
-<h1 id="2022-2-7"><a href="#2022-2-7" class="headerlink" title="2022_2_7"></a>2022_2_7</h1><p>周六周末没有学习，可恶</p>
-<p>看到一个好有意思的财神爷饭，周五做给大家吃，期待复刻，嘿嘿</p>
-<div align="center">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207223313.png"height="200">    </div>]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
   </entry>
   <entry>
     <title>序言</title>
@@ -949,5 +910,63 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
       <tags>
         <tag>测试</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>那些细碎而美好的存在</title>
+    <url>/2022/02/01/%E7%BB%86%E7%A2%8E%E8%80%8C%E7%BE%8E%E5%A5%BD/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>一个持续更新的日常记录</p>
+<span id="more"></span>
+<h1 id="2022-2-1"><a href="#2022-2-1" class="headerlink" title="2022_2_1"></a>2022_2_1</h1><p>我画画真好看，嘿嘿</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221428.png"height="200"><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221611.png" height="200">
+    </div>
+
+
+
+<p>以及，新的学期新的摸鱼</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201221742.png" alt="img" style="zoom:50%;" /></p>
+<h1 id="2022-2-2"><a href="#2022-2-2" class="headerlink" title="2022_2_2"></a>2022_2_2</h1><p>-经过一天的讨论，滑雪假兜兜转转起起伏伏，最终成为了和学长一起的法国自驾游（开心期待</p>
+<p>-希望快点长大到可以开着车向着随机方向选择随机地点随机停留的那天</p>
+<p>-莫名其妙的去测了MBTI，第三次了吧，真的好神奇，还是INFJ，从高考填志愿到大一再到今天，前辈们留下的东西是真的太厉害了。</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220202235702.png"height="200">    </div>
+# 2022_2_3
+
+安然给的国家爸爸发的大白兔，四舍五入我也收到大使馆的春节礼物啦
+
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207223907.png"height="200">    </div>
+
+<h1 id="2022-2-4"><a href="#2022-2-4" class="headerlink" title="2022_2_4"></a>2022_2_4</h1><p>很难不记录</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220204154934.png"height="200">    </div>
+
+<h1 id="2022-2-7"><a href="#2022-2-7" class="headerlink" title="2022_2_7"></a>2022_2_7</h1><p>周六周末没有学习，可恶</p>
+<p>看到一个好有意思的财神爷饭，周五做给大家吃，期待复刻，嘿嘿</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207223313.png"height="200">    </div>
+
+<h1 id="2022-2-9"><a href="#2022-2-9" class="headerlink" title="2022_2_9"></a>2022_2_9</h1><p>关于财神饭的复刻,成功!</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220211191730.png"height="200">    </div>
+
+<h1 id="2022-2-10"><a href="#2022-2-10" class="headerlink" title="2022_2_10"></a>2022_2_10</h1><p>谷爱凌nb！！！！！以及抓住摸鱼的zwl子</p>
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220211191929.png"height="200"> <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220211192132.png"height="200">    </div>
+# 2022_2_11
+
+摸了一个谷爱凌和意外好吃的番茄牛奶辣椒粥
+
+<div align="center">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220213210356.png"height="200"><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220213210423.png" height="200">
+    </div>
+
+<h1 id="2022-2-12"><a href="#2022-2-12" class="headerlink" title="2022_2_12"></a>2022_2_12</h1><p>旅行途中遇到的可可爱爱的善意们~</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220213210228.png" alt="img" style="zoom:50%;" /></p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
   </entry>
 </search>
