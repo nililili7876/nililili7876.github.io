@@ -407,31 +407,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>ANG-01</title>
-    <url>/2022/02/06/ANG-01/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>Welcome to the ‘metaverse’.(From BBC 6 Minute English)</p>
-<p>Links：<a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2022/ep-220106">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2022/ep-220106</a></p>
-<span id="more"></span>
-<h1 id="1-5-minutes的introduction"><a href="#1-5-minutes的introduction" class="headerlink" title="1.5 minutes的introduction"></a>1.5 minutes的introduction</h1><p>The topic I chose to talk about is &lt;&lt;<em>Welcome to the ‘metaverse’</em>&gt;&gt;. </p>
-<p>So to begin with, what is metavers? According to the video, metaverse means a virtual-reality space in which users can interact with a computer-generated environment and other users. Recently, Facebook announced that it was hiring ten thousand new workers to develop <strong>VR</strong> for the ‘metaverse’, according to  Mark Zuckerberg, the Facebook boss,” in the future we’ll all spend much of our time living and working in the ‘metaverse’ “. But people hold different opinions about it.</p>
-<p>Some supporters think it can make a great difference to our living world. They believe that with the technology of  metaverse,  everything that we do on our phone today can be done in 3-D. </p>
-<p>But there are also some negative opinions. For example,some people called VR ‘ vomity reality ’,because wearing the headset of VR makes them feel sick, maybe because it’s so <strong>unwieldy</strong> .</p>
-<p>From my perspective, I hold a supportive attitude towards this new technology as it seems so cool which can make our world more convenient .</p>
-<h1 id="2-new-keywords"><a href="#2-new-keywords" class="headerlink" title="2 new keywords"></a>2 new keywords</h1><p>VR: virtual-reality,a hypothetical three-dimensional visual world created by a computer; user wears special goggles and fiber optic gloves etc., and can enter and move about in this world and interact with objects as if inside it</p>
-<p>unwieldy: difficult to move or carry because it’s so heavy, large or strangely shaped</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>所以元宇宙就是VR? VR OU AR ?</p>
-<p>看了一些科普，就是有比较像头号玩家那种世界（或许赛博朋克的那种？。感觉就是，元宇宙感觉是个画大饼的不太实的概念（</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ANG</category>
-      </categories>
-      <tags>
-        <tag>metaverse</tag>
-        <tag>PRE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ALGPR-3</title>
     <url>/2022/02/21/ALGPR-3/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>ALGPR的第三周</p>
@@ -480,6 +455,52 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>ALGPR-4</title>
+    <url>/2022/02/28/ALGPR-4/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>关于算法的第四周</p>
+<span id="more"></span>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="Listes-chainees"><a href="#Listes-chainees" class="headerlink" title="Listes chainées"></a>Listes chainées</h2><p>En utilisant une structure de liste chainée dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour: </p>
+<ul>
+<li>afficher les éléments de liste(打印)</li>
+<li>ajouter un éléments à la fin de la liste(增)</li>
+<li>rechercher une valeur avec renvoi du nombre de valeurs présentes dans la liste(查)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">type</span><br><span class="line">	elementSimplementChiane: Enregistrement</span><br><span class="line">		type valeur,</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">		suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">type</span><br><span class="line">	elementEntier: Enregistrement</span><br><span class="line">		type valeur</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Afficher"><a href="#Afficher" class="headerlink" title="Afficher"></a>Afficher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">afficherElement(Lien ElementEntier début)</span><br><span class="line">paramètre: Lien sur ElementEntier</span><br><span class="line">resultat: vide</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début non vide) alors</span><br><span class="line">		écrire(début -&gt; valeur)//也可以写成contenu(début).valeur</span><br><span class="line">		afficherElement(début -&gt; suivant)//contenu(début).suivant</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter"><a href="#Ajouter" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">ajoutFin(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		contenu(début).suivant &lt;- ajoutFin(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		contenu(début).valeur &lt;- val;</span><br><span class="line">		contenu(début).suivant &lt;- NULL;</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Rechercher"><a href="#Rechercher" class="headerlink" title="Rechercher"></a>Rechercher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">rechercheNbVal(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(contenu(début).valeur = val)</span><br><span class="line">			nb &lt;- nb+1</span><br><span class="line">		finsi</span><br><span class="line">		nb &lt;- nb+rechercheNbVal(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		nb&lt;-0</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Liste-doublement-chainees"><a href="#Liste-doublement-chainees" class="headerlink" title="Liste doublement chainées"></a>Liste doublement chainées</h2><p>En utilisant une structure de liste doublement chainées dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour:</p>
+<ul>
+<li>ajouter un éléments à la bonne place dans une liste triée,</li>
+<li>supprimer un élément dont la valeur est donnée en paramètre.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter-1"><a href="#Ajouter-1" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line">	</span><br><span class="line">ajoutTrié(Lien ElementEntier début, Entier val)</span><br><span class="line">Variable: Lien ElementEntierDbl tmp</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(val &lt; contenu(début).valeur)</span><br><span class="line">			tmp &lt;- noveau()</span><br><span class="line">			contenu(tmp).valeur &lt;- val</span><br><span class="line">			contenu(tmp).suivant &lt;- début</span><br><span class="line">			//insère</span><br><span class="line">			contenu(précrédent) &lt;- contenu(début).précrédent</span><br><span class="line">			contenu(début).précrédent &lt;- tmp</span><br><span class="line">			début &lt;- tmp</span><br><span class="line">		sinon</span><br><span class="line">			contenu(début).précrédent &lt;- ajoutTrié(contenu(début).suivant,val)</span><br><span class="line">		finsi</span><br><span class="line">	sinon</span><br><span class="line">	 	début &lt;- noveau()</span><br><span class="line">		contenu(début).valeur &lt;- val</span><br><span class="line">		</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Arbres-binaires"><a href="#Arbres-binaires" class="headerlink" title="Arbres binaires"></a>Arbres binaires</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type NoeudArbreBinaire: Enregistrement</span><br><span class="line">	type valeur,</span><br><span class="line">	lien NoeudArbreBinaire fg,</span><br><span class="line">	NoeudArbreBinaire fd,</span><br><span class="line">Fin_enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Fonction-parcoursPrefixe"><a href="#Fonction-parcoursPrefixe" class="headerlink" title="Fonction parcoursPréfixe"></a>Fonction parcoursPréfixe</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Début</span><br><span class="line">	afficher(racine -&gt; valeur)</span><br><span class="line">	si racine -&gt; fg non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fg)</span><br><span class="line">	fin_si</span><br><span class="line">	si racine -&gt; fd non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fd)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Recherche"><a href="#Recherche" class="headerlink" title="Recherche"></a>Recherche</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Booleen &lt;- existe(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">		si(noeud.valeur = val) alors</span><br><span class="line">			renvoyer VRAI</span><br><span class="line">		sinon </span><br><span class="line">			renvoyer existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)//注意这里一定是ou</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">另一种写法</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">			renvoyer (noeud.valeur = val) OU existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Supprime"><a href="#Supprime" class="headerlink" title="Supprime[]"></a>Supprime[]</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lien NoeudEntier &lt;- supprimeFeuille(lien NoeudEntier, Entier val)</span><br><span class="line">efface()、nouveau()</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(noeud.fg = vide ET noeud.fd = vide ET noeud.valeur = val)</span><br><span class="line">			efface(noeud)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fg &lt;- supprimeFeuille(noeud.fg , val)</span><br><span class="line">			noeud.fd &lt;- supprimeFeuille(noeud.fd , val)</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">	renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter-2"><a href="#Ajouter-2" class="headerlink" title="Ajouter"></a>Ajouter</h3><h4 id="Haute"><a href="#Haute" class="headerlink" title="Haute"></a>Haute</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Entier &lt;- hauteur(lien NoeudEntier noeud)</span><br><span class="line">Début</span><br><span class="line">	variable: entier g,d=0//放这里吗？？？？是的</span><br><span class="line">	si(noeud.fg is not vide) alors</span><br><span class="line">		g &lt;- hauteur(noeud.fd)</span><br><span class="line">	finsi</span><br><span class="line">	si(noeud.fd is not vide) alors</span><br><span class="line">		d &lt;- hauteur(noeud.fd)</span><br><span class="line">	finsi</span><br><span class="line">	h &lt;- 1+ max(g,d)</span><br><span class="line">    renvoyer h</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>ajouter dans la branche la plus courte d’un arbre une valeur passée en paramètre(在树的最短分支上添加一个参数中传递的值)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//[用树高来判断存在问题]---&gt;树的最小深度问题</span><br><span class="line">lien NoeudEntier &lt;- ajoutHtMin(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(hauteur(noeud-&gt;fg) &lt; hauteur(noeud-&gt;fd))</span><br><span class="line">			noeud.fg &lt;- ajoutHtMin(noeud-&gt;fg, val)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fd &lt;- ajoutHtMin(noeud-&gt;fd, val)	</span><br><span class="line">	sinon</span><br><span class="line">		nouveau.valeur &lt;- val</span><br><span class="line">		nouveau.fg &lt;- NULL</span><br><span class="line">		nouveau.fd &lt;- NULL</span><br><span class="line">    	noeud &lt;- nouveau()</span><br><span class="line">    finsi</span><br><span class="line">    renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Arbres-binaires-de-recherche-ABR-enracinement"><a href="#Arbres-binaires-de-recherche-ABR-enracinement" class="headerlink" title="Arbres binaires de recherche(ABR): enracinement"></a>Arbres binaires de recherche(ABR): enracinement</h2><p>Définition : Un ABR est un arbre dont les valeurs des noeuds appartiennent à un ensemble totalement ordonné et les conditions équivalentes suivantes sont vérifiées:</p>
+<p>​    La liste des valeurs en ordre infixe est croissante</p>
+<p>​    Pour tout noeud x de valeur v, les valeurs des noeuds de la branche gauche de x sont inférieures ou égales à v et les valeurs des noeuds de la branche droite de x sont surpérieures ou égales à v (左节点要小于根节点，右节点要大于根结点)</p>
+<p>二叉查找树的查找会更快</p>
+<h3 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h3><p>constituer</p>
+<p>用parcoursInfixe()创建//中序</p>
+<p>inferieur, superieur(), abr()//都是布尔型函数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">specification:</span><br><span class="line">	fonction: super &lt;- superieur(racine , x)</span><br><span class="line">	parametres: lien NoeudArbreBinaire racine, Entier x</span><br><span class="line">	resultat: booleen</span><br><span class="line"></span><br><span class="line">Debut</span><br><span class="line">variables locales</span><br><span class="line">	booleen b &lt;- (x &gt;= racine-&gt;valeur)</span><br><span class="line">	choix selon</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et</span><br><span class="line">					superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer b</span><br><span class="line">	fin_choix_selon</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h1 id="CM"><a href="#CM" class="headerlink" title="CM"></a>CM</h1><p>真后悔，没去</p>
+<p>待补</p>
+<p>看了一眼，大概c++的语法。好耶！</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CCUBE_Chapitre1</title>
     <url>/2022/02/04/CCUBE-01/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
@@ -497,6 +518,123 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
         <category>NANTE_S6</category>
         <category>CCUBE</category>
       </categories>
+  </entry>
+  <entry>
+    <title>ANG</title>
+    <url>/2022/02/06/ANG-01/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>From BBC 6 Minute English.(<a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english</a> )</p>
+<span id="more"></span>
+<h1 id="Welcome-to-the-‘metaverse’"><a href="#Welcome-to-the-‘metaverse’" class="headerlink" title="Welcome to the ‘metaverse’"></a>Welcome to the ‘metaverse’</h1><p>Links：<a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2022/ep-220106">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2022/ep-220106</a></p>
+<h2 id="1-5-minutes的introduction"><a href="#1-5-minutes的introduction" class="headerlink" title="1.5 minutes的introduction"></a>1.5 minutes的introduction</h2><p>The topic I chose to talk about is &lt;&lt;<em>Welcome to the ‘metaverse’</em>&gt;&gt;. </p>
+<p>So to begin with, what is metavers? According to the video, metaverse means a virtual-reality space in which users can interact with a computer-generated environment and other users. Recently, Facebook announced that it was hiring ten thousand new workers to develop <strong>VR</strong> for the ‘metaverse’, according to  Mark Zuckerberg, the Facebook boss,” in the future we’ll all spend much of our time living and working in the ‘metaverse’ “. But people hold different opinions about it.</p>
+<p>Some supporters think it can make a great difference to our living world. They believe that with the technology of  metaverse,  everything that we do on our phone today can be done in 3-D. </p>
+<p>But there are also some negative opinions. For example,some people called VR ‘ vomity reality ’,because wearing the headset of VR makes them feel sick, maybe because it’s so <strong>unwieldy</strong> .</p>
+<p>From my perspective, I hold a supportive attitude towards this new technology as it seems so cool which can make our world more convenient .</p>
+<h2 id="2-new-keywords"><a href="#2-new-keywords" class="headerlink" title="2 new keywords"></a>2 new keywords</h2><p>VR: virtual-reality,a hypothetical three-dimensional visual world created by a computer; user wears special goggles and fiber optic gloves etc., and can enter and move about in this world and interact with objects as if inside it</p>
+<p>unwieldy: difficult to move or carry because it’s so heavy, large or strangely shaped</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>所以元宇宙就是VR? VR OU AR ?</p>
+<p>看了一些科普，就是有比较像头号玩家那种世界（或许赛博朋克的那种？。感觉就是，元宇宙感觉是个画大饼的不太实的概念（</p>
+<h1 id="Body-language-online"><a href="#Body-language-online" class="headerlink" title="Body language online"></a>Body language online</h1><p>Links: <a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english/ep-211209">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english/ep-211209</a></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The topic I chose to talk about is ‘Body language online’. </p>
+<p>As we know, body language is important when we communicate with others. By using some hand gestures and facial expressions, we can make the conversation more natural. But during the Covid <strong>pandemic</strong>,  the communication tend to move online to be video meetings by using software like Zoom and Skype. So, in that case, how has body language changed in the world of online video meetings?</p>
+<p>Firstly, eye contact. In face-to-face meetings, we immediately see someone’s reaction to what we’ve said through eye contact, but using a web camera to make eye contact is almost impossible in online meetings and this often creates a kind of ‘distance’ effect.—&gt; ? </p>
+<p>Secondly, pause. It was completely normal to have a one-minute pause in a room with one another because we knew when we’re thinking but if we don’t hear someone speak on video, we may ask them if there are some Internet problems.—&gt; Slow down.</p>
+<p>Last but not the least, smile or laughing. <em>Erica</em> , a communications expert from the conversation, points out that laughing often happens in <strong>unison</strong>,  so it is much less likely that we laugh and smile on camera. Laughing is often done in unison where we can quickly pick up the energy of someone smiling or laughing and feed off of that and laugh together. When it comes to screen delays, the fact that it’s not natural to see our own camera – being distracted by that – we are much less likely to laugh and smile. —&gt;<strong>Water cooler effect.</strong></p>
+<p>That’s all.</p>
+<h2 id="New-words"><a href="#New-words" class="headerlink" title="New words"></a>New words</h2><p><strong>Water cooler effect</strong>: it’s an American expression to describe informal conversations between people at work.—&gt; Talk someting informal out of the topic.</p>
+<p><strong>In Unison</strong>: it means happening together and at the same time </p>
+<p><strong>Pandemic</strong>: 流行病 </p>
+<p>noun: a widespread outbreak of an infectious disease and many people are infected at the same time</p>
+<p>adjective: existing everywhere</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ANG</category>
+      </categories>
+      <tags>
+        <tag>metaverse</tag>
+        <tag>BBC_6mintues</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATHS-TP1</title>
+    <url>/2022/02/22/MATH-TP1/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>MATHS_TP1: Initiation Matlab – Equation de la chaleur 1D</p>
+<span id="more"></span>
+<h1 id="Initiation"><a href="#Initiation" class="headerlink" title="Initiation"></a>Initiation</h1><p>注释：%</p>
+<p>显示：disp、fprintf</p>
+<p>vecteur: x = [x1,x2……,xn] %空格或者逗号都可以；vecteur colonne</p>
+<p>冒号：5：-1：1 %表示5到1以-1为间隔的vecteur</p>
+<p>linspace：是Matlab中的均分计算指令，用于产生x1,x2之间的N点行线性的矢量。其中x1、x2、N分别为起始值、终止值、元素个数。若默认N，默认点数为100</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>MATHS</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PRO20</title>
+    <url>/2022/02/07/PRO20/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>趁着可能对P2E有点用处的东风，把上学期一个很有意思的softskill给整理了。</p>
+<span id="more"></span>
+<h1 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h1><p>就是一个教怎么组织项目的课，具体实例是建养鸡场，选址、选鸡蛋品种（bio或者非bio）、然后风险评估啥的。以下是一些有趣的概念的大略整理。</p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Définitions"></a>Définitions</h2><p>Project: Un ensemble de tâches coordonnées accomplies par des personnes utilisant des moyens dans le but de répondre au besoin<br>du client avec la qualité demandée en temps et coûts maitrisés</p>
+<p>Gestion de projet: La Gestion de projet s’assure du déroulement opérationnel prévu dans la planification. Elle reporte à la fonction de pilotage de projet sur l’avancement, elle sollicite des prises de décisions et remonte des alertes</p>
+<p>Management de projet: Direction + Gestion = Management</p>
+<h2 id="Cadrage-框架-du-Project"><a href="#Cadrage-框架-du-Project" class="headerlink" title="Cadrage(框架) du Project"></a>Cadrage(框架) du Project</h2><ul>
+<li><p>L’identité du client</p>
+</li>
+<li><p>Les objectifs du projet</p>
+<p>目标应该满足的原则：S(Spécifique)M(Mesurable)A(Atteignable)R(Réaliste)T(Temporel)</p>
+</li>
+<li><p>Les délais à respecter</p>
+</li>
+<li><p>Les limites du budget à investir</p>
+</li>
+<li><p>L’utilité du projet</p>
+</li>
+<li><p>La rentabilité escomptée du projet</p>
+</li>
+</ul>
+<h2 id="Decomposer-le-projet"><a href="#Decomposer-le-projet" class="headerlink" title="Décomposer le projet"></a>Décomposer le projet</h2><h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><p>WBS : Work Breakdown Structure. Décomposition hiérarchique, axée sur les livrables, du travail que l’équipe de projet doit exécuter pour atteindre les objectifs du projet et produire les livrables souhaités.</p>
+<p>做法：</p>
+<ul>
+<li>Spécifier les objectifs du projet</li>
+<li>Identifier spécifiquement les produits, services ou résultats </li>
+<li>Identifier les travaux</li>
+<li>Subdiviser les éléments jusqu’au niveau qui permet la<br>planification et le contrôle</li>
+</ul>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153543.png" alt="img"></p>
+<h3 id="PBS"><a href="#PBS" class="headerlink" title="PBS"></a>PBS</h3><p>Product Breakdown Structure</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207215522.png" alt="img" style="zoom:80%;" /></p>
+<p>注：当时好像是上课没咋讲这个，后来是按照网上(ZHIHU)的文章说，WBS是以项目结果为导向的工作过程的结构分解，PBS是项目交付结果本身为对象进行的层级结构分解来做的。具体到这道题，就是，WBS包含整个项目管理，PBS只是按照养鸡场本身按照地基、外部建筑、内部建筑、服务设施这样子分级。</p>
+<h2 id="Diagramme-de-Gantt"><a href="#Diagramme-de-Gantt" class="headerlink" title="Diagramme de Gantt"></a>Diagramme de Gantt</h2><p>C’est un outil que peut aider à définir un planning réaliste.</p>
+<p>貌似就是一个项目的时间的进程表，找出要做的事情，然后分析发生的先后或者并行关系，搞成条状表就行了。</p>
+<p>Exemple(红色表示关键事件) : </p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153744.png" alt="img"></p>
+<h2 id="PERT"><a href="#PERT" class="headerlink" title="PERT"></a>PERT</h2><p>C’est un outil souvent utilisée pour la gestion de projets  importants et à long terme. </p>
+<p>PERT = Program Evaluation and Review Technic (ou CPM: Critical Path Method)</p>
+<p>就是把上面那个Gantt图给这样子表示，然后往里面写时间就行，然后选时间最大的那条线（不是我说，这好像算法里面的那个啥图</p>
+<p>Exemple:</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154725.png" alt="img"></p>
+<h2 id="Les-risques"><a href="#Les-risques" class="headerlink" title="Les risques"></a>Les risques</h2><p>Principaux risques  incluent  Risques financiers, Risques marchés, Risques technologiques, Risques liés à l’équipe.</p>
+<p> Pour gestion des risques, on peut utiliser le table comme ça,</p>
+<p>就是两部分：严重程度+发生概率</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154820.png" alt="img"></p>
+<p>对，记得当时有个文化shock还蛮有趣的小点就是，当时有个风险是员工absent，然后写应对措施，我说搞时刻表，然后其他人：推迟上班的时间或者改变工作环境。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>其实这个项目还有超级多的东西，当时TD课第一节课搞WBS、PBS和GANTT的图，第二节课搞投资和收益计算，第三节课是风险评估，参与程度递减，到最后一节课就除了汇报叭叭两句就完全没太参与进去，不知道在干嘛了T^T</p>
+<p>反正最后结论就是要养bio的鸡，唔。</p>
+]]></content>
+      <categories>
+        <category>NANTE_S5</category>
+        <category>PRO20</category>
+      </categories>
+      <tags>
+        <tag>SOFTSKILLS</tag>
+      </tags>
   </entry>
   <entry>
     <title>SSTEM_DS</title>
@@ -615,64 +753,153 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>PRO20</title>
-    <url>/2022/02/07/PRO20/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>趁着可能对P2E有点用处的东风，把上学期一个很有意思的softskill给整理了。</p>
+    <title>Voyage-Paris</title>
+    <url>/2021/12/08/Voyage-Paris/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
 <span id="more"></span>
-<h1 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h1><p>就是一个教怎么组织项目的课，具体实例是建养鸡场，选址、选鸡蛋品种（bio或者非bio）、然后风险评估啥的。以下是一些有趣的概念的大略整理。</p>
-<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Définitions"></a>Définitions</h2><p>Project: Un ensemble de tâches coordonnées accomplies par des personnes utilisant des moyens dans le but de répondre au besoin<br>du client avec la qualité demandée en temps et coûts maitrisés</p>
-<p>Gestion de projet: La Gestion de projet s’assure du déroulement opérationnel prévu dans la planification. Elle reporte à la fonction de pilotage de projet sur l’avancement, elle sollicite des prises de décisions et remonte des alertes</p>
-<p>Management de projet: Direction + Gestion = Management</p>
-<h2 id="Cadrage-框架-du-Project"><a href="#Cadrage-框架-du-Project" class="headerlink" title="Cadrage(框架) du Project"></a>Cadrage(框架) du Project</h2><ul>
-<li><p>L’identité du client</p>
+<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
+<p>铁塔上看的夕阳</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224029.png" alt="img"></p>
+<p>超好看！</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
+<p>顺便打卡盗梦空间的桥</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223509.png" alt="img"></p>
+<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223552.png" alt="img"></p>
+<p>未来的日子永远爱跳跳虎</p>
+<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
+<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
+<p>雕塑真的好厉害。</p>
+<p>伊斯兰教的艺术印象蛮深。</p>
+<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
+<center class="half">
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223807.png"width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223713.png" width="200"/>
+    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223655.png" width="200"/>
+</center>
+
+
+
+<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
+<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
+<p>梵高好看</p>
+<p>莫奈也好好看</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223903.png" alt="img"></p>
+<p>还有个点彩画派</p>
+<p>很喜欢的画买了明信片但忘记画家了T^T</p>
+<p>出来时的公园，好看到分不清是不是在画中</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223951.png" alt="img"></p>
+<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
+<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
+<p>外面比里面好看</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224001.png" alt="img"></p>
+<p>只记得里面的钟摆了</p>
+<p>看到了一群穿正装的未来大佬们</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224010.png" alt="img"></p>
+<p>听说隔壁是很法国很厉害的大学</p>
+<p>站在那里真的会有</p>
+<p>一种学术的</p>
+<p>很厉害的感觉</p>
+<p>听说建筑仿的是意大利的万神庙</p>
+<p>那就正好</p>
+<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224046.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224018.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>Voyage</category>
+      </categories>
+      <tags>
+        <tag>Paris</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSTEM01</title>
+    <url>/2021/12/06/SSTEM01/</url>
+    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
+<span id="more"></span>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
+<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
+<p>But pour cet TD: Analyse externe d’un systèmes</p>
+<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
+<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
+<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
+<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
+<p><strong>Exemples:</strong></p>
+<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
+<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
+<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
+<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
+<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
+<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
+<p><strong>Exemples:</strong></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
 </li>
-<li><p>Les objectifs du projet</p>
-<p>目标应该满足的原则：S(Spécifique)M(Mesurable)A(Atteignable)R(Réaliste)T(Temporel)</p>
-</li>
-<li><p>Les délais à respecter</p>
-</li>
-<li><p>Les limites du budget à investir</p>
-</li>
-<li><p>L’utilité du projet</p>
-</li>
-<li><p>La rentabilité escomptée du projet</p>
+<li><p><strong>Faire un diagramme de bloc</strong></p>
+<p>Le système est placé au centre du <u>schéma</u>.</p>
+<p>Il est relié aux parties prenantes.</p>
+<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
 </li>
 </ul>
-<h2 id="Decomposer-le-projet"><a href="#Decomposer-le-projet" class="headerlink" title="Décomposer le projet"></a>Décomposer le projet</h2><h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><p>WBS : Work Breakdown Structure. Décomposition hiérarchique, axée sur les livrables, du travail que l’équipe de projet doit exécuter pour atteindre les objectifs du projet et produire les livrables souhaités.</p>
-<p>做法：</p>
+<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
+<p>​    <strong>Règles de dessin</strong></p>
 <ul>
-<li>Spécifier les objectifs du projet</li>
-<li>Identifier spécifiquement les produits, services ou résultats </li>
-<li>Identifier les travaux</li>
-<li>Subdiviser les éléments jusqu’au niveau qui permet la<br>planification et le contrôle</li>
+<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
+</li>
+<li><p>Le Système est représenté comme <em>un bloc</em></p>
+</li>
+<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
+</li>
+<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
+<p>2 types: extend, include(<u>obligatoirement</u>).</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
+</li>
 </ul>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153543.png" alt="img"></p>
-<h3 id="PBS"><a href="#PBS" class="headerlink" title="PBS"></a>PBS</h3><p>Product Breakdown Structure</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207215522.png" alt="img" style="zoom:80%;" /></p>
-<p>注：当时好像是上课没咋讲这个，后来是按照网上(ZHIHU)的文章说，WBS是以项目结果为导向的工作过程的结构分解，PBS是项目交付结果本身为对象进行的层级结构分解来做的。具体到这道题，就是，WBS包含整个项目管理，PBS只是按照养鸡场本身按照地基、外部建筑、内部建筑、服务设施这样子分级。</p>
-<h2 id="Diagramme-de-Gantt"><a href="#Diagramme-de-Gantt" class="headerlink" title="Diagramme de Gantt"></a>Diagramme de Gantt</h2><p>C’est un outil que peut aider à définir un planning réaliste.</p>
-<p>貌似就是一个项目的时间的进程表，找出要做的事情，然后分析发生的先后或者并行关系，搞成条状表就行了。</p>
-<p>Exemple(红色表示关键事件) : </p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153744.png" alt="img"></p>
-<h2 id="PERT"><a href="#PERT" class="headerlink" title="PERT"></a>PERT</h2><p>C’est un outil souvent utilisée pour la gestion de projets  importants et à long terme. </p>
-<p>PERT = Program Evaluation and Review Technic (ou CPM: Critical Path Method)</p>
-<p>就是把上面那个Gantt图给这样子表示，然后往里面写时间就行，然后选时间最大的那条线（不是我说，这好像算法里面的那个啥图</p>
-<p>Exemple:</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154725.png" alt="img"></p>
-<h2 id="Les-risques"><a href="#Les-risques" class="headerlink" title="Les risques"></a>Les risques</h2><p>Principaux risques  incluent  Risques financiers, Risques marchés, Risques technologiques, Risques liés à l’équipe.</p>
-<p> Pour gestion des risques, on peut utiliser le table comme ça,</p>
-<p>就是两部分：严重程度+发生概率</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154820.png" alt="img"></p>
-<p>对，记得当时有个文化shock还蛮有趣的小点就是，当时有个风险是员工absent，然后写应对措施，我说搞时刻表，然后其他人：推迟上班的时间或者改变工作环境。</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>其实这个项目还有超级多的东西，当时TD课第一节课搞WBS、PBS和GANTT的图，第二节课搞投资和收益计算，第三节课是风险评估，参与程度递减，到最后一节课就除了汇报叭叭两句就完全没太参与进去，不知道在干嘛了T^T</p>
-<p>反正最后结论就是要养bio的鸡，唔。</p>
+<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
+</li>
+<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
+</li>
+<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
+</li>
+</ul>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
+<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
+<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
+<p>Radio-réveil:收音机闹钟</p>
+<p>Sert:服务、帮助</p>
+<p>Apporte：带来，提供</p>
+<p>Mise:安装</p>
+<p>oeuvre:工作</p>
+<p>Diffuser:扩散、传播</p>
+<p>Schéma:图解、提纲</p>
+<p>Figurer:画出、代表</p>
+<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
+<p>Flux:流动</p>
+<p>Obligatoirement：必须的</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
+<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
+<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
+<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
+<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
+<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
 ]]></content>
       <categories>
         <category>NANTE_S5</category>
-        <category>PRO20</category>
+        <category>SSTEM</category>
       </categories>
       <tags>
-        <tag>SOFTSKILLS</tag>
+        <tag>SysML</tag>
       </tags>
   </entry>
   <entry>
@@ -765,156 +992,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </categories>
   </entry>
   <entry>
-    <title>SSTEM01</title>
-    <url>/2021/12/06/SSTEM01/</url>
-    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
-<span id="more"></span>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
-<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
-<p>But pour cet TD: Analyse externe d’un systèmes</p>
-<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
-<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
-<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
-<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
-<p><strong>Exemples:</strong></p>
-<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
-<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
-<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
-<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
-<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
-<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
-<p><strong>Exemples:</strong></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
-</li>
-<li><p><strong>Faire un diagramme de bloc</strong></p>
-<p>Le système est placé au centre du <u>schéma</u>.</p>
-<p>Il est relié aux parties prenantes.</p>
-<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
-</li>
-<li><p>Le Système est représenté comme <em>un bloc</em></p>
-</li>
-<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
-</li>
-<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
-<p>2 types: extend, include(<u>obligatoirement</u>).</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
-</li>
-<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
-</li>
-<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
-</li>
-</ul>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
-<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
-<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
-<p>Radio-réveil:收音机闹钟</p>
-<p>Sert:服务、帮助</p>
-<p>Apporte：带来，提供</p>
-<p>Mise:安装</p>
-<p>oeuvre:工作</p>
-<p>Diffuser:扩散、传播</p>
-<p>Schéma:图解、提纲</p>
-<p>Figurer:画出、代表</p>
-<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
-<p>Flux:流动</p>
-<p>Obligatoirement：必须的</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
-<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
-<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
-<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
-<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
-<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
-]]></content>
-      <categories>
-        <category>NANTE_S5</category>
-        <category>SSTEM</category>
-      </categories>
-      <tags>
-        <tag>SysML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Voyage-Paris</title>
-    <url>/2021/12/08/Voyage-Paris/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
-<span id="more"></span>
-<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
-<p>铁塔上看的夕阳</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224029.png" alt="img"></p>
-<p>超好看！</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/png/20211209000220.png" alt="img"></p>
-<p>顺便打卡盗梦空间的桥</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223509.png" alt="img"></p>
-<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223552.png" alt="img"></p>
-<p>未来的日子永远爱跳跳虎</p>
-<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
-<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
-<p>雕塑真的好厉害。</p>
-<p>伊斯兰教的艺术印象蛮深。</p>
-<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
-<center class="half">
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223807.png"width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223713.png" width="200"/>
-    <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223655.png" width="200"/>
-</center>
-
-
-
-<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
-<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
-<p>梵高好看</p>
-<p>莫奈也好好看</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223903.png" alt="img"></p>
-<p>还有个点彩画派</p>
-<p>很喜欢的画买了明信片但忘记画家了T^T</p>
-<p>出来时的公园，好看到分不清是不是在画中</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201223951.png" alt="img"></p>
-<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
-<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
-<p>外面比里面好看</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224001.png" alt="img"></p>
-<p>只记得里面的钟摆了</p>
-<p>看到了一群穿正装的未来大佬们</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224010.png" alt="img"></p>
-<p>听说隔壁是很法国很厉害的大学</p>
-<p>站在那里真的会有</p>
-<p>一种学术的</p>
-<p>很厉害的感觉</p>
-<p>听说建筑仿的是意大利的万神庙</p>
-<p>那就正好</p>
-<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224046.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220201224018.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
-      </categories>
-      <tags>
-        <tag>Paris</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>algorithm-绪论</title>
     <url>/2021/12/06/algorithm01/</url>
     <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
@@ -935,31 +1012,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       <tags>
         <tag>ALGORITHM</tag>
         <tag>算法基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>序言</title>
-    <url>/2021/12/05/hello-world/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
-<p>截断测试</p>
-<span id="more"></span>
-<p>图片测试：</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
-<p>数学公式测试</p>
-<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
-<script type="math/tex; mode=display">
-T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
-<p>侧边栏多级分类</p>
-<p>FLUID整理</p>
-<p>Pro20整理</p>
-<p>SSTEM一周一记</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -1012,14 +1064,42 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
     <img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220213210356.png"height="200"><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220213210423.png" height="200">
     </div>
 
-<h1 id="2022-2-12"><a href="#2022-2-12" class="headerlink" title="2022_2_12"></a>2022_2_12</h1><p>旅行途中遇到的可可爱爱的善意们~</p>
+<h1 id="2022-2-12"><a href="#2022-2-12" class="headerlink" title="2022_2_12"></a>2022_2_12</h1><p>旅行途中遇到的可可爱爱的善意们</p>
 <p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220213210228.png" alt="img" style="zoom:50%;" /></p>
 <h1 id="2022-2-21"><a href="#2022-2-21" class="headerlink" title="2022_2_21"></a>2022_2_21</h1><p>春天来了</p>
-<p><img src="undefined" alt="img" style="zoom:50%;" /></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220307224454.png" alt="img"  /></p>
+<h1 id="2022-3-4"><a href="#2022-3-4" class="headerlink" title="2022_3_4"></a>2022_3_4</h1><p>可以做梦不补考吗(靓女流泪</p>
+<h1 id="2022-3-7"><a href="#2022-3-7" class="headerlink" title="2022_3_7"></a>2022_3_7</h1><p>好好听</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220307224135.png" alt="img"  /></p>
 ]]></content>
       <categories>
         <category>生活区</category>
         <category>杂谈</category>
       </categories>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/12/05/hello-world/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
+<p>截断测试</p>
+<span id="more"></span>
+<p>图片测试：</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202112041747093.jpg" alt="img"></p>
+<p>数学公式测试</p>
+<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
+<script type="math/tex; mode=display">
+T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
+<p>侧边栏多级分类</p>
+<p>FLUID整理</p>
+<p>Pro20整理</p>
+<p>SSTEM一周一记</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
   </entry>
 </search>
