@@ -20,45 +20,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ALGPR-1</title>
-    <url>/2022/02/08/ALGPR-1/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第一周的算法课都讲了什么T.T</p>
-<span id="more"></span>
-<h1 id="CM1"><a href="#CM1" class="headerlink" title="CM1"></a>CM1</h1><h1 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h1><p>从字符的匹配开始讲的，说了蛮多伪代码的东西，真难看(bushi</p>
-<h2 id="字符的匹配"><a href="#字符的匹配" class="headerlink" title="字符的匹配"></a>字符的匹配</h2><p>貌似没啥，就是熟悉一下子法语书写的伪代码</p>
-<h3 id="L"><a href="#L" class="headerlink" title="L"></a>L</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables://定义变量</span><br><span class="line">	Caractère:courant//串，定义为字符类型</span><br><span class="line">	Entier:nbL//拿来计数的int</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbL &lt;- 0</span><br><span class="line">	courant &lt;- lire()//这里的读是一个个读</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27;) </span><br><span class="line">			nbL &lt;- nbL+1</span><br><span class="line">		finsi</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbL)//输出</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="LE"><a href="#LE" class="headerlink" title="LE"></a>LE</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:courant,précédent</span><br><span class="line">	Entier:nbLE</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	précédent &lt;- &#x27;.&#x27;</span><br><span class="line">	courant &lt;- lire()</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27; ET courant = &#x27;E&#x27;) </span><br><span class="line">			nbLE &lt;- nbLE+1</span><br><span class="line">		finsi</span><br><span class="line">		précédent &lt;- courant</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="ELLE"><a href="#ELLE" class="headerlink" title="ELLE"></a>ELLE</h3><p>就是把子串固定，然后拿courant去做匹配</p>
-<p>以ELELLELLLLEL找ELLE为例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Chaine de caractère:courant,motif//motif是子串</span><br><span class="line">	Caractère: c</span><br><span class="line">	Entier: nbMotif	</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbMotif &lt;- 0</span><br><span class="line">	afficher(&quot;quel est le motif cherché?&quot;)</span><br><span class="line">	motif &lt;- lire()</span><br><span class="line">	//初始化串为...courant[0]</span><br><span class="line">	pour i de 0 à taille(motif)-2</span><br><span class="line">		courant[i] &lt;- &#x27;.&#x27;</span><br><span class="line">	finpour</span><br><span class="line">	c &lt;- lire()</span><br><span class="line">	courant[taille(motif)-1] &lt;- c</span><br><span class="line">	</span><br><span class="line">	//串变成了...E</span><br><span class="line">	</span><br><span class="line">	tantque(c != &#x27;.&#x27;)</span><br><span class="line">		si (courant = motif)</span><br><span class="line">			nbMotif &lt;- nbMotif+1</span><br><span class="line">		finsi</span><br><span class="line">		//从后往前移</span><br><span class="line">		pour i de 0 à taille(motif)-2</span><br><span class="line">			courant[i] &lt;- courant[i+1]</span><br><span class="line">		finpour</span><br><span class="line">		c &lt;- lire()</span><br><span class="line">		courant[taille(motif)-1] &lt;- c</span><br><span class="line">	fintanque</span><br><span class="line">	</span><br><span class="line">	afficher(nbMotif)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>妙的！时间复杂度的话N*n，可能比用想的的find函数要好哎</p>
-<p>实际写的好艰难,string里面真的好多东西哦:(</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nbMotif=<span class="number">0</span>;</span><br><span class="line">   string courant,motif;</span><br><span class="line">   cin&gt;&gt;courant;</span><br><span class="line">   cin&gt;&gt;motif;</span><br><span class="line">   <span class="keyword">size_t</span> p=<span class="number">0</span>;<span class="comment">//注意返回类型</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>((p = courant.<span class="built_in">find</span>(motif,p)) != courant.npos)</span><br><span class="line">    &#123;</span><br><span class="line">        nbMotif++;</span><br><span class="line">        p += motif.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;nbMotif&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="老师的奇妙方法"><a href="#老师的奇妙方法" class="headerlink" title="老师的奇妙方法"></a>老师的奇妙方法</h3><p>用矩阵还是图的知识来实现匹配(example:LE</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:c</span><br><span class="line">	Entier: s,ss,x,nbLE</span><br><span class="line">	Tableau d&#x27;Entiers m &lt;- &#123;&#123;0,1,0,2&#125;,&#123;0,1,0,2&#125;&#125;</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	s &lt;- 0</span><br><span class="line">	tantque(s != 2)</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">		x &lt;- 0</span><br><span class="line">		si(c == &#x27;L&#x27;) alors x &lt;- 1	finsi</span><br><span class="line">		si(c == &#x27;E&#x27;) alors x &lt;- 2	finsi</span><br><span class="line">		si(c == &#x27;.&#x27;) alors x &lt;- 3	finsi</span><br><span class="line">		</span><br><span class="line">		ss &lt;- m(s,x)</span><br><span class="line">		si (s = 1 ET x = 2) alors nbLE &lt;- nbLE+1 finsi</span><br><span class="line">		s&lt;- ss</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>时间复杂度的话应该有两部分，一是在写m矩阵那里，然后是主程序。主程序的时间复杂度的话，有个逐个读的n，然后剩下的话我感觉有m^2。—-&gt; ?</p>
-<p>矩阵长这样</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220209020654.png" alt="img" style="zoom:50%;" /></p>
-<p>好像是在用s和x来表示前后两次的匹配的结果</p>
-<p>但感觉就是时间也多了，空间也给浪费了嘛(；′⌒`)</p>
-<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><p>“肘，再逝一次”</p>
-<h2 id="TD题"><a href="#TD题" class="headerlink" title="TD题"></a>TD题</h2><h3 id="题"><a href="#题" class="headerlink" title="题"></a>题</h3><p>1.1 Points et polygone (enregistrement)<br>On souhaite calculer quelques propri´et´es d’un polygone quelconque (p´erim etre, longueur<br>moyenne des arˆetes, boite englobante). La boite englobante est un rectangle englobant le<br>polygone de cˆot´es paralleles aux axes. Les sommets du polygone sont donn´es (dans l’ordre<br>de parcours du p´erimetre) par leurs coordonn´ees r´eelles dans un plan et le nom du point<br>(caractere).<br>La liste de coordonn´ees est suppos´ee correcte et n’est lue qu’une seule fois. Exemple de<br>fichier a lire :<br>— 1,5 3,7 A<br>— 6,4 4,6 B<br>— 5,8 8,3 C<br>— …<br>— 1,5 3,7 A (dernier sommet a ne pas ajouter dans la structure de donn´ees)<br>Les coordonn´ees du dernier sommet sont ´egales a celles du premier. Ce sommet permet<br>uniquement de d´etecter la fermeture du polygone. Il ne faut pas rentrer ce sommet dans la<br>structure de donn´ees.<br>— Proposez une structure de donn´ee pour stocker le polygone,<br>— Ecrivez l’algorithme principal pour lire le fichier contenant les points du polygone, ´<br>appeler les fonctions permettant de calculer les propri´et´es demand´ees et afficher les<br>r´esultats a l’´ecran,<br>— Ecrivez les fonctions secondaires pour calculer la longueur du p´erim`etre, calculer la ´<br>longueur moyenne des arˆetes et d´elimiter la boite englobante.</p>
-<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types//应该是在定义结构体</span><br><span class="line">	point: enregistrement</span><br><span class="line">		caratère: nom</span><br><span class="line">		réel: x</span><br><span class="line">		réel: y</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">	tabPoint: tableau de point</span><br><span class="line"></span><br><span class="line">Algorithme principal Polygone</span><br><span class="line">Variables://定义变量</span><br><span class="line">	tabPoint polygone,boiteEnglobante</span><br><span class="line">	réel périmètre, longMoy</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	polygone &lt;- lirePolygone(&quot;data.txt&quot;)//读文件</span><br><span class="line">	périmètre &lt;- calcuPérimètre(polygone)//周长</span><br><span class="line">	longMoy &lt;- périmètre/taille(polygone)//棱边数</span><br><span class="line">	boiteEnglobante &lt;- calculBoite(polygone)</span><br><span class="line">Fin Algorithme</span><br></pre></td></tr></table></figure>
-<h3 id="我想的C"><a href="#我想的C" class="headerlink" title="我想的C++"></a>我想的C++</h3><p>不知道能不能成</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> Nom;</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    <span class="keyword">float</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">distance</span><span class="params">(Point A, Point B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygone</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    vecter&lt;Point&gt; PonitsDePolygone;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="comment">//构造函数</span></span><br><span class="line">    	<span class="built_in">Polygone</span>(Point A)&#123;PonitsDePolygone.<span class="built_in">push</span>(A);&#125;</span><br><span class="line">    	<span class="comment">//拷贝构造 ou 析构？？？？</span></span><br><span class="line">    	<span class="keyword">float</span> périmè<span class="built_in">tre</span>();</span><br><span class="line">    	<span class="function"><span class="keyword">int</span> <span class="title">longMoy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>KMP,CM和未完成的C++就是明天一定</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ALGORITHM</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>KMP</tag>
-        <tag>string</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -330,6 +291,45 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>ALGPR-1</title>
+    <url>/2022/02/08/ALGPR-1/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第一周的算法课都讲了什么T.T</p>
+<span id="more"></span>
+<h1 id="CM1"><a href="#CM1" class="headerlink" title="CM1"></a>CM1</h1><h1 id="TD1"><a href="#TD1" class="headerlink" title="TD1"></a>TD1</h1><p>从字符的匹配开始讲的，说了蛮多伪代码的东西，真难看(bushi</p>
+<h2 id="字符的匹配"><a href="#字符的匹配" class="headerlink" title="字符的匹配"></a>字符的匹配</h2><p>貌似没啥，就是熟悉一下子法语书写的伪代码</p>
+<h3 id="L"><a href="#L" class="headerlink" title="L"></a>L</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables://定义变量</span><br><span class="line">	Caractère:courant//串，定义为字符类型</span><br><span class="line">	Entier:nbL//拿来计数的int</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbL &lt;- 0</span><br><span class="line">	courant &lt;- lire()//这里的读是一个个读</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27;) </span><br><span class="line">			nbL &lt;- nbL+1</span><br><span class="line">		finsi</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbL)//输出</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="LE"><a href="#LE" class="headerlink" title="LE"></a>LE</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:courant,précédent</span><br><span class="line">	Entier:nbLE</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	précédent &lt;- &#x27;.&#x27;</span><br><span class="line">	courant &lt;- lire()</span><br><span class="line">	tantque(courant != &#x27;.&#x27;)</span><br><span class="line">		si(courant == &#x27;L&#x27; ET courant = &#x27;E&#x27;) </span><br><span class="line">			nbLE &lt;- nbLE+1</span><br><span class="line">		finsi</span><br><span class="line">		précédent &lt;- courant</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="ELLE"><a href="#ELLE" class="headerlink" title="ELLE"></a>ELLE</h3><p>就是把子串固定，然后拿courant去做匹配</p>
+<p>以ELELLELLLLEL找ELLE为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Chaine de caractère:courant,motif//motif是子串</span><br><span class="line">	Caractère: c</span><br><span class="line">	Entier: nbMotif	</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbMotif &lt;- 0</span><br><span class="line">	afficher(&quot;quel est le motif cherché?&quot;)</span><br><span class="line">	motif &lt;- lire()</span><br><span class="line">	//初始化串为...courant[0]</span><br><span class="line">	pour i de 0 à taille(motif)-2</span><br><span class="line">		courant[i] &lt;- &#x27;.&#x27;</span><br><span class="line">	finpour</span><br><span class="line">	c &lt;- lire()</span><br><span class="line">	courant[taille(motif)-1] &lt;- c</span><br><span class="line">	</span><br><span class="line">	//串变成了...E</span><br><span class="line">	</span><br><span class="line">	tantque(c != &#x27;.&#x27;)</span><br><span class="line">		si (courant = motif)</span><br><span class="line">			nbMotif &lt;- nbMotif+1</span><br><span class="line">		finsi</span><br><span class="line">		//从后往前移</span><br><span class="line">		pour i de 0 à taille(motif)-2</span><br><span class="line">			courant[i] &lt;- courant[i+1]</span><br><span class="line">		finpour</span><br><span class="line">		c &lt;- lire()</span><br><span class="line">		courant[taille(motif)-1] &lt;- c</span><br><span class="line">	fintanque</span><br><span class="line">	</span><br><span class="line">	afficher(nbMotif)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>妙的！时间复杂度的话N*n，可能比用想的的find函数要好哎</p>
+<p>实际写的好艰难,string里面真的好多东西哦:(</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nbMotif=<span class="number">0</span>;</span><br><span class="line">   string courant,motif;</span><br><span class="line">   cin&gt;&gt;courant;</span><br><span class="line">   cin&gt;&gt;motif;</span><br><span class="line">   <span class="keyword">size_t</span> p=<span class="number">0</span>;<span class="comment">//注意返回类型</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>((p = courant.<span class="built_in">find</span>(motif,p)) != courant.npos)</span><br><span class="line">    &#123;</span><br><span class="line">        nbMotif++;</span><br><span class="line">        p += motif.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;nbMotif&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="老师的奇妙方法"><a href="#老师的奇妙方法" class="headerlink" title="老师的奇妙方法"></a>老师的奇妙方法</h3><p>用矩阵还是图的知识来实现匹配(example:LE</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables:</span><br><span class="line">	Caractère:c</span><br><span class="line">	Entier: s,ss,x,nbLE</span><br><span class="line">	Tableau d&#x27;Entiers m &lt;- &#123;&#123;0,1,0,2&#125;,&#123;0,1,0,2&#125;&#125;</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	nbLE &lt;- 0</span><br><span class="line">	s &lt;- 0</span><br><span class="line">	tantque(s != 2)</span><br><span class="line">		courant &lt;- lire()</span><br><span class="line">		x &lt;- 0</span><br><span class="line">		si(c == &#x27;L&#x27;) alors x &lt;- 1	finsi</span><br><span class="line">		si(c == &#x27;E&#x27;) alors x &lt;- 2	finsi</span><br><span class="line">		si(c == &#x27;.&#x27;) alors x &lt;- 3	finsi</span><br><span class="line">		</span><br><span class="line">		ss &lt;- m(s,x)</span><br><span class="line">		si (s = 1 ET x = 2) alors nbLE &lt;- nbLE+1 finsi</span><br><span class="line">		s&lt;- ss</span><br><span class="line">	fintanque</span><br><span class="line">	afficher(nbLE)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>时间复杂度的话应该有两部分，一是在写m矩阵那里，然后是主程序。主程序的时间复杂度的话，有个逐个读的n，然后剩下的话我感觉有m^2。—-&gt; ?</p>
+<p>矩阵长这样</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220209020654.png" alt="img" style="zoom:50%;" /></p>
+<p>好像是在用s和x来表示前后两次的匹配的结果</p>
+<p>但感觉就是时间也多了，空间也给浪费了嘛(；′⌒`)</p>
+<h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><p>“肘，再逝一次”</p>
+<h2 id="TD题"><a href="#TD题" class="headerlink" title="TD题"></a>TD题</h2><h3 id="题"><a href="#题" class="headerlink" title="题"></a>题</h3><p>1.1 Points et polygone (enregistrement)<br>On souhaite calculer quelques propri´et´es d’un polygone quelconque (p´erim etre, longueur<br>moyenne des arˆetes, boite englobante). La boite englobante est un rectangle englobant le<br>polygone de cˆot´es paralleles aux axes. Les sommets du polygone sont donn´es (dans l’ordre<br>de parcours du p´erimetre) par leurs coordonn´ees r´eelles dans un plan et le nom du point<br>(caractere).<br>La liste de coordonn´ees est suppos´ee correcte et n’est lue qu’une seule fois. Exemple de<br>fichier a lire :<br>— 1,5 3,7 A<br>— 6,4 4,6 B<br>— 5,8 8,3 C<br>— …<br>— 1,5 3,7 A (dernier sommet a ne pas ajouter dans la structure de donn´ees)<br>Les coordonn´ees du dernier sommet sont ´egales a celles du premier. Ce sommet permet<br>uniquement de d´etecter la fermeture du polygone. Il ne faut pas rentrer ce sommet dans la<br>structure de donn´ees.<br>— Proposez une structure de donn´ee pour stocker le polygone,<br>— Ecrivez l’algorithme principal pour lire le fichier contenant les points du polygone, ´<br>appeler les fonctions permettant de calculer les propri´et´es demand´ees et afficher les<br>r´esultats a l’´ecran,<br>— Ecrivez les fonctions secondaires pour calculer la longueur du p´erim`etre, calculer la ´<br>longueur moyenne des arˆetes et d´elimiter la boite englobante.</p>
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types//应该是在定义结构体</span><br><span class="line">	point: enregistrement</span><br><span class="line">		caratère: nom</span><br><span class="line">		réel: x</span><br><span class="line">		réel: y</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">	tabPoint: tableau de point</span><br><span class="line"></span><br><span class="line">Algorithme principal Polygone</span><br><span class="line">Variables://定义变量</span><br><span class="line">	tabPoint polygone,boiteEnglobante</span><br><span class="line">	réel périmètre, longMoy</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	polygone &lt;- lirePolygone(&quot;data.txt&quot;)//读文件</span><br><span class="line">	périmètre &lt;- calcuPérimètre(polygone)//周长</span><br><span class="line">	longMoy &lt;- périmètre/taille(polygone)//棱边数</span><br><span class="line">	boiteEnglobante &lt;- calculBoite(polygone)</span><br><span class="line">Fin Algorithme</span><br></pre></td></tr></table></figure>
+<h3 id="我想的C"><a href="#我想的C" class="headerlink" title="我想的C++"></a>我想的C++</h3><p>不知道能不能成</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> Nom;</span><br><span class="line">    <span class="keyword">float</span> x;</span><br><span class="line">    <span class="keyword">float</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">distance</span><span class="params">(Point A, Point B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((A.x-B.x)*(A.x-B.x)+(A.y-B.y)*(A.y-B.y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygone</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    vecter&lt;Point&gt; PonitsDePolygone;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="comment">//构造函数</span></span><br><span class="line">    	<span class="built_in">Polygone</span>(Point A)&#123;PonitsDePolygone.<span class="built_in">push</span>(A);&#125;</span><br><span class="line">    	<span class="comment">//拷贝构造 ou 析构？？？？</span></span><br><span class="line">    	<span class="keyword">float</span> périmè<span class="built_in">tre</span>();</span><br><span class="line">    	<span class="function"><span class="keyword">int</span> <span class="title">longMoy</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>KMP,CM和未完成的C++就是明天一定</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>KMP</tag>
+        <tag>string</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGPR-2</title>
     <url>/2022/02/09/ALGPR-2/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第二周的算法课都讲了什么T.T</p>
@@ -407,6 +407,52 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>ALGPR-4</title>
+    <url>/2022/02/28/ALGPR-4/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>关于算法的第四周</p>
+<span id="more"></span>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="Listes-chainees"><a href="#Listes-chainees" class="headerlink" title="Listes chainées"></a>Listes chainées</h2><p>En utilisant une structure de liste chainée dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour: </p>
+<ul>
+<li>afficher les éléments de liste(打印)</li>
+<li>ajouter un éléments à la fin de la liste(增)</li>
+<li>rechercher une valeur avec renvoi du nombre de valeurs présentes dans la liste(查)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">types</span><br><span class="line">	elementSimplementChiane: Enregistrement</span><br><span class="line">		type valeur,</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">types</span><br><span class="line">	elementEntier: Enregistrement</span><br><span class="line">		type valeur</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Afficher"><a href="#Afficher" class="headerlink" title="Afficher"></a>Afficher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">afficherElement(Lien ElementEntier début)</span><br><span class="line">paramètre: Lien sur ElementEntier</span><br><span class="line">resultat: vide</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début non vide) alors</span><br><span class="line">		écrire(début -&gt; valeur)//也可以写成contenu(début).valeur</span><br><span class="line">		afficherElement(début -&gt; suivant)//contenu(début).suivant</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter"><a href="#Ajouter" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">ajoutFin(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		contenu(début).suivant &lt;- ajoutFin(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		contenu(début).valeur &lt;- val;</span><br><span class="line">		contenu(début).suivant &lt;- NULL;</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Rechercher"><a href="#Rechercher" class="headerlink" title="Rechercher"></a>Rechercher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">rechercheNbVal(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(contenu(début).valeur = val)</span><br><span class="line">			nb &lt;- nb+1</span><br><span class="line">		finsi</span><br><span class="line">		nb &lt;- nb+rechercheNbVal(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		nb&lt;-0</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Liste-doublement-chainees"><a href="#Liste-doublement-chainees" class="headerlink" title="Liste doublement chainées"></a>Liste doublement chainées</h2><p>En utilisant une structure de liste doublement chainées dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour:</p>
+<ul>
+<li>ajouter un éléments à la bonne place dans une liste triée,</li>
+<li>supprimer un élément dont la valeur est donnée en paramètre.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter-1"><a href="#Ajouter-1" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line">	</span><br><span class="line">ajoutTrié(Lien ElementEntier début, Entier val)</span><br><span class="line">Variable: Lien ElementEntierDbl tmp</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(val &lt; contenu(début).valeur)</span><br><span class="line">			tmp &lt;- noveau()</span><br><span class="line">			contenu(tmp).valeur &lt;- val</span><br><span class="line">			//insère</span><br><span class="line">			contenu(tmp).suivant &lt;- début</span><br><span class="line">			contenu(tmp).précrédent &lt;- contenu(début).précrédent</span><br><span class="line">			contenu(début).précrédent &lt;- tmp</span><br><span class="line">			début &lt;- tmp</span><br><span class="line">		sinon</span><br><span class="line">			contenu(début).suivant &lt;- ajoutTrié(contenu(début).suivant,val)</span><br><span class="line">		finsi</span><br><span class="line">	sinon</span><br><span class="line">	 	début &lt;- noveau()</span><br><span class="line">		contenu(début).valeur &lt;- val</span><br><span class="line">		</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Arbres-binaires"><a href="#Arbres-binaires" class="headerlink" title="Arbres binaires"></a>Arbres binaires</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type NoeudArbreBinaire: Enregistrement</span><br><span class="line">	type valeur,</span><br><span class="line">	lien NoeudArbreBinaire fg,</span><br><span class="line">	lien NoeudArbreBinaire fd,</span><br><span class="line">Fin_enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Fonction-parcoursPrefixe"><a href="#Fonction-parcoursPrefixe" class="headerlink" title="Fonction parcoursPréfixe"></a>Fonction parcoursPréfixe</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Début</span><br><span class="line">	afficher(racine -&gt; valeur)</span><br><span class="line">	si racine -&gt; fg non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fg)</span><br><span class="line">	fin_si</span><br><span class="line">	si racine -&gt; fd non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fd)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Recherche"><a href="#Recherche" class="headerlink" title="Recherche"></a>Recherche</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Booleen &lt;- existe(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud n&#x27;est pas vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">		si(noeud.valeur = val) alors</span><br><span class="line">			renvoyer VRAI</span><br><span class="line">		sinon </span><br><span class="line">			renvoyer existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)//注意这里一定是ou</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">另一种写法</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">			renvoyer (noeud.valeur = val) OU existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Supprime"><a href="#Supprime" class="headerlink" title="Supprime[]"></a>Supprime[]</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lien NoeudEntier &lt;- supprimeFeuille(lien NoeudEntier, Entier val)</span><br><span class="line">efface()、nouveau()</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(noeud.fg = vide ET noeud.fd = vide ET noeud.valeur = val)</span><br><span class="line">			efface(noeud)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fg &lt;- supprimeFeuille(noeud.fg , val)</span><br><span class="line">			noeud.fd &lt;- supprimeFeuille(noeud.fd , val)</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">	renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter-2"><a href="#Ajouter-2" class="headerlink" title="Ajouter"></a>Ajouter</h3><h4 id="Haute"><a href="#Haute" class="headerlink" title="Haute"></a>Haute</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Entier &lt;- hauteur(lien NoeudEntier noeud)</span><br><span class="line">Début</span><br><span class="line">	variable: entier g,d=0//放这里吗？？？？是的</span><br><span class="line">	si(noeud.fg is not vide) alors</span><br><span class="line">		g &lt;- hauteur(noeud.fg)</span><br><span class="line">	finsi</span><br><span class="line">	si(noeud.fd is not vide) alors</span><br><span class="line">		d &lt;- hauteur(noeud.fd)</span><br><span class="line">	finsi</span><br><span class="line">	h &lt;- 1+ max(g,d)</span><br><span class="line">    renvoyer h</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>ajouter dans la branche la plus courte d’un arbre une valeur passée en paramètre(在树的最短分支上添加一个参数中传递的值)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//[用树高来判断存在问题]---&gt;树的最小深度问题</span><br><span class="line">lien NoeudEntier &lt;- ajoutHtMin(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(hauteur(noeud-&gt;fg) &lt; hauteur(noeud-&gt;fd))</span><br><span class="line">			noeud.fg &lt;- ajoutHtMin(noeud-&gt;fg, val)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fd &lt;- ajoutHtMin(noeud-&gt;fd, val)	</span><br><span class="line">	sinon</span><br><span class="line">		nouveau.valeur &lt;- val</span><br><span class="line">		nouveau.fg &lt;- NULL</span><br><span class="line">		nouveau.fd &lt;- NULL</span><br><span class="line">    	noeud &lt;- nouveau()</span><br><span class="line">    finsi</span><br><span class="line">    renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Arbres-binaires-de-recherche-ABR-enracinement"><a href="#Arbres-binaires-de-recherche-ABR-enracinement" class="headerlink" title="Arbres binaires de recherche(ABR): enracinement"></a>Arbres binaires de recherche(ABR): enracinement</h2><p>Définition : Un ABR est un arbre dont les valeurs des noeuds appartiennent à un ensemble totalement ordonné et les conditions équivalentes suivantes sont vérifiées:</p>
+<p>​    La liste des valeurs en ordre infixe est croissante</p>
+<p>​    Pour tout noeud x de valeur v, les valeurs des noeuds de la branche gauche de x sont inférieures ou égales à v et les valeurs des noeuds de la branche droite de x sont surpérieures ou égales à v (左节点要小于根节点，右节点要大于根结点)</p>
+<p>二叉查找树的查找会更快</p>
+<h3 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h3><p>constituer</p>
+<p>用parcoursInfixe()创建//中序</p>
+<p>inferieur, superieur(), abr()//都是布尔型函数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">specification:</span><br><span class="line">	fonction: super &lt;- superieur(racine , x)</span><br><span class="line">	parametres: lien NoeudArbreBinaire racine, Entier x</span><br><span class="line">	resultat: booleen</span><br><span class="line"></span><br><span class="line">Debut</span><br><span class="line">variables locales</span><br><span class="line">	booleen b &lt;- (x &gt;= racine-&gt;valeur)</span><br><span class="line">	choix selon</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et</span><br><span class="line">					superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer b</span><br><span class="line">	fin_choix_selon</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h1 id="CM"><a href="#CM" class="headerlink" title="CM"></a>CM</h1><p>真后悔，没去</p>
+<p>待补</p>
+<p>看了一眼，大概c++的语法。好耶！</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
+      </categories>
+  </entry>
+  <entry>
     <title>ALGPR-3</title>
     <url>/2022/02/21/ALGPR-3/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>ALGPR的第三周</p>
@@ -453,52 +499,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       <tags>
         <tag>指针与引用</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>ALGPR-4</title>
-    <url>/2022/02/28/ALGPR-4/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>关于算法的第四周</p>
-<span id="more"></span>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="Listes-chainees"><a href="#Listes-chainees" class="headerlink" title="Listes chainées"></a>Listes chainées</h2><p>En utilisant une structure de liste chainée dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour: </p>
-<ul>
-<li>afficher les éléments de liste(打印)</li>
-<li>ajouter un éléments à la fin de la liste(增)</li>
-<li>rechercher une valeur avec renvoi du nombre de valeurs présentes dans la liste(查)</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">types</span><br><span class="line">	elementSimplementChiane: Enregistrement</span><br><span class="line">		type valeur,</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">types</span><br><span class="line">	elementEntier: Enregistrement</span><br><span class="line">		type valeur</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
-<h3 id="Afficher"><a href="#Afficher" class="headerlink" title="Afficher"></a>Afficher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">afficherElement(Lien ElementEntier début)</span><br><span class="line">paramètre: Lien sur ElementEntier</span><br><span class="line">resultat: vide</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début non vide) alors</span><br><span class="line">		écrire(début -&gt; valeur)//也可以写成contenu(début).valeur</span><br><span class="line">		afficherElement(début -&gt; suivant)//contenu(début).suivant</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="Ajouter"><a href="#Ajouter" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">ajoutFin(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		contenu(début).suivant &lt;- ajoutFin(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		contenu(début).valeur &lt;- val;</span><br><span class="line">		contenu(début).suivant &lt;- NULL;</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="Rechercher"><a href="#Rechercher" class="headerlink" title="Rechercher"></a>Rechercher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">rechercheNbVal(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(contenu(début).valeur = val)</span><br><span class="line">			nb &lt;- nb+1</span><br><span class="line">		finsi</span><br><span class="line">		nb &lt;- nb+rechercheNbVal(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		nb&lt;-0</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h2 id="Liste-doublement-chainees"><a href="#Liste-doublement-chainees" class="headerlink" title="Liste doublement chainées"></a>Liste doublement chainées</h2><p>En utilisant une structure de liste doublement chainées dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour:</p>
-<ul>
-<li>ajouter un éléments à la bonne place dans une liste triée,</li>
-<li>supprimer un élément dont la valeur est donnée en paramètre.</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
-<h3 id="Ajouter-1"><a href="#Ajouter-1" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line">	</span><br><span class="line">ajoutTrié(Lien ElementEntier début, Entier val)</span><br><span class="line">Variable: Lien ElementEntierDbl tmp</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(val &lt; contenu(début).valeur)</span><br><span class="line">			tmp &lt;- noveau()</span><br><span class="line">			contenu(tmp).valeur &lt;- val</span><br><span class="line">			//insère</span><br><span class="line">			contenu(tmp).suivant &lt;- début</span><br><span class="line">			contenu(tmp).précrédent &lt;- contenu(début).précrédent</span><br><span class="line">			contenu(début).précrédent &lt;- tmp</span><br><span class="line">			début &lt;- tmp</span><br><span class="line">		sinon</span><br><span class="line">			contenu(début).suivant &lt;- ajoutTrié(contenu(début).suivant,val)</span><br><span class="line">		finsi</span><br><span class="line">	sinon</span><br><span class="line">	 	début &lt;- noveau()</span><br><span class="line">		contenu(début).valeur &lt;- val</span><br><span class="line">		</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h2 id="Arbres-binaires"><a href="#Arbres-binaires" class="headerlink" title="Arbres binaires"></a>Arbres binaires</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type NoeudArbreBinaire: Enregistrement</span><br><span class="line">	type valeur,</span><br><span class="line">	lien NoeudArbreBinaire fg,</span><br><span class="line">	lien NoeudArbreBinaire fd,</span><br><span class="line">Fin_enregistrement</span><br></pre></td></tr></table></figure>
-<h3 id="Fonction-parcoursPrefixe"><a href="#Fonction-parcoursPrefixe" class="headerlink" title="Fonction parcoursPréfixe"></a>Fonction parcoursPréfixe</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Début</span><br><span class="line">	afficher(racine -&gt; valeur)</span><br><span class="line">	si racine -&gt; fg non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fg)</span><br><span class="line">	fin_si</span><br><span class="line">	si racine -&gt; fd non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fd)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="Recherche"><a href="#Recherche" class="headerlink" title="Recherche"></a>Recherche</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Booleen &lt;- existe(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud n&#x27;est pas vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">		si(noeud.valeur = val) alors</span><br><span class="line">			renvoyer VRAI</span><br><span class="line">		sinon </span><br><span class="line">			renvoyer existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)//注意这里一定是ou</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">另一种写法</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">			renvoyer (noeud.valeur = val) OU existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="Supprime"><a href="#Supprime" class="headerlink" title="Supprime[]"></a>Supprime[]</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lien NoeudEntier &lt;- supprimeFeuille(lien NoeudEntier, Entier val)</span><br><span class="line">efface()、nouveau()</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(noeud.fg = vide ET noeud.fd = vide ET noeud.valeur = val)</span><br><span class="line">			efface(noeud)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fg &lt;- supprimeFeuille(noeud.fg , val)</span><br><span class="line">			noeud.fd &lt;- supprimeFeuille(noeud.fd , val)</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">	renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="Ajouter-2"><a href="#Ajouter-2" class="headerlink" title="Ajouter"></a>Ajouter</h3><h4 id="Haute"><a href="#Haute" class="headerlink" title="Haute"></a>Haute</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Entier &lt;- hauteur(lien NoeudEntier noeud)</span><br><span class="line">Début</span><br><span class="line">	variable: entier g,d=0//放这里吗？？？？是的</span><br><span class="line">	si(noeud.fg is not vide) alors</span><br><span class="line">		g &lt;- hauteur(noeud.fg)</span><br><span class="line">	finsi</span><br><span class="line">	si(noeud.fd is not vide) alors</span><br><span class="line">		d &lt;- hauteur(noeud.fd)</span><br><span class="line">	finsi</span><br><span class="line">	h &lt;- 1+ max(g,d)</span><br><span class="line">    renvoyer h</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>ajouter dans la branche la plus courte d’un arbre une valeur passée en paramètre(在树的最短分支上添加一个参数中传递的值)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//[用树高来判断存在问题]---&gt;树的最小深度问题</span><br><span class="line">lien NoeudEntier &lt;- ajoutHtMin(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(hauteur(noeud-&gt;fg) &lt; hauteur(noeud-&gt;fd))</span><br><span class="line">			noeud.fg &lt;- ajoutHtMin(noeud-&gt;fg, val)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fd &lt;- ajoutHtMin(noeud-&gt;fd, val)	</span><br><span class="line">	sinon</span><br><span class="line">		nouveau.valeur &lt;- val</span><br><span class="line">		nouveau.fg &lt;- NULL</span><br><span class="line">		nouveau.fd &lt;- NULL</span><br><span class="line">    	noeud &lt;- nouveau()</span><br><span class="line">    finsi</span><br><span class="line">    renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h2 id="Arbres-binaires-de-recherche-ABR-enracinement"><a href="#Arbres-binaires-de-recherche-ABR-enracinement" class="headerlink" title="Arbres binaires de recherche(ABR): enracinement"></a>Arbres binaires de recherche(ABR): enracinement</h2><p>Définition : Un ABR est un arbre dont les valeurs des noeuds appartiennent à un ensemble totalement ordonné et les conditions équivalentes suivantes sont vérifiées:</p>
-<p>​    La liste des valeurs en ordre infixe est croissante</p>
-<p>​    Pour tout noeud x de valeur v, les valeurs des noeuds de la branche gauche de x sont inférieures ou égales à v et les valeurs des noeuds de la branche droite de x sont surpérieures ou égales à v (左节点要小于根节点，右节点要大于根结点)</p>
-<p>二叉查找树的查找会更快</p>
-<h3 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h3><p>constituer</p>
-<p>用parcoursInfixe()创建//中序</p>
-<p>inferieur, superieur(), abr()//都是布尔型函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">specification:</span><br><span class="line">	fonction: super &lt;- superieur(racine , x)</span><br><span class="line">	parametres: lien NoeudArbreBinaire racine, Entier x</span><br><span class="line">	resultat: booleen</span><br><span class="line"></span><br><span class="line">Debut</span><br><span class="line">variables locales</span><br><span class="line">	booleen b &lt;- (x &gt;= racine-&gt;valeur)</span><br><span class="line">	choix selon</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et</span><br><span class="line">					superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer b</span><br><span class="line">	fin_choix_selon</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h1 id="CM"><a href="#CM" class="headerlink" title="CM"></a>CM</h1><p>真后悔，没去</p>
-<p>待补</p>
-<p>看了一眼，大概c++的语法。好耶！</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ALGORITHM</category>
-      </categories>
   </entry>
   <entry>
     <title>ANG</title>
@@ -576,12 +576,73 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>PRO20</title>
+    <url>/2022/02/07/PRO20/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>趁着可能对P2E有点用处的东风，把上学期一个很有意思的softskill给整理了。</p>
+<span id="more"></span>
+<h1 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h1><p>就是一个教怎么组织项目的课，具体实例是建养鸡场，选址、选鸡蛋品种（bio或者非bio）、然后风险评估啥的。以下是一些有趣的概念的大略整理。</p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Définitions"></a>Définitions</h2><p>Project: Un ensemble de tâches coordonnées accomplies par des personnes utilisant des moyens dans le but de répondre au besoin<br>du client avec la qualité demandée en temps et coûts maitrisés</p>
+<p>Gestion de projet: La Gestion de projet s’assure du déroulement opérationnel prévu dans la planification. Elle reporte à la fonction de pilotage de projet sur l’avancement, elle sollicite des prises de décisions et remonte des alertes</p>
+<p>Management de projet: Direction + Gestion = Management</p>
+<h2 id="Cadrage-框架-du-Project"><a href="#Cadrage-框架-du-Project" class="headerlink" title="Cadrage(框架) du Project"></a>Cadrage(框架) du Project</h2><ul>
+<li><p>L’identité du client</p>
+</li>
+<li><p>Les objectifs du projet</p>
+<p>目标应该满足的原则：S(Spécifique)M(Mesurable)A(Atteignable)R(Réaliste)T(Temporel)</p>
+</li>
+<li><p>Les délais à respecter</p>
+</li>
+<li><p>Les limites du budget à investir</p>
+</li>
+<li><p>L’utilité du projet</p>
+</li>
+<li><p>La rentabilité escomptée du projet</p>
+</li>
+</ul>
+<h2 id="Decomposer-le-projet"><a href="#Decomposer-le-projet" class="headerlink" title="Décomposer le projet"></a>Décomposer le projet</h2><h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><p>WBS : Work Breakdown Structure. Décomposition hiérarchique, axée sur les livrables, du travail que l’équipe de projet doit exécuter pour atteindre les objectifs du projet et produire les livrables souhaités.</p>
+<p>做法：</p>
+<ul>
+<li>Spécifier les objectifs du projet</li>
+<li>Identifier spécifiquement les produits, services ou résultats </li>
+<li>Identifier les travaux</li>
+<li>Subdiviser les éléments jusqu’au niveau qui permet la<br>planification et le contrôle</li>
+</ul>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153543.png" alt="img"></p>
+<h3 id="PBS"><a href="#PBS" class="headerlink" title="PBS"></a>PBS</h3><p>Product Breakdown Structure</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207215522.png" alt="img" style="zoom:80%;" /></p>
+<p>注：当时好像是上课没咋讲这个，后来是按照网上(ZHIHU)的文章说，WBS是以项目结果为导向的工作过程的结构分解，PBS是项目交付结果本身为对象进行的层级结构分解来做的。具体到这道题，就是，WBS包含整个项目管理，PBS只是按照养鸡场本身按照地基、外部建筑、内部建筑、服务设施这样子分级。</p>
+<h2 id="Diagramme-de-Gantt"><a href="#Diagramme-de-Gantt" class="headerlink" title="Diagramme de Gantt"></a>Diagramme de Gantt</h2><p>C’est un outil que peut aider à définir un planning réaliste.</p>
+<p>貌似就是一个项目的时间的进程表，找出要做的事情，然后分析发生的先后或者并行关系，搞成条状表就行了。</p>
+<p>Exemple(红色表示关键事件) : </p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153744.png" alt="img"></p>
+<h2 id="PERT"><a href="#PERT" class="headerlink" title="PERT"></a>PERT</h2><p>C’est un outil souvent utilisée pour la gestion de projets  importants et à long terme. </p>
+<p>PERT = Program Evaluation and Review Technic (ou CPM: Critical Path Method)</p>
+<p>就是把上面那个Gantt图给这样子表示，然后往里面写时间就行，然后选时间最大的那条线（不是我说，这好像算法里面的那个啥图</p>
+<p>Exemple:</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154725.png" alt="img"></p>
+<h2 id="Les-risques"><a href="#Les-risques" class="headerlink" title="Les risques"></a>Les risques</h2><p>Principaux risques  incluent  Risques financiers, Risques marchés, Risques technologiques, Risques liés à l’équipe.</p>
+<p> Pour gestion des risques, on peut utiliser le table comme ça,</p>
+<p>就是两部分：严重程度+发生概率</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154820.png" alt="img"></p>
+<p>对，记得当时有个文化shock还蛮有趣的小点就是，当时有个风险是员工absent，然后写应对措施，我说搞时刻表，然后其他人：推迟上班的时间或者改变工作环境。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>其实这个项目还有超级多的东西，当时TD课第一节课搞WBS、PBS和GANTT的图，第二节课搞投资和收益计算，第三节课是风险评估，参与程度递减，到最后一节课就除了汇报叭叭两句就完全没太参与进去，不知道在干嘛了T^T</p>
+<p>反正最后结论就是要养bio的鸡，唔。</p>
+]]></content>
+      <categories>
+        <category>NANTE_S5</category>
+        <category>PRO20</category>
+      </categories>
+      <tags>
+        <tag>SOFTSKILLS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MVDNet</title>
     <url>/2022/05/20/MVDNet/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>记录第一次看论文与第一次独立运行深度学习代码~</p>
 <span id="more"></span>
 <h1 id="读论文"><a href="#读论文" class="headerlink" title="读论文"></a>读论文</h1><p>太多不懂的了</p>
-<p><img src="C:\Users\nili990221\Desktop\激光雷达与雷达信号的多模融合.png" alt="激光雷达与雷达信号的多模融合"></p>
+<p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E4%B8%8E%E9%9B%B7%E8%BE%BE%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%A4%9A%E6%A8%A1%E8%9E%8D%E5%90%88.png" alt="img" style="zoom:50%;" /></p>
 <h1 id="跑项目"><a href="#跑项目" class="headerlink" title="跑项目"></a>跑项目</h1><p>就总体都超顺利！到目前为止都意想不到的超级顺利！</p>
 <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>anaconda+linux+cuda11.0</p>
 <h3 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h3><ol>
@@ -590,11 +651,11 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
 <li><p>激活/进入：conda activate MVDNet</p>
 </li>
 <li><p>pytorch下载：1.查看cuda版本信息：nvcc —version；2.根据官网<a href="https://pytorch.org/get-started/locally/选择对应版本下载">https://pytorch.org/get-started/locally/选择对应版本下载</a></p>
-<p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220520193341163.png" alt="image-20220520193341163" style="zoom:50%;" /></p>
+<p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193341163.png" alt="img" style="zoom:50%;" /></p>
 </li>
 </ol>
-<h3 id="Detectron2"><a href="#Detectron2" class="headerlink" title="Detectron2"></a>Detectron2</h3><p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220520193706253.png" alt="image-20220520193706253"></p>
-<h3 id="Pycocotools"><a href="#Pycocotools" class="headerlink" title="Pycocotools"></a>Pycocotools</h3><h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><p>下载数据集：<a href="https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，需用学校邮箱注册，等待时间较长（1h以上">https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，需用学校邮箱注册，等待时间较长（1h以上</a></p>
+<h3 id="Detectron2"><a href="#Detectron2" class="headerlink" title="Detectron2"></a>Detectron2</h3><p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193706253.png" alt="img"  /></p>
+<h3 id="Pycocotools"><a href="#Pycocotools" class="headerlink" title="Pycocotools"></a>Pycocotools</h3><h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><p>下载数据集：<a href="https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，">https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，</a> 需用学校邮箱注册，等待时间较长（1h以上</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>武运昌隆</p>
 ]]></content>
       <categories>
@@ -722,64 +783,90 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>PRO20</title>
-    <url>/2022/02/07/PRO20/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>趁着可能对P2E有点用处的东风，把上学期一个很有意思的softskill给整理了。</p>
+    <title>SSTEM01</title>
+    <url>/2021/12/06/SSTEM01/</url>
+    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
 <span id="more"></span>
-<h1 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h1><p>就是一个教怎么组织项目的课，具体实例是建养鸡场，选址、选鸡蛋品种（bio或者非bio）、然后风险评估啥的。以下是一些有趣的概念的大略整理。</p>
-<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Définitions"></a>Définitions</h2><p>Project: Un ensemble de tâches coordonnées accomplies par des personnes utilisant des moyens dans le but de répondre au besoin<br>du client avec la qualité demandée en temps et coûts maitrisés</p>
-<p>Gestion de projet: La Gestion de projet s’assure du déroulement opérationnel prévu dans la planification. Elle reporte à la fonction de pilotage de projet sur l’avancement, elle sollicite des prises de décisions et remonte des alertes</p>
-<p>Management de projet: Direction + Gestion = Management</p>
-<h2 id="Cadrage-框架-du-Project"><a href="#Cadrage-框架-du-Project" class="headerlink" title="Cadrage(框架) du Project"></a>Cadrage(框架) du Project</h2><ul>
-<li><p>L’identité du client</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
+<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
+<p>But pour cet TD: Analyse externe d’un systèmes</p>
+<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
+<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
+<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
+<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
+<p><strong>Exemples:</strong></p>
+<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
+<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
+<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
+<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
+<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
+<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
+<p><strong>Exemples:</strong></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
 </li>
-<li><p>Les objectifs du projet</p>
-<p>目标应该满足的原则：S(Spécifique)M(Mesurable)A(Atteignable)R(Réaliste)T(Temporel)</p>
-</li>
-<li><p>Les délais à respecter</p>
-</li>
-<li><p>Les limites du budget à investir</p>
-</li>
-<li><p>L’utilité du projet</p>
-</li>
-<li><p>La rentabilité escomptée du projet</p>
+<li><p><strong>Faire un diagramme de bloc</strong></p>
+<p>Le système est placé au centre du <u>schéma</u>.</p>
+<p>Il est relié aux parties prenantes.</p>
+<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
 </li>
 </ul>
-<h2 id="Decomposer-le-projet"><a href="#Decomposer-le-projet" class="headerlink" title="Décomposer le projet"></a>Décomposer le projet</h2><h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><p>WBS : Work Breakdown Structure. Décomposition hiérarchique, axée sur les livrables, du travail que l’équipe de projet doit exécuter pour atteindre les objectifs du projet et produire les livrables souhaités.</p>
-<p>做法：</p>
+<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
+<p>​    <strong>Règles de dessin</strong></p>
 <ul>
-<li>Spécifier les objectifs du projet</li>
-<li>Identifier spécifiquement les produits, services ou résultats </li>
-<li>Identifier les travaux</li>
-<li>Subdiviser les éléments jusqu’au niveau qui permet la<br>planification et le contrôle</li>
+<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
+</li>
+<li><p>Le Système est représenté comme <em>un bloc</em></p>
+</li>
+<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
+</li>
+<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
+<p>2 types: extend, include(<u>obligatoirement</u>).</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
+</li>
 </ul>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153543.png" alt="img"></p>
-<h3 id="PBS"><a href="#PBS" class="headerlink" title="PBS"></a>PBS</h3><p>Product Breakdown Structure</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207215522.png" alt="img" style="zoom:80%;" /></p>
-<p>注：当时好像是上课没咋讲这个，后来是按照网上(ZHIHU)的文章说，WBS是以项目结果为导向的工作过程的结构分解，PBS是项目交付结果本身为对象进行的层级结构分解来做的。具体到这道题，就是，WBS包含整个项目管理，PBS只是按照养鸡场本身按照地基、外部建筑、内部建筑、服务设施这样子分级。</p>
-<h2 id="Diagramme-de-Gantt"><a href="#Diagramme-de-Gantt" class="headerlink" title="Diagramme de Gantt"></a>Diagramme de Gantt</h2><p>C’est un outil que peut aider à définir un planning réaliste.</p>
-<p>貌似就是一个项目的时间的进程表，找出要做的事情，然后分析发生的先后或者并行关系，搞成条状表就行了。</p>
-<p>Exemple(红色表示关键事件) : </p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207153744.png" alt="img"></p>
-<h2 id="PERT"><a href="#PERT" class="headerlink" title="PERT"></a>PERT</h2><p>C’est un outil souvent utilisée pour la gestion de projets  importants et à long terme. </p>
-<p>PERT = Program Evaluation and Review Technic (ou CPM: Critical Path Method)</p>
-<p>就是把上面那个Gantt图给这样子表示，然后往里面写时间就行，然后选时间最大的那条线（不是我说，这好像算法里面的那个啥图</p>
-<p>Exemple:</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154725.png" alt="img"></p>
-<h2 id="Les-risques"><a href="#Les-risques" class="headerlink" title="Les risques"></a>Les risques</h2><p>Principaux risques  incluent  Risques financiers, Risques marchés, Risques technologiques, Risques liés à l’équipe.</p>
-<p> Pour gestion des risques, on peut utiliser le table comme ça,</p>
-<p>就是两部分：严重程度+发生概率</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20220207154820.png" alt="img"></p>
-<p>对，记得当时有个文化shock还蛮有趣的小点就是，当时有个风险是员工absent，然后写应对措施，我说搞时刻表，然后其他人：推迟上班的时间或者改变工作环境。</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>其实这个项目还有超级多的东西，当时TD课第一节课搞WBS、PBS和GANTT的图，第二节课搞投资和收益计算，第三节课是风险评估，参与程度递减，到最后一节课就除了汇报叭叭两句就完全没太参与进去，不知道在干嘛了T^T</p>
-<p>反正最后结论就是要养bio的鸡，唔。</p>
+<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
+<p>​    <strong>Règles de dessin</strong></p>
+<ul>
+<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
+</li>
+<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
+</li>
+<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
+</li>
+</ul>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
+<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
+<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
+<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
+<p>Radio-réveil:收音机闹钟</p>
+<p>Sert:服务、帮助</p>
+<p>Apporte：带来，提供</p>
+<p>Mise:安装</p>
+<p>oeuvre:工作</p>
+<p>Diffuser:扩散、传播</p>
+<p>Schéma:图解、提纲</p>
+<p>Figurer:画出、代表</p>
+<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
+<p>Flux:流动</p>
+<p>Obligatoirement：必须的</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
+<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
+<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
+<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
+<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
+<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
 ]]></content>
       <categories>
         <category>NANTE_S5</category>
-        <category>PRO20</category>
+        <category>SSTEM</category>
       </categories>
       <tags>
-        <tag>SOFTSKILLS</tag>
+        <tag>SysML</tag>
       </tags>
   </entry>
   <entry>
@@ -870,93 +957,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
         <category>生活区</category>
         <category>Voyage</category>
       </categories>
-  </entry>
-  <entry>
-    <title>SSTEM01</title>
-    <url>/2021/12/06/SSTEM01/</url>
-    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
-<span id="more"></span>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>SysML: un <u>outil</u> pour modéliser les Systèmes</p>
-<p>But: Analyse et description des systèmes( Besoin, Description de sous-systèmes, Chîne d’information)</p>
-<p>But pour cet TD: Analyse externe d’un systèmes</p>
-<h1 id="Etape（以exemples进行更好说明）"><a href="#Etape（以exemples进行更好说明）" class="headerlink" title="Etape（以exemples进行更好说明）"></a>Etape（以exemples进行更好说明）</h1><h2 id="0-Exemples"><a href="#0-Exemples" class="headerlink" title="0.Exemples"></a>0.Exemples</h2><p>Analyse externe d’un <u>radio-réveil</u>.</p>
-<h2 id="1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme"><a href="#1-Identification-de-la-finalite-des-missions-et-objectifs-du-systeme" class="headerlink" title="1.Identification de la finalité des  missions et objectifs du système"></a>1.Identification de la <em>finalité</em> des  <em>missions</em> et <em>objectifs</em> du système</h2><p>​    <strong>finalité</strong>: Qu’est-ce qu’<u>apporte</u> le Système?à quoi <u>sert</u>-il?</p>
-<p>​    <strong>missions:</strong> Comment le Système contribue-t-il à la <strong>finalité</strong>. Sur quels principes reposent la <u>mise</u> en <u>oeuvre</u> de la finalité?</p>
-<p>​    <strong>objectifs:</strong> Comment le Système met-il en oeuvre ses <strong>missions</strong>?</p>
-<p><strong>Exemples:</strong></p>
-<p>​    <strong>finalité</strong>: réveiller une personne endormie</p>
-<p>​    <strong>missions:</strong>  réveiller l’utilisateur à l’aide d’un signal sonore  (bip ou radio choisie) à une heure prédéfinie. <u>Diffuser</u> le signal sonore émit par une station  radio.</p>
-<p>​    <strong>objectifs:</strong> Émettre un son suffisamment fort pour le réveil (ex: &gt;  90db).</p>
-<h2 id="2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme"><a href="#2-Identification-de-interacteurs-ou-parties-prenantes-du-systeme" class="headerlink" title="2.Identification de interacteurs ou parties prenantes du système"></a>2.Identification de <em>interacteurs</em> ou <em>parties prenantes</em> du système</h2><ul>
-<li><p><strong>Faire une liste des parties prenantes:</strong> les éléments qui sont relies au Systèmes (systèmes physiques, personnes…) via une action sur ce système.</p>
-<p><strong>Note:</strong> Les <strong>éléments interne</strong> du Système <strong>ne font pas</strong> partie des ‘parties prenantes’</p>
-<p><strong>Exemples:</strong></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202115864.png" alt="img"></p>
-</li>
-<li><p><strong>Faire un diagramme de bloc</strong></p>
-<p>Le système est placé au centre du <u>schéma</u>.</p>
-<p>Il est relié aux parties prenantes.</p>
-<p>Sur le lien, on peut faire <u>figurer</u> la nature du lien</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202143042.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="3-Les-cas-d’utilisation"><a href="#3-Les-cas-d’utilisation" class="headerlink" title="3.Les  cas d’utilisation"></a>3.Les  cas d’utilisation</h2><p>Le cycle de vie du Système peut comporter: <u>conception, implémentation, implémentation, utilisation, démantèlement, recyclage</u>.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Les parties prenantes qui utilisent ou ont une action sur le Système seront représentées comme des <strong>acteurs</strong>, <em>un petit bonhomme</em></p>
-</li>
-<li><p>Le Système est représenté comme <em>un bloc</em></p>
-</li>
-<li><p>Dans le bloc figurent les <strong>actions(fonctionnalités) que peuvent faire les acteurs</strong>. Elles sont représentées par une <em>ellipse</em>.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202233671.png" alt="img"></p>
-</li>
-<li><p>Dans le bloc, on doit dessiner les actions importantes et les liaisons entre les actions.</p>
-<p>2 types: extend, include(<u>obligatoirement</u>).</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202213800.png" alt="img"></p>
-</li>
-</ul>
-<h2 id="4-Les-interfaces"><a href="#4-Les-interfaces" class="headerlink" title="4.Les interfaces"></a>4.Les interfaces</h2><p>Certaines des parties prenantes alimentent/sont alimentées par le Système. Pour chacune d’elle, on peut définir le/les <u>flux</u>(matière-énergie-information) qui sont échangés.</p>
-<p>​    <strong>Règles de dessin</strong></p>
-<ul>
-<li><p>Le système est un bloc au centre du <u>schéma.</u></p>
-</li>
-<li><p>Les <u>flux</u> entrants et sortants du système sont indiqués par des boites de connexion sur le bord du bloc central.</p>
-</li>
-<li><p>Les flux sont également décrits par des boites sur le coté du diagramme.</p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202258612.png" alt="img"></p>
-</li>
-</ul>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202704990.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/image-20211205202724279.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205312.png" alt="img"></p>
-<p><img src="https://gitee.com/nililili7876/blog_nantes/raw/master/jpg/20211206205403.png" alt="img"></p>
-<p>TD1小结：用学长的拼拼凑凑的搞上去的，但自己的第一次思考并没有把finalité,missions,objectif给找好。在理解上存在偏差。希望之后能够有所改进</p>
-<h1 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h1><p>Outil:工具</p>
-<p>Radio-réveil:收音机闹钟</p>
-<p>Sert:服务、帮助</p>
-<p>Apporte：带来，提供</p>
-<p>Mise:安装</p>
-<p>oeuvre:工作</p>
-<p>Diffuser:扩散、传播</p>
-<p>Schéma:图解、提纲</p>
-<p>Figurer:画出、代表</p>
-<p>conception, implémentation, implémentation, utilisation, démantèlement, recyclage：设计，实施，实施，使用，拆卸，回收。</p>
-<p>Flux:流动</p>
-<p>Obligatoirement：必须的</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>来法国后的第一篇博客真的太多想说了的。（虽然在国内也没写几篇</p>
-<p>首先就是上这节课的那天下午是流体的期末，所以对课上很多内容都不知道，包括TD1的实例，也有其他许多待修正的部分。</p>
-<p>其次就是很多地方都是照搬的PPT，没有起到一个很好的总结和思考。</p>
-<p>这篇博客完成的也是磕磕绊绊，对法语键盘的不熟悉（比如打不出oe和^i)和法语的不熟悉。</p>
-<p>最后的最后，希望自己坚持下去，做好记录，出现越来越少不认识的单词和行文中越来越少的中文。</p>
-<p>就祝自己能以此为新开始，用Blog的形式见证我在南特这两年的跌跌撞撞的成长。</p>
-]]></content>
-      <categories>
-        <category>NANTE_S5</category>
-        <category>SSTEM</category>
-      </categories>
-      <tags>
-        <tag>SysML</tag>
-      </tags>
   </entry>
   <entry>
     <title>Voyage-Paris</title>
