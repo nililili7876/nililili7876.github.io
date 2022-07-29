@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ALGORITHM-Prem</title>
+    <url>/2021/12/06/ALGORITHM-Prem/</url>
+    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
+<span id="more"></span>
+<p>1.DFS(来自啊哈算法一书)</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step , <span class="keyword">int</span> n ,<span class="keyword">int</span> book[] , <span class="keyword">int</span> a[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (step == n )<span class="comment">//排到第n个数，排列完成</span></span><br><span class="line">	&#123;</span><br><span class="line">		print(a,n);</span><br><span class="line">		<span class="keyword">return</span>;<span class="comment">//【返回之前一步，很重要】</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//每一步的操作</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (!book[i])<span class="comment">//还没有排</span></span><br><span class="line">	&#123;</span><br><span class="line">		a[step] = i+<span class="number">1</span>;</span><br><span class="line">		book[i] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//开始排下一个了</span></span><br><span class="line">		dfs(step+<span class="number">1</span>,n,book,a);</span><br><span class="line">				book[i] = <span class="number">0</span>;<span class="comment">//排序完成，回收本次数【！！！】</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
+<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
+]]></content>
+      <categories>
+        <category>SWJTU</category>
+        <category>ALGORITHM</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>全排列</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -201,25 +220,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ALGORITHM-Prem</title>
-    <url>/2021/12/06/ALGORITHM-Prem/</url>
-    <content><![CDATA[<h1 id="Prem"><a href="#Prem" class="headerlink" title="Prem"></a>Prem</h1><p>问题描述：全排列问题的两种递归实现</p>
-<span id="more"></span>
-<p>1.DFS(来自啊哈算法一书)</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step , <span class="keyword">int</span> n ,<span class="keyword">int</span> book[] , <span class="keyword">int</span> a[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (step == n )<span class="comment">//排到第n个数，排列完成</span></span><br><span class="line">	&#123;</span><br><span class="line">		print(a,n);</span><br><span class="line">		<span class="keyword">return</span>;<span class="comment">//【返回之前一步，很重要】</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//每一步的操作</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (!book[i])<span class="comment">//还没有排</span></span><br><span class="line">	&#123;</span><br><span class="line">		a[step] = i+<span class="number">1</span>;</span><br><span class="line">		book[i] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//开始排下一个了</span></span><br><span class="line">		dfs(step+<span class="number">1</span>,n,book,a);</span><br><span class="line">				book[i] = <span class="number">0</span>;<span class="comment">//排序完成，回收本次数【！！！】</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>DFS：深度优先搜索，这里的DFS不单指图论，理解为一种递归的思想。下一步操作与当下操作是一样的,一直执行，直到符合条件。基本模型为：</p>
-<p> void dfs(int step)<br> {<br>    判断边界(递归结束条件)return;<br>    尝试每一种可能<br>    for(int i = 0 ; i &lt; n ; i++)<br>     {<br>         继续下一步 dfs(step + 1);<br>      }<br>      return ;<br> }</p>
-]]></content>
-      <categories>
-        <category>SWJTU</category>
-        <category>ALGORITHM</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>全排列</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ALGORITHM-算法效率</title>
     <url>/2021/12/06/ALGORITHM02/</url>
     <content><![CDATA[<h1 id="算法-第二章-算法效率分析"><a href="#算法-第二章-算法效率分析" class="headerlink" title="算法_第二章__算法效率分析"></a>算法_第二章__算法效率分析</h1><h2 id="1-算法分析概述"><a href="#1-算法分析概述" class="headerlink" title="1.算法分析概述"></a>1.算法分析概述</h2><p>对算法所需要的两种计算机资源：时间资源和空间资源进行估算。</p>
@@ -330,100 +330,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>ALGPR-4</title>
-    <url>/2022/02/28/ALGPR-4/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>关于算法的第四周</p>
-<span id="more"></span>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="Listes-chainees"><a href="#Listes-chainees" class="headerlink" title="Listes chainées"></a>Listes chainées</h2><p>En utilisant une structure de liste chainée dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour: </p>
-<ul>
-<li>afficher les éléments de liste(打印)</li>
-<li>ajouter un éléments à la fin de la liste(增)</li>
-<li>rechercher une valeur avec renvoi du nombre de valeurs présentes dans la liste(查)</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">types</span><br><span class="line">	elementSimplementChiane: Enregistrement</span><br><span class="line">		type valeur,</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">types</span><br><span class="line">	elementEntier: Enregistrement</span><br><span class="line">		type valeur</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
-<h3 id="Afficher"><a href="#Afficher" class="headerlink" title="Afficher"></a>Afficher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">afficherElement(Lien ElementEntier début)</span><br><span class="line">paramètre: Lien sur ElementEntier</span><br><span class="line">resultat: vide</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début non vide) alors</span><br><span class="line">		écrire(début -&gt; valeur)//也可以写成contenu(début).valeur</span><br><span class="line">		afficherElement(début -&gt; suivant)//contenu(début).suivant</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="Ajouter"><a href="#Ajouter" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">ajoutFin(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		contenu(début).suivant &lt;- ajoutFin(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		contenu(début).valeur &lt;- val;</span><br><span class="line">		contenu(début).suivant &lt;- NULL;</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="Rechercher"><a href="#Rechercher" class="headerlink" title="Rechercher"></a>Rechercher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">rechercheNbVal(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(contenu(début).valeur = val)</span><br><span class="line">			nb &lt;- nb+1</span><br><span class="line">		finsi</span><br><span class="line">		nb &lt;- nb+rechercheNbVal(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		nb&lt;-0</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h2 id="Liste-doublement-chainees"><a href="#Liste-doublement-chainees" class="headerlink" title="Liste doublement chainées"></a>Liste doublement chainées</h2><p>En utilisant une structure de liste doublement chainées dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour:</p>
-<ul>
-<li>ajouter un éléments à la bonne place dans une liste triée,</li>
-<li>supprimer un élément dont la valeur est donnée en paramètre.</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
-<h3 id="Ajouter-1"><a href="#Ajouter-1" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line">	</span><br><span class="line">ajoutTrié(Lien ElementEntier début, Entier val)</span><br><span class="line">Variable: Lien ElementEntierDbl tmp</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(val &lt; contenu(début).valeur)</span><br><span class="line">			tmp &lt;- noveau()</span><br><span class="line">			contenu(tmp).valeur &lt;- val</span><br><span class="line">			//insère</span><br><span class="line">			contenu(tmp).suivant &lt;- début</span><br><span class="line">			contenu(tmp).précrédent &lt;- contenu(début).précrédent</span><br><span class="line">			contenu(début).précrédent &lt;- tmp</span><br><span class="line">			début &lt;- tmp</span><br><span class="line">		sinon</span><br><span class="line">			contenu(début).suivant &lt;- ajoutTrié(contenu(début).suivant,val)</span><br><span class="line">		finsi</span><br><span class="line">	sinon</span><br><span class="line">	 	début &lt;- noveau()</span><br><span class="line">		contenu(début).valeur &lt;- val</span><br><span class="line">		</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h2 id="Arbres-binaires"><a href="#Arbres-binaires" class="headerlink" title="Arbres binaires"></a>Arbres binaires</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type NoeudArbreBinaire: Enregistrement</span><br><span class="line">	type valeur,</span><br><span class="line">	lien NoeudArbreBinaire fg,</span><br><span class="line">	lien NoeudArbreBinaire fd,</span><br><span class="line">Fin_enregistrement</span><br></pre></td></tr></table></figure>
-<h3 id="Fonction-parcoursPrefixe"><a href="#Fonction-parcoursPrefixe" class="headerlink" title="Fonction parcoursPréfixe"></a>Fonction parcoursPréfixe</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Début</span><br><span class="line">	afficher(racine -&gt; valeur)</span><br><span class="line">	si racine -&gt; fg non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fg)</span><br><span class="line">	fin_si</span><br><span class="line">	si racine -&gt; fd non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fd)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="Recherche"><a href="#Recherche" class="headerlink" title="Recherche"></a>Recherche</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Booleen &lt;- existe(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud n&#x27;est pas vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">		si(noeud.valeur = val) alors</span><br><span class="line">			renvoyer VRAI</span><br><span class="line">		sinon </span><br><span class="line">			renvoyer existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)//注意这里一定是ou</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">另一种写法</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">			renvoyer (noeud.valeur = val) OU existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="Supprime"><a href="#Supprime" class="headerlink" title="Supprime[]"></a>Supprime[]</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lien NoeudEntier &lt;- supprimeFeuille(lien NoeudEntier, Entier val)</span><br><span class="line">efface()、nouveau()</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(noeud.fg = vide ET noeud.fd = vide ET noeud.valeur = val)</span><br><span class="line">			efface(noeud)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fg &lt;- supprimeFeuille(noeud.fg , val)</span><br><span class="line">			noeud.fd &lt;- supprimeFeuille(noeud.fd , val)</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">	renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h3 id="Ajouter-2"><a href="#Ajouter-2" class="headerlink" title="Ajouter"></a>Ajouter</h3><h4 id="Haute"><a href="#Haute" class="headerlink" title="Haute"></a>Haute</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Entier &lt;- hauteur(lien NoeudEntier noeud)</span><br><span class="line">Début</span><br><span class="line">	variable: entier g,d=0//放这里吗？？？？是的</span><br><span class="line">	si(noeud.fg is not vide) alors</span><br><span class="line">		g &lt;- hauteur(noeud.fg)</span><br><span class="line">	finsi</span><br><span class="line">	si(noeud.fd is not vide) alors</span><br><span class="line">		d &lt;- hauteur(noeud.fd)</span><br><span class="line">	finsi</span><br><span class="line">	h &lt;- 1+ max(g,d)</span><br><span class="line">    renvoyer h</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<p>ajouter dans la branche la plus courte d’un arbre une valeur passée en paramètre(在树的最短分支上添加一个参数中传递的值)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//[用树高来判断存在问题]---&gt;树的最小深度问题</span><br><span class="line">lien NoeudEntier &lt;- ajoutHtMin(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(hauteur(noeud-&gt;fg) &lt; hauteur(noeud-&gt;fd))</span><br><span class="line">			noeud.fg &lt;- ajoutHtMin(noeud-&gt;fg, val)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fd &lt;- ajoutHtMin(noeud-&gt;fd, val)	</span><br><span class="line">	sinon</span><br><span class="line">		nouveau.valeur &lt;- val</span><br><span class="line">		nouveau.fg &lt;- NULL</span><br><span class="line">		nouveau.fd &lt;- NULL</span><br><span class="line">    	noeud &lt;- nouveau()</span><br><span class="line">    finsi</span><br><span class="line">    renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h2 id="Arbres-binaires-de-recherche-ABR-enracinement"><a href="#Arbres-binaires-de-recherche-ABR-enracinement" class="headerlink" title="Arbres binaires de recherche(ABR): enracinement"></a>Arbres binaires de recherche(ABR): enracinement</h2><p>Définition : Un ABR est un arbre dont les valeurs des noeuds appartiennent à un ensemble totalement ordonné et les conditions équivalentes suivantes sont vérifiées:</p>
-<p>​    La liste des valeurs en ordre infixe est croissante</p>
-<p>​    Pour tout noeud x de valeur v, les valeurs des noeuds de la branche gauche de x sont inférieures ou égales à v et les valeurs des noeuds de la branche droite de x sont surpérieures ou égales à v (左节点要小于根节点，右节点要大于根结点)</p>
-<p>二叉查找树的查找会更快</p>
-<h3 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h3><p>constituer</p>
-<p>用parcoursInfixe()创建//中序</p>
-<p>inferieur, superieur(), abr()//都是布尔型函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">specification:</span><br><span class="line">	fonction: super &lt;- superieur(racine , x)</span><br><span class="line">	parametres: lien NoeudArbreBinaire racine, Entier x</span><br><span class="line">	resultat: booleen</span><br><span class="line"></span><br><span class="line">Debut</span><br><span class="line">variables locales</span><br><span class="line">	booleen b &lt;- (x &gt;= racine-&gt;valeur)</span><br><span class="line">	choix selon</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et</span><br><span class="line">					superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer b</span><br><span class="line">	fin_choix_selon</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h1 id="CM"><a href="#CM" class="headerlink" title="CM"></a>CM</h1><p>真后悔，没去</p>
-<p>待补</p>
-<p>看了一眼，大概c++的语法。好耶！</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ALGORITHM</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ALGPR-3</title>
-    <url>/2022/02/21/ALGPR-3/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>ALGPR的第三周</p>
-<span id="more"></span>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="TD2-Division-euclidienne"><a href="#TD2-Division-euclidienne" class="headerlink" title="TD2_Division euclidienne"></a>TD2_Division euclidienne</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">couplEntier qr &lt;- divEuclid(entier n, entier d)</span><br><span class="line">Types</span><br><span class="line">	couplEntiers: enregistrement</span><br><span class="line">		entier: quotient</span><br><span class="line">		entier: reste</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">Variables</span><br><span class="line">	couplEntiers qr,inter</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	Si(n &lt; d) alors </span><br><span class="line">		qr.reste &lt;- n;</span><br><span class="line">	Sinon</span><br><span class="line">		qr.quotient++;</span><br><span class="line">		divEuclid(n - d , d);</span><br><span class="line">	fin_Si</span><br><span class="line">	retourner qr</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	Si(n &lt; d) alors </span><br><span class="line">		qr.quotient &lt;- 0;</span><br><span class="line">		qr.reste &lt;- n;</span><br><span class="line">	Sinon</span><br><span class="line">		inter &lt;- divEuclid(n - d , d);</span><br><span class="line">		qr.quotient &lt;- inter.quotient + 1;</span><br><span class="line">		qr.reste = inter.reste ;</span><br><span class="line">	fin_Si</span><br><span class="line">	retourner qr</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="TD3-Definition"><a href="#TD3-Definition" class="headerlink" title="TD3_Définition"></a>TD3_Définition</h2><p>Notion de lien vers une structure de données: ce lien est un type de données à part entière défini par le mot-clé <strong>lien</strong>, suivi du type lié.</p>
-<p>Cette notion de lien sera traduite(翻译) en C++ par la notion de <strong>pointeur</strong>（指针）</p>
-<ul>
-<li>Lien Type_x 1: pour créer ou déclarer un lien sur une variable</li>
-<li>contenu(1): pour accéder au contenu du lien 1</li>
-</ul>
-<p>指针和引用</p>
-<p>指针本质也是变量，存储地址。引用本质是取地址。</p>
-<p>注：</p>
-<ol>
-<li><p>引用必须初始化，引用不能为空，引用只是别名不是实体</p>
-<p>就是说不能这样子 int &amp;n</p>
-<p>要这样 int &amp;n = m(m之前定义)</p>
-<p>然后in &amp;n = 3这样子也会报错（？）</p>
-</li>
-<li><p>引用没有const</p>
-</li>
-<li><p>引用的自增和指针的自增问题</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *p,entier;</span><br><span class="line"><span class="keyword">int</span> &amp;q = entier;</span><br><span class="line">entier=<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">p = &amp;q;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">*p++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">q++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">p++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220221153634.webp" alt="ya20220221153634"></p>
-<p>指针自增就是还挺多，*运算符的优先级低于右++，然后还有什么移位不安全啥的，看到再说</p>
-</li>
-</ol>
-<p>Exemple</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables</span><br><span class="line">	Lien Entier lienEnt</span><br><span class="line">	Entier n</span><br><span class="line">Début</span><br><span class="line">	lienEnt &lt;- lien(n)</span><br><span class="line">	conteun(lienEnt) &lt;- 5</span><br><span class="line">	afficher(n)</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int *lienEnt,n</span><br><span class="line">lienEnt = &amp;n;</span><br><span class="line">*lienEnt = 5;</span><br><span class="line">cout&lt;&lt;n;</span><br></pre></td></tr></table></figure>
-<p>[?]</p>
-<ul>
-<li>ne transmettre que la valeur de la variable: utiliser le passage par valeur</li>
-<li>modifier la valeur originale de la variable: utiliser le passage en partage</li>
-</ul>
-<h2 id="TD3-Swap"><a href="#TD3-Swap" class="headerlink" title="TD3_Swap"></a>TD3_Swap</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables</span><br><span class="line">	Entier c</span><br><span class="line">Début</span><br><span class="line"> 	c &lt;- a</span><br><span class="line"> 	a &lt;- b</span><br><span class="line"> 	b &lt;- c</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h2 id="TD3-Swap-lien-struct"><a href="#TD3-Swap-lien-struct" class="headerlink" title="TD3_Swap+lien+struct"></a>TD3_Swap+lien+struct</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fonction creerArticle</span><br><span class="line">problème : création d&#x27;un novel article</span><br><span class="line">apecification:</span><br><span class="line">	fonction: Lien Article &lt;- creerArticle(r,n,p)</span><br><span class="line">	paramètres: Entier r, VectCar n , Réel p</span><br><span class="line">	résultats: Lien Article 1A</span><br><span class="line">	</span><br><span class="line">Variables</span><br><span class="line">	Lien Article 1A</span><br><span class="line">Début</span><br><span class="line">	1A &lt;- nouveau()</span><br><span class="line">	contenu(1A).reference &lt;- r</span><br><span class="line">	contenu(1A).nom &lt;- n</span><br><span class="line">	contenu(1A).prix &lt;- p</span><br><span class="line">	renvoyer 1A</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ALGORITHM</category>
-      </categories>
-      <tags>
-        <tag>指针与引用</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ALGPR-2</title>
     <url>/2022/02/09/ALGPR-2/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第二周的算法课都讲了什么T.T</p>
@@ -501,6 +407,52 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>ALGPR-4</title>
+    <url>/2022/02/28/ALGPR-4/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>关于算法的第四周</p>
+<span id="more"></span>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="Listes-chainees"><a href="#Listes-chainees" class="headerlink" title="Listes chainées"></a>Listes chainées</h2><p>En utilisant une structure de liste chainée dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour: </p>
+<ul>
+<li>afficher les éléments de liste(打印)</li>
+<li>ajouter un éléments à la fin de la liste(增)</li>
+<li>rechercher une valeur avec renvoi du nombre de valeurs présentes dans la liste(查)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">types</span><br><span class="line">	elementSimplementChiane: Enregistrement</span><br><span class="line">		type valeur,</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">types</span><br><span class="line">	elementEntier: Enregistrement</span><br><span class="line">		type valeur</span><br><span class="line">		lien elementSimplementChiane suivant</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Afficher"><a href="#Afficher" class="headerlink" title="Afficher"></a>Afficher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">afficherElement(Lien ElementEntier début)</span><br><span class="line">paramètre: Lien sur ElementEntier</span><br><span class="line">resultat: vide</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début non vide) alors</span><br><span class="line">		écrire(début -&gt; valeur)//也可以写成contenu(début).valeur</span><br><span class="line">		afficherElement(début -&gt; suivant)//contenu(début).suivant</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter"><a href="#Ajouter" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">ajoutFin(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		contenu(début).suivant &lt;- ajoutFin(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		contenu(début).valeur &lt;- val;</span><br><span class="line">		contenu(début).suivant &lt;- NULL;</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Rechercher"><a href="#Rechercher" class="headerlink" title="Rechercher"></a>Rechercher</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type</span><br><span class="line">	ElementEntier: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntier suivant</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line"></span><br><span class="line">rechercheNbVal(Lien ElementEntier début, Entier val)</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(contenu(début).valeur = val)</span><br><span class="line">			nb &lt;- nb+1</span><br><span class="line">		finsi</span><br><span class="line">		nb &lt;- nb+rechercheNbVal(contenu(début).suivant,val)</span><br><span class="line">	sinon</span><br><span class="line">		nb&lt;-0</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Liste-doublement-chainees"><a href="#Liste-doublement-chainees" class="headerlink" title="Liste doublement chainées"></a>Liste doublement chainées</h2><p>En utilisant une structure de liste doublement chainées dont les valeurs sont des Entiers, proposer les algorithmes des fonctions secondaires pour:</p>
+<ul>
+<li>ajouter un éléments à la bonne place dans une liste triée,</li>
+<li>supprimer un élément dont la valeur est donnée en paramètre.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter-1"><a href="#Ajouter-1" class="headerlink" title="Ajouter"></a>Ajouter</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Types</span><br><span class="line">	ElementEntierDbl: enregistrement</span><br><span class="line">		Entier valeur</span><br><span class="line">		Lien ElementEntierDbl suivant</span><br><span class="line">		Lien ElementEntierDbl précrédent</span><br><span class="line">	Fin_Enregistrement</span><br><span class="line">	</span><br><span class="line">ajoutTrié(Lien ElementEntier début, Entier val)</span><br><span class="line">Variable: Lien ElementEntierDbl tmp</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(début n&#x27;est pas vide) alors</span><br><span class="line">		si(val &lt; contenu(début).valeur)</span><br><span class="line">			tmp &lt;- noveau()</span><br><span class="line">			contenu(tmp).valeur &lt;- val</span><br><span class="line">			//insère</span><br><span class="line">			contenu(tmp).suivant &lt;- début</span><br><span class="line">			contenu(tmp).précrédent &lt;- contenu(début).précrédent</span><br><span class="line">			contenu(début).précrédent &lt;- tmp</span><br><span class="line">			début &lt;- tmp</span><br><span class="line">		sinon</span><br><span class="line">			contenu(début).suivant &lt;- ajoutTrié(contenu(début).suivant,val)</span><br><span class="line">		finsi</span><br><span class="line">	sinon</span><br><span class="line">	 	début &lt;- noveau()</span><br><span class="line">		contenu(début).valeur &lt;- val</span><br><span class="line">		</span><br><span class="line">	finsi</span><br><span class="line">	renvoyer début</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Arbres-binaires"><a href="#Arbres-binaires" class="headerlink" title="Arbres binaires"></a>Arbres binaires</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Type NoeudArbreBinaire: Enregistrement</span><br><span class="line">	type valeur,</span><br><span class="line">	lien NoeudArbreBinaire fg,</span><br><span class="line">	lien NoeudArbreBinaire fd,</span><br><span class="line">Fin_enregistrement</span><br></pre></td></tr></table></figure>
+<h3 id="Fonction-parcoursPrefixe"><a href="#Fonction-parcoursPrefixe" class="headerlink" title="Fonction parcoursPréfixe"></a>Fonction parcoursPréfixe</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Début</span><br><span class="line">	afficher(racine -&gt; valeur)</span><br><span class="line">	si racine -&gt; fg non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fg)</span><br><span class="line">	fin_si</span><br><span class="line">	si racine -&gt; fd non vide alors</span><br><span class="line">		parcoursPréfixe(racine-&gt;fd)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Recherche"><a href="#Recherche" class="headerlink" title="Recherche"></a>Recherche</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Booleen &lt;- existe(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud n&#x27;est pas vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">		si(noeud.valeur = val) alors</span><br><span class="line">			renvoyer VRAI</span><br><span class="line">		sinon </span><br><span class="line">			renvoyer existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)//注意这里一定是ou</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">另一种写法</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		renvoyer FAUX</span><br><span class="line">	sinon</span><br><span class="line">			renvoyer (noeud.valeur = val) OU existe(noeud-&gt;fg,val) OU existe(noeud-&gt;fd,val)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Supprime"><a href="#Supprime" class="headerlink" title="Supprime[]"></a>Supprime[]</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lien NoeudEntier &lt;- supprimeFeuille(lien NoeudEntier, Entier val)</span><br><span class="line">efface()、nouveau()</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(noeud.fg = vide ET noeud.fd = vide ET noeud.valeur = val)</span><br><span class="line">			efface(noeud)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fg &lt;- supprimeFeuille(noeud.fg , val)</span><br><span class="line">			noeud.fd &lt;- supprimeFeuille(noeud.fd , val)</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line">	renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="Ajouter-2"><a href="#Ajouter-2" class="headerlink" title="Ajouter"></a>Ajouter</h3><h4 id="Haute"><a href="#Haute" class="headerlink" title="Haute"></a>Haute</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Entier &lt;- hauteur(lien NoeudEntier noeud)</span><br><span class="line">Début</span><br><span class="line">	variable: entier g,d=0//放这里吗？？？？是的</span><br><span class="line">	si(noeud.fg is not vide) alors</span><br><span class="line">		g &lt;- hauteur(noeud.fg)</span><br><span class="line">	finsi</span><br><span class="line">	si(noeud.fd is not vide) alors</span><br><span class="line">		d &lt;- hauteur(noeud.fd)</span><br><span class="line">	finsi</span><br><span class="line">	h &lt;- 1+ max(g,d)</span><br><span class="line">    renvoyer h</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>ajouter dans la branche la plus courte d’un arbre une valeur passée en paramètre(在树的最短分支上添加一个参数中传递的值)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//[用树高来判断存在问题]---&gt;树的最小深度问题</span><br><span class="line">lien NoeudEntier &lt;- ajoutHtMin(lien NoeudEntier noeud, Entier val)</span><br><span class="line">Début</span><br><span class="line">	si(noeud is not vide) alors</span><br><span class="line">		si(hauteur(noeud-&gt;fg) &lt; hauteur(noeud-&gt;fd))</span><br><span class="line">			noeud.fg &lt;- ajoutHtMin(noeud-&gt;fg, val)</span><br><span class="line">		sinon</span><br><span class="line">			noeud.fd &lt;- ajoutHtMin(noeud-&gt;fd, val)	</span><br><span class="line">	sinon</span><br><span class="line">		nouveau.valeur &lt;- val</span><br><span class="line">		nouveau.fg &lt;- NULL</span><br><span class="line">		nouveau.fd &lt;- NULL</span><br><span class="line">    	noeud &lt;- nouveau()</span><br><span class="line">    finsi</span><br><span class="line">    renvoyer noeud</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="Arbres-binaires-de-recherche-ABR-enracinement"><a href="#Arbres-binaires-de-recherche-ABR-enracinement" class="headerlink" title="Arbres binaires de recherche(ABR): enracinement"></a>Arbres binaires de recherche(ABR): enracinement</h2><p>Définition : Un ABR est un arbre dont les valeurs des noeuds appartiennent à un ensemble totalement ordonné et les conditions équivalentes suivantes sont vérifiées:</p>
+<p>​    La liste des valeurs en ordre infixe est croissante</p>
+<p>​    Pour tout noeud x de valeur v, les valeurs des noeuds de la branche gauche de x sont inférieures ou égales à v et les valeurs des noeuds de la branche droite de x sont surpérieures ou égales à v (左节点要小于根节点，右节点要大于根结点)</p>
+<p>二叉查找树的查找会更快</p>
+<h3 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h3><p>constituer</p>
+<p>用parcoursInfixe()创建//中序</p>
+<p>inferieur, superieur(), abr()//都是布尔型函数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">specification:</span><br><span class="line">	fonction: super &lt;- superieur(racine , x)</span><br><span class="line">	parametres: lien NoeudArbreBinaire racine, Entier x</span><br><span class="line">	resultat: booleen</span><br><span class="line"></span><br><span class="line">Debut</span><br><span class="line">variables locales</span><br><span class="line">	booleen b &lt;- (x &gt;= racine-&gt;valeur)</span><br><span class="line">	choix selon</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et</span><br><span class="line">					superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg != NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fg , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd != NULL):</span><br><span class="line">			renvoyer superieur(racine-&gt;fd , x) et b</span><br><span class="line">		(racine-&gt;fg = NULL et racine-&gt;fd = NULL):</span><br><span class="line">			renvoyer b</span><br><span class="line">	fin_choix_selon</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h1 id="CM"><a href="#CM" class="headerlink" title="CM"></a>CM</h1><p>真后悔，没去</p>
+<p>待补</p>
+<p>看了一眼，大概c++的语法。好耶！</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CCUBE_Chapitre1</title>
     <url>/2022/02/04/CCUBE-01/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
@@ -518,6 +470,54 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
         <category>NANTE_S6</category>
         <category>CCUBE</category>
       </categories>
+  </entry>
+  <entry>
+    <title>ALGPR-3</title>
+    <url>/2022/02/21/ALGPR-3/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>ALGPR的第三周</p>
+<span id="more"></span>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="TD2-Division-euclidienne"><a href="#TD2-Division-euclidienne" class="headerlink" title="TD2_Division euclidienne"></a>TD2_Division euclidienne</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">couplEntier qr &lt;- divEuclid(entier n, entier d)</span><br><span class="line">Types</span><br><span class="line">	couplEntiers: enregistrement</span><br><span class="line">		entier: quotient</span><br><span class="line">		entier: reste</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">Variables</span><br><span class="line">	couplEntiers qr,inter</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	Si(n &lt; d) alors </span><br><span class="line">		qr.reste &lt;- n;</span><br><span class="line">	Sinon</span><br><span class="line">		qr.quotient++;</span><br><span class="line">		divEuclid(n - d , d);</span><br><span class="line">	fin_Si</span><br><span class="line">	retourner qr</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	Si(n &lt; d) alors </span><br><span class="line">		qr.quotient &lt;- 0;</span><br><span class="line">		qr.reste &lt;- n;</span><br><span class="line">	Sinon</span><br><span class="line">		inter &lt;- divEuclid(n - d , d);</span><br><span class="line">		qr.quotient &lt;- inter.quotient + 1;</span><br><span class="line">		qr.reste = inter.reste ;</span><br><span class="line">	fin_Si</span><br><span class="line">	retourner qr</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="TD3-Definition"><a href="#TD3-Definition" class="headerlink" title="TD3_Définition"></a>TD3_Définition</h2><p>Notion de lien vers une structure de données: ce lien est un type de données à part entière défini par le mot-clé <strong>lien</strong>, suivi du type lié.</p>
+<p>Cette notion de lien sera traduite(翻译) en C++ par la notion de <strong>pointeur</strong>（指针）</p>
+<ul>
+<li>Lien Type_x 1: pour créer ou déclarer un lien sur une variable</li>
+<li>contenu(1): pour accéder au contenu du lien 1</li>
+</ul>
+<p>指针和引用</p>
+<p>指针本质也是变量，存储地址。引用本质是取地址。</p>
+<p>注：</p>
+<ol>
+<li><p>引用必须初始化，引用不能为空，引用只是别名不是实体</p>
+<p>就是说不能这样子 int &amp;n</p>
+<p>要这样 int &amp;n = m(m之前定义)</p>
+<p>然后in &amp;n = 3这样子也会报错（？）</p>
+</li>
+<li><p>引用没有const</p>
+</li>
+<li><p>引用的自增和指针的自增问题</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *p,entier;</span><br><span class="line"><span class="keyword">int</span> &amp;q = entier;</span><br><span class="line">entier=<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">p = &amp;q;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">*p++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">q++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">p++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220221153634.webp" alt="ya20220221153634"></p>
+<p>指针自增就是还挺多，*运算符的优先级低于右++，然后还有什么移位不安全啥的，看到再说</p>
+</li>
+</ol>
+<p>Exemple</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables</span><br><span class="line">	Lien Entier lienEnt</span><br><span class="line">	Entier n</span><br><span class="line">Début</span><br><span class="line">	lienEnt &lt;- lien(n)</span><br><span class="line">	conteun(lienEnt) &lt;- 5</span><br><span class="line">	afficher(n)</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int *lienEnt,n</span><br><span class="line">lienEnt = &amp;n;</span><br><span class="line">*lienEnt = 5;</span><br><span class="line">cout&lt;&lt;n;</span><br></pre></td></tr></table></figure>
+<p>[?]</p>
+<ul>
+<li>ne transmettre que la valeur de la variable: utiliser le passage par valeur</li>
+<li>modifier la valeur originale de la variable: utiliser le passage en partage</li>
+</ul>
+<h2 id="TD3-Swap"><a href="#TD3-Swap" class="headerlink" title="TD3_Swap"></a>TD3_Swap</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables</span><br><span class="line">	Entier c</span><br><span class="line">Début</span><br><span class="line"> 	c &lt;- a</span><br><span class="line"> 	a &lt;- b</span><br><span class="line"> 	b &lt;- c</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="TD3-Swap-lien-struct"><a href="#TD3-Swap-lien-struct" class="headerlink" title="TD3_Swap+lien+struct"></a>TD3_Swap+lien+struct</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fonction creerArticle</span><br><span class="line">problème : création d&#x27;un novel article</span><br><span class="line">apecification:</span><br><span class="line">	fonction: Lien Article &lt;- creerArticle(r,n,p)</span><br><span class="line">	paramètres: Entier r, VectCar n , Réel p</span><br><span class="line">	résultats: Lien Article 1A</span><br><span class="line">	</span><br><span class="line">Variables</span><br><span class="line">	Lien Article 1A</span><br><span class="line">Début</span><br><span class="line">	1A &lt;- nouveau()</span><br><span class="line">	contenu(1A).reference &lt;- r</span><br><span class="line">	contenu(1A).nom &lt;- n</span><br><span class="line">	contenu(1A).prix &lt;- p</span><br><span class="line">	renvoyer 1A</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
+      </categories>
+      <tags>
+        <tag>指针与引用</tag>
+      </tags>
   </entry>
   <entry>
     <title>ANG</title>
@@ -554,6 +554,25 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       <tags>
         <tag>metaverse</tag>
         <tag>BBC_6mintues</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATHS-TP1</title>
+    <url>/2022/02/22/MATH-TP1/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>MATHS_TP1: Initiation Matlab – Equation de la chaleur 1D</p>
+<span id="more"></span>
+<h1 id="Initiation"><a href="#Initiation" class="headerlink" title="Initiation"></a>Initiation</h1><p>注释：%</p>
+<p>显示：disp、fprintf</p>
+<p>vecteur: x = [x1,x2……,xn] %空格或者逗号都可以；vecteur colonne</p>
+<p>冒号：5：-1：1 %表示5到1以-1为间隔的vecteur</p>
+<p>linspace：是Matlab中的均分计算指令，用于产生x1,x2之间的N点行线性的矢量。其中x1、x2、N分别为起始值、终止值、元素个数。若默认N，默认点数为100</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>MATHS</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
       </tags>
   </entry>
   <entry>
@@ -622,7 +641,7 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>武运昌隆</p>
 ]]></content>
       <categories>
-        <category>研究生</category>
+        <category>学习区</category>
       </categories>
       <tags>
         <tag>lidar</tag>
@@ -630,22 +649,64 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>MATHS-TP1</title>
-    <url>/2022/02/22/MATH-TP1/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>MATHS_TP1: Initiation Matlab – Equation de la chaleur 1D</p>
+    <title>PRO20</title>
+    <url>/2022/02/07/PRO20/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>趁着可能对P2E有点用处的东风，把上学期一个很有意思的softskill给整理了。</p>
 <span id="more"></span>
-<h1 id="Initiation"><a href="#Initiation" class="headerlink" title="Initiation"></a>Initiation</h1><p>注释：%</p>
-<p>显示：disp、fprintf</p>
-<p>vecteur: x = [x1,x2……,xn] %空格或者逗号都可以；vecteur colonne</p>
-<p>冒号：5：-1：1 %表示5到1以-1为间隔的vecteur</p>
-<p>linspace：是Matlab中的均分计算指令，用于产生x1,x2之间的N点行线性的矢量。其中x1、x2、N分别为起始值、终止值、元素个数。若默认N，默认点数为100</p>
+<h1 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h1><p>就是一个教怎么组织项目的课，具体实例是建养鸡场，选址、选鸡蛋品种（bio或者非bio）、然后风险评估啥的。以下是一些有趣的概念的大略整理。</p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Définitions"></a>Définitions</h2><p>Project: Un ensemble de tâches coordonnées accomplies par des personnes utilisant des moyens dans le but de répondre au besoin<br>du client avec la qualité demandée en temps et coûts maitrisés</p>
+<p>Gestion de projet: La Gestion de projet s’assure du déroulement opérationnel prévu dans la planification. Elle reporte à la fonction de pilotage de projet sur l’avancement, elle sollicite des prises de décisions et remonte des alertes</p>
+<p>Management de projet: Direction + Gestion = Management</p>
+<h2 id="Cadrage-框架-du-Project"><a href="#Cadrage-框架-du-Project" class="headerlink" title="Cadrage(框架) du Project"></a>Cadrage(框架) du Project</h2><ul>
+<li><p>L’identité du client</p>
+</li>
+<li><p>Les objectifs du projet</p>
+<p>目标应该满足的原则：S(Spécifique)M(Mesurable)A(Atteignable)R(Réaliste)T(Temporel)</p>
+</li>
+<li><p>Les délais à respecter</p>
+</li>
+<li><p>Les limites du budget à investir</p>
+</li>
+<li><p>L’utilité du projet</p>
+</li>
+<li><p>La rentabilité escomptée du projet</p>
+</li>
+</ul>
+<h2 id="Decomposer-le-projet"><a href="#Decomposer-le-projet" class="headerlink" title="Décomposer le projet"></a>Décomposer le projet</h2><h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><p>WBS : Work Breakdown Structure. Décomposition hiérarchique, axée sur les livrables, du travail que l’équipe de projet doit exécuter pour atteindre les objectifs du projet et produire les livrables souhaités.</p>
+<p>做法：</p>
+<ul>
+<li>Spécifier les objectifs du projet</li>
+<li>Identifier spécifiquement les produits, services ou résultats </li>
+<li>Identifier les travaux</li>
+<li>Subdiviser les éléments jusqu’au niveau qui permet la<br>planification et le contrôle</li>
+</ul>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207153543.webp" alt="ya20220207153543" style="zoom:80%;" /></p>
+<h3 id="PBS"><a href="#PBS" class="headerlink" title="PBS"></a>PBS</h3><p>Product Breakdown Structure</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207215522.webp" alt="ya20220207215522" style="zoom:80%;" /></p>
+<p>注：当时好像是上课没咋讲这个，后来是按照网上(ZHIHU)的文章说，WBS是以项目结果为导向的工作过程的结构分解，PBS是项目交付结果本身为对象进行的层级结构分解来做的。具体到这道题，就是，WBS包含整个项目管理，PBS只是按照养鸡场本身按照地基、外部建筑、内部建筑、服务设施这样子分级。</p>
+<h2 id="Diagramme-de-Gantt"><a href="#Diagramme-de-Gantt" class="headerlink" title="Diagramme de Gantt"></a>Diagramme de Gantt</h2><p>C’est un outil que peut aider à définir un planning réaliste.</p>
+<p>貌似就是一个项目的时间的进程表，找出要做的事情，然后分析发生的先后或者并行关系，搞成条状表就行了。</p>
+<p>Exemple(红色表示关键事件) : </p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207153744.webp" alt="ya20220207153744" style="zoom:80%;" /></p>
+<h2 id="PERT"><a href="#PERT" class="headerlink" title="PERT"></a>PERT</h2><p>C’est un outil souvent utilisée pour la gestion de projets  importants et à long terme. </p>
+<p>PERT = Program Evaluation and Review Technic (ou CPM: Critical Path Method)</p>
+<p>就是把上面那个Gantt图给这样子表示，然后往里面写时间就行，然后选时间最大的那条线（不是我说，这好像算法里面的那个啥图</p>
+<p>Exemple:</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207154725.webp" alt="ya20220207154725" style="zoom:90%;" /></p>
+<h2 id="Les-risques"><a href="#Les-risques" class="headerlink" title="Les risques"></a>Les risques</h2><p>Principaux risques  incluent  Risques financiers, Risques marchés, Risques technologiques, Risques liés à l’équipe.</p>
+<p> Pour gestion des risques, on peut utiliser le table comme ça,</p>
+<p>就是两部分：严重程度+发生概率</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207154820.webp" alt="ya20220207154820" style="zoom:80%;" /></p>
+<p>对，记得当时有个文化shock还蛮有趣的小点就是，当时有个风险是员工absent，然后写应对措施，我说搞时刻表，然后其他人：推迟上班的时间或者改变工作环境。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>其实这个项目还有超级多的东西，当时TD课第一节课搞WBS、PBS和GANTT的图，第二节课搞投资和收益计算，第三节课是风险评估，参与程度递减，到最后一节课就除了汇报叭叭两句就完全没太参与进去，不知道在干嘛了T^T</p>
+<p>反正最后结论就是要养bio的鸡，唔。</p>
 ]]></content>
       <categories>
-        <category>NANTE_S6</category>
-        <category>MATHS</category>
+        <category>NANTE_S5</category>
+        <category>PRO20</category>
       </categories>
       <tags>
-        <tag>MATLAB</tag>
+        <tag>SOFTSKILLS</tag>
       </tags>
   </entry>
   <entry>
@@ -736,64 +797,69 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>PRO20</title>
-    <url>/2022/02/07/PRO20/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>趁着可能对P2E有点用处的东风，把上学期一个很有意思的softskill给整理了。</p>
+    <title>Voyage-Paris</title>
+    <url>/2021/12/08/Voyage-Paris/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
 <span id="more"></span>
-<h1 id="中间"><a href="#中间" class="headerlink" title="中间"></a>中间</h1><p>就是一个教怎么组织项目的课，具体实例是建养鸡场，选址、选鸡蛋品种（bio或者非bio）、然后风险评估啥的。以下是一些有趣的概念的大略整理。</p>
-<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Définitions"></a>Définitions</h2><p>Project: Un ensemble de tâches coordonnées accomplies par des personnes utilisant des moyens dans le but de répondre au besoin<br>du client avec la qualité demandée en temps et coûts maitrisés</p>
-<p>Gestion de projet: La Gestion de projet s’assure du déroulement opérationnel prévu dans la planification. Elle reporte à la fonction de pilotage de projet sur l’avancement, elle sollicite des prises de décisions et remonte des alertes</p>
-<p>Management de projet: Direction + Gestion = Management</p>
-<h2 id="Cadrage-框架-du-Project"><a href="#Cadrage-框架-du-Project" class="headerlink" title="Cadrage(框架) du Project"></a>Cadrage(框架) du Project</h2><ul>
-<li><p>L’identité du client</p>
-</li>
-<li><p>Les objectifs du projet</p>
-<p>目标应该满足的原则：S(Spécifique)M(Mesurable)A(Atteignable)R(Réaliste)T(Temporel)</p>
-</li>
-<li><p>Les délais à respecter</p>
-</li>
-<li><p>Les limites du budget à investir</p>
-</li>
-<li><p>L’utilité du projet</p>
-</li>
-<li><p>La rentabilité escomptée du projet</p>
-</li>
-</ul>
-<h2 id="Decomposer-le-projet"><a href="#Decomposer-le-projet" class="headerlink" title="Décomposer le projet"></a>Décomposer le projet</h2><h3 id="WBS"><a href="#WBS" class="headerlink" title="WBS"></a>WBS</h3><p>WBS : Work Breakdown Structure. Décomposition hiérarchique, axée sur les livrables, du travail que l’équipe de projet doit exécuter pour atteindre les objectifs du projet et produire les livrables souhaités.</p>
-<p>做法：</p>
-<ul>
-<li>Spécifier les objectifs du projet</li>
-<li>Identifier spécifiquement les produits, services ou résultats </li>
-<li>Identifier les travaux</li>
-<li>Subdiviser les éléments jusqu’au niveau qui permet la<br>planification et le contrôle</li>
-</ul>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207153543.webp" alt="ya20220207153543" style="zoom:80%;" /></p>
-<h3 id="PBS"><a href="#PBS" class="headerlink" title="PBS"></a>PBS</h3><p>Product Breakdown Structure</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207215522.webp" alt="ya20220207215522" style="zoom:80%;" /></p>
-<p>注：当时好像是上课没咋讲这个，后来是按照网上(ZHIHU)的文章说，WBS是以项目结果为导向的工作过程的结构分解，PBS是项目交付结果本身为对象进行的层级结构分解来做的。具体到这道题，就是，WBS包含整个项目管理，PBS只是按照养鸡场本身按照地基、外部建筑、内部建筑、服务设施这样子分级。</p>
-<h2 id="Diagramme-de-Gantt"><a href="#Diagramme-de-Gantt" class="headerlink" title="Diagramme de Gantt"></a>Diagramme de Gantt</h2><p>C’est un outil que peut aider à définir un planning réaliste.</p>
-<p>貌似就是一个项目的时间的进程表，找出要做的事情，然后分析发生的先后或者并行关系，搞成条状表就行了。</p>
-<p>Exemple(红色表示关键事件) : </p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207153744.webp" alt="ya20220207153744" style="zoom:80%;" /></p>
-<h2 id="PERT"><a href="#PERT" class="headerlink" title="PERT"></a>PERT</h2><p>C’est un outil souvent utilisée pour la gestion de projets  importants et à long terme. </p>
-<p>PERT = Program Evaluation and Review Technic (ou CPM: Critical Path Method)</p>
-<p>就是把上面那个Gantt图给这样子表示，然后往里面写时间就行，然后选时间最大的那条线（不是我说，这好像算法里面的那个啥图</p>
-<p>Exemple:</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207154725.webp" alt="ya20220207154725" style="zoom:90%;" /></p>
-<h2 id="Les-risques"><a href="#Les-risques" class="headerlink" title="Les risques"></a>Les risques</h2><p>Principaux risques  incluent  Risques financiers, Risques marchés, Risques technologiques, Risques liés à l’équipe.</p>
-<p> Pour gestion des risques, on peut utiliser le table comme ça,</p>
-<p>就是两部分：严重程度+发生概率</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220207154820.webp" alt="ya20220207154820" style="zoom:80%;" /></p>
-<p>对，记得当时有个文化shock还蛮有趣的小点就是，当时有个风险是员工absent，然后写应对措施，我说搞时刻表，然后其他人：推迟上班的时间或者改变工作环境。</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>其实这个项目还有超级多的东西，当时TD课第一节课搞WBS、PBS和GANTT的图，第二节课搞投资和收益计算，第三节课是风险评估，参与程度递减，到最后一节课就除了汇报叭叭两句就完全没太参与进去，不知道在干嘛了T^T</p>
-<p>反正最后结论就是要养bio的鸡，唔。</p>
+<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
+<p>铁塔上看的夕阳</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584513.webp" alt="ya微信图片_2021120823584513" style="zoom:80%;" /></p>
+<p>超好看！</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20211209000220.png" alt="ya20211209000220" style="zoom:80%;" /></p>
+<p>顺便打卡盗梦空间的桥</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_20211208235845.webp" alt="ya微信图片_20211208235845" style="zoom:80%;" /></p>
+<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358453.webp" alt="ya微信图片_202112082358453" style="zoom:60%;" /></p>
+<p>未来的日子永远爱跳跳虎</p>
+<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
+<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
+<p>雕塑真的好厉害。</p>
+<p>伊斯兰教的艺术印象蛮深。</p>
+<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
+<center class="half">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358454.webp"width="200"/>
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358455.webp" width="200"/>
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358456.webp" width="200"/>
+</center>
+
+
+
+
+<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
+<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
+<p>梵高好看</p>
+<p>莫奈也好好看</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_20211208235859.jpg" alt="ya微信图片_20211208235859" style="zoom:50%;" /></p>
+<p>还有个点彩画派</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358457.webp" alt="ya微信图片_202112082358457" style="zoom:50%;" /></p>
+<p>很喜欢的画买了明信片但忘记画家了T^T</p>
+<p>出来时的公园，好看到分不清是不是在画中</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358459.webp" alt="ya微信图片_202112082358459" style="zoom:67%;" /></p>
+<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
+<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
+<p>外面比里面好看</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584510.webp" alt="ya微信图片_2021120823584510" style="zoom:50%;" /></p>
+<p>只记得里面的钟摆了</p>
+<p>看到了一群穿正装的未来大佬们</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584511.webp" alt="ya微信图片_2021120823584511" style="zoom:50%;" /></p>
+<p>听说隔壁是很法国很厉害的大学</p>
+<p>站在那里真的会有</p>
+<p>一种学术的</p>
+<p>很厉害的感觉</p>
+<p>听说建筑仿的是意大利的万神庙</p>
+<p>那就正好</p>
+<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584512.webp" alt="ya微信图片_2021120823584512" style="zoom:50%;" /></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082352193.webp" alt="ya微信图片_202112082352193" style="zoom:80%;" /></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082352192.webp" alt="ya微信图片_202112082352192" style="zoom:80%;" /></p>
 ]]></content>
       <categories>
-        <category>NANTE_S5</category>
-        <category>PRO20</category>
+        <category>生活区</category>
+        <category>Voyage</category>
       </categories>
       <tags>
-        <tag>SOFTSKILLS</tag>
+        <tag>Paris</tag>
       </tags>
   </entry>
   <entry>
@@ -913,97 +979,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>Voyage-Paris</title>
-    <url>/2021/12/08/Voyage-Paris/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
-<span id="more"></span>
-<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
-<p>铁塔上看的夕阳</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584513.webp" alt="ya微信图片_2021120823584513" style="zoom:80%;" /></p>
-<p>超好看！</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20211209000220.png" alt="ya20211209000220" style="zoom:80%;" /></p>
-<p>顺便打卡盗梦空间的桥</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_20211208235845.webp" alt="ya微信图片_20211208235845" style="zoom:80%;" /></p>
-<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358453.webp" alt="ya微信图片_202112082358453" style="zoom:60%;" /></p>
-<p>未来的日子永远爱跳跳虎</p>
-<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
-<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
-<p>雕塑真的好厉害。</p>
-<p>伊斯兰教的艺术印象蛮深。</p>
-<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
-<center class="half">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358454.webp"width="200"/>
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358455.webp" width="200"/>
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358456.webp" width="200"/>
-</center>
-
-
-
-
-<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
-<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
-<p>梵高好看</p>
-<p>莫奈也好好看</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_20211208235859.jpg" alt="ya微信图片_20211208235859" style="zoom:50%;" /></p>
-<p>还有个点彩画派</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358457.webp" alt="ya微信图片_202112082358457" style="zoom:50%;" /></p>
-<p>很喜欢的画买了明信片但忘记画家了T^T</p>
-<p>出来时的公园，好看到分不清是不是在画中</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358459.webp" alt="ya微信图片_202112082358459" style="zoom:67%;" /></p>
-<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
-<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
-<p>外面比里面好看</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584510.webp" alt="ya微信图片_2021120823584510" style="zoom:50%;" /></p>
-<p>只记得里面的钟摆了</p>
-<p>看到了一群穿正装的未来大佬们</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584511.webp" alt="ya微信图片_2021120823584511" style="zoom:50%;" /></p>
-<p>听说隔壁是很法国很厉害的大学</p>
-<p>站在那里真的会有</p>
-<p>一种学术的</p>
-<p>很厉害的感觉</p>
-<p>听说建筑仿的是意大利的万神庙</p>
-<p>那就正好</p>
-<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584512.webp" alt="ya微信图片_2021120823584512" style="zoom:50%;" /></p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082352193.webp" alt="ya微信图片_202112082352193" style="zoom:80%;" /></p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082352192.webp" alt="ya微信图片_202112082352192" style="zoom:80%;" /></p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
-      </categories>
-      <tags>
-        <tag>Paris</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>序言</title>
-    <url>/2021/12/05/hello-world/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
-<p>截断测试</p>
-<span id="more"></span>
-<p>图片测试：</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/111.webp" alt="111"></p>
-<p>数学公式测试</p>
-<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
-<script type="math/tex; mode=display">
-T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
-<p>侧边栏多级分类</p>
-<p>FLUID整理</p>
-<p>Pro20整理</p>
-<p>SSTEM一周一记</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Voyage-Italie</title>
     <url>/2022/02/01/Voyage-Italie/</url>
     <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>马耳他$\longrightarrow$罗马$\longrightarrow$米兰</p>
@@ -1096,27 +1071,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
       </categories>
   </entry>
   <entry>
-    <title>戛纳动机信</title>
-    <url>/2022/05/20/%E6%88%9B%E7%BA%B3%E5%8A%A8%E6%9C%BA%E4%BF%A1-1/</url>
-    <content><![CDATA[<p>Cannes!!!</p>
-<span id="more"></span>
-<h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>Je suis une étudiante en double diplôme à l’Ecole Centrale de Nantes, en vue d’obtenir un diplôme d’ingénieur. Je suis très intéressé par le projet “Trois jours à Cannes” et j’aimerais partager avec vous ma principale motivation. </p>
-<h2 id="喜欢电影"><a href="#喜欢电影" class="headerlink" title="喜欢电影"></a>喜欢电影</h2><p>J’ai 22 ans et je viens d’une petite ville de Chengdu, une province centrale de Chine. Influencé par mes parents, j’aime regarder des films depuis que je suis enfant. Je suis particulièrement reconnaissant aux films de m’avoir fait découvrir un monde après l’autre pendant mon enfance. Je me souviens du choc que j’ai ressenti en regardant <em>Harry Potter</em> pour la première fois quand j’étais enfant, et je n’ai pas pu me calmer longtemps après. Jouer au Quidditch avec Ron dans mes rêves, m’allonger sur le balcon en attendant ma lettre d’acceptation à Poudlard, lutter pour trouver le quai 9 et 3/4 en prenant le train. Je me souviens aussi d’avoir regardé <em>Les Chroniques de Narnia</em> et d’avoir joué à cache-cache avec mes amis pour ensuite me cacher dans l’armoire, désireuse de s’embarquer dans une aventure où il faut aussi faire preuve de courage. Il n’est pas exagéré de dire que les films ont construit mon enfance.</p>
-<p>我今年22岁，来自中国中部省份成都的一个小镇。受父母影响，我从小便喜欢看电影。我特别感谢电影给我童年带我走进了一个又一个的世界。我记得我小时候第一次看哈利波特时的震撼，看完以后久久不能平静。在梦里和罗恩打魁地奇，趴在阳台等霍格沃兹的录取通知书，在乘坐火车时努力的寻找9又3/4站台。我也记得我看完纳尼亚传奇后，从此和朋友玩捉迷藏只躲在衣柜，渴望也能开启一段关于勇气的冒险。毫不夸张的讲，电影构建了我的童年。</p>
-<p>Lorsque je suis entré dans l’enseignement secondaire, les films n’étaient jamais absents non plus. Je me souviens d’un cours de musique où le professeur de musique nous a montré un extrait de <em>Les choristes</em>, et depuis lors, les films français, ou plutôt la France, ont commencé à entrer dans mon univers. Après avoir regardé <em>Le fabuleux destin d’Amélie Poulain</em>, j’ai été captivé par la romance créée par le film et en même temps déterminé à faire l’expérience du pays et de la culture française par moi-même pendant mes années d’université. Mais je dois admettre que lorsque j’étais jeune, j’étais immature et j’avais une vision unilatérale du monde, mais ces films sur différents sujets m’ont énormément aidé à construire un système de pensée selon lequel le monde est divers, la beauté est diverse et la vie est diverse, et ces films ont façonné ma tolérance.</p>
-<p>升入中学后，电影也从未缺席。还记得那时一节音乐课，音乐老师给我们放了放牛班的春天选段，自此法国电影或者说法国开始进入我的世界。在看完天使爱美丽后，我被电影创造出的浪漫所深深吸引，同时坚定了自己要在大学期间亲历这片土地和法国文化。但我不得不承认，年轻时我的思想并不成熟，看世界的角度也很片面，但这些不同题材的电影给我带来了巨大的帮助，让我建立了一个世界是多元的、美是多元的、生活是多元的思维体系，这些电影塑造了我的宽容。</p>
-<p>Le célèbre réalisateur français, Abel Gance a dit : “Ce n’est pas l’image qui fait le film, c’est l’âme de l’image”. Je me rappelle encore comment je me suis sentie chez moi cet après-midi de 2020, lorsque j’ai fini de regarder Le grand bleu de Luc Paul Maurice Besson. La scène où Jean-marc regarde tendrement son amant puis se retourne et se jette dans les bras de la mer est gravée dans mon esprit. Peut-être que les gens viennent au monde avec un but, la vie n’est 1/2 qu’un processus, et suivre son cœur au maximum est aussi une façon de vivre. Jean-marc est né seul et ne pouvait pas combler sa solitude dans la foule, préférant se plonger dans l’obscurité de la mer pour profiter d’un moment de paix.</p>
-<p>法国著名导演阿贝尔-甘斯说：”拍摄电影的不是影像，而是影像的灵魂”。我仍然记得2020年的那个下午，当我看完吕克-保罗-莫里斯-贝松的《Le grand bleu》时，我在家里的感觉。让-马克温柔地看着他的爱人，然后转身投入大海的怀抱，这一幕深深地刻在我的脑海里。也许人们来到这个世界上是有目的的，生活是1/2个过程，充分跟随自己的心也是一种生活方式。让-马克生来孤独，在人群中无法填补他的孤独，他宁愿将自己沉浸在黑暗的大海中，享受片刻的宁静。</p>
-<h2 id="想来戛纳"><a href="#想来戛纳" class="headerlink" title="想来戛纳"></a>想来戛纳</h2><p>J’ai travaillé dur et j’ai pu poursuivre mes études en France comme je le souhaitais, les mots ne peuvent décrire mon excitation lorsque j’ai appris que j’aurais peut-être l’occasion d’aller au Festival du film de Cannes et de voir les meilleurs films du monde entier dans cette belle ville du sud, par une belle journée de mai. Le Festival de Cannes est pour moi un sanctuaire pour le pèlerinage des fidèles, un trésor si beau et si désirable pour les gourmands qui le cherchent tant. Mais aussi comme un bon ami, si familier, qui m’a rencontré dans mes rêves à travers d’innombrables films. C’est peut-être notre seule chance de nous rencontrer dans cette vie. Je pense que je n’oublierai jamais cette rencontre avec le Festival de Cannes et que ce sera l’une des expériences les plus importantes de ma vie. C’est pourquoi je demande au comité de me donner la possibilité de réaliser mon rêve de raconter mon histoire d’été à Cannes. Je vous en serais très reconnaissant.</p>
-<p>现在我通过努力，如愿在法国开启我的学习生活，当我得知我可能有机会去参加戛纳电影节，在这个美丽的南方城市看到来自世界各地的最佳影片时，我的兴奋之情难以言表。戛纳电影节对我来说是一个供信徒朝圣的圣地，是一个如此美丽、如此令人向往的宝藏，让那些追求它的饕餮之徒欲罢不能。但也像一个好朋友，如此熟悉，通过无数的电影在梦中与我相遇。这可能是我们今生唯一的见面机会。我想我永远不会忘记这次与戛纳电影节的会面，这将是我人生中最重要的经历之一。这就是为什么我请求委员会给我机会实现我的梦想，在戛纳讲述我的夏季故事。我将非常感激。</p>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p> Veuillez agréer, Mesdames, Messieurs, l’expression de ma considération distinguée.</p>
-<p> Li NI</p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-      </categories>
-  </entry>
-  <entry>
     <title>algorithm-绪论</title>
     <url>/2021/12/06/algorithm01/</url>
     <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
@@ -1138,6 +1092,144 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
         <tag>ALGORITHM</tag>
         <tag>算法基础</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/12/05/hello-world/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
+<p>截断测试</p>
+<span id="more"></span>
+<p>图片测试：</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/111.webp" alt="111"></p>
+<p>数学公式测试</p>
+<script type="math/tex; mode=display">T(n)=\sum_i C_{opi} * C_i(n)</script><p>公式测试2</p>
+<script type="math/tex; mode=display">
+T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
+<p>侧边栏多级分类</p>
+<p>FLUID整理</p>
+<p>Pro20整理</p>
+<p>SSTEM一周一记</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法(一)</title>
+    <url>/2022/05/20/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95(%E4%B8%80)/</url>
+    <content><![CDATA[<h1 id="排序算法（一）"><a href="#排序算法（一）" class="headerlink" title="排序算法（一）"></a>排序算法（一）</h1><p>浅学排序</p>
+<span id="more"></span>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>1.教案版</p>
+<p>算法描述：</p>
+<p>每次循环完前i个数按升序排列，排第i个时用j去找位置，找到位置后插入并使别的元素移动</p>
+<p>算法实现</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(ElemTp R[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(j&lt;i &amp;&amp; R[j].valeur &lt;= R[i].valeur)</span><br><span class="line">            j++; </span><br><span class="line">        <span class="comment">//把R[i]插入到位置R[j]左边</span></span><br><span class="line">        <span class="comment">//我在这里用的是vector的insert函数，有后移操作，复杂度为O(n) </span></span><br><span class="line">         R.<span class="built_in">insert</span>(R.<span class="built_in">begin</span>()+j,R[i]);</span><br><span class="line">  		 R.<span class="built_in">erase</span>(R.<span class="built_in">begin</span>()+i+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度为O(n^2)</p>
+<p>2.网上看到的</p>
+<p>//从后往前，查找的时候就进行后移操作</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertion_sort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">int</span> key=arr[i];</span><br><span class="line">                <span class="keyword">int</span> j=i<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">while</span>((j&gt;=<span class="number">0</span>) &amp;&amp; (key&lt;arr[j]))&#123;</span><br><span class="line">                        arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">                        j--;</span><br><span class="line">                &#125;</span><br><span class="line">                arr[j+<span class="number">1</span>]=key;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>每次循环进行两两比较和交换，第i次循环结束，第i大（小）的数排序完成。</p>
+<p>算法实现</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">0</span>；</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = arr[j];</span><br><span class="line">                arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">                arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">                </span><br><span class="line">                flag = <span class="number">1</span>；</span><br><span class="line">                pos = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        k = pos;   </span><br><span class="line">        <span class="keyword">if</span>(!flag) <span class="keyword">return</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度为O(n^2)</p>
+<p>冒泡排序的优化_1</p>
+<p>加入flag判断当前是否已经排序完成。</p>
+<p>冒泡排序的优化_2</p>
+<p>加入记录上次循环发生交换的最后位置pos,说明后(或者前)pos个是已经排好了，下次循环只需比到k即可</p>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>将待排序列分割成子序列，子序列进行插入排序，当子序列的size为1时，排序完成。属于插入排序的升级版。</p>
+<p>例子：</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220331003031.webp" alt="img"></p>
+<p>一般来讲增量序列的size是3或者4//循环次数</p>
+<p>代码实现：</p>
+<p>1.赵宏宇版</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; arr[],vector&lt;<span class="keyword">int</span>&gt; d[])</span><span class="comment">//d里面存增量序列</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;d.size;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;d[i];j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//进行插入排序_2,从后边查边移,真难看，(bushi</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = j+d[i];k&lt;arr.size;k+=d[i])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = arr[k];</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> t = k-d[i];t&gt;=j&amp;&amp;arr[t]&gt;arr[j];t-=d[i])</span><br><span class="line">                    arr[t+d[i]] = arr[t];</span><br><span class="line">                arr[t+d[i]]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.网络版</p>
+<p>排两次，增量序列为(4,1)</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">(T array[], <span class="keyword">int</span> length)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//[就是说，length为2和3是直接插入排就行了]</span></span><br><span class="line">    <span class="keyword">while</span> (h &lt; length / <span class="number">3</span>) </span><br><span class="line">    &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//增量序列为1是排序完成</span></span><br><span class="line">    <span class="keyword">while</span> (h &gt;= <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//插入排序，对array[0,h,]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = h; i &lt; length; i++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt;= h &amp;&amp; array[j] &lt; array[j - h]; j -= h)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">swap</span>(array[j], array[j - h]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//减小增量序列</span></span><br><span class="line">        h = h / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>插入排序那里感觉也不是很插入</p>
+<h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><p>是冒泡排序的升级版</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
+      </categories>
+      <tags>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>遗传算法</title>
+    <url>/2022/07/29/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h1><p>帮ZZ做SRTP学的一些东西</p>
+<span id="more"></span>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><h3 id="一些生物学常识"><a href="#一些生物学常识" class="headerlink" title="一些生物学常识"></a>一些生物学常识</h3><p>基因型、表现型</p>
+<p>进化：群体，个体，适应度(Fitness)</p>
+<h3 id="优化问题—-gt-优化问题模型"><a href="#优化问题—-gt-优化问题模型" class="headerlink" title="优化问题—&gt;优化问题模型"></a>优化问题—&gt;优化问题模型</h3><p>f(X)目标函数+约束条件 </p>
+<p>求最优化问题的方法：枚举，启发式算法（？），搜索</p>
+<h3 id="遗传算法中的基本过程"><a href="#遗传算法中的基本过程" class="headerlink" title="遗传算法中的基本过程"></a>遗传算法中的基本过程</h3><ol>
+<li>选择：按照个体适应度，按照一定的规则，从t代群体P（t）中选择优良个体遗传到P（t+1）</li>
+<li>交叉 ：将P（t）内的各个个体随机搭配成对，以每一对个体，以某个概率交换</li>
+<li>变异：对群体P（t）中的每一个个体，以某一概率改变某一个或者某一些值</li>
+</ol>
+<p>流程</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224236119.webp" alt="img"></p>
+<p>群体：可行解编码成基因的个体的一个集合</p>
+<h3 id="模拟遗传算法的简单实例"><a href="#模拟遗传算法的简单实例" class="headerlink" title="模拟遗传算法的简单实例"></a>模拟遗传算法的简单实例</h3><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224550098.webp" alt="img"></p>
+<ol>
+<li><p>个体编码</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224911233.webp" alt="img" style="zoom:80%;" /></p>
+</li>
+<li><p>初始群体的产生</p>
+<p>选取起始搜索点的初始群体数据，需要选取群体规模，这里选4。个体则随机产生</p>
+</li>
+<li><p>适应度计算</p>
+<p>这里直接以目标函数为适应度</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722225740210.webp" alt="img"></p>
+<p>第6列表示适应度概率，7进行选择，注意选择完成时，群体规模是保持不变的</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722230022681.webp" alt="img"></p>
+</li>
+</ol>
+<p>​    9,10,11进行交叉的过程：配对的第2位进行交叉（等位基因）</p>
+<p>​    12,13进行变异</p>
+<p>​    13产生子代群体，完成一次迭代。</p>
+<p>最优解可由迭代次数决定</p>
+<h2 id="2-基本的遗传算法"><a href="#2-基本的遗传算法" class="headerlink" title="2.基本的遗传算法"></a>2.基本的遗传算法</h2><h2 id="遗传算法解决TSP问题"><a href="#遗传算法解决TSP问题" class="headerlink" title="遗传算法解决TSP问题"></a>遗传算法解决TSP问题</h2><h3 id="问题抽象"><a href="#问题抽象" class="headerlink" title="问题抽象"></a>问题抽象</h3><p>1.如何将答案编码成基因</p>
+<p>旅行路线—&gt;一个数组</p>
+<p>2.如何定义个体适应度</p>
+<p>路程（目标函数）</p>
+]]></content>
+      <categories>
+        <category>学习区</category>
+        <category>暑假的乱七八糟</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>戛纳动机信</title>
+    <url>/2022/05/20/%E6%88%9B%E7%BA%B3%E5%8A%A8%E6%9C%BA%E4%BF%A1-1/</url>
+    <content><![CDATA[<p>Cannes!!!</p>
+<span id="more"></span>
+<h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>Je suis une étudiante en double diplôme à l’Ecole Centrale de Nantes, en vue d’obtenir un diplôme d’ingénieur. Je suis très intéressé par le projet “Trois jours à Cannes” et j’aimerais partager avec vous ma principale motivation. </p>
+<h2 id="喜欢电影"><a href="#喜欢电影" class="headerlink" title="喜欢电影"></a>喜欢电影</h2><p>J’ai 22 ans et je viens d’une petite ville de Chengdu, une province centrale de Chine. Influencé par mes parents, j’aime regarder des films depuis que je suis enfant. Je suis particulièrement reconnaissant aux films de m’avoir fait découvrir un monde après l’autre pendant mon enfance. Je me souviens du choc que j’ai ressenti en regardant <em>Harry Potter</em> pour la première fois quand j’étais enfant, et je n’ai pas pu me calmer longtemps après. Jouer au Quidditch avec Ron dans mes rêves, m’allonger sur le balcon en attendant ma lettre d’acceptation à Poudlard, lutter pour trouver le quai 9 et 3/4 en prenant le train. Je me souviens aussi d’avoir regardé <em>Les Chroniques de Narnia</em> et d’avoir joué à cache-cache avec mes amis pour ensuite me cacher dans l’armoire, désireuse de s’embarquer dans une aventure où il faut aussi faire preuve de courage. Il n’est pas exagéré de dire que les films ont construit mon enfance.</p>
+<p>我今年22岁，来自中国中部省份成都的一个小镇。受父母影响，我从小便喜欢看电影。我特别感谢电影给我童年带我走进了一个又一个的世界。我记得我小时候第一次看哈利波特时的震撼，看完以后久久不能平静。在梦里和罗恩打魁地奇，趴在阳台等霍格沃兹的录取通知书，在乘坐火车时努力的寻找9又3/4站台。我也记得我看完纳尼亚传奇后，从此和朋友玩捉迷藏只躲在衣柜，渴望也能开启一段关于勇气的冒险。毫不夸张的讲，电影构建了我的童年。</p>
+<p>Lorsque je suis entré dans l’enseignement secondaire, les films n’étaient jamais absents non plus. Je me souviens d’un cours de musique où le professeur de musique nous a montré un extrait de <em>Les choristes</em>, et depuis lors, les films français, ou plutôt la France, ont commencé à entrer dans mon univers. Après avoir regardé <em>Le fabuleux destin d’Amélie Poulain</em>, j’ai été captivé par la romance créée par le film et en même temps déterminé à faire l’expérience du pays et de la culture française par moi-même pendant mes années d’université. Mais je dois admettre que lorsque j’étais jeune, j’étais immature et j’avais une vision unilatérale du monde, mais ces films sur différents sujets m’ont énormément aidé à construire un système de pensée selon lequel le monde est divers, la beauté est diverse et la vie est diverse, et ces films ont façonné ma tolérance.</p>
+<p>升入中学后，电影也从未缺席。还记得那时一节音乐课，音乐老师给我们放了放牛班的春天选段，自此法国电影或者说法国开始进入我的世界。在看完天使爱美丽后，我被电影创造出的浪漫所深深吸引，同时坚定了自己要在大学期间亲历这片土地和法国文化。但我不得不承认，年轻时我的思想并不成熟，看世界的角度也很片面，但这些不同题材的电影给我带来了巨大的帮助，让我建立了一个世界是多元的、美是多元的、生活是多元的思维体系，这些电影塑造了我的宽容。</p>
+<p>Le célèbre réalisateur français, Abel Gance a dit : “Ce n’est pas l’image qui fait le film, c’est l’âme de l’image”. Je me rappelle encore comment je me suis sentie chez moi cet après-midi de 2020, lorsque j’ai fini de regarder Le grand bleu de Luc Paul Maurice Besson. La scène où Jean-marc regarde tendrement son amant puis se retourne et se jette dans les bras de la mer est gravée dans mon esprit. Peut-être que les gens viennent au monde avec un but, la vie n’est 1/2 qu’un processus, et suivre son cœur au maximum est aussi une façon de vivre. Jean-marc est né seul et ne pouvait pas combler sa solitude dans la foule, préférant se plonger dans l’obscurité de la mer pour profiter d’un moment de paix.</p>
+<p>法国著名导演阿贝尔-甘斯说：”拍摄电影的不是影像，而是影像的灵魂”。我仍然记得2020年的那个下午，当我看完吕克-保罗-莫里斯-贝松的《Le grand bleu》时，我在家里的感觉。让-马克温柔地看着他的爱人，然后转身投入大海的怀抱，这一幕深深地刻在我的脑海里。也许人们来到这个世界上是有目的的，生活是1/2个过程，充分跟随自己的心也是一种生活方式。让-马克生来孤独，在人群中无法填补他的孤独，他宁愿将自己沉浸在黑暗的大海中，享受片刻的宁静。</p>
+<h2 id="想来戛纳"><a href="#想来戛纳" class="headerlink" title="想来戛纳"></a>想来戛纳</h2><p>J’ai travaillé dur et j’ai pu poursuivre mes études en France comme je le souhaitais, les mots ne peuvent décrire mon excitation lorsque j’ai appris que j’aurais peut-être l’occasion d’aller au Festival du film de Cannes et de voir les meilleurs films du monde entier dans cette belle ville du sud, par une belle journée de mai. Le Festival de Cannes est pour moi un sanctuaire pour le pèlerinage des fidèles, un trésor si beau et si désirable pour les gourmands qui le cherchent tant. Mais aussi comme un bon ami, si familier, qui m’a rencontré dans mes rêves à travers d’innombrables films. C’est peut-être notre seule chance de nous rencontrer dans cette vie. Je pense que je n’oublierai jamais cette rencontre avec le Festival de Cannes et que ce sera l’une des expériences les plus importantes de ma vie. C’est pourquoi je demande au comité de me donner la possibilité de réaliser mon rêve de raconter mon histoire d’été à Cannes. Je vous en serais très reconnaissant.</p>
+<p>现在我通过努力，如愿在法国开启我的学习生活，当我得知我可能有机会去参加戛纳电影节，在这个美丽的南方城市看到来自世界各地的最佳影片时，我的兴奋之情难以言表。戛纳电影节对我来说是一个供信徒朝圣的圣地，是一个如此美丽、如此令人向往的宝藏，让那些追求它的饕餮之徒欲罢不能。但也像一个好朋友，如此熟悉，通过无数的电影在梦中与我相遇。这可能是我们今生唯一的见面机会。我想我永远不会忘记这次与戛纳电影节的会面，这将是我人生中最重要的经历之一。这就是为什么我请求委员会给我机会实现我的梦想，在戛纳讲述我的夏季故事。我将非常感激。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p> Veuillez agréer, Mesdames, Messieurs, l’expression de ma considération distinguée.</p>
+<p> Li NI</p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+      </categories>
   </entry>
   <entry>
     <title>那些细碎而美好的存在</title>
@@ -1202,97 +1294,5 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
         <category>生活区</category>
         <category>杂谈</category>
       </categories>
-  </entry>
-  <entry>
-    <title>遗传算法</title>
-    <url>/2022/07/29/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h1><p>帮ZZ做SRTP学的一些东西</p>
-<span id="more"></span>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><h3 id="一些生物学常识"><a href="#一些生物学常识" class="headerlink" title="一些生物学常识"></a>一些生物学常识</h3><p>基因型、表现型</p>
-<p>进化：群体，个体，适应度(Fitness)</p>
-<h3 id="优化问题—-gt-优化问题模型"><a href="#优化问题—-gt-优化问题模型" class="headerlink" title="优化问题—&gt;优化问题模型"></a>优化问题—&gt;优化问题模型</h3><p>f(X)目标函数+约束条件 </p>
-<p>求最优化问题的方法：枚举，启发式算法（？），搜索</p>
-<h3 id="遗传算法中的基本过程"><a href="#遗传算法中的基本过程" class="headerlink" title="遗传算法中的基本过程"></a>遗传算法中的基本过程</h3><ol>
-<li>选择：按照个体适应度，按照一定的规则，从t代群体P（t）中选择优良个体遗传到P（t+1）</li>
-<li>交叉 ：将P（t）内的各个个体随机搭配成对，以每一对个体，以某个概率交换</li>
-<li>变异：对群体P（t）中的每一个个体，以某一概率改变某一个或者某一些值</li>
-</ol>
-<p>流程</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224236119.webp" alt="img"></p>
-<p>群体：可行解编码成基因的个体的一个集合</p>
-<h3 id="模拟遗传算法的简单实例"><a href="#模拟遗传算法的简单实例" class="headerlink" title="模拟遗传算法的简单实例"></a>模拟遗传算法的简单实例</h3><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224550098.webp" alt="img"></p>
-<ol>
-<li><p>个体编码</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224911233.webp" alt="img" style="zoom:80%;" /></p>
-</li>
-<li><p>初始群体的产生</p>
-<p>选取起始搜索点的初始群体数据，需要选取群体规模，这里选4。个体则随机产生</p>
-</li>
-<li><p>适应度计算</p>
-<p>这里直接以目标函数为适应度</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722225740210.webp" alt="img"></p>
-<p>第6列表示适应度概率，7进行选择，注意选择完成时，群体规模是保持不变的</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722230022681.webp" alt="img"></p>
-</li>
-</ol>
-<p>​    9,10,11进行交叉的过程：配对的第2位进行交叉（等位基因）</p>
-<p>​    12,13进行变异</p>
-<p>​    13产生子代群体，完成一次迭代。</p>
-<p>最优解可由迭代次数决定</p>
-<h2 id="2-基本的遗传算法"><a href="#2-基本的遗传算法" class="headerlink" title="2.基本的遗传算法"></a>2.基本的遗传算法</h2><h2 id="遗传算法解决TSP问题"><a href="#遗传算法解决TSP问题" class="headerlink" title="遗传算法解决TSP问题"></a>遗传算法解决TSP问题</h2><h3 id="问题抽象"><a href="#问题抽象" class="headerlink" title="问题抽象"></a>问题抽象</h3><p>1.如何将答案编码成基因</p>
-<p>旅行路线—&gt;一个数组</p>
-<p>2.如何定义个体适应度</p>
-<p>路程（目标函数）</p>
-]]></content>
-      <categories>
-        <category>学习区</category>
-        <category>暑假的乱七八糟</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序算法(一)</title>
-    <url>/2022/05/20/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95(%E4%B8%80)/</url>
-    <content><![CDATA[<h1 id="排序算法（一）"><a href="#排序算法（一）" class="headerlink" title="排序算法（一）"></a>排序算法（一）</h1><p>浅学排序</p>
-<span id="more"></span>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>1.教案版</p>
-<p>算法描述：</p>
-<p>每次循环完前i个数按升序排列，排第i个时用j去找位置，找到位置后插入并使别的元素移动</p>
-<p>算法实现</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(ElemTp R[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(j&lt;i &amp;&amp; R[j].valeur &lt;= R[i].valeur)</span><br><span class="line">            j++; </span><br><span class="line">        <span class="comment">//把R[i]插入到位置R[j]左边</span></span><br><span class="line">        <span class="comment">//我在这里用的是vector的insert函数，有后移操作，复杂度为O(n) </span></span><br><span class="line">         R.<span class="built_in">insert</span>(R.<span class="built_in">begin</span>()+j,R[i]);</span><br><span class="line">  		 R.<span class="built_in">erase</span>(R.<span class="built_in">begin</span>()+i+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度为O(n^2)</p>
-<p>2.网上看到的</p>
-<p>//从后往前，查找的时候就进行后移操作</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertion_sort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">int</span> key=arr[i];</span><br><span class="line">                <span class="keyword">int</span> j=i<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">while</span>((j&gt;=<span class="number">0</span>) &amp;&amp; (key&lt;arr[j]))&#123;</span><br><span class="line">                        arr[j+<span class="number">1</span>]=arr[j];</span><br><span class="line">                        j--;</span><br><span class="line">                &#125;</span><br><span class="line">                arr[j+<span class="number">1</span>]=key;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>每次循环进行两两比较和交换，第i次循环结束，第i大（小）的数排序完成。</p>
-<p>算法实现</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">0</span>；</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = arr[j];</span><br><span class="line">                arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">                arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">                </span><br><span class="line">                flag = <span class="number">1</span>；</span><br><span class="line">                pos = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        k = pos;   </span><br><span class="line">        <span class="keyword">if</span>(!flag) <span class="keyword">return</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度为O(n^2)</p>
-<p>冒泡排序的优化_1</p>
-<p>加入flag判断当前是否已经排序完成。</p>
-<p>冒泡排序的优化_2</p>
-<p>加入记录上次循环发生交换的最后位置pos,说明后(或者前)pos个是已经排好了，下次循环只需比到k即可</p>
-<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>将待排序列分割成子序列，子序列进行插入排序，当子序列的size为1时，排序完成。属于插入排序的升级版。</p>
-<p>例子：</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220331003031.webp" alt="img"></p>
-<p>一般来讲增量序列的size是3或者4//循环次数</p>
-<p>代码实现：</p>
-<p>1.赵宏宇版</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; arr[],vector&lt;<span class="keyword">int</span>&gt; d[])</span><span class="comment">//d里面存增量序列</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;d.size;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;d[i];j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//进行插入排序_2,从后边查边移,真难看，(bushi</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = j+d[i];k&lt;arr.size;k+=d[i])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = arr[k];</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> t = k-d[i];t&gt;=j&amp;&amp;arr[t]&gt;arr[j];t-=d[i])</span><br><span class="line">                    arr[t+d[i]] = arr[t];</span><br><span class="line">                arr[t+d[i]]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.网络版</p>
-<p>排两次，增量序列为(4,1)</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">(T array[], <span class="keyword">int</span> length)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//[就是说，length为2和3是直接插入排就行了]</span></span><br><span class="line">    <span class="keyword">while</span> (h &lt; length / <span class="number">3</span>) </span><br><span class="line">    &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//增量序列为1是排序完成</span></span><br><span class="line">    <span class="keyword">while</span> (h &gt;= <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//插入排序，对array[0,h,]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = h; i &lt; length; i++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt;= h &amp;&amp; array[j] &lt; array[j - h]; j -= h)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">swap</span>(array[j], array[j - h]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//减小增量序列</span></span><br><span class="line">        h = h / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>插入排序那里感觉也不是很插入</p>
-<h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><p>是冒泡排序的升级版</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ALGORITHM</category>
-      </categories>
-      <tags>
-        <tag>排序</tag>
-      </tags>
   </entry>
 </search>
