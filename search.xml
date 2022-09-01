@@ -1581,4 +1581,91 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
         <category>生活区</category>
       </categories>
   </entry>
+  <entry>
+    <title>HASK_入门学习</title>
+    <url>/2022/09/01/HASK/</url>
+    <content><![CDATA[<h1 id="HASK-入门学习"><a href="#HASK-入门学习" class="headerlink" title="HASK_入门学习"></a><centre>HASK_入门学习<centre></h1><p>B站：<a href="https://www.bilibili.com/video/BV16F411j7Zq?p=8&amp;vd_source=ec0ffac623909fb11a02d9651bce5ea8">https://www.bilibili.com/video/BV16F411j7Zq?p=8&amp;vd_source=ec0ffac623909fb11a02d9651bce5ea8</a></p>
+<p>不推荐，听不懂T^T</p>
+<span id="more"></span>
+<h1 id="P1"><a href="#P1" class="headerlink" title="P1"></a>P1</h1><h2 id="简单算术运算"><a href="#简单算术运算" class="headerlink" title="简单算术运算"></a>简单算术运算</h2><p>cmd+ghci进入环境，可以直接使用命令行进行简单的数学计算</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.ota585cmtz4.png" alt="yaimage"></p>
+<h2 id="Haskell的自定义函数"><a href="#Haskell的自定义函数" class="headerlink" title="Haskell的自定义函数"></a>Haskell的自定义函数</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>函数名+输出参数+等号+表达式（可以调用函数/别的或者自己）</p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>文件以.hs结尾保存</p>
+<p>cmd进入桌面：cd Desktop</p>
+<p>ghci</p>
+<p>:l + 文件名</p>
+<p>输入函数名和参数，回车即可运行。</p>
+<h1 id="P2"><a href="#P2" class="headerlink" title="P2"></a>P2</h1><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>用中括号定义，只能包含单一元素类型(但可以嵌套：列表元素是列表)</p>
+<p>字符串，用双引号定义，其实是字符列表</p>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><h4 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h4><p>++</p>
+<p>[1,2,3]++[4,5] —&gt; [1,2,3,4,5]</p>
+<p>“hello”++”haskell”—&gt;”hellohaskell”</p>
+<p>单个元素的拼接可以使用冒号</p>
+<p>6：[3,4,5] —&gt; [6,3,4,5]</p>
+<p>2:[] —&gt;[2]</p>
+<p>2:3:4:[]—&gt;[2,3,4]</p>
+<h4 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h4><p>!!</p>
+<p>“haskell world” !! 1 —&gt;’a’</p>
+<h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><p>可以直接用 &gt;(如果相等则比较下一个位置),&lt;,==</p>
+<h4 id="列表乘"><a href="#列表乘" class="headerlink" title="列表乘"></a>列表乘</h4><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.4axszmx5gvo0.png" alt="yaimage"></p>
+<h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><p>let lst = [1,2,3,4]</p>
+<p>head,last,tail（第一个元素之后的元素）,init（最后一个函数之前的元素）,length,null,reverse</p>
+<p>take+n+列表：获取前n个元素//0返回空</p>
+<p>drop+n+列表：删除前n个元素</p>
+<p>4+’elem’+列表：判断4是否在列表中</p>
+<p>minimum,maximum,sum,product(累乘)</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.6ruo8d9fkg00.png" alt="yaimage"></p>
+<h3 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h3><p>直接..</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.5yszh2s7ii00.png" alt="yaimage"></p>
+<p>cycle表示无限循环，take+cycle组合使用</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.4w8u8gvngo40.png" alt="yaimage"></p>
+<p><strong>take的是长度</strong></p>
+<p>take 5(repeat ‘a’) 等价于 replicate 5 ‘a’</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.gsvpfy6efqg.png" alt="yaimage"></p>
+<p>也可以用列表的形式实现</p>
+<p>[2*x|x&lt;-[1..10]]</p>
+<p>[x|x&lt;[1..100], x <code>mod</code>13 == 0]</p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>注释：单行—，多行{-多行注释-}</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.6svsl3cpcwk0.png" alt="yaimage"></p>
+<p>|表示对a进行说明，a&lt;-str表示a取自字符串str（想成在遍历）</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.ided7jn2svk.png" alt="yaimage"></p>
+<p>_&lt;-str表示取自字符串str,都把它搞成1</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.1f5vtp7bcjb4.png" alt="yaimage"></p>
+<p>x &lt;- xs,odd x表示只获取xs中的奇数</p>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>()表示，可以包含多种元素，不同长度的元组是不同的数据类型</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[(1,2),(8,9,10),(4,5)]会报错</span><br></pre></td></tr></table></figure>
+<p>函数：fst返回第一个元素，snd返回第二个元素，<strong>但只用于长度为2的元组</strong>（？？？？？？）</p>
+<h2 id="ZIP函数"><a href="#ZIP函数" class="headerlink" title="ZIP函数"></a>ZIP函数</h2><p>接收两个列表进行元素配对压缩为新列表，新列表的元素为元组</p>
+<figure class="highlight plaintext"><figcaption><span>[1..]['A',''B,'C']```-->[(1,'A'),(2,'B'),(3,'C')]</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">## 例题</span><br><span class="line"></span><br><span class="line">10以内可组成直角三角形的三条边的组合</span><br><span class="line"></span><br><span class="line">```haskell</span><br><span class="line">fun = [(a,b,c)|a&lt;-[1..10],b&lt;-[1..10],c&lt;-[1..10],a^2+b^2 == c^2]</span><br><span class="line">--&gt;fun = [(a,b,c)|a&lt;-[1..b],b&lt;-[1..c],c&lt;-[1..10],a^2+b^2 == c^2]--可以避免重复</span><br></pre></td></tr></table></figure>
+<h2 id="P3：类型、类型变量、类型类"><a href="#P3：类型、类型变量、类型类" class="headerlink" title="P3：类型、类型变量、类型类"></a>P3：类型、类型变量、类型类</h2><h3 id="TYPE"><a href="#TYPE" class="headerlink" title="TYPE"></a>TYPE</h3><p>使用:t查看</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.nz1x5nv7onk.png" alt="yaimage"></p>
+<h3 id="类型变量"><a href="#类型变量" class="headerlink" title="类型变量"></a>类型变量</h3><p>比如说head啊fst啊这些函数返回值（的类型）是不一定的，所以head和fst函数就是类型变量</p>
+<h3 id="类型类"><a href="#类型类" class="headerlink" title="类型类"></a>类型类</h3><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.re8cgbp6my8.png" alt="yaimage"></p>
+<p>没懂啊啊啊啊啊啊啊啊啊啊</p>
+<h1 id="P4-模式匹配"><a href="#P4-模式匹配" class="headerlink" title="P4 模式匹配"></a>P4 模式匹配</h1><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.449ujnh6ejg0.png" alt="yaimage"></p>
+<p>输入5之外都是“holiday”</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.5uce2881a780.png" alt="yaimage"></p>
+<p>阶乘</p>
+<p>不写：：那排能运行吗？—&gt;不能</p>
+<h1 id="P5"><a href="#P5" class="headerlink" title="P5"></a>P5</h1><p><strong>|</strong>：管道，单竖线，感觉有点像if</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.1rjj5m5zilsw.png" alt="yaimage"></p>
+<p><strong>where</strong></p>
+<p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220901213638563.png" alt="image-20220901213638563"></p>
+<p><strong>let</strong> </p>
+<p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220901213758843.png" alt="image-20220901213758843"></p>
+<p>有点像where</p>
+<p><strong>case</strong></p>
+<p><img src="C:\Users\nili990221\AppData\Roaming\Typora\typora-user-images\image-20220901214026003.png" alt="image-20220901214026003"></p>
+<p>switch吧</p>
+<p>听不懂了不听了</p>
+]]></content>
+      <categories>
+        <category>学习区</category>
+        <category>暑假的乱七八糟</category>
+      </categories>
+      <tags>
+        <tag>haskell</tag>
+        <tag>函数式编程</tag>
+      </tags>
+  </entry>
 </search>
