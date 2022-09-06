@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-12-07%20220027.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-12-07%20220027.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nililili7876.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="PFONC_CM1Introduction基于函数的编程，接近数学声明式编程（programmation déclarative）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PFONC_CM1">
+<meta property="og:url" content="http://nililili7876.cn/2022/09/06/PFONC_CM1/index.html">
+<meta property="og:site_name" content="Bienvenue en Planète 7876">
+<meta property="og:description" content="PFONC_CM1Introduction基于函数的编程，接近数学声明式编程（programmation déclarative）">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.1sj9vtamuy2o.png">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.2mrhycdn7ki0.png">
+<meta property="article:published_time" content="2022-09-06T17:59:57.250Z">
+<meta property="article:modified_time" content="2022-09-06T18:07:20.801Z">
+<meta property="article:author" content="7876">
+<meta property="article:tag" content="haskell">
+<meta property="article:tag" content="palindromique">
+<meta property="article:tag" content="fibonacci">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.1sj9vtamuy2o.png">
+
+<link rel="canonical" href="http://nililili7876.cn/2022/09/06/PFONC_CM1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>PFONC_CM1 | Bienvenue en Planète 7876</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bienvenue en Planète 7876</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags<span class="badge">28</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories<span class="badge">23</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives<span class="badge">29</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://nililili7876.cn/2022/09/06/PFONC_CM1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2021120417470915.png">
+      <meta itemprop="name" content="7876">
+      <meta itemprop="description" content="别怕别想别后退">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bienvenue en Planète 7876">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PFONC_CM1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-09-06 19:59:57 / Modified: 20:07:20" itemprop="dateCreated datePublished" datetime="2022-09-06T19:59:57+02:00">2022-09-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NANTE-EI2-1/" itemprop="url" rel="index"><span itemprop="name">NANTE_EI2|1</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NANTE-EI2-1/PFONC/" itemprop="url" rel="index"><span itemprop="name">PFONC</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NANTE-EI2-1/PFONC/CM/" itemprop="url" rel="index"><span itemprop="name">CM</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/09/06/PFONC_CM1/" class="post-meta-item leancloud_visitors" data-flag-title="PFONC_CM1" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/09/06/PFONC_CM1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/09/06/PFONC_CM1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="PFONC-CM1"><a href="#PFONC-CM1" class="headerlink" title="PFONC_CM1"></a>PFONC_CM1</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>基于函数的编程，接近数学声明式编程（programmation déclarative）</p>
+<span id="more"></span>
+<p>属性:transparence référentielle：参考透明,immutabilité：不变性</p>
+<p>​         <strong>transparence référentielle</strong>:并行，没有指针，全局变量或者输入输出</p>
+<p>​         <strong>immutabilité</strong>：被操纵对象的值永远不能改变</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.1sj9vtamuy2o.png" alt="yaimage"></p>
+<h2 id="Constructions-de-base"><a href="#Constructions-de-base" class="headerlink" title="Constructions de base"></a>Constructions de base</h2><h3 id="复合函数"><a href="#复合函数" class="headerlink" title="复合函数"></a>复合函数</h3><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">square</span> x = x*x</span><br><span class="line"><span class="title">inc</span> x = x+<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="title">f</span> x = inc(square x)</span><br><span class="line"><span class="title">f</span> x = (inc.square) x</span><br></pre></td></tr></table></figure>
+<h3 id="条件式"><a href="#条件式" class="headerlink" title="条件式"></a>条件式</h3><h4 id="if-then-else"><a href="#if-then-else" class="headerlink" title="if-then-else"></a>if-then-else</h4><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">f</span> n = <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> n == <span class="number">-1</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">else</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>然后不等于是 /=</p>
+<h4 id="gardee-otherwise"><a href="#gardee-otherwise" class="headerlink" title="gardée(|+ otherwise)"></a>gardée(|+ otherwise)</h4><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">caculate&#x27;</span> a b c | b == &#x27;+&#x27;  = <span class="type">Just</span> (a + c)<span class="comment">--不太知道这里的just是啥</span></span><br><span class="line">                | b == &#x27;-&#x27;  = <span class="type">Just</span> (a - c)</span><br><span class="line">                | b == &#x27;*&#x27;  = <span class="type">Just</span> (a * c)</span><br><span class="line">                | b == &#x27;/&#x27; &amp;&amp; c == <span class="number">0</span> = <span class="type">Nothing</span> </span><br><span class="line">                | b == &#x27;/&#x27; = <span class="type">Just</span> (a / c)</span><br><span class="line">                | otherwise = <span class="type">Nothing</span> </span><br></pre></td></tr></table></figure>
+<h4 id="case-of"><a href="#case-of" class="headerlink" title="case-of"></a>case-of</h4><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">f</span> n = <span class="keyword">case</span> n <span class="keyword">of</span></span><br><span class="line">	<span class="number">0</span> -&gt; <span class="number">1</span></span><br><span class="line">	_ -&gt; n * f (n<span class="number">-1</span>)<span class="comment">--下划线_表示任意</span></span><br></pre></td></tr></table></figure>
+<h3 id="递归-recursivite"><a href="#递归-recursivite" class="headerlink" title="递归: récursivité"></a>递归: récursivité</h3><p>Une fonction récursive possède（有） :</p>
+<p> • un (ou plusieurs) cas général récursif </p>
+<p> • un (ou plusieurs) cas de base non récursif</p>
+<p>L’évaluation d’une fonction récursive se fait sur le modèle d’une pile[堆栈]</p>
+<p><strong>Fonction récursive terminale</strong></p>
+<p>定义：Pour une fonction f définie en utilisant une fonction g, l’évaluation de g est dite terminale (tail évaluation/call) si elle fournit directement la valeur de f sans opération supplémentaire.</p>
+<p>对于一个用函数g定义的函数f，如果g直接提供了f的值而没有任何额外的操作，那么g的évaluation被称为terminale</p>
+<p>如果一个递归函数的所有递归的évaluation都是terminale的，那么他就是<strong>Fonction récursive terminale</strong></p>
+<p>例</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">f&#x27;</span> <span class="number">0</span> r = r</span><br><span class="line"><span class="title">f&#x27;</span> n r = f&#x27; (n<span class="number">-1</span>) (r*n)</span><br><span class="line"></span><br><span class="line"><span class="title">f</span> n = f&#x27; n <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="title">main</span> = print(f <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p> <strong>Exercices</strong></p>
+<p><strong>EX1: PUISSANCE</strong></p>
+<p>1.Écrire une fonction récursive qui calcule la puissance $n^e$ d’un nombre </p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">puissance</span> x <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"><span class="title">puissance</span> x n = x * puissance x (n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Utiliser le fait que $x^{2n}=(x^2)^n$ pour améliorer la fonction.</li>
+</ol>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">puissance&#x27;</span> x <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"><span class="title">puissance&#x27;</span> x n = <span class="keyword">if</span> even n <span class="keyword">then</span> puissance&#x27; (x*x) (div n <span class="number">2</span>) <span class="keyword">else</span> x * puissance&#x27; (x*x) (div n <span class="number">2</span>)<span class="comment">--even应该是在说n是偶数，odd奇数</span></span><br></pre></td></tr></table></figure>
+<p>3.Quelles sont les complexités temporelles des deux versions ?</p>
+<p>方法1是关于n的线性，方法2是关于$log_2n$ 的。</p>
+<p><strong>EX2: Fibonacci</strong></p>
+<p> Écrire une fonction récursive terminale qui calcule le terme d’indice n de la suite de Fibonacci </p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">fibonacci</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line"><span class="title">fibonacci</span> <span class="number">2</span> = <span class="number">1</span></span><br><span class="line"><span class="title">fibonacci</span> n = fibonacci(n<span class="number">-1</span>) + fibonacci(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--terminale</span></span><br><span class="line"><span class="title">fibonacci&#x27;</span> <span class="number">0</span> _ n2 = n2<span class="comment">--不是很懂这里</span></span><br><span class="line"><span class="title">fibonacci&#x27;</span> n n1 n2 = fibonacci&#x27;(n<span class="number">-1</span>) (n1+n2) n1</span><br><span class="line"><span class="title">fib</span> n = fibonacci&#x27; n <span class="number">1</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><strong>EX3:La hauteur palindromique</strong></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.2mrhycdn7ki0.png" alt="yaimage"></p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">r&#x27;</span> <span class="number">0</span> m = m</span><br><span class="line"><span class="title">r&#x27;</span> x m = r&#x27; (div x <span class="number">10</span>) (<span class="number">10</span>*m + mod x <span class="number">10</span>)</span><br><span class="line"><span class="title">r</span> x = r&#x27; x <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--判断回文数字:n == r(n)</span></span><br><span class="line"><span class="title">hpal</span> n = <span class="keyword">if</span> n == r n <span class="keyword">then</span> <span class="number">0</span></span><br><span class="line">      <span class="keyword">else</span> <span class="number">1</span> + hpal (n + r n)<span class="comment">--太妙了太妙了太妙了</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/haskell/" rel="tag"><i class="fa fa-tag"></i> haskell</a>
+              <a href="/tags/palindromique/" rel="tag"><i class="fa fa-tag"></i> palindromique</a>
+              <a href="/tags/fibonacci/" rel="tag"><i class="fa fa-tag"></i> fibonacci</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/06/INDUR%20-%20Informatique%20durable/" rel="prev" title="INDUR_CM1">
+      <i class="fa fa-chevron-left"></i> INDUR_CM1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/06/PYTHON_0/" rel="next" title="PYTHON_CM1">
+      PYTHON_CM1 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PFONC-CM1"><span class="nav-number">1.</span> <span class="nav-text">PFONC_CM1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructions-de-base"><span class="nav-number">1.2.</span> <span class="nav-text">Constructions de base</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">复合函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">条件式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if-then-else"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">if-then-else</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gardee-otherwise"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">gardée(|+ otherwise)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#case-of"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">case-of</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92-recursivite"><span class="nav-number">1.2.3.</span> <span class="nav-text">递归: récursivité</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="7876"
+      src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2021120417470915.png">
+  <p class="site-author-name" itemprop="name">7876</p>
+  <div class="site-description" itemprop="description">别怕别想别后退</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/lilili_7876" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;lilili_7876" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://littlewuuu.com/" title="http:&#x2F;&#x2F;littlewuuu.com&#x2F;" rel="noopener" target="_blank">WZL</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">7876</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">66k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">1:01</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.6/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '91j0YOhNsJ3dVCsvMn06SGEM-MdYXbMMI',
+      appKey     : 'YET3dXX87AXEbAsskLm60b0j',
+      placeholder: "yeah!",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://91j0YOhN.api.lncldglobal.com'
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
