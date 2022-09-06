@@ -492,6 +492,25 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>CCUBE_Chapitre1</title>
+    <url>/2022/02/04/CCUBE-01/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
+<span id="more"></span>
+<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220204024706.webp" alt="img"></p>
+<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h3 id="教学目标："><a href="#教学目标：" class="headerlink" title="教学目标："></a>教学目标：</h3><p>— échantillonner un signal 信号采样;<br>— en faire une analyse de Fourier 傅里叶分析;<br>— modéliser un système physique continu par le langage des fonctions de transfert 用transfert函数给系统建模;<br>— modéliser un système physique continu par le langage de l’espace d’état 用l’’espace d’état给系统建模;<br>— lier les phénomènes physiques aux paramètres de ces représentations (temps de réponse, stabilité) ;<br>— interfacer le temps continu et le temps discret(离散) ;<br>— simuler(模拟) ces représentations à l’aide de logiciels adaptés.</p>
+<h3 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h3><p>使用Matlab的Simulink完成：</p>
+<p>1.la reconstruction d’une partition à partir de l’enregistrement audio-phonique ;</p>
+<p>2.le pilotage en simulation d’une navette spatiale, version très simplifiée d’un contrat avec l’agence spatiale</p>
+<h3 id="前置数学知识"><a href="#前置数学知识" class="headerlink" title="前置数学知识"></a>前置数学知识</h3><p>— les nombres complexes 复数;<br>— la dérivation et l’intégration d’une fonction d’une <strong>variable réelle</strong>（？） à <strong>valeur réelle</strong>（？） 积分求导;<br>— les suites de nombres réels ou complexes ;<br>on n’a pas à craindre les quelques calculs élémentaires de séries ;<br>— le calcul matriciel 矩阵 ;<br>— les valeurs et vecteurs propres, la diagonalisation d’une matrice carrée特征值；</p>
+<p>—LTI linéaire temporellement invariant线性时间不变</p>
+<h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>CCUBE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>ALGPR-4</title>
     <url>/2022/02/28/ALGPR-4/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>关于算法的第四周</p>
@@ -538,23 +557,22 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </categories>
   </entry>
   <entry>
-    <title>CCUBE_Chapitre1</title>
-    <url>/2022/02/04/CCUBE-01/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
+    <title>Ekya</title>
+    <url>/2022/08/01/Ekya/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>戴老师给的第二篇论文</p>
 <span id="more"></span>
-<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220204024706.webp" alt="img"></p>
-<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h3 id="教学目标："><a href="#教学目标：" class="headerlink" title="教学目标："></a>教学目标：</h3><p>— échantillonner un signal 信号采样;<br>— en faire une analyse de Fourier 傅里叶分析;<br>— modéliser un système physique continu par le langage des fonctions de transfert 用transfert函数给系统建模;<br>— modéliser un système physique continu par le langage de l’espace d’état 用l’’espace d’état给系统建模;<br>— lier les phénomènes physiques aux paramètres de ces représentations (temps de réponse, stabilité) ;<br>— interfacer le temps continu et le temps discret(离散) ;<br>— simuler(模拟) ces représentations à l’aide de logiciels adaptés.</p>
-<h3 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h3><p>使用Matlab的Simulink完成：</p>
-<p>1.la reconstruction d’une partition à partir de l’enregistrement audio-phonique ;</p>
-<p>2.le pilotage en simulation d’une navette spatiale, version très simplifiée d’un contrat avec l’agence spatiale</p>
-<h3 id="前置数学知识"><a href="#前置数学知识" class="headerlink" title="前置数学知识"></a>前置数学知识</h3><p>— les nombres complexes 复数;<br>— la dérivation et l’intégration d’une fonction d’une <strong>variable réelle</strong>（？） à <strong>valeur réelle</strong>（？） 积分求导;<br>— les suites de nombres réels ou complexes ;<br>on n’a pas à craindre les quelques calculs élémentaires de séries ;<br>— le calcul matriciel 矩阵 ;<br>— les valeurs et vecteurs propres, la diagonalisation d’une matrice carrée特征值；</p>
-<p>—LTI linéaire temporellement invariant线性时间不变</p>
-<h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+<h1 id="读论文"><a href="#读论文" class="headerlink" title="读论文"></a>读论文</h1><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.png" alt="img" style="zoom:80%;" /></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/xxx.png" alt="img" style="zoom:80%;" /></p>
+<h2 id="DNN"><a href="#DNN" class="headerlink" title="DNN"></a>DNN</h2><p>深度神经网络，隐含层大于两层的神经网络</p>
+<h1 id="跑项目"><a href="#跑项目" class="headerlink" title="跑项目"></a>跑项目</h1><p>项目地址：<a href="https://github.com/edge-video-services/ekya">https://github.com/edge-video-services/ekya</a></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>武运昌隆！</p>
 ]]></content>
       <categories>
-        <category>NANTE_S6</category>
-        <category>CCUBE</category>
+        <category>学习区</category>
       </categories>
+      <tags>
+        <tag>DNN</tag>
+      </tags>
   </entry>
   <entry>
     <title>ALGOA_CM1&amp;2</title>
@@ -682,6 +700,25 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>MATHS-TP1</title>
+    <url>/2022/02/22/MATH-TP1/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>MATHS_TP1: Initiation Matlab – Equation de la chaleur 1D</p>
+<span id="more"></span>
+<h1 id="Initiation"><a href="#Initiation" class="headerlink" title="Initiation"></a>Initiation</h1><p>注释：%</p>
+<p>显示：disp、fprintf</p>
+<p>vecteur: x = [x1,x2……,xn] %空格或者逗号都可以；vecteur colonne</p>
+<p>冒号：5：-1：1 %表示5到1以-1为间隔的vecteur</p>
+<p>linspace：是Matlab中的均分计算指令，用于产生x1,x2之间的N点行线性的矢量。其中x1、x2、N分别为起始值、终止值、元素个数。若默认N，默认点数为100</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>MATHS</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HASK_入门学习</title>
     <url>/2022/09/01/HASK/</url>
     <content><![CDATA[<h1 id="HASK-入门学习"><a href="#HASK-入门学习" class="headerlink" title="HASK_入门学习"></a><centre>HASK_入门学习<centre></h1><p>B站：<a href="https://www.bilibili.com/video/BV16F411j7Zq?p=8&amp;vd_source=ec0ffac623909fb11a02d9651bce5ea8">https://www.bilibili.com/video/BV16F411j7Zq?p=8&amp;vd_source=ec0ffac623909fb11a02d9651bce5ea8</a></p>
@@ -769,102 +806,10 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>Ekya</title>
-    <url>/2022/08/01/Ekya/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>戴老师给的第二篇论文</p>
-<span id="more"></span>
-<h1 id="读论文"><a href="#读论文" class="headerlink" title="读论文"></a>读论文</h1><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.png" alt="img" style="zoom:80%;" /></p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/xxx.png" alt="img" style="zoom:80%;" /></p>
-<h2 id="DNN"><a href="#DNN" class="headerlink" title="DNN"></a>DNN</h2><p>深度神经网络，隐含层大于两层的神经网络</p>
-<h1 id="跑项目"><a href="#跑项目" class="headerlink" title="跑项目"></a>跑项目</h1><p>项目地址：<a href="https://github.com/edge-video-services/ekya">https://github.com/edge-video-services/ekya</a></p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>武运昌隆！</p>
-]]></content>
-      <categories>
-        <category>学习区</category>
-      </categories>
-      <tags>
-        <tag>DNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MVDNet</title>
-    <url>/2022/05/20/MVDNet/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>记录第一次看论文与第一次独立运行深度学习代码~</p>
-<span id="more"></span>
-<h1 id="读论文"><a href="#读论文" class="headerlink" title="读论文"></a>读论文</h1><p>脉络梳理于XMind中</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image.webp" alt="img"></p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/xxx.webp" alt="img"></p>
-<h2 id="CNN概述"><a href="#CNN概述" class="headerlink" title="CNN概述"></a>CNN概述</h2><p>对图像进行识别</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729162318665.webp" alt="img"></p>
-<p>鲁棒性和抗干扰性都很强</p>
-<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>卷积核/特征提取器：将图像拆分成对应的特点，查看被识别图像有无对应的卷积核来确认是否为目标物体。</p>
-<p>卷积运算：用卷积核对原图像素（矩阵）进行扫描（点乘和），形成的新矩阵就叫特征图。特诊图的一些值(如行列式的值这种)能够反映与卷积核的相似度。比如：</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729163604395.webp" alt="img"></p>
-<h2 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h2><p>池化/下采样：多个卷积核(特征)会导致计算量增大，为解决这个问题提出的概念，本质是缩小特征图。池化方式有：最大池化（选择被扫描区域内的最大值）和平均池化（取被扫描区域内的平均值）</p>
-<p>比如刚刚那个：</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729164423785.webp" alt="img"></p>
-<h1 id="跑项目"><a href="#跑项目" class="headerlink" title="跑项目"></a>跑项目</h1><p>不太顺利</p>
-<p>项目地址：<a href="https://github.com/qiank10/MVDNet">https://github.com/qiank10/MVDNet</a></p>
-<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>anaconda+linux+python3.7+cuda11.0+pytorch1.7</p>
-<h3 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h3><ol>
-<li><p>创建环境：conda create -n MVDNet python=3.7</p>
-</li>
-<li><p>激活/进入：conda activate MVDNet</p>
-</li>
-<li><p>pytorch下载</p>
-<p>1.查看cuda版本信息：nvcc —version或者nvidia-smi；</p>
-<p>2.注意这里不能根据官网<a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a>  入口直接选择下载（如果正好是cuda10.2这种应该是ok的），不然后续不能配合cuda使用。</p>
-<p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193341163.png" alt="img" style="zoom:50%;" /></p>
-<p>正确操作应该是到这里<a href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a> 去找对应的下载进行安装(pip install就可以)</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729214203795.webp" alt="img"></p>
-</li>
-</ol>
-<p>参数理解：cu110—&gt;cuda 11.0，torch版本自选，cp37—&gt;python3.7，后面就是win/linux了</p>
-<ol>
-<li><p>检查</p>
-<p>python—&gt;import torch—&gt;torch.cuda.is_available()</p>
-</li>
-</ol>
-<h3 id="Detectron2"><a href="#Detectron2" class="headerlink" title="Detectron2"></a>Detectron2</h3><p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193706253.png" alt="img"  /></p>
-<h3 id="Pycocotools"><a href="#Pycocotools" class="headerlink" title="Pycocotools"></a>Pycocotools</h3><p>挺好装的而且没啥幺蛾子</p>
-<h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><ol>
-<li><p>下载数据集：<a href="https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，">https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，</a> 用学校邮箱注册</p>
-<p>可恨！等了一个月才回复，然后还在垃圾邮箱里面找不到了=_=</p>
-<p>最后下载免费的数据集来后续操作的</p>
-</li>
-<li><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729215307561.webp" alt="img"></p>
-</li>
-</ol>
-<p>在这里疯狂报错，主要是缺包和语法更新两个问题</p>
-<ol>
-<li><p>报错no module named scipy或者cv，装scipy和opencv库</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install scipy</span><br><span class="line">pip install opencv-python </span><br></pre></td></tr></table></figure>
-</li>
-<li><p>报错 AttributeError: ‘scipy.spatial.transform.rotation.Rotation’ object has no attribute ‘as_dcm’：要把所有的as_dcm改成as_matrix</p>
-</li>
-</ol>
-<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><ol>
-<li><p>报错import，需要到detectron2执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python setup.py build develop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>报错“No such file or directory: ‘data/RobotCar/object/radar/1547122770869274.jpg’”：没解决</p>
-</li>
-</ol>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>武运昌隆</p>
-]]></content>
-      <categories>
-        <category>学习区</category>
-      </categories>
-      <tags>
-        <tag>lidar</tag>
-        <tag>模型融合</tag>
-        <tag>CNN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>INDUR_CM1</title>
     <url>/2022/09/06/INDUR%20-%20Informatique%20durable/</url>
-    <content><![CDATA[<h1 id="INDUR-Informatique-durable-CM1"><a href="#INDUR-Informatique-durable-CM1" class="headerlink" title="INDUR - Informatique durable_CM1"></a>INDUR - Informatique durable_CM1</h1><h2 id="一些问题和介绍"><a href="#一些问题和介绍" class="headerlink" title="一些问题和介绍"></a>一些问题和介绍</h2><p><strong>Quels mots/concepts vous évoque[唤起] l’idée d’une informatique durable(ou responsable)?</strong></p>
+    <content><![CDATA[<h1 id="INDUR-Informatique-durable-CM1"><a href="#INDUR-Informatique-durable-CM1" class="headerlink" title="INDUR - Informatique durable_CM1"></a>INDUR - Informatique durable_CM1</h1><span id="more"></span>
+<h2 id="一些问题和介绍"><a href="#一些问题和介绍" class="headerlink" title="一些问题和介绍"></a>一些问题和介绍</h2><p><strong>Quels mots/concepts vous évoque[唤起] l’idée d’une informatique durable(ou responsable)?</strong></p>
 <p>​    Energie:</p>
 <ul>
 <li><p>Conception logicielle—&gt;cycle de vie d’un logiciel</p>
@@ -980,22 +925,78 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>MATHS-TP1</title>
-    <url>/2022/02/22/MATH-TP1/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>MATHS_TP1: Initiation Matlab – Equation de la chaleur 1D</p>
+    <title>MVDNet</title>
+    <url>/2022/05/20/MVDNet/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>记录第一次看论文与第一次独立运行深度学习代码~</p>
 <span id="more"></span>
-<h1 id="Initiation"><a href="#Initiation" class="headerlink" title="Initiation"></a>Initiation</h1><p>注释：%</p>
-<p>显示：disp、fprintf</p>
-<p>vecteur: x = [x1,x2……,xn] %空格或者逗号都可以；vecteur colonne</p>
-<p>冒号：5：-1：1 %表示5到1以-1为间隔的vecteur</p>
-<p>linspace：是Matlab中的均分计算指令，用于产生x1,x2之间的N点行线性的矢量。其中x1、x2、N分别为起始值、终止值、元素个数。若默认N，默认点数为100</p>
+<h1 id="读论文"><a href="#读论文" class="headerlink" title="读论文"></a>读论文</h1><p>脉络梳理于XMind中</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image.webp" alt="img"></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/xxx.webp" alt="img"></p>
+<h2 id="CNN概述"><a href="#CNN概述" class="headerlink" title="CNN概述"></a>CNN概述</h2><p>对图像进行识别</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729162318665.webp" alt="img"></p>
+<p>鲁棒性和抗干扰性都很强</p>
+<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>卷积核/特征提取器：将图像拆分成对应的特点，查看被识别图像有无对应的卷积核来确认是否为目标物体。</p>
+<p>卷积运算：用卷积核对原图像素（矩阵）进行扫描（点乘和），形成的新矩阵就叫特征图。特诊图的一些值(如行列式的值这种)能够反映与卷积核的相似度。比如：</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729163604395.webp" alt="img"></p>
+<h2 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h2><p>池化/下采样：多个卷积核(特征)会导致计算量增大，为解决这个问题提出的概念，本质是缩小特征图。池化方式有：最大池化（选择被扫描区域内的最大值）和平均池化（取被扫描区域内的平均值）</p>
+<p>比如刚刚那个：</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729164423785.webp" alt="img"></p>
+<h1 id="跑项目"><a href="#跑项目" class="headerlink" title="跑项目"></a>跑项目</h1><p>不太顺利</p>
+<p>项目地址：<a href="https://github.com/qiank10/MVDNet">https://github.com/qiank10/MVDNet</a></p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>anaconda+linux+python3.7+cuda11.0+pytorch1.7</p>
+<h3 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h3><ol>
+<li><p>创建环境：conda create -n MVDNet python=3.7</p>
+</li>
+<li><p>激活/进入：conda activate MVDNet</p>
+</li>
+<li><p>pytorch下载</p>
+<p>1.查看cuda版本信息：nvcc —version或者nvidia-smi；</p>
+<p>2.注意这里不能根据官网<a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a>  入口直接选择下载（如果正好是cuda10.2这种应该是ok的），不然后续不能配合cuda使用。</p>
+<p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193341163.png" alt="img" style="zoom:50%;" /></p>
+<p>正确操作应该是到这里<a href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a> 去找对应的下载进行安装(pip install就可以)</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729214203795.webp" alt="img"></p>
+</li>
+</ol>
+<p>参数理解：cu110—&gt;cuda 11.0，torch版本自选，cp37—&gt;python3.7，后面就是win/linux了</p>
+<ol>
+<li><p>检查</p>
+<p>python—&gt;import torch—&gt;torch.cuda.is_available()</p>
+</li>
+</ol>
+<h3 id="Detectron2"><a href="#Detectron2" class="headerlink" title="Detectron2"></a>Detectron2</h3><p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193706253.png" alt="img"  /></p>
+<h3 id="Pycocotools"><a href="#Pycocotools" class="headerlink" title="Pycocotools"></a>Pycocotools</h3><p>挺好装的而且没啥幺蛾子</p>
+<h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><ol>
+<li><p>下载数据集：<a href="https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，">https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，</a> 用学校邮箱注册</p>
+<p>可恨！等了一个月才回复，然后还在垃圾邮箱里面找不到了=_=</p>
+<p>最后下载免费的数据集来后续操作的</p>
+</li>
+<li><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729215307561.webp" alt="img"></p>
+</li>
+</ol>
+<p>在这里疯狂报错，主要是缺包和语法更新两个问题</p>
+<ol>
+<li><p>报错no module named scipy或者cv，装scipy和opencv库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install scipy</span><br><span class="line">pip install opencv-python </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>报错 AttributeError: ‘scipy.spatial.transform.rotation.Rotation’ object has no attribute ‘as_dcm’：要把所有的as_dcm改成as_matrix</p>
+</li>
+</ol>
+<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><ol>
+<li><p>报错import，需要到detectron2执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python setup.py build develop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>报错“No such file or directory: ‘data/RobotCar/object/radar/1547122770869274.jpg’”：没解决</p>
+</li>
+</ol>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>武运昌隆</p>
 ]]></content>
       <categories>
-        <category>NANTE_S6</category>
-        <category>MATHS</category>
+        <category>学习区</category>
       </categories>
       <tags>
-        <tag>MATLAB</tag>
+        <tag>lidar</tag>
+        <tag>模型融合</tag>
+        <tag>CNN</tag>
       </tags>
   </entry>
   <entry>
@@ -1089,6 +1090,98 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       <tags>
         <tag>python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Voyage-Italie</title>
+    <url>/2022/02/01/Voyage-Italie/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>马耳他$\longrightarrow$罗马$\longrightarrow$米兰</p>
+<span id="more"></span>
+<h1 id="马耳他"><a href="#马耳他" class="headerlink" title="马耳他"></a>马耳他</h1><p>好看！</p>
+<p>看到海就真的超级开心</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231830.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231634.webp" height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231445.webp" height="200">
+    </div>
+
+
+
+
+<p>能在这个岛上过暑假的小孩应该很幸福吧</p>
+<p>但就是住的好远（晕车真的难顶</p>
+<p>体验了壁炉和烤鸡</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231721.webp"width=40%><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201232158.webp" width=40%>
+</div>
+
+
+
+
+
+<p>还有偷偷摘下来的仙人掌的果</p>
+<p>整体风格蛮中东的</p>
+<p>但又特别电影</p>
+<p>穷途末路的英雄的流浪故事</p>
+<p>碰到的司机大叔也人超级好</p>
+<p>希望这两年间能再去一次</p>
+<p>带着夏企和橘子汽水</p>
+<p>想念夏天</p>
+<h1 id="罗马"><a href="#罗马" class="headerlink" title="罗马"></a>罗马</h1><p>西班牙台阶$\longrightarrow$总统府（？maybe）$\longrightarrow$圣天使堡$\longrightarrow$梵蒂冈$\longrightarrow$万神庙$\longrightarrow$斗兽场$\longrightarrow$什么祭坛</p>
+<h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h2><p>西班牙台阶，总统府和一个喷泉(and 张女士)</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234600.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234616.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234815.webp"height="200">   </div>
+
+
+
+<p>夕阳好看！</p>
+<p>龙虾意面好吃！</p>
+<p>冰淇淋好吃！</p>
+<div align="center">
+     <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234928.webp" height="200">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234943.webp" height="200">
+      <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234958.webp" height="200">
+    </div>
+
+<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h2><p>圣天使堡+法院+梵蒂冈+万神庙</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235138.webp"width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235129.webp" width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235447.webp" width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235151.webp" width="200">
+    </div>
+
+
+
+
+<p>夕阳好看！</p>
+<p>在梵蒂冈被骗了10欧QAQ</p>
+<p>但暴走了两次不亏！（Cappella Sistina</p>
+<p>看到了前前前手机壁纸，开心</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235204.webp" alt="img" style="zoom:50%;" /></p>
+<h2 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h2><p>斗兽场+祭坛</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235423.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235732.webp" height="200">
+</div>
+
+
+
+<p>中餐好吃！</p>
+<p>臭鸟拉屎（猖狂到当地老太太会打伞的程度，可恶</p>
+<h1 id="米兰"><a href="#米兰" class="headerlink" title="米兰"></a>米兰</h1><p>个人不官方的宣布</p>
+<p>米兰就是旅游荒漠</p>
+<p>只就去了大教堂，然后有猥琐的偷偷喂鸽子</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230627.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230643.webp" height="200">
+</div>
+
+
+
+<p>但是！</p>
+<p>米兰火锅！好好吃！店名：“巴倒辣”。人生建议：不能点中辣不能点中辣不能点中辣！（上次被辣成瓜娃子还是在重庆的时候了</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230545.webp" alt="img" style="zoom:80%;" /></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>虽然没去佛罗伦萨和威尼斯，但得歇一段时间不看人文类风光啦~</p>
+<p>意大利再见﻿ε≡٩(๑&gt;₃&lt;)۶ </p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230618.webp" alt="img" style="zoom:80%;" /></p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>Voyage</category>
+      </categories>
   </entry>
   <entry>
     <title>PYTHON_入门学习</title>
@@ -1447,164 +1540,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>Voyage-Italie</title>
-    <url>/2022/02/01/Voyage-Italie/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>马耳他$\longrightarrow$罗马$\longrightarrow$米兰</p>
-<span id="more"></span>
-<h1 id="马耳他"><a href="#马耳他" class="headerlink" title="马耳他"></a>马耳他</h1><p>好看！</p>
-<p>看到海就真的超级开心</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231830.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231634.webp" height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231445.webp" height="200">
-    </div>
-
-
-
-
-<p>能在这个岛上过暑假的小孩应该很幸福吧</p>
-<p>但就是住的好远（晕车真的难顶</p>
-<p>体验了壁炉和烤鸡</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231721.webp"width=40%><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201232158.webp" width=40%>
-</div>
-
-
-
-
-
-<p>还有偷偷摘下来的仙人掌的果</p>
-<p>整体风格蛮中东的</p>
-<p>但又特别电影</p>
-<p>穷途末路的英雄的流浪故事</p>
-<p>碰到的司机大叔也人超级好</p>
-<p>希望这两年间能再去一次</p>
-<p>带着夏企和橘子汽水</p>
-<p>想念夏天</p>
-<h1 id="罗马"><a href="#罗马" class="headerlink" title="罗马"></a>罗马</h1><p>西班牙台阶$\longrightarrow$总统府（？maybe）$\longrightarrow$圣天使堡$\longrightarrow$梵蒂冈$\longrightarrow$万神庙$\longrightarrow$斗兽场$\longrightarrow$什么祭坛</p>
-<h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h2><p>西班牙台阶，总统府和一个喷泉(and 张女士)</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234600.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234616.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234815.webp"height="200">   </div>
-
-
-
-<p>夕阳好看！</p>
-<p>龙虾意面好吃！</p>
-<p>冰淇淋好吃！</p>
-<div align="center">
-     <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234928.webp" height="200">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234943.webp" height="200">
-      <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234958.webp" height="200">
-    </div>
-
-<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h2><p>圣天使堡+法院+梵蒂冈+万神庙</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235138.webp"width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235129.webp" width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235447.webp" width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235151.webp" width="200">
-    </div>
-
-
-
-
-<p>夕阳好看！</p>
-<p>在梵蒂冈被骗了10欧QAQ</p>
-<p>但暴走了两次不亏！（Cappella Sistina</p>
-<p>看到了前前前手机壁纸，开心</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235204.webp" alt="img" style="zoom:50%;" /></p>
-<h2 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h2><p>斗兽场+祭坛</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235423.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235732.webp" height="200">
-</div>
-
-
-
-<p>中餐好吃！</p>
-<p>臭鸟拉屎（猖狂到当地老太太会打伞的程度，可恶</p>
-<h1 id="米兰"><a href="#米兰" class="headerlink" title="米兰"></a>米兰</h1><p>个人不官方的宣布</p>
-<p>米兰就是旅游荒漠</p>
-<p>只就去了大教堂，然后有猥琐的偷偷喂鸽子</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230627.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230643.webp" height="200">
-</div>
-
-
-
-<p>但是！</p>
-<p>米兰火锅！好好吃！店名：“巴倒辣”。人生建议：不能点中辣不能点中辣不能点中辣！（上次被辣成瓜娃子还是在重庆的时候了</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230545.webp" alt="img" style="zoom:80%;" /></p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>虽然没去佛罗伦萨和威尼斯，但得歇一段时间不看人文类风光啦~</p>
-<p>意大利再见﻿ε≡٩(๑&gt;₃&lt;)۶ </p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230618.webp" alt="img" style="zoom:80%;" /></p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Voyage-Paris</title>
-    <url>/2021/12/08/Voyage-Paris/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
-<span id="more"></span>
-<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
-<p>铁塔上看的夕阳</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584513.webp" alt="ya微信图片_2021120823584513" style="zoom:80%;" /></p>
-<p>超好看！</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20211209000220.png" alt="ya20211209000220" style="zoom:80%;" /></p>
-<p>顺便打卡盗梦空间的桥</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_20211208235845.webp" alt="ya微信图片_20211208235845" style="zoom:80%;" /></p>
-<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358453.webp" alt="ya微信图片_202112082358453" style="zoom:60%;" /></p>
-<p>未来的日子永远爱跳跳虎</p>
-<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
-<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
-<p>雕塑真的好厉害。</p>
-<p>伊斯兰教的艺术印象蛮深。</p>
-<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
-<center class="half">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358454.webp"width="200"/>
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358455.webp" width="200"/>
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358456.webp" width="200"/>
-</center>
-
-
-
-
-<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
-<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
-<p>梵高好看</p>
-<p>莫奈也好好看</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_20211208235859.jpg" alt="ya微信图片_20211208235859" style="zoom:50%;" /></p>
-<p>还有个点彩画派</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358457.webp" alt="ya微信图片_202112082358457" style="zoom:50%;" /></p>
-<p>很喜欢的画买了明信片但忘记画家了T^T</p>
-<p>出来时的公园，好看到分不清是不是在画中</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358459.webp" alt="ya微信图片_202112082358459" style="zoom:67%;" /></p>
-<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
-<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
-<p>外面比里面好看</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584510.webp" alt="ya微信图片_2021120823584510" style="zoom:50%;" /></p>
-<p>只记得里面的钟摆了</p>
-<p>看到了一群穿正装的未来大佬们</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584511.webp" alt="ya微信图片_2021120823584511" style="zoom:50%;" /></p>
-<p>听说隔壁是很法国很厉害的大学</p>
-<p>站在那里真的会有</p>
-<p>一种学术的</p>
-<p>很厉害的感觉</p>
-<p>听说建筑仿的是意大利的万神庙</p>
-<p>那就正好</p>
-<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584512.webp" alt="ya微信图片_2021120823584512" style="zoom:50%;" /></p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082352193.webp" alt="ya微信图片_202112082352193" style="zoom:80%;" /></p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082352192.webp" alt="ya微信图片_202112082352192" style="zoom:80%;" /></p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
-      </categories>
-      <tags>
-        <tag>Paris</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SSTEM01</title>
     <url>/2021/12/06/SSTEM01/</url>
     <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>介绍SysML和其简单应用,对TD1的内容进行简单的总结与归纳。</p>
@@ -1715,6 +1650,72 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>Voyage-Paris</title>
+    <url>/2021/12/08/Voyage-Paris/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
+<span id="more"></span>
+<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>下午到的</p>
+<p>铁塔上看的夕阳</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584513.webp" alt="ya微信图片_2021120823584513" style="zoom:80%;" /></p>
+<p>超好看！</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20211209000220.png" alt="ya20211209000220" style="zoom:80%;" /></p>
+<p>顺便打卡盗梦空间的桥</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_20211208235845.webp" alt="ya微信图片_20211208235845" style="zoom:80%;" /></p>
+<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>迪士尼好玩的</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358453.webp" alt="ya微信图片_202112082358453" style="zoom:60%;" /></p>
+<p>未来的日子永远爱跳跳虎</p>
+<h1 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h1><p>卢浮宫真的好大就是说</p>
+<p>法国斥巨资修建这座宫殿或许比里面的展品还要了不起。</p>
+<p>雕塑真的好厉害。</p>
+<p>伊斯兰教的艺术印象蛮深。</p>
+<p>然后镇馆三宝打卡成功：维纳斯、蒙娜丽莎、胜利女神</p>
+<center class="half">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358454.webp"width="200"/>
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358455.webp" width="200"/>
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358456.webp" width="200"/>
+</center>
+
+
+
+
+<p>画的话，宗教类、宫廷很多。一开始很震撼，看多了，嗯，装不下。</p>
+<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>奥赛博物馆的话就是好看的画</p>
+<p>梵高好看</p>
+<p>莫奈也好好看</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_20211208235859.jpg" alt="ya微信图片_20211208235859" style="zoom:50%;" /></p>
+<p>还有个点彩画派</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358457.webp" alt="ya微信图片_202112082358457" style="zoom:50%;" /></p>
+<p>很喜欢的画买了明信片但忘记画家了T^T</p>
+<p>出来时的公园，好看到分不清是不是在画中</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082358459.webp" alt="ya微信图片_202112082358459" style="zoom:67%;" /></p>
+<p>（或许还记得出来一家商店里面的9000欧的衣服？</p>
+<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>先贤祠</p>
+<p>外面比里面好看</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584510.webp" alt="ya微信图片_2021120823584510" style="zoom:50%;" /></p>
+<p>只记得里面的钟摆了</p>
+<p>看到了一群穿正装的未来大佬们</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584511.webp" alt="ya微信图片_2021120823584511" style="zoom:50%;" /></p>
+<p>听说隔壁是很法国很厉害的大学</p>
+<p>站在那里真的会有</p>
+<p>一种学术的</p>
+<p>很厉害的感觉</p>
+<p>听说建筑仿的是意大利的万神庙</p>
+<p>那就正好</p>
+<h1 id="下一站"><a href="#下一站" class="headerlink" title="下一站"></a>下一站</h1><p>意大利！</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>巴黎再会~</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_2021120823584512.webp" alt="ya微信图片_2021120823584512" style="zoom:50%;" /></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082352193.webp" alt="ya微信图片_202112082352193" style="zoom:80%;" /></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya微信图片_202112082352192.webp" alt="ya微信图片_202112082352192" style="zoom:80%;" /></p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>Voyage</category>
+      </categories>
+      <tags>
+        <tag>Paris</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>序言</title>
     <url>/2021/12/05/hello-world/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
@@ -1802,6 +1803,55 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
       <categories>
         <category>生活区</category>
       </categories>
+  </entry>
+  <entry>
+    <title>遗传算法</title>
+    <url>/2022/07/29/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h1><p>帮ZZ做SRTP学的一些东西</p>
+<span id="more"></span>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><h3 id="一些生物学常识"><a href="#一些生物学常识" class="headerlink" title="一些生物学常识"></a>一些生物学常识</h3><p>基因型、表现型</p>
+<p>进化：群体，个体，适应度(Fitness)</p>
+<h3 id="优化问题—-gt-优化问题模型"><a href="#优化问题—-gt-优化问题模型" class="headerlink" title="优化问题—&gt;优化问题模型"></a>优化问题—&gt;优化问题模型</h3><p>f(X)目标函数+约束条件 </p>
+<p>求最优化问题的方法：枚举，启发式算法（？），搜索</p>
+<h3 id="遗传算法中的基本过程"><a href="#遗传算法中的基本过程" class="headerlink" title="遗传算法中的基本过程"></a>遗传算法中的基本过程</h3><ol>
+<li>选择：按照个体适应度，按照一定的规则，从t代群体P（t）中选择优良个体遗传到P（t+1）</li>
+<li>交叉 ：将P（t）内的各个个体随机搭配成对，以每一对个体，以某个概率交换</li>
+<li>变异：对群体P（t）中的每一个个体，以某一概率改变某一个或者某一些值</li>
+</ol>
+<p>流程</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224236119.webp" alt="img"></p>
+<p>群体：可行解编码成基因的个体的一个集合</p>
+<h3 id="模拟遗传算法的简单实例"><a href="#模拟遗传算法的简单实例" class="headerlink" title="模拟遗传算法的简单实例"></a>模拟遗传算法的简单实例</h3><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224550098.webp" alt="img"></p>
+<ol>
+<li><p>个体编码</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224911233.webp" alt="img" style="zoom:80%;" /></p>
+</li>
+<li><p>初始群体的产生</p>
+<p>选取起始搜索点的初始群体数据，需要选取群体规模，这里选4。个体则随机产生</p>
+</li>
+<li><p>适应度计算</p>
+<p>这里直接以目标函数为适应度</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722225740210.webp" alt="img"></p>
+<p>第6列表示适应度概率，7进行选择，注意选择完成时，群体规模是保持不变的</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722230022681.webp" alt="img"></p>
+</li>
+</ol>
+<p>​    9,10,11进行交叉的过程：配对的第2位进行交叉（等位基因）</p>
+<p>​    12,13进行变异</p>
+<p>​    13产生子代群体，完成一次迭代。</p>
+<p>最优解可由迭代次数决定</p>
+<h2 id="2-基本的遗传算法"><a href="#2-基本的遗传算法" class="headerlink" title="2.基本的遗传算法"></a>2.基本的遗传算法</h2><h2 id="遗传算法解决TSP问题"><a href="#遗传算法解决TSP问题" class="headerlink" title="遗传算法解决TSP问题"></a>遗传算法解决TSP问题</h2><h3 id="问题抽象"><a href="#问题抽象" class="headerlink" title="问题抽象"></a>问题抽象</h3><p>1.如何将答案编码成基因</p>
+<p>旅行路线—&gt;一个数组</p>
+<p>2.如何定义个体适应度</p>
+<p>路程（目标函数）</p>
+]]></content>
+      <categories>
+        <category>学习区</category>
+        <category>暑假的乱七八糟</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
   </entry>
   <entry>
     <title>那些细碎而美好的存在</title>
@@ -1892,54 +1942,5 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
         <category>生活区</category>
         <category>杂谈</category>
       </categories>
-  </entry>
-  <entry>
-    <title>遗传算法</title>
-    <url>/2022/07/29/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h1><p>帮ZZ做SRTP学的一些东西</p>
-<span id="more"></span>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><h3 id="一些生物学常识"><a href="#一些生物学常识" class="headerlink" title="一些生物学常识"></a>一些生物学常识</h3><p>基因型、表现型</p>
-<p>进化：群体，个体，适应度(Fitness)</p>
-<h3 id="优化问题—-gt-优化问题模型"><a href="#优化问题—-gt-优化问题模型" class="headerlink" title="优化问题—&gt;优化问题模型"></a>优化问题—&gt;优化问题模型</h3><p>f(X)目标函数+约束条件 </p>
-<p>求最优化问题的方法：枚举，启发式算法（？），搜索</p>
-<h3 id="遗传算法中的基本过程"><a href="#遗传算法中的基本过程" class="headerlink" title="遗传算法中的基本过程"></a>遗传算法中的基本过程</h3><ol>
-<li>选择：按照个体适应度，按照一定的规则，从t代群体P（t）中选择优良个体遗传到P（t+1）</li>
-<li>交叉 ：将P（t）内的各个个体随机搭配成对，以每一对个体，以某个概率交换</li>
-<li>变异：对群体P（t）中的每一个个体，以某一概率改变某一个或者某一些值</li>
-</ol>
-<p>流程</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224236119.webp" alt="img"></p>
-<p>群体：可行解编码成基因的个体的一个集合</p>
-<h3 id="模拟遗传算法的简单实例"><a href="#模拟遗传算法的简单实例" class="headerlink" title="模拟遗传算法的简单实例"></a>模拟遗传算法的简单实例</h3><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224550098.webp" alt="img"></p>
-<ol>
-<li><p>个体编码</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224911233.webp" alt="img" style="zoom:80%;" /></p>
-</li>
-<li><p>初始群体的产生</p>
-<p>选取起始搜索点的初始群体数据，需要选取群体规模，这里选4。个体则随机产生</p>
-</li>
-<li><p>适应度计算</p>
-<p>这里直接以目标函数为适应度</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722225740210.webp" alt="img"></p>
-<p>第6列表示适应度概率，7进行选择，注意选择完成时，群体规模是保持不变的</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722230022681.webp" alt="img"></p>
-</li>
-</ol>
-<p>​    9,10,11进行交叉的过程：配对的第2位进行交叉（等位基因）</p>
-<p>​    12,13进行变异</p>
-<p>​    13产生子代群体，完成一次迭代。</p>
-<p>最优解可由迭代次数决定</p>
-<h2 id="2-基本的遗传算法"><a href="#2-基本的遗传算法" class="headerlink" title="2.基本的遗传算法"></a>2.基本的遗传算法</h2><h2 id="遗传算法解决TSP问题"><a href="#遗传算法解决TSP问题" class="headerlink" title="遗传算法解决TSP问题"></a>遗传算法解决TSP问题</h2><h3 id="问题抽象"><a href="#问题抽象" class="headerlink" title="问题抽象"></a>问题抽象</h3><p>1.如何将答案编码成基因</p>
-<p>旅行路线—&gt;一个数组</p>
-<p>2.如何定义个体适应度</p>
-<p>路程（目标函数）</p>
-]]></content>
-      <categories>
-        <category>学习区</category>
-        <category>暑假的乱七八糟</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
   </entry>
 </search>
