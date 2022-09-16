@@ -698,54 +698,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>ALGPR-3</title>
-    <url>/2022/02/21/ALGPR-3/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>ALGPR的第三周</p>
-<span id="more"></span>
-<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="TD2-Division-euclidienne"><a href="#TD2-Division-euclidienne" class="headerlink" title="TD2_Division euclidienne"></a>TD2_Division euclidienne</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">couplEntier qr &lt;- divEuclid(entier n, entier d)</span><br><span class="line">Types</span><br><span class="line">	couplEntiers: enregistrement</span><br><span class="line">		entier: quotient</span><br><span class="line">		entier: reste</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">Variables</span><br><span class="line">	couplEntiers qr,inter</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	Si(n &lt; d) alors </span><br><span class="line">		qr.reste &lt;- n;</span><br><span class="line">	Sinon</span><br><span class="line">		qr.quotient++;</span><br><span class="line">		divEuclid(n - d , d);</span><br><span class="line">	fin_Si</span><br><span class="line">	retourner qr</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	Si(n &lt; d) alors </span><br><span class="line">		qr.quotient &lt;- 0;</span><br><span class="line">		qr.reste &lt;- n;</span><br><span class="line">	Sinon</span><br><span class="line">		inter &lt;- divEuclid(n - d , d);</span><br><span class="line">		qr.quotient &lt;- inter.quotient + 1;</span><br><span class="line">		qr.reste = inter.reste ;</span><br><span class="line">	fin_Si</span><br><span class="line">	retourner qr</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="TD3-Definition"><a href="#TD3-Definition" class="headerlink" title="TD3_Définition"></a>TD3_Définition</h2><p>Notion de lien vers une structure de données: ce lien est un type de données à part entière défini par le mot-clé <strong>lien</strong>, suivi du type lié.</p>
-<p>Cette notion de lien sera traduite(翻译) en C++ par la notion de <strong>pointeur</strong>（指针）</p>
-<ul>
-<li>Lien Type_x 1: pour créer ou déclarer un lien sur une variable</li>
-<li>contenu(1): pour accéder au contenu du lien 1</li>
-</ul>
-<p>指针和引用</p>
-<p>指针本质也是变量，存储地址。引用本质是取地址。</p>
-<p>注：</p>
-<ol>
-<li><p>引用必须初始化，引用不能为空，引用只是别名不是实体</p>
-<p>就是说不能这样子 int &amp;n</p>
-<p>要这样 int &amp;n = m(m之前定义)</p>
-<p>然后in &amp;n = 3这样子也会报错（？）</p>
-</li>
-<li><p>引用没有const</p>
-</li>
-<li><p>引用的自增和指针的自增问题</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *p,entier;</span><br><span class="line"><span class="keyword">int</span> &amp;q = entier;</span><br><span class="line">entier=<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">p = &amp;q;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">*p++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">q++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">p++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220221153634.webp" alt="ya20220221153634"></p>
-<p>指针自增就是还挺多，*运算符的优先级低于右++，然后还有什么移位不安全啥的，看到再说</p>
-</li>
-</ol>
-<p>Exemple</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables</span><br><span class="line">	Lien Entier lienEnt</span><br><span class="line">	Entier n</span><br><span class="line">Début</span><br><span class="line">	lienEnt &lt;- lien(n)</span><br><span class="line">	conteun(lienEnt) &lt;- 5</span><br><span class="line">	afficher(n)</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int *lienEnt,n</span><br><span class="line">lienEnt = &amp;n;</span><br><span class="line">*lienEnt = 5;</span><br><span class="line">cout&lt;&lt;n;</span><br></pre></td></tr></table></figure>
-<p>[?]</p>
-<ul>
-<li>ne transmettre que la valeur de la variable: utiliser le passage par valeur</li>
-<li>modifier la valeur originale de la variable: utiliser le passage en partage</li>
-</ul>
-<h2 id="TD3-Swap"><a href="#TD3-Swap" class="headerlink" title="TD3_Swap"></a>TD3_Swap</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables</span><br><span class="line">	Entier c</span><br><span class="line">Début</span><br><span class="line"> 	c &lt;- a</span><br><span class="line"> 	a &lt;- b</span><br><span class="line"> 	b &lt;- c</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h2 id="TD3-Swap-lien-struct"><a href="#TD3-Swap-lien-struct" class="headerlink" title="TD3_Swap+lien+struct"></a>TD3_Swap+lien+struct</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fonction creerArticle</span><br><span class="line">problème : création d&#x27;un novel article</span><br><span class="line">apecification:</span><br><span class="line">	fonction: Lien Article &lt;- creerArticle(r,n,p)</span><br><span class="line">	paramètres: Entier r, VectCar n , Réel p</span><br><span class="line">	résultats: Lien Article 1A</span><br><span class="line">	</span><br><span class="line">Variables</span><br><span class="line">	Lien Article 1A</span><br><span class="line">Début</span><br><span class="line">	1A &lt;- nouveau()</span><br><span class="line">	contenu(1A).reference &lt;- r</span><br><span class="line">	contenu(1A).nom &lt;- n</span><br><span class="line">	contenu(1A).prix &lt;- p</span><br><span class="line">	renvoyer 1A</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>ALGORITHM</category>
-      </categories>
-      <tags>
-        <tag>指针与引用</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ALGORITHM-期末</title>
     <url>/2021/12/06/ALGORITHM-%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="期末实验汇总"><a href="#期末实验汇总" class="headerlink" title="期末实验汇总"></a>期末实验汇总</h1><p>西南交通大学算法实验期末题型汇总</p>
@@ -946,6 +898,73 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>ALGPR-3</title>
+    <url>/2022/02/21/ALGPR-3/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>ALGPR的第三周</p>
+<span id="more"></span>
+<h1 id="TD"><a href="#TD" class="headerlink" title="TD"></a>TD</h1><h2 id="TD2-Division-euclidienne"><a href="#TD2-Division-euclidienne" class="headerlink" title="TD2_Division euclidienne"></a>TD2_Division euclidienne</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">couplEntier qr &lt;- divEuclid(entier n, entier d)</span><br><span class="line">Types</span><br><span class="line">	couplEntiers: enregistrement</span><br><span class="line">		entier: quotient</span><br><span class="line">		entier: reste</span><br><span class="line">	fin_enregistrement</span><br><span class="line">	</span><br><span class="line">Variables</span><br><span class="line">	couplEntiers qr,inter</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	Si(n &lt; d) alors </span><br><span class="line">		qr.reste &lt;- n;</span><br><span class="line">	Sinon</span><br><span class="line">		qr.quotient++;</span><br><span class="line">		divEuclid(n - d , d);</span><br><span class="line">	fin_Si</span><br><span class="line">	retourner qr</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">Début</span><br><span class="line">	Si(n &lt; d) alors </span><br><span class="line">		qr.quotient &lt;- 0;</span><br><span class="line">		qr.reste &lt;- n;</span><br><span class="line">	Sinon</span><br><span class="line">		inter &lt;- divEuclid(n - d , d);</span><br><span class="line">		qr.quotient &lt;- inter.quotient + 1;</span><br><span class="line">		qr.reste = inter.reste ;</span><br><span class="line">	fin_Si</span><br><span class="line">	retourner qr</span><br><span class="line">Fin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="TD3-Definition"><a href="#TD3-Definition" class="headerlink" title="TD3_Définition"></a>TD3_Définition</h2><p>Notion de lien vers une structure de données: ce lien est un type de données à part entière défini par le mot-clé <strong>lien</strong>, suivi du type lié.</p>
+<p>Cette notion de lien sera traduite(翻译) en C++ par la notion de <strong>pointeur</strong>（指针）</p>
+<ul>
+<li>Lien Type_x 1: pour créer ou déclarer un lien sur une variable</li>
+<li>contenu(1): pour accéder au contenu du lien 1</li>
+</ul>
+<p>指针和引用</p>
+<p>指针本质也是变量，存储地址。引用本质是取地址。</p>
+<p>注：</p>
+<ol>
+<li><p>引用必须初始化，引用不能为空，引用只是别名不是实体</p>
+<p>就是说不能这样子 int &amp;n</p>
+<p>要这样 int &amp;n = m(m之前定义)</p>
+<p>然后in &amp;n = 3这样子也会报错（？）</p>
+</li>
+<li><p>引用没有const</p>
+</li>
+<li><p>引用的自增和指针的自增问题</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *p,entier;</span><br><span class="line"><span class="keyword">int</span> &amp;q = entier;</span><br><span class="line">entier=<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">p = &amp;q;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">*p++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">q++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">p++;</span><br><span class="line">cout&lt;&lt;p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;*p&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;&amp;q&lt;&lt;<span class="string">&quot;   &quot;</span>&lt;&lt;q&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220221153634.webp" alt="ya20220221153634"></p>
+<p>指针自增就是还挺多，*运算符的优先级低于右++，然后还有什么移位不安全啥的，看到再说</p>
+</li>
+</ol>
+<p>Exemple</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables</span><br><span class="line">	Lien Entier lienEnt</span><br><span class="line">	Entier n</span><br><span class="line">Début</span><br><span class="line">	lienEnt &lt;- lien(n)</span><br><span class="line">	conteun(lienEnt) &lt;- 5</span><br><span class="line">	afficher(n)</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int *lienEnt,n</span><br><span class="line">lienEnt = &amp;n;</span><br><span class="line">*lienEnt = 5;</span><br><span class="line">cout&lt;&lt;n;</span><br></pre></td></tr></table></figure>
+<p>[?]</p>
+<ul>
+<li>ne transmettre que la valeur de la variable: utiliser le passage par valeur</li>
+<li>modifier la valeur originale de la variable: utiliser le passage en partage</li>
+</ul>
+<h2 id="TD3-Swap"><a href="#TD3-Swap" class="headerlink" title="TD3_Swap"></a>TD3_Swap</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Variables</span><br><span class="line">	Entier c</span><br><span class="line">Début</span><br><span class="line"> 	c &lt;- a</span><br><span class="line"> 	a &lt;- b</span><br><span class="line"> 	b &lt;- c</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h2 id="TD3-Swap-lien-struct"><a href="#TD3-Swap-lien-struct" class="headerlink" title="TD3_Swap+lien+struct"></a>TD3_Swap+lien+struct</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fonction creerArticle</span><br><span class="line">problème : création d&#x27;un novel article</span><br><span class="line">apecification:</span><br><span class="line">	fonction: Lien Article &lt;- creerArticle(r,n,p)</span><br><span class="line">	paramètres: Entier r, VectCar n , Réel p</span><br><span class="line">	résultats: Lien Article 1A</span><br><span class="line">	</span><br><span class="line">Variables</span><br><span class="line">	Lien Article 1A</span><br><span class="line">Début</span><br><span class="line">	1A &lt;- nouveau()</span><br><span class="line">	contenu(1A).reference &lt;- r</span><br><span class="line">	contenu(1A).nom &lt;- n</span><br><span class="line">	contenu(1A).prix &lt;- p</span><br><span class="line">	renvoyer 1A</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>ALGORITHM</category>
+      </categories>
+      <tags>
+        <tag>指针与引用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CCUBE_Chapitre1</title>
+    <url>/2022/02/04/CCUBE-01/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
+<span id="more"></span>
+<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220204024706.webp" alt="img"></p>
+<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h3 id="教学目标："><a href="#教学目标：" class="headerlink" title="教学目标："></a>教学目标：</h3><p>— échantillonner un signal 信号采样;<br>— en faire une analyse de Fourier 傅里叶分析;<br>— modéliser un système physique continu par le langage des fonctions de transfert 用transfert函数给系统建模;<br>— modéliser un système physique continu par le langage de l’espace d’état 用l’’espace d’état给系统建模;<br>— lier les phénomènes physiques aux paramètres de ces représentations (temps de réponse, stabilité) ;<br>— interfacer le temps continu et le temps discret(离散) ;<br>— simuler(模拟) ces représentations à l’aide de logiciels adaptés.</p>
+<h3 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h3><p>使用Matlab的Simulink完成：</p>
+<p>1.la reconstruction d’une partition à partir de l’enregistrement audio-phonique ;</p>
+<p>2.le pilotage en simulation d’une navette spatiale, version très simplifiée d’un contrat avec l’agence spatiale</p>
+<h3 id="前置数学知识"><a href="#前置数学知识" class="headerlink" title="前置数学知识"></a>前置数学知识</h3><p>— les nombres complexes 复数;<br>— la dérivation et l’intégration d’une fonction d’une <strong>variable réelle</strong>（？） à <strong>valeur réelle</strong>（？） 积分求导;<br>— les suites de nombres réels ou complexes ;<br>on n’a pas à craindre les quelques calculs élémentaires de séries ;<br>— le calcul matriciel 矩阵 ;<br>— les valeurs et vecteurs propres, la diagonalisation d’une matrice carrée特征值；</p>
+<p>—LTI linéaire temporellement invariant线性时间不变</p>
+<h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+]]></content>
+      <categories>
+        <category>NANTE_S6</category>
+        <category>CCUBE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>ANG</title>
     <url>/2022/02/06/ANG-01/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>From BBC 6 Minute English.(<a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english</a> )</p>
@@ -981,25 +1000,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
         <tag>metaverse</tag>
         <tag>BBC_6mintues</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>CCUBE_Chapitre1</title>
-    <url>/2022/02/04/CCUBE-01/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>CCUBE: ${C^3}$ est capteurs, contrôle, commande</p>
-<span id="more"></span>
-<h1 id="Chapitre-0-Preface-et-Objectifs"><a href="#Chapitre-0-Preface-et-Objectifs" class="headerlink" title="Chapitre_0:Préface et Objectifs"></a>Chapitre_0:Préface et Objectifs</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Préface"></a>Préface</h2><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220204024706.webp" alt="img"></p>
-<h2 id="Objectifs-et-moyens"><a href="#Objectifs-et-moyens" class="headerlink" title="Objectifs et moyens"></a>Objectifs et moyens</h2><h3 id="教学目标："><a href="#教学目标：" class="headerlink" title="教学目标："></a>教学目标：</h3><p>— échantillonner un signal 信号采样;<br>— en faire une analyse de Fourier 傅里叶分析;<br>— modéliser un système physique continu par le langage des fonctions de transfert 用transfert函数给系统建模;<br>— modéliser un système physique continu par le langage de l’espace d’état 用l’’espace d’état给系统建模;<br>— lier les phénomènes physiques aux paramètres de ces représentations (temps de réponse, stabilité) ;<br>— interfacer le temps continu et le temps discret(离散) ;<br>— simuler(模拟) ces représentations à l’aide de logiciels adaptés.</p>
-<h3 id="TP"><a href="#TP" class="headerlink" title="TP"></a>TP</h3><p>使用Matlab的Simulink完成：</p>
-<p>1.la reconstruction d’une partition à partir de l’enregistrement audio-phonique ;</p>
-<p>2.le pilotage en simulation d’une navette spatiale, version très simplifiée d’un contrat avec l’agence spatiale</p>
-<h3 id="前置数学知识"><a href="#前置数学知识" class="headerlink" title="前置数学知识"></a>前置数学知识</h3><p>— les nombres complexes 复数;<br>— la dérivation et l’intégration d’une fonction d’une <strong>variable réelle</strong>（？） à <strong>valeur réelle</strong>（？） 积分求导;<br>— les suites de nombres réels ou complexes ;<br>on n’a pas à craindre les quelques calculs élémentaires de séries ;<br>— le calcul matriciel 矩阵 ;<br>— les valeurs et vecteurs propres, la diagonalisation d’une matrice carrée特征值；</p>
-<p>—LTI linéaire temporellement invariant线性时间不变</p>
-<h1 id="Chapitre1-Concepts-et-outils-fondamentaux"><a href="#Chapitre1-Concepts-et-outils-fondamentaux" class="headerlink" title="Chapitre1:Concepts et outils fondamentaux"></a>Chapitre1:Concepts et outils fondamentaux</h1><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
-]]></content>
-      <categories>
-        <category>NANTE_S6</category>
-        <category>CCUBE</category>
-      </categories>
   </entry>
   <entry>
     <title>ALGPR-4</title>
@@ -1239,81 +1239,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
-    <title>MVDNet</title>
-    <url>/2022/05/20/MVDNet/</url>
-    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>记录第一次看论文与第一次独立运行深度学习代码~</p>
-<span id="more"></span>
-<h1 id="读论文"><a href="#读论文" class="headerlink" title="读论文"></a>读论文</h1><p>脉络梳理于XMind中</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image.webp" alt="img"></p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/xxx.webp" alt="img"></p>
-<h2 id="CNN概述"><a href="#CNN概述" class="headerlink" title="CNN概述"></a>CNN概述</h2><p>对图像进行识别</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729162318665.webp" alt="img"></p>
-<p>鲁棒性和抗干扰性都很强</p>
-<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>卷积核/特征提取器：将图像拆分成对应的特点，查看被识别图像有无对应的卷积核来确认是否为目标物体。</p>
-<p>卷积运算：用卷积核对原图像素（矩阵）进行扫描（点乘和），形成的新矩阵就叫特征图。特诊图的一些值(如行列式的值这种)能够反映与卷积核的相似度。比如：</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729163604395.webp" alt="img"></p>
-<h2 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h2><p>池化/下采样：多个卷积核(特征)会导致计算量增大，为解决这个问题提出的概念，本质是缩小特征图。池化方式有：最大池化（选择被扫描区域内的最大值）和平均池化（取被扫描区域内的平均值）</p>
-<p>比如刚刚那个：</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729164423785.webp" alt="img"></p>
-<h1 id="跑项目"><a href="#跑项目" class="headerlink" title="跑项目"></a>跑项目</h1><p>不太顺利</p>
-<p>项目地址：<a href="https://github.com/qiank10/MVDNet">https://github.com/qiank10/MVDNet</a></p>
-<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>anaconda+linux+python3.7+cuda11.0+pytorch1.7</p>
-<h3 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h3><ol>
-<li><p>创建环境：conda create -n MVDNet python=3.7</p>
-</li>
-<li><p>激活/进入：conda activate MVDNet</p>
-</li>
-<li><p>pytorch下载</p>
-<p>1.查看cuda版本信息：nvcc —version或者nvidia-smi；</p>
-<p>2.注意这里不能根据官网<a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a>  入口直接选择下载（如果正好是cuda10.2这种应该是ok的），不然后续不能配合cuda使用。</p>
-<p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193341163.png" alt="img" style="zoom:50%;" /></p>
-<p>正确操作应该是到这里<a href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a> 去找对应的下载进行安装(pip install就可以)</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729214203795.webp" alt="img"></p>
-</li>
-</ol>
-<p>参数理解：cu110—&gt;cuda 11.0，torch版本自选，cp37—&gt;python3.7，后面就是win/linux了</p>
-<ol>
-<li><p>检查</p>
-<p>python—&gt;import torch—&gt;torch.cuda.is_available()</p>
-</li>
-</ol>
-<h3 id="Detectron2"><a href="#Detectron2" class="headerlink" title="Detectron2"></a>Detectron2</h3><p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193706253.png" alt="img"  /></p>
-<h3 id="Pycocotools"><a href="#Pycocotools" class="headerlink" title="Pycocotools"></a>Pycocotools</h3><p>挺好装的而且没啥幺蛾子</p>
-<h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><ol>
-<li><p>下载数据集：<a href="https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，">https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，</a> 用学校邮箱注册</p>
-<p>可恨！等了一个月才回复，然后还在垃圾邮箱里面找不到了=_=</p>
-<p>最后下载免费的数据集来后续操作的</p>
-</li>
-<li><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729215307561.webp" alt="img"></p>
-</li>
-</ol>
-<p>在这里疯狂报错，主要是缺包和语法更新两个问题</p>
-<ol>
-<li><p>报错no module named scipy或者cv，装scipy和opencv库</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install scipy</span><br><span class="line">pip install opencv-python </span><br></pre></td></tr></table></figure>
-</li>
-<li><p>报错 AttributeError: ‘scipy.spatial.transform.rotation.Rotation’ object has no attribute ‘as_dcm’：要把所有的as_dcm改成as_matrix</p>
-</li>
-</ol>
-<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><ol>
-<li><p>报错import，需要到detectron2执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python setup.py build develop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>报错“No such file or directory: ‘data/RobotCar/object/radar/1547122770869274.jpg’”：没解决</p>
-</li>
-</ol>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>武运昌隆</p>
-]]></content>
-      <categories>
-        <category>学习区</category>
-      </categories>
-      <tags>
-        <tag>lidar</tag>
-        <tag>模型融合</tag>
-        <tag>CNN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>INDUR_MOOC</title>
     <url>/2022/09/16/INDUR_MOOC/</url>
     <content><![CDATA[<h1 id="MOOC"><a href="#MOOC" class="headerlink" title="MOOC"></a>MOOC</h1><p>课上要求看的MOOC</p>
@@ -1446,89 +1371,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </categories>
   </entry>
   <entry>
-    <title>PFONC_CM1</title>
-    <url>/2022/09/06/PFONC_CM1/</url>
-    <content><![CDATA[<h1 id="PFONC-CM1"><a href="#PFONC-CM1" class="headerlink" title="PFONC_CM1"></a>PFONC_CM1</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>基于函数的编程，接近数学声明式编程（programmation déclarative）</p>
-<span id="more"></span>
-<p>属性:transparence référentielle：参考透明,immutabilité：不变性</p>
-<p>​         <strong>transparence référentielle</strong>:并行，没有指针，全局变量或者输入输出</p>
-<p>​         <strong>immutabilité</strong>：被操纵对象的值永远不能改变</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.1sj9vtamuy2o.png" alt="yaimage"></p>
-<h2 id="Constructions-de-base"><a href="#Constructions-de-base" class="headerlink" title="Constructions de base"></a>Constructions de base</h2><h3 id="复合函数"><a href="#复合函数" class="headerlink" title="复合函数"></a>复合函数</h3><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">square</span> x = x*x</span><br><span class="line"><span class="title">inc</span> x = x+<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="title">f</span> x = inc(square x)</span><br><span class="line"><span class="title">f</span> x = (inc.square) x</span><br></pre></td></tr></table></figure>
-<h3 id="条件式"><a href="#条件式" class="headerlink" title="条件式"></a>条件式</h3><h4 id="if-then-else"><a href="#if-then-else" class="headerlink" title="if-then-else"></a>if-then-else</h4><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">f</span> n = <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> n == <span class="number">-1</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">else</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>然后不等于是 /=</p>
-<h4 id="gardee-otherwise"><a href="#gardee-otherwise" class="headerlink" title="gardée(|+ otherwise)"></a>gardée(|+ otherwise)</h4><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">caculate&#x27;</span> a b c | b == &#x27;+&#x27;  = <span class="type">Just</span> (a + c)<span class="comment">--不太知道这里的just是啥</span></span><br><span class="line">                | b == &#x27;-&#x27;  = <span class="type">Just</span> (a - c)</span><br><span class="line">                | b == &#x27;*&#x27;  = <span class="type">Just</span> (a * c)</span><br><span class="line">                | b == &#x27;/&#x27; &amp;&amp; c == <span class="number">0</span> = <span class="type">Nothing</span> </span><br><span class="line">                | b == &#x27;/&#x27; = <span class="type">Just</span> (a / c)</span><br><span class="line">                | otherwise = <span class="type">Nothing</span> </span><br></pre></td></tr></table></figure>
-<h4 id="case-of"><a href="#case-of" class="headerlink" title="case-of"></a>case-of</h4><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">f</span> n = <span class="keyword">case</span> n <span class="keyword">of</span></span><br><span class="line">	<span class="number">0</span> -&gt; <span class="number">1</span></span><br><span class="line">	_ -&gt; n * f (n<span class="number">-1</span>)<span class="comment">--下划线_表示任意</span></span><br></pre></td></tr></table></figure>
-<h3 id="递归-recursivite"><a href="#递归-recursivite" class="headerlink" title="递归: récursivité"></a>递归: récursivité</h3><p>Une fonction récursive possède（有） :</p>
-<p> • un (ou plusieurs) cas général récursif </p>
-<p> • un (ou plusieurs) cas de base non récursif</p>
-<p>L’évaluation d’une fonction récursive se fait sur le modèle d’une pile[堆栈]</p>
-<p><strong>Fonction récursive terminale</strong></p>
-<p>定义：Pour une fonction f définie en utilisant une fonction g, l’évaluation de g est dite terminale (tail évaluation/call) si elle fournit directement la valeur de f sans opération supplémentaire.</p>
-<p>对于一个用函数g定义的函数f，如果g直接提供了f的值而没有任何额外的操作，那么g的évaluation被称为terminale</p>
-<p>如果一个递归函数的所有递归的évaluation都是terminale的，那么他就是<strong>Fonction récursive terminale</strong></p>
-<p>例</p>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">f&#x27;</span> <span class="number">0</span> r = r</span><br><span class="line"><span class="title">f&#x27;</span> n r = f&#x27; (n<span class="number">-1</span>) (r*n)</span><br><span class="line"></span><br><span class="line"><span class="title">f</span> n = f&#x27; n <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="title">main</span> = print(f <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<p> <strong>Exercices</strong></p>
-<p><strong>EX1: PUISSANCE</strong></p>
-<p>1.Écrire une fonction récursive qui calcule la puissance $n^e$ d’un nombre </p>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">puissance</span> x <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"><span class="title">puissance</span> x n = x * puissance x (n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>Utiliser le fait que $x^{2n}=(x^2)^n$ pour améliorer la fonction.</li>
-</ol>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">puissance&#x27;</span> x <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"><span class="title">puissance&#x27;</span> x n = <span class="keyword">if</span> even n <span class="keyword">then</span> puissance&#x27; (x*x) (div n <span class="number">2</span>) <span class="keyword">else</span> x * puissance&#x27; (x*x) (div n <span class="number">2</span>)<span class="comment">--even应该是在说n是偶数，odd奇数</span></span><br></pre></td></tr></table></figure>
-<p>3.Quelles sont les complexités temporelles des deux versions ?</p>
-<p>方法1是关于n的线性，方法2是关于$log_2n$ 的。</p>
-<p><strong>EX2: Fibonacci</strong></p>
-<p> Écrire une fonction récursive terminale qui calcule le terme d’indice n de la suite de Fibonacci </p>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">fibonacci</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line"><span class="title">fibonacci</span> <span class="number">2</span> = <span class="number">1</span></span><br><span class="line"><span class="title">fibonacci</span> n = fibonacci(n<span class="number">-1</span>) + fibonacci(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--terminale</span></span><br><span class="line"><span class="title">fibonacci&#x27;</span> <span class="number">0</span> _ n2 = n2<span class="comment">--不是很懂这里</span></span><br><span class="line"><span class="title">fibonacci&#x27;</span> n n1 n2 = fibonacci&#x27;(n<span class="number">-1</span>) (n1+n2) n1</span><br><span class="line"><span class="title">fib</span> n = fibonacci&#x27; n <span class="number">1</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p><strong>EX3:La hauteur palindromique</strong></p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.2mrhycdn7ki0.png" alt="yaimage"></p>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">r&#x27;</span> <span class="number">0</span> m = m</span><br><span class="line"><span class="title">r&#x27;</span> x m = r&#x27; (div x <span class="number">10</span>) (<span class="number">10</span>*m + mod x <span class="number">10</span>)</span><br><span class="line"><span class="title">r</span> x = r&#x27; x <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--判断回文数字:n == r(n)</span></span><br><span class="line"><span class="title">hpal</span> n = <span class="keyword">if</span> n == r n <span class="keyword">then</span> <span class="number">0</span></span><br><span class="line">      <span class="keyword">else</span> <span class="number">1</span> + hpal (n + r n)<span class="comment">--太妙了太妙了太妙了</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>NANTE_EI2|1</category>
-        <category>PFONC</category>
-        <category>CM</category>
-      </categories>
-      <tags>
-        <tag>haskell</tag>
-        <tag>palindromique</tag>
-        <tag>fibonacci</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PYTHON_CM1</title>
-    <url>/2022/09/06/PYTHON_0/</url>
-    <content><![CDATA[<h1 id="PYTHON-CM1"><a href="#PYTHON-CM1" class="headerlink" title="PYTHON_CM1"></a>PYTHON_CM1</h1><p>Lucas Lestandi</p>
-<span id="more"></span>
-<h2 id="Introdution"><a href="#Introdution" class="headerlink" title="Introdution"></a>Introdution</h2><p>-mutiplateforme, langage interprété（解释） et interractif</p>
-<p>-python robuste,la lisibilité et la maintenance, paquet pour la distribution sur d’autres machines y compris des dépendances</p>
-<h2 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h2><p>1.python:安装环境啥的—&gt;2hCM+4hTP</p>
-<p>2.数据结构：OPP,code robuste(architecture,introspection,exceptions)—&gt;2hCM+6hTP</p>
-<p>3.avec modules:os,sys,subprocess,numpy,scipy,matplotlib,扩展包（conda或者pip）</p>
-<p>4.看到个C++</p>
-<h2 id="CM1"><a href="#CM1" class="headerlink" title="CM1"></a>CM1</h2><p>conda: python环境，anaconda划分python环境，miniconda</p>
-<p>IDE：vscode</p>
-<p>jupyter：mixe code, markdown et cellules “raw”</p>
-<p>数据类型：complex表示复数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">all_paths = sys.path</span><br><span class="line"><span class="keyword">for</span> path <span class="keyword">in</span> all_paths:</span><br><span class="line">    <span class="built_in">print</span>(path)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>(<span class="params">string</span>):</span></span><br><span class="line">	longueur=()</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		<span class="keyword">assert</span>(<span class="built_in">type</span>(string) <span class="keyword">is</span> <span class="built_in">str</span>)</span><br><span class="line">		longueur=<span class="built_in">len</span>(string)</span><br><span class="line">	<span class="keyword">except</span> Exception <span class="keyword">as</span> err:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">f&quot;Unexpected <span class="subst">&#123;err=&#125;</span>,<span class="subst">&#123;<span class="built_in">type</span>(err)=&#125;</span>&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> longueur</span><br><span class="line"><span class="built_in">print</span>(a(all_paths[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
-<p>assert: 断言, 用于判断一个表达式，在表达式条件为false 的时候触发异常。 断言可以在条件不满足程序运行的情况下直接返回错误，而不必等待程序运行后出现崩溃的情况，例如我们的代码只能在Linux 系统下运行，可以先判断当前系统是否符合条件。</p>
-<p>try…except结构：捕捉异常，更一般加else</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.sygde52vn00.png" alt="yaimage"></p>
-<p>函数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名(<span class="params">参数</span>):</span><span class="comment">#这里的参数*arg就是表示随意取几个</span></span><br><span class="line">	函数体<span class="comment">#不写的话加上pass占位</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>NANTE_EI2|1</category>
-        <category>PYTHON</category>
-        <category>CM</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PFONC_CM2&amp;3</title>
     <url>/2022/09/16/PFONC_CM2&amp;3/</url>
     <content><![CDATA[<h1 id="PFONC-CM2-amp-3"><a href="#PFONC-CM2-amp-3" class="headerlink" title="PFONC_CM2&amp;3"></a>PFONC_CM2&amp;3</h1><p>CHAP2:Types, 介绍haskell中的类型变量.</p>
@@ -1650,6 +1492,133 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
         <category>PFONC</category>
         <category>CM</category>
       </categories>
+  </entry>
+  <entry>
+    <title>PFONC_CM1</title>
+    <url>/2022/09/06/PFONC_CM1/</url>
+    <content><![CDATA[<h1 id="PFONC-CM1"><a href="#PFONC-CM1" class="headerlink" title="PFONC_CM1"></a>PFONC_CM1</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>基于函数的编程，接近数学声明式编程（programmation déclarative）</p>
+<span id="more"></span>
+<p>属性:transparence référentielle：参考透明,immutabilité：不变性</p>
+<p>​         <strong>transparence référentielle</strong>:并行，没有指针，全局变量或者输入输出</p>
+<p>​         <strong>immutabilité</strong>：被操纵对象的值永远不能改变</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.1sj9vtamuy2o.png" alt="yaimage"></p>
+<h2 id="Constructions-de-base"><a href="#Constructions-de-base" class="headerlink" title="Constructions de base"></a>Constructions de base</h2><h3 id="复合函数"><a href="#复合函数" class="headerlink" title="复合函数"></a>复合函数</h3><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">square</span> x = x*x</span><br><span class="line"><span class="title">inc</span> x = x+<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="title">f</span> x = inc(square x)</span><br><span class="line"><span class="title">f</span> x = (inc.square) x</span><br></pre></td></tr></table></figure>
+<h3 id="条件式"><a href="#条件式" class="headerlink" title="条件式"></a>条件式</h3><h4 id="if-then-else"><a href="#if-then-else" class="headerlink" title="if-then-else"></a>if-then-else</h4><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">f</span> n = <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> n == <span class="number">-1</span> <span class="keyword">then</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">else</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>然后不等于是 /=</p>
+<h4 id="gardee-otherwise"><a href="#gardee-otherwise" class="headerlink" title="gardée(|+ otherwise)"></a>gardée(|+ otherwise)</h4><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">caculate&#x27;</span> a b c | b == &#x27;+&#x27;  = <span class="type">Just</span> (a + c)<span class="comment">--不太知道这里的just是啥</span></span><br><span class="line">                | b == &#x27;-&#x27;  = <span class="type">Just</span> (a - c)</span><br><span class="line">                | b == &#x27;*&#x27;  = <span class="type">Just</span> (a * c)</span><br><span class="line">                | b == &#x27;/&#x27; &amp;&amp; c == <span class="number">0</span> = <span class="type">Nothing</span> </span><br><span class="line">                | b == &#x27;/&#x27; = <span class="type">Just</span> (a / c)</span><br><span class="line">                | otherwise = <span class="type">Nothing</span> </span><br></pre></td></tr></table></figure>
+<h4 id="case-of"><a href="#case-of" class="headerlink" title="case-of"></a>case-of</h4><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">f</span> n = <span class="keyword">case</span> n <span class="keyword">of</span></span><br><span class="line">	<span class="number">0</span> -&gt; <span class="number">1</span></span><br><span class="line">	_ -&gt; n * f (n<span class="number">-1</span>)<span class="comment">--下划线_表示任意</span></span><br></pre></td></tr></table></figure>
+<h3 id="递归-recursivite"><a href="#递归-recursivite" class="headerlink" title="递归: récursivité"></a>递归: récursivité</h3><p>Une fonction récursive possède（有） :</p>
+<p> • un (ou plusieurs) cas général récursif </p>
+<p> • un (ou plusieurs) cas de base non récursif</p>
+<p>L’évaluation d’une fonction récursive se fait sur le modèle d’une pile[堆栈]</p>
+<p><strong>Fonction récursive terminale</strong></p>
+<p>定义：Pour une fonction f définie en utilisant une fonction g, l’évaluation de g est dite terminale (tail évaluation/call) si elle fournit directement la valeur de f sans opération supplémentaire.</p>
+<p>对于一个用函数g定义的函数f，如果g直接提供了f的值而没有任何额外的操作，那么g的évaluation被称为terminale</p>
+<p>如果一个递归函数的所有递归的évaluation都是terminale的，那么他就是<strong>Fonction récursive terminale</strong></p>
+<p>例</p>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">f&#x27;</span> <span class="number">0</span> r = r</span><br><span class="line"><span class="title">f&#x27;</span> n r = f&#x27; (n<span class="number">-1</span>) (r*n)</span><br><span class="line"></span><br><span class="line"><span class="title">f</span> n = f&#x27; n <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="title">main</span> = print(f <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p> <strong>Exercices</strong></p>
+<p><strong>EX1: PUISSANCE</strong></p>
+<p>1.Écrire une fonction récursive qui calcule la puissance $n^e$ d’un nombre </p>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">puissance</span> x <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"><span class="title">puissance</span> x n = x * puissance x (n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Utiliser le fait que $x^{2n}=(x^2)^n$ pour améliorer la fonction.</li>
+</ol>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">puissance&#x27;</span> x <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"><span class="title">puissance&#x27;</span> x n = <span class="keyword">if</span> even n <span class="keyword">then</span> puissance&#x27; (x*x) (div n <span class="number">2</span>) <span class="keyword">else</span> x * puissance&#x27; (x*x) (div n <span class="number">2</span>)<span class="comment">--even应该是在说n是偶数，odd奇数</span></span><br></pre></td></tr></table></figure>
+<p>3.Quelles sont les complexités temporelles des deux versions ?</p>
+<p>方法1是关于n的线性，方法2是关于$log_2n$ 的。</p>
+<p><strong>EX2: Fibonacci</strong></p>
+<p> Écrire une fonction récursive terminale qui calcule le terme d’indice n de la suite de Fibonacci </p>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">fibonacci</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line"><span class="title">fibonacci</span> <span class="number">2</span> = <span class="number">1</span></span><br><span class="line"><span class="title">fibonacci</span> n = fibonacci(n<span class="number">-1</span>) + fibonacci(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--terminale</span></span><br><span class="line"><span class="title">fibonacci&#x27;</span> <span class="number">0</span> _ n2 = n2<span class="comment">--不是很懂这里</span></span><br><span class="line"><span class="title">fibonacci&#x27;</span> n n1 n2 = fibonacci&#x27;(n<span class="number">-1</span>) (n1+n2) n1</span><br><span class="line"><span class="title">fib</span> n = fibonacci&#x27; n <span class="number">1</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><strong>EX3:La hauteur palindromique</strong></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.2mrhycdn7ki0.png" alt="yaimage"></p>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">r&#x27;</span> <span class="number">0</span> m = m</span><br><span class="line"><span class="title">r&#x27;</span> x m = r&#x27; (div x <span class="number">10</span>) (<span class="number">10</span>*m + mod x <span class="number">10</span>)</span><br><span class="line"><span class="title">r</span> x = r&#x27; x <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--判断回文数字:n == r(n)</span></span><br><span class="line"><span class="title">hpal</span> n = <span class="keyword">if</span> n == r n <span class="keyword">then</span> <span class="number">0</span></span><br><span class="line">      <span class="keyword">else</span> <span class="number">1</span> + hpal (n + r n)<span class="comment">--太妙了太妙了太妙了</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>NANTE_EI2|1</category>
+        <category>PFONC</category>
+        <category>CM</category>
+      </categories>
+      <tags>
+        <tag>haskell</tag>
+        <tag>palindromique</tag>
+        <tag>fibonacci</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MVDNet</title>
+    <url>/2022/05/20/MVDNet/</url>
+    <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>记录第一次看论文与第一次独立运行深度学习代码~</p>
+<span id="more"></span>
+<h1 id="读论文"><a href="#读论文" class="headerlink" title="读论文"></a>读论文</h1><p>脉络梳理于XMind中</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image.webp" alt="img"></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/xxx.webp" alt="img"></p>
+<h2 id="CNN概述"><a href="#CNN概述" class="headerlink" title="CNN概述"></a>CNN概述</h2><p>对图像进行识别</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729162318665.webp" alt="img"></p>
+<p>鲁棒性和抗干扰性都很强</p>
+<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>卷积核/特征提取器：将图像拆分成对应的特点，查看被识别图像有无对应的卷积核来确认是否为目标物体。</p>
+<p>卷积运算：用卷积核对原图像素（矩阵）进行扫描（点乘和），形成的新矩阵就叫特征图。特诊图的一些值(如行列式的值这种)能够反映与卷积核的相似度。比如：</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729163604395.webp" alt="img"></p>
+<h2 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h2><p>池化/下采样：多个卷积核(特征)会导致计算量增大，为解决这个问题提出的概念，本质是缩小特征图。池化方式有：最大池化（选择被扫描区域内的最大值）和平均池化（取被扫描区域内的平均值）</p>
+<p>比如刚刚那个：</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729164423785.webp" alt="img"></p>
+<h1 id="跑项目"><a href="#跑项目" class="headerlink" title="跑项目"></a>跑项目</h1><p>不太顺利</p>
+<p>项目地址：<a href="https://github.com/qiank10/MVDNet">https://github.com/qiank10/MVDNet</a></p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>anaconda+linux+python3.7+cuda11.0+pytorch1.7</p>
+<h3 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h3><ol>
+<li><p>创建环境：conda create -n MVDNet python=3.7</p>
+</li>
+<li><p>激活/进入：conda activate MVDNet</p>
+</li>
+<li><p>pytorch下载</p>
+<p>1.查看cuda版本信息：nvcc —version或者nvidia-smi；</p>
+<p>2.注意这里不能根据官网<a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a>  入口直接选择下载（如果正好是cuda10.2这种应该是ok的），不然后续不能配合cuda使用。</p>
+<p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193341163.png" alt="img" style="zoom:50%;" /></p>
+<p>正确操作应该是到这里<a href="https://download.pytorch.org/whl/torch_stable.html">https://download.pytorch.org/whl/torch_stable.html</a> 去找对应的下载进行安装(pip install就可以)</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729214203795.webp" alt="img"></p>
+</li>
+</ol>
+<p>参数理解：cu110—&gt;cuda 11.0，torch版本自选，cp37—&gt;python3.7，后面就是win/linux了</p>
+<ol>
+<li><p>检查</p>
+<p>python—&gt;import torch—&gt;torch.cuda.is_available()</p>
+</li>
+</ol>
+<h3 id="Detectron2"><a href="#Detectron2" class="headerlink" title="Detectron2"></a>Detectron2</h3><p><img src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/image-20220520193706253.png" alt="img"  /></p>
+<h3 id="Pycocotools"><a href="#Pycocotools" class="headerlink" title="Pycocotools"></a>Pycocotools</h3><p>挺好装的而且没啥幺蛾子</p>
+<h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><ol>
+<li><p>下载数据集：<a href="https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，">https://oxford-robotics-institute.github.io/radar-robotcar-dataset/，</a> 用学校邮箱注册</p>
+<p>可恨！等了一个月才回复，然后还在垃圾邮箱里面找不到了=_=</p>
+<p>最后下载免费的数据集来后续操作的</p>
+</li>
+<li><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220729215307561.webp" alt="img"></p>
+</li>
+</ol>
+<p>在这里疯狂报错，主要是缺包和语法更新两个问题</p>
+<ol>
+<li><p>报错no module named scipy或者cv，装scipy和opencv库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install scipy</span><br><span class="line">pip install opencv-python </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>报错 AttributeError: ‘scipy.spatial.transform.rotation.Rotation’ object has no attribute ‘as_dcm’：要把所有的as_dcm改成as_matrix</p>
+</li>
+</ol>
+<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><ol>
+<li><p>报错import，需要到detectron2执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python setup.py build develop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>报错“No such file or directory: ‘data/RobotCar/object/radar/1547122770869274.jpg’”：没解决</p>
+</li>
+</ol>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>武运昌隆</p>
+]]></content>
+      <categories>
+        <category>学习区</category>
+      </categories>
+      <tags>
+        <tag>lidar</tag>
+        <tag>模型融合</tag>
+        <tag>CNN</tag>
+      </tags>
   </entry>
   <entry>
     <title>PRO20</title>
@@ -2070,6 +2039,37 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       </tags>
   </entry>
   <entry>
+    <title>PYTHON_CM1</title>
+    <url>/2022/09/06/PYTHON_0/</url>
+    <content><![CDATA[<h1 id="PYTHON-CM1"><a href="#PYTHON-CM1" class="headerlink" title="PYTHON_CM1"></a>PYTHON_CM1</h1><p>Lucas Lestandi</p>
+<span id="more"></span>
+<h2 id="Introdution"><a href="#Introdution" class="headerlink" title="Introdution"></a>Introdution</h2><p>-mutiplateforme, langage interprété（解释） et interractif</p>
+<p>-python robuste,la lisibilité et la maintenance, paquet pour la distribution sur d’autres machines y compris des dépendances</p>
+<h2 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h2><p>1.python:安装环境啥的—&gt;2hCM+4hTP</p>
+<p>2.数据结构：OPP,code robuste(architecture,introspection,exceptions)—&gt;2hCM+6hTP</p>
+<p>3.avec modules:os,sys,subprocess,numpy,scipy,matplotlib,扩展包（conda或者pip）</p>
+<p>4.看到个C++</p>
+<h2 id="CM1"><a href="#CM1" class="headerlink" title="CM1"></a>CM1</h2><p>conda: python环境，anaconda划分python环境，miniconda</p>
+<p>IDE：vscode</p>
+<p>jupyter：mixe code, markdown et cellules “raw”</p>
+<p>数据类型：complex表示复数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">all_paths = sys.path</span><br><span class="line"><span class="keyword">for</span> path <span class="keyword">in</span> all_paths:</span><br><span class="line">    <span class="built_in">print</span>(path)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>(<span class="params">string</span>):</span></span><br><span class="line">	longueur=()</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		<span class="keyword">assert</span>(<span class="built_in">type</span>(string) <span class="keyword">is</span> <span class="built_in">str</span>)</span><br><span class="line">		longueur=<span class="built_in">len</span>(string)</span><br><span class="line">	<span class="keyword">except</span> Exception <span class="keyword">as</span> err:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">f&quot;Unexpected <span class="subst">&#123;err=&#125;</span>,<span class="subst">&#123;<span class="built_in">type</span>(err)=&#125;</span>&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> longueur</span><br><span class="line"><span class="built_in">print</span>(a(all_paths[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>assert: 断言, 用于判断一个表达式，在表达式条件为false 的时候触发异常。 断言可以在条件不满足程序运行的情况下直接返回错误，而不必等待程序运行后出现崩溃的情况，例如我们的代码只能在Linux 系统下运行，可以先判断当前系统是否符合条件。</p>
+<p>try…except结构：捕捉异常，更一般加else</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.sygde52vn00.png" alt="yaimage"></p>
+<p>函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名(<span class="params">参数</span>):</span><span class="comment">#这里的参数*arg就是表示随意取几个</span></span><br><span class="line">	函数体<span class="comment">#不写的话加上pass占位</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>NANTE_EI2|1</category>
+        <category>PYTHON</category>
+        <category>CM</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SSTEM_DS</title>
     <url>/2022/01/27/SSTEM-DS/</url>
     <content><![CDATA[<h1 id="SSTEM期末自救"><a href="#SSTEM期末自救" class="headerlink" title="SSTEM期末自救"></a><centre>SSTEM期末自救<centre></h1><span id="more"></span>
@@ -2184,6 +2184,98 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><h3 id="（2）时间复杂性"><a href="#�
       <tags>
         <tag>DS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Voyage-Italie</title>
+    <url>/2022/02/01/Voyage-Italie/</url>
+    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>马耳他$\longrightarrow$罗马$\longrightarrow$米兰</p>
+<span id="more"></span>
+<h1 id="马耳他"><a href="#马耳他" class="headerlink" title="马耳他"></a>马耳他</h1><p>好看！</p>
+<p>看到海就真的超级开心</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231830.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231634.webp" height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231445.webp" height="200">
+    </div>
+
+
+
+
+<p>能在这个岛上过暑假的小孩应该很幸福吧</p>
+<p>但就是住的好远（晕车真的难顶</p>
+<p>体验了壁炉和烤鸡</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231721.webp"width=40%><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201232158.webp" width=40%>
+</div>
+
+
+
+
+
+<p>还有偷偷摘下来的仙人掌的果</p>
+<p>整体风格蛮中东的</p>
+<p>但又特别电影</p>
+<p>穷途末路的英雄的流浪故事</p>
+<p>碰到的司机大叔也人超级好</p>
+<p>希望这两年间能再去一次</p>
+<p>带着夏企和橘子汽水</p>
+<p>想念夏天</p>
+<h1 id="罗马"><a href="#罗马" class="headerlink" title="罗马"></a>罗马</h1><p>西班牙台阶$\longrightarrow$总统府（？maybe）$\longrightarrow$圣天使堡$\longrightarrow$梵蒂冈$\longrightarrow$万神庙$\longrightarrow$斗兽场$\longrightarrow$什么祭坛</p>
+<h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h2><p>西班牙台阶，总统府和一个喷泉(and 张女士)</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234600.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234616.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234815.webp"height="200">   </div>
+
+
+
+<p>夕阳好看！</p>
+<p>龙虾意面好吃！</p>
+<p>冰淇淋好吃！</p>
+<div align="center">
+     <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234928.webp" height="200">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234943.webp" height="200">
+      <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234958.webp" height="200">
+    </div>
+
+<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h2><p>圣天使堡+法院+梵蒂冈+万神庙</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235138.webp"width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235129.webp" width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235447.webp" width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235151.webp" width="200">
+    </div>
+
+
+
+
+<p>夕阳好看！</p>
+<p>在梵蒂冈被骗了10欧QAQ</p>
+<p>但暴走了两次不亏！（Cappella Sistina</p>
+<p>看到了前前前手机壁纸，开心</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235204.webp" alt="img" style="zoom:50%;" /></p>
+<h2 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h2><p>斗兽场+祭坛</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235423.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235732.webp" height="200">
+</div>
+
+
+
+<p>中餐好吃！</p>
+<p>臭鸟拉屎（猖狂到当地老太太会打伞的程度，可恶</p>
+<h1 id="米兰"><a href="#米兰" class="headerlink" title="米兰"></a>米兰</h1><p>个人不官方的宣布</p>
+<p>米兰就是旅游荒漠</p>
+<p>只就去了大教堂，然后有猥琐的偷偷喂鸽子</p>
+<div align="center">
+    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230627.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230643.webp" height="200">
+</div>
+
+
+
+<p>但是！</p>
+<p>米兰火锅！好好吃！店名：“巴倒辣”。人生建议：不能点中辣不能点中辣不能点中辣！（上次被辣成瓜娃子还是在重庆的时候了</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230545.webp" alt="img" style="zoom:80%;" /></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>虽然没去佛罗伦萨和威尼斯，但得歇一段时间不看人文类风光啦~</p>
+<p>意大利再见﻿ε≡٩(๑&gt;₃&lt;)۶ </p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230618.webp" alt="img" style="zoom:80%;" /></p>
+]]></content>
+      <categories>
+        <category>生活区</category>
+        <category>Voyage</category>
+      </categories>
   </entry>
   <entry>
     <title>SSTEM01</title>
@@ -2689,98 +2781,6 @@ $$ \mathrm{new} \; n = \begin{cases} \frac{n}{2} &\text{si }  n \; \text{est pai
       </tags>
   </entry>
   <entry>
-    <title>Voyage-Italie</title>
-    <url>/2022/02/01/Voyage-Italie/</url>
-    <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>马耳他$\longrightarrow$罗马$\longrightarrow$米兰</p>
-<span id="more"></span>
-<h1 id="马耳他"><a href="#马耳他" class="headerlink" title="马耳他"></a>马耳他</h1><p>好看！</p>
-<p>看到海就真的超级开心</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231830.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231634.webp" height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231445.webp" height="200">
-    </div>
-
-
-
-
-<p>能在这个岛上过暑假的小孩应该很幸福吧</p>
-<p>但就是住的好远（晕车真的难顶</p>
-<p>体验了壁炉和烤鸡</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201231721.webp"width=40%><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201232158.webp" width=40%>
-</div>
-
-
-
-
-
-<p>还有偷偷摘下来的仙人掌的果</p>
-<p>整体风格蛮中东的</p>
-<p>但又特别电影</p>
-<p>穷途末路的英雄的流浪故事</p>
-<p>碰到的司机大叔也人超级好</p>
-<p>希望这两年间能再去一次</p>
-<p>带着夏企和橘子汽水</p>
-<p>想念夏天</p>
-<h1 id="罗马"><a href="#罗马" class="headerlink" title="罗马"></a>罗马</h1><p>西班牙台阶$\longrightarrow$总统府（？maybe）$\longrightarrow$圣天使堡$\longrightarrow$梵蒂冈$\longrightarrow$万神庙$\longrightarrow$斗兽场$\longrightarrow$什么祭坛</p>
-<h2 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h2><p>西班牙台阶，总统府和一个喷泉(and 张女士)</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234600.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234616.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234815.webp"height="200">   </div>
-
-
-
-<p>夕阳好看！</p>
-<p>龙虾意面好吃！</p>
-<p>冰淇淋好吃！</p>
-<div align="center">
-     <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234928.webp" height="200">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234943.webp" height="200">
-      <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201234958.webp" height="200">
-    </div>
-
-<h2 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h2><p>圣天使堡+法院+梵蒂冈+万神庙</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235138.webp"width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235129.webp" width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235447.webp" width="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235151.webp" width="200">
-    </div>
-
-
-
-
-<p>夕阳好看！</p>
-<p>在梵蒂冈被骗了10欧QAQ</p>
-<p>但暴走了两次不亏！（Cappella Sistina</p>
-<p>看到了前前前手机壁纸，开心</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235204.webp" alt="img" style="zoom:50%;" /></p>
-<h2 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h2><p>斗兽场+祭坛</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235423.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201235732.webp" height="200">
-</div>
-
-
-
-<p>中餐好吃！</p>
-<p>臭鸟拉屎（猖狂到当地老太太会打伞的程度，可恶</p>
-<h1 id="米兰"><a href="#米兰" class="headerlink" title="米兰"></a>米兰</h1><p>个人不官方的宣布</p>
-<p>米兰就是旅游荒漠</p>
-<p>只就去了大教堂，然后有猥琐的偷偷喂鸽子</p>
-<div align="center">
-    <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230627.webp"height="200"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230643.webp" height="200">
-</div>
-
-
-
-<p>但是！</p>
-<p>米兰火锅！好好吃！店名：“巴倒辣”。人生建议：不能点中辣不能点中辣不能点中辣！（上次被辣成瓜娃子还是在重庆的时候了</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230545.webp" alt="img" style="zoom:80%;" /></p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>虽然没去佛罗伦萨和威尼斯，但得歇一段时间不看人文类风光啦~</p>
-<p>意大利再见﻿ε≡٩(๑&gt;₃&lt;)۶ </p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220201230618.webp" alt="img" style="zoom:80%;" /></p>
-]]></content>
-      <categories>
-        <category>生活区</category>
-        <category>Voyage</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Voyage-Paris</title>
     <url>/2021/12/08/Voyage-Paris/</url>
     <content><![CDATA[<h1 id="行程"><a href="#行程" class="headerlink" title="行程"></a>行程</h1><p>铁塔$\longrightarrow$迪士尼$\longrightarrow$卢浮宫$\longrightarrow$奥赛$\longrightarrow$先贤祠</p>
@@ -2847,6 +2847,29 @@ $$ \mathrm{new} \; n = \begin{cases} \frac{n}{2} &\text{si }  n \; \text{est pai
       </tags>
   </entry>
   <entry>
+    <title>algorithm-绪论</title>
+    <url>/2021/12/06/algorithm01/</url>
+    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
+<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
+<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
+<li>自然语言描述</li>
+<li>流程描述</li>
+<li>伪代码描述</li>
+</ul>
+<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
+<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
+<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
+]]></content>
+      <categories>
+        <category>SWJTU</category>
+        <category>ALGORITHM</category>
+      </categories>
+      <tags>
+        <tag>ALGORITHM</tag>
+        <tag>算法基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>序言</title>
     <url>/2021/12/05/hello-world/</url>
     <content><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>太晚了，明天写。</p>
@@ -2869,29 +2892,6 @@ T(n)=\sum_i C_{opi} * C_i(n)</script><p>Flags：</p>
       </categories>
       <tags>
         <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>algorithm-绪论</title>
-    <url>/2021/12/06/algorithm01/</url>
-    <content><![CDATA[<h1 id="算法-第一章-绪论"><a href="#算法-第一章-绪论" class="headerlink" title="算法_第一章__绪论"></a>算法_第一章__绪论</h1><span id="more"></span>
-<h2 id="1-算法的五大特征"><a href="#1-算法的五大特征" class="headerlink" title="1.算法的五大特征"></a>1.算法的五大特征</h2><p>输入、输出、确定性、有穷性、可行性</p>
-<h2 id="2-算法的描述方法"><a href="#2-算法的描述方法" class="headerlink" title="2.算法的描述方法"></a>2.算法的描述方法</h2><ul>
-<li>自然语言描述</li>
-<li>流程描述</li>
-<li>伪代码描述</li>
-</ul>
-<h2 id="3-算法的重要问题"><a href="#3-算法的重要问题" class="headerlink" title="3.算法的重要问题"></a>3.算法的重要问题</h2><p>排序、查找、字符串匹配、图问题、组合问题、几何问题、数值问题</p>
-<h2 id="4-算法基本的数据结构"><a href="#4-算法基本的数据结构" class="headerlink" title="4.算法基本的数据结构"></a>4.算法基本的数据结构</h2><p>线性结构、数结构、图结构、集合</p>
-<h2 id="5-算法设计的方法策略"><a href="#5-算法设计的方法策略" class="headerlink" title="5.算法设计的方法策略"></a>5.算法设计的方法策略</h2><p>蛮力法、递归与分治、动态规划、贪心算法、回溯与分治</p>
-]]></content>
-      <categories>
-        <category>SWJTU</category>
-        <category>ALGORITHM</category>
-      </categories>
-      <tags>
-        <tag>ALGORITHM</tag>
-        <tag>算法基础</tag>
       </tags>
   </entry>
   <entry>
