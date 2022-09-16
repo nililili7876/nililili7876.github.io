@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-12-07%20220027.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-12-07%20220027.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nililili7876.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="PFONC_CM4&amp;5CHAP4 : Fonctions d’ordre supérieur -Les fonctions sont des objets de première classe : elles se manipulent comme les types de base：函数像基本类型那样被传递[参数和返回值] -Notion de fonction d’ordre supé">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PFONC_CM4&amp;5">
+<meta property="og:url" content="http://nililili7876.cn/2022/09/16/PFONC_CM4&5/index.html">
+<meta property="og:site_name" content="Bienvenue en Planète 7876">
+<meta property="og:description" content="PFONC_CM4&amp;5CHAP4 : Fonctions d’ordre supérieur -Les fonctions sont des objets de première classe : elles se manipulent comme les types de base：函数像基本类型那样被传递[参数和返回值] -Notion de fonction d’ordre supé">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.mxxkg4q7kow.png">
+<meta property="article:published_time" content="2022-09-16T15:18:25.930Z">
+<meta property="article:modified_time" content="2022-09-16T15:25:52.212Z">
+<meta property="article:author" content="7876">
+<meta property="article:tag" content="Curryfication">
+<meta property="article:tag" content="lameda">
+<meta property="article:tag" content="map">
+<meta property="article:tag" content="flod">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.mxxkg4q7kow.png">
+
+<link rel="canonical" href="http://nililili7876.cn/2022/09/16/PFONC_CM4&5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>PFONC_CM4&5 | Bienvenue en Planète 7876</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bienvenue en Planète 7876</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags<span class="badge">37</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives<span class="badge">35</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://nililili7876.cn/2022/09/16/PFONC_CM4&5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2021120417470915.png">
+      <meta itemprop="name" content="7876">
+      <meta itemprop="description" content="别怕别想别后退">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bienvenue en Planète 7876">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PFONC_CM4&5
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-09-16 17:18:25 / Modified: 17:25:52" itemprop="dateCreated datePublished" datetime="2022-09-16T17:18:25+02:00">2022-09-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NANTE-EI2-1/" itemprop="url" rel="index"><span itemprop="name">NANTE_EI2|1</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NANTE-EI2-1/PFONC/" itemprop="url" rel="index"><span itemprop="name">PFONC</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NANTE-EI2-1/PFONC/CM/" itemprop="url" rel="index"><span itemprop="name">CM</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/09/16/PFONC_CM4&5/" class="post-meta-item leancloud_visitors" data-flag-title="PFONC_CM4&5" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/09/16/PFONC_CM4&5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/09/16/PFONC_CM4&5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="PFONC-CM4-amp-5"><a href="#PFONC-CM4-amp-5" class="headerlink" title="PFONC_CM4&amp;5"></a>PFONC_CM4&amp;5</h1><p>CHAP4 : Fonctions d’ordre supérieur</p>
+<p>-Les fonctions sont des objets de première classe : elles se manipulent comme les types de base：函数像基本类型那样被传递[参数和返回值]</p>
+<p>-Notion de fonction d’ordre supérieur : ensembles de fonctions dans le domaine ou le codomaine：域或共域中的函数[?]</p>
+<span id="more"></span>
+<h2 id="Curryfication"><a href="#Curryfication" class="headerlink" title="Curryfication"></a>Curryfication</h2><p>Haskell 的所有函数都只有一个参数, 所有多个参数的函数都是 Curried functions，下面以max函数为例进行说明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max x y = if x &gt; y then x else y</span><br></pre></td></tr></table></figure>
+<p>他的类型说明是：<code>max::Integer -&gt;Integer -&gt;Integer</code>，但按照我们一般的理解，它应该长这样：<code>max::(Integer,Integer)-&gt;Integer</code></p>
+<p>-Pour tout x, (max x) est une fonction d’un entier qui donne un entier</p>
+<p>Haskell 的所有函数都只有一个参数</p>
+<p>-Donc max est aussi une fonction d’un entier qui donne « une fonction d’un entier qui donne un entier »</p>
+<p>max函数的参数是(一个返回值为int的函数)—&gt;<code>max :: Integer-&gt;(Integer -&gt;Integer)</code> —哎这里为什么不是 <code>max :: (Integer-&gt;Integer) -&gt;Integer</code></p>
+<p>Et comme -&gt; est associatif à droite :<code>max :: Integer-&gt;Integer -&gt;Integer</code></p>
+<p>Toute fonction de plusieurs variables peut être transformée en une fonction d’une seule variable, pour tous types a,b,c, on peut définir deux fonctions, les fonctions sont « curryfiées » (curried) par défaut en Haskell</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">curry</span>::((a,b)-&gt;c)-&gt;(a-&gt;(b-&gt;c))</span><br><span class="line"><span class="title">uncurry</span>::(a-&gt;(b-&gt;c))-&gt;((a,b)-&gt;c)</span><br><span class="line"><span class="comment">-- et on pourrait définir des versions pour tous</span></span><br><span class="line"><span class="comment">-- les tuples de types possibles</span></span><br></pre></td></tr></table></figure>
+<p><strong>EXERCICE</strong></p>
+<ol>
+<li><p>Quel est le type de map ?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map _ [] = []</span><br><span class="line">map f (x:xs) = (f x):(map f xs)</span><br></pre></td></tr></table></figure>
+<p>map :: (a-&gt;b)-&gt;list-&gt;list</p>
+<p>map :: (a-&gt;b) -&gt; [a] -&gt;[b]</p>
+</li>
+<li><p>Écrire une fonction flip, avec son type, qui à partir d’une fonction d’arité 2, donne la même fonction avec les variables inversées. Par exemple : <code>main = print (flip (-) 1 3) --2(pas -2)</code></p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">filp</span> :: (a-&gt;b-&gt;c) -&gt; (b-&gt;a-&gt;c)<span class="comment">--为什么不是((a-&gt;b)-&gt;c-&gt;d) -&gt;((a-&gt;b)-&gt;d-&gt;c) --为什么f不是(a-&gt;b)，为什么不是交换b和c</span></span><br><span class="line"><span class="title">filp</span> f x y = f y x</span><br><span class="line"><span class="title">main</span> = print (flip (-) <span class="number">1</span> <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>​        以及这个神奇的错误        <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.mxxkg4q7kow.png" alt="yaimage"></p>
+<h2 id="Application-de-fonction"><a href="#Application-de-fonction" class="headerlink" title="Application de fonction($)"></a>Application de fonction($)</h2><p>L’application de fonction est une fonction. Elle est notée ($) en Haskell :</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">($)::(a-&gt;b)-&gt;a-&gt;b</span><br><span class="line">($) f x = f x</span><br></pre></td></tr></table></figure>
+<p>函数调用符，空格的函数调用符是左结合，而 $ 则是右结合，用于减少代码中括号的数目</p>
+<p>Elle est de faible priorité et <strong>associative à droite</strong> :</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">main</span> = print (square (inc <span class="number">2</span>))</span><br><span class="line"><span class="comment">-- ou un peu plus concis</span></span><br><span class="line"><span class="title">main</span> = print $ square $ inc <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>Elle sert pour définir certaines fonctions d’ordre supérieur :</p>
+<p>将数据作为函数使用：映射一个函数调用符到一组函数组成的 List</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- valeurs en 0 des fonctions f, g et h</span></span><br><span class="line"><span class="title">map</span> ($ <span class="number">0</span>) [f,g,h]</span><br></pre></td></tr></table></figure>
+<h2 id="Fonctions-anonymes-Fonctions-λ"><a href="#Fonctions-anonymes-Fonctions-λ" class="headerlink" title="Fonctions anonymes (Fonctions λ)"></a>Fonctions anonymes (Fonctions λ)</h2><p>On peut définir des fonctions anonymes, appelées fonctions λ : P. ex. λx.(x + 1) ou λx.(λy.(x + y)) </p>
+<p>En Haskell :</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">inc</span> x = x+<span class="number">1</span></span><br><span class="line"><span class="title">map</span> inc [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">-- ou simplement</span></span><br><span class="line"><span class="title">map</span> (\x -&gt; x+<span class="number">1</span>) [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">-- plusieurs variables:</span></span><br><span class="line"><span class="title">add</span> = (\x y -&gt; x+y)</span><br></pre></td></tr></table></figure>
+<p>编写 lambda:  ，+用空格分隔的参数，+-&gt; 后面的函数体。通常用括号将其括起，要不然它就会占据整个右边部分。</p>
+<h2 id="Fermetures-Closures-闭包"><a href="#Fermetures-Closures-闭包" class="headerlink" title="Fermetures (Closures): 闭包"></a>Fermetures (Closures): 闭包</h2><p>On quantifie implicitement[隐式地量化了] x et y quand on écrit : </p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">f</span> x y = x + y <span class="comment">-- ∀x, ∀y</span></span><br></pre></td></tr></table></figure>
+<p>La variable y est dite libre dans :</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">f&#x27;</span> x = x + y <span class="comment">-- ∀x--不能这样子</span></span><br></pre></td></tr></table></figure>
+<p>On ne peut pas évaluer f’ x sans une valeur pour y. D’ailleurs, toute seule, ce n’est pas une déclaration correcte</p>
+<p>Une fermeture est <strong>une fonction avec variables libres plus une valeur</strong> pour ces variables libres :</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Pour tout y, g y est une fermeture，x是自由变量</span></span><br><span class="line"><span class="title">g</span> y = (\x -&gt; x + y)</span><br></pre></td></tr></table></figure>
+<p>那么怎么传参和调用呢？</p>
+<h2 id="Recursion-sur-les-listes"><a href="#Recursion-sur-les-listes" class="headerlink" title="Récursion sur les listes"></a>Récursion sur les listes</h2><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>-Plutôt que de faire de la récursivité explicite, on utilise plutôt, autant que possible, des fonctions de plus haut niveau [与其说是显式递归，不如说是尽可能地使用了更高层次的函数]</p>
+<p>-On a déjà vu <strong>map qui permet d’appliquer une fonction à chaque élément d’une liste</strong> :</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">map</span>::(a-&gt;b)-&gt;[a]-&gt;[b]</span><br><span class="line"><span class="title">map</span> _ [] = []</span><br><span class="line"><span class="title">map</span> f (x:xs) = (f x):(map f xs)</span><br></pre></td></tr></table></figure>
+<p><strong>EXERCICE:</strong></p>
+<p>En utilisant map, écrire une fonction an qui donne la liste de toutes les anagrammes d’un mot[找所有字母组合]. On pourra utiliser aussi : concat::[[a]]-&gt;[a] ,delete::Eq a =&gt;a-&gt;[a]-&gt;[a]</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Data.List (<span class="title">delete</span>,<span class="title">nub</span>)</span><br><span class="line"><span class="comment">-- anagrammes</span></span><br><span class="line"><span class="title">an</span> :: <span class="type">String</span> -&gt; [<span class="type">String</span>]</span><br><span class="line"><span class="title">an</span> <span class="string">&quot;&quot;</span> = [<span class="string">&quot;&quot;</span>]</span><br><span class="line"><span class="title">an</span> xs = concat $ map (\x -&gt; map (x:) $ an $ delete x xs ) $ nub xs<span class="comment">--nub拿来去重复的</span></span><br></pre></td></tr></table></figure>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p><strong>filter permet de ne garder que les éléments d’une liste qui satisfont un certain prédicat</strong> :</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">filter</span>::(a-&gt;<span class="type">Bool</span>)-&gt;[a]-&gt;[a]</span><br><span class="line"><span class="title">filter</span> _ [] = []</span><br><span class="line"><span class="title">filter</span> f (x:xs) = <span class="keyword">if</span> f x <span class="keyword">then</span> x:(filter f xs)</span><br><span class="line">				   <span class="keyword">else</span> filter f xs</span><br></pre></td></tr></table></figure>
+<p><strong>EXERCICE</strong></p>
+<p>Écrire une fonction <em>premiers</em> qui donne la liste des entiers premiers inférieurs à n. On pourra ne pas chercher à optimiser et : </p>
+<ol>
+<li>écrire une fonction diviseurs donnant une liste de diviseurs de n</li>
+<li>utiliser la syntaxe [x..y] pour la liste des entiers compris entre x et y ; </li>
+<li>et rem::Integer-&gt;Integer-&gt;Integer donnant le reste la division entière ;</li>
+<li>et null::[a]-&gt;Bool indiquant si une liste est vide ;</li>
+<li>ou length::[a]-&gt;Int donnant la taille d’une liste.</li>
+</ol>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">premiers</span> n listes = filter (&lt;n) listes</span><br><span class="line"><span class="comment">--找除数</span></span><br><span class="line"><span class="title">diviseurs</span> n = filter ((==<span class="number">0</span>).(rem n)) [<span class="number">1.</span>.n]<span class="comment">--rem与mod差不多，但.的用法原则是什么？</span></span><br><span class="line"><span class="comment">--找质数</span></span><br><span class="line"><span class="title">premiers&#x27;</span> n = filter ((==<span class="number">2</span>).length.diviseurs) [<span class="number">2.</span>.n<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="folds"><a href="#folds" class="headerlink" title="folds"></a>folds</h3><p><strong>foldl</strong> et <strong>foldr</strong> permettent de réduire une liste à une valeur en appliquant une fonction d’arité 2 récursivement à tous les éléments : </p>
+<p><strong>foldl</strong> réduit de la gauche vers la droite :</p>
+<p>它从 List 的左端开始折叠，用初始值和 List 的头部调用这二元函数，得一新的累加值，并用新的累加值与 List 的下一个元素调用二元函数</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">foldl</span>::(b-&gt;a-&gt;b)-&gt;b-&gt;[a]-&gt;b</span><br><span class="line"><span class="title">foldl</span> f x [] = x</span><br><span class="line"><span class="title">foldl</span> f x (y:ys) = foldl f (f x y) ys</span><br><span class="line"></span><br><span class="line"><span class="title">foldl</span> f z [x1, x2, ..., xn]</span><br><span class="line">			== f (...(f (f z x1) x2)...) xn</span><br><span class="line"><span class="comment">-- ou en notation infixe</span></span><br><span class="line"><span class="title">foldl</span> f z [x1, x2, ..., xn]</span><br><span class="line">			== (...((z `f` x1) `f` x2)...) `f` xn</span><br></pre></td></tr></table></figure>
+<p><strong>foldr</strong> réduit de la droite vers la gauche :</p>
+<p>右折叠 foldr 的行为与左折叠相似，只是累加值是从 List 的右边开始</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">foldr</span>::(a-&gt;b-&gt;b)-&gt;b-&gt;[a]-&gt;b</span><br><span class="line"><span class="title">foldr</span> f x [] = x</span><br><span class="line"><span class="title">foldr</span> f x (y:ys) = f y (foldr f x ys)</span><br><span class="line"></span><br><span class="line"><span class="title">foldr</span> f z [x1, x2, ..., xn]</span><br><span class="line">		== f x1 (f x2 (...(f xn z)...))</span><br><span class="line"><span class="comment">-- ou en notation infixe</span></span><br><span class="line"><span class="title">foldr</span> f z [x1, x2, ..., xn]</span><br><span class="line">		== x1 `f` (x2 `f` (...(xn `f` z)...))</span><br></pre></td></tr></table></figure>
+<p>右折叠可以处理无限长度的数据结构，而左折叠不可以。将 无限 List 从中断开执行左折叠是可以的，不过若是向右，就永远到不了头</p>
+<p>foldl1,foldr1::(a-&gt;a-&gt;a)-&gt;[a]-&gt;a sont des versions sans élément de départ pour les listes non vides [没有起始元素的非空列表];</p>
+<p>无需明确提供初始值。他们假定 List 的首个 (或末尾) 元素作为起始值，并从旁边的元素开始折叠</p>
+<p>以sum函数说明</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">suml</span>::[<span class="type">Integer</span>]-&gt;<span class="type">Integer</span></span><br><span class="line"><span class="title">suml</span> xs = foldl (+) <span class="number">0</span> xs</span><br><span class="line"><span class="title">sumr</span>::[<span class="type">Integer</span>]-&gt;<span class="type">Integer</span></span><br><span class="line"><span class="title">sumr</span> xs = foldr (+) <span class="number">0</span> xs</span><br></pre></td></tr></table></figure>
+<p><strong>EXERCICE:</strong></p>
+<p>Écrire les fonctions suivantes (et tester à la main sur quelques exemples) : </p>
+<ol>
+<li><p>sum::[Integer]-&gt;Integer qui donne la somme des éléments d’une liste ; </p>
+<p>上面</p>
+</li>
+<li><p>maximum::[Integer]-&gt;Integer qui donne le maximum des éléments d’une liste ;</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">maxi&#x27;</span>::[<span class="type">Integer</span>]-&gt;<span class="type">Integer</span></span><br><span class="line"><span class="title">maxi&#x27;</span> [] = error <span class="string">&quot;list: vide&quot;</span></span><br><span class="line"><span class="title">maxi&#x27;</span> xs = foldl1 max xs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>and::[Bool]-&gt;Bool qui indique si tous les éléments sont vrais ; </p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">and&#x27;</span>::[<span class="type">Bool</span>]-&gt;<span class="type">Bool</span></span><br><span class="line"><span class="title">and&#x27;</span> = foldr (&amp;&amp;) <span class="type">True</span></span><br><span class="line"></span><br><span class="line"><span class="title">or&#x27;</span> :: [<span class="type">Bool</span>] -&gt; <span class="type">Bool</span></span><br><span class="line"><span class="title">or&#x27;</span> = foldr (||) <span class="type">False</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>any::(a-&gt;Bool)-&gt;[a]-&gt;Bool qui indique si au moins un élément de la liste satisfait un prédicat donné ; </p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">any&#x27;</span>::(a-&gt;<span class="type">Bool</span>)-&gt;[a]-&gt;<span class="type">Bool</span></span><br><span class="line"><span class="title">any&#x27;</span> f = or&#x27;.(map f)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>concat::[[a]]-&gt;[a] qui concatène une liste de listes.</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">concat&#x27;</span> :: [[a]] -&gt; [a]</span><br><span class="line"><span class="title">concat&#x27;</span> = foldl (++) []</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="问题集"><a href="#问题集" class="headerlink" title="问题集"></a>问题集</h2><ol>
+<li>Curryfication的max和例题的fild</li>
+<li>闭包函数的调用和有什么用</li>
+<li>P41的map全排列</li>
+<li>上面的3,4,5怎么都不加列表参数，看不懂啊啊啊啊啊</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Curryfication/" rel="tag"><i class="fa fa-tag"></i> Curryfication</a>
+              <a href="/tags/lameda/" rel="tag"><i class="fa fa-tag"></i> lameda</a>
+              <a href="/tags/map/" rel="tag"><i class="fa fa-tag"></i> map</a>
+              <a href="/tags/flod/" rel="tag"><i class="fa fa-tag"></i> flod</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/16/PFONC_CM2&3/" rel="prev" title="PFONC_CM2&3">
+      <i class="fa fa-chevron-left"></i> PFONC_CM2&3
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/16/ALGOA_CM3/" rel="next" title="ALGOA_CM3">
+      ALGOA_CM3 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PFONC-CM4-amp-5"><span class="nav-number">1.</span> <span class="nav-text">PFONC_CM4&amp;5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Curryfication"><span class="nav-number">1.1.</span> <span class="nav-text">Curryfication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-de-fonction"><span class="nav-number">1.2.</span> <span class="nav-text">Application de fonction($)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fonctions-anonymes-Fonctions-%CE%BB"><span class="nav-number">1.3.</span> <span class="nav-text">Fonctions anonymes (Fonctions λ)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fermetures-Closures-%E9%97%AD%E5%8C%85"><span class="nav-number">1.4.</span> <span class="nav-text">Fermetures (Closures): 闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recursion-sur-les-listes"><span class="nav-number">1.5.</span> <span class="nav-text">Récursion sur les listes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">1.5.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">1.5.2.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#folds"><span class="nav-number">1.5.3.</span> <span class="nav-text">folds</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E9%9B%86"><span class="nav-number">1.6.</span> <span class="nav-text">问题集</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="7876"
+      src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2021120417470915.png">
+  <p class="site-author-name" itemprop="name">7876</p>
+  <div class="site-description" itemprop="description">别怕别想别后退</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/lilili_7876" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;lilili_7876" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://littlewuuu.com/" title="http:&#x2F;&#x2F;littlewuuu.com&#x2F;" rel="noopener" target="_blank">WZL</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">7876</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">126k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">1:54</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.6/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '91j0YOhNsJ3dVCsvMn06SGEM-MdYXbMMI',
+      appKey     : 'YET3dXX87AXEbAsskLm60b0j',
+      placeholder: "yeah!",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://91j0YOhN.api.lncldglobal.com'
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
