@@ -17,13 +17,13 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>遗传算法 | Hexo</title>
-  <meta name="description" content="遗传算法帮ZZ做SRTP学的一些东西">
+  <title>遗传算法 | 7876</title>
+  <meta name="description" content="遗传算法 帮ZZ做SRTP学的一些东西">
 <meta property="og:type" content="article">
 <meta property="og:title" content="遗传算法">
 <meta property="og:url" content="http://nililili7876.cn/2022/07/29/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Bienvenue en Planète 7876">
-<meta property="og:description" content="遗传算法帮ZZ做SRTP学的一些东西">
+<meta property="og:description" content="遗传算法 帮ZZ做SRTP学的一些东西">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224236119.webp">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224550098.webp">
@@ -386,41 +386,55 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h1><p>帮ZZ做SRTP学的一些东西</p>
+        <h1 id="遗传算法"><a class="markdownIt-Anchor" href="#遗传算法"></a> 遗传算法</h1>
+<p>帮ZZ做SRTP学的一些东西</p>
 <span id="more"></span>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><h3 id="一些生物学常识"><a href="#一些生物学常识" class="headerlink" title="一些生物学常识"></a>一些生物学常识</h3><p>基因型、表现型</p>
+<h2 id="1简介"><a class="markdownIt-Anchor" href="#1简介"></a> 1.简介</h2>
+<h3 id="一些生物学常识"><a class="markdownIt-Anchor" href="#一些生物学常识"></a> 一些生物学常识</h3>
+<p>基因型、表现型</p>
 <p>进化：群体，个体，适应度(Fitness)</p>
-<h3 id="优化问题—-gt-优化问题模型"><a href="#优化问题—-gt-优化问题模型" class="headerlink" title="优化问题—&gt;优化问题模型"></a>优化问题—&gt;优化问题模型</h3><p>f(X)目标函数+约束条件 </p>
+<h3 id="优化问题优化问题模型"><a class="markdownIt-Anchor" href="#优化问题优化问题模型"></a> 优化问题–&gt;优化问题模型</h3>
+<p>f(X)目标函数+约束条件</p>
 <p>求最优化问题的方法：枚举，启发式算法（？），搜索</p>
-<h3 id="遗传算法中的基本过程"><a href="#遗传算法中的基本过程" class="headerlink" title="遗传算法中的基本过程"></a>遗传算法中的基本过程</h3><ol>
+<h3 id="遗传算法中的基本过程"><a class="markdownIt-Anchor" href="#遗传算法中的基本过程"></a> 遗传算法中的基本过程</h3>
+<ol>
 <li>选择：按照个体适应度，按照一定的规则，从t代群体P（t）中选择优良个体遗传到P（t+1）</li>
 <li>交叉 ：将P（t）内的各个个体随机搭配成对，以每一对个体，以某个概率交换</li>
 <li>变异：对群体P（t）中的每一个个体，以某一概率改变某一个或者某一些值</li>
 </ol>
 <p>流程</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224236119.webp" alt="img"></p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224236119.webp" alt="img" /></p>
 <p>群体：可行解编码成基因的个体的一个集合</p>
-<h3 id="模拟遗传算法的简单实例"><a href="#模拟遗传算法的简单实例" class="headerlink" title="模拟遗传算法的简单实例"></a>模拟遗传算法的简单实例</h3><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224550098.webp" alt="img"></p>
+<h3 id="模拟遗传算法的简单实例"><a class="markdownIt-Anchor" href="#模拟遗传算法的简单实例"></a> 模拟遗传算法的简单实例</h3>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224550098.webp" alt="img" /></p>
 <ol>
-<li><p>个体编码</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224911233.webp" alt="img" style="zoom:80%;" /></p>
+<li>
+<p>个体编码</p>
+<img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722224911233.webp" alt="img" style="zoom:80%;" />
 </li>
-<li><p>初始群体的产生</p>
-<p>选取起始搜索点的初始群体数据，需要选取群体规模，这里选4。个体则随机产生</p>
-</li>
-<li><p>适应度计算</p>
-<p>这里直接以目标函数为适应度</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722225740210.webp" alt="img"></p>
-<p>第6列表示适应度概率，7进行选择，注意选择完成时，群体规模是保持不变的</p>
-<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722230022681.webp" alt="img"></p>
+<li>
+<p>初始群体的产生</p>
 </li>
 </ol>
-<p>​    9,10,11进行交叉的过程：配对的第2位进行交叉（等位基因）</p>
-<p>​    12,13进行变异</p>
-<p>​    13产生子代群体，完成一次迭代。</p>
+<p>选取起始搜索点的初始群体数据，需要选取群体规模，这里选4。个体则随机产生</p>
+<ol start="3">
+<li>
+<p>适应度计算</p>
+<p>这里直接以目标函数为适应度</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722225740210.webp" alt="img" /></p>
+<p>第6列表示适应度概率，7进行选择，注意选择完成时，群体规模是保持不变的</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/image-20220722230022681.webp" alt="img" /></p>
+</li>
+</ol>
+<p>​	9,10,11进行交叉的过程：配对的第2位进行交叉（等位基因）</p>
+<p>​	12,13进行变异</p>
+<p>​	13产生子代群体，完成一次迭代。</p>
 <p>最优解可由迭代次数决定</p>
-<h2 id="2-基本的遗传算法"><a href="#2-基本的遗传算法" class="headerlink" title="2.基本的遗传算法"></a>2.基本的遗传算法</h2><h2 id="遗传算法解决TSP问题"><a href="#遗传算法解决TSP问题" class="headerlink" title="遗传算法解决TSP问题"></a>遗传算法解决TSP问题</h2><h3 id="问题抽象"><a href="#问题抽象" class="headerlink" title="问题抽象"></a>问题抽象</h3><p>1.如何将答案编码成基因</p>
-<p>旅行路线—&gt;一个数组</p>
+<h2 id="2基本的遗传算法"><a class="markdownIt-Anchor" href="#2基本的遗传算法"></a> 2.基本的遗传算法</h2>
+<h2 id="遗传算法解决tsp问题"><a class="markdownIt-Anchor" href="#遗传算法解决tsp问题"></a> 遗传算法解决TSP问题</h2>
+<h3 id="问题抽象"><a class="markdownIt-Anchor" href="#问题抽象"></a> 问题抽象</h3>
+<p>1.如何将答案编码成基因</p>
+<p>旅行路线–&gt;一个数组</p>
 <p>2.如何定义个体适应度</p>
 <p>路程（目标函数）</p>
 
@@ -484,7 +498,7 @@
     
     
     <li class="next">
-      <a href="/2022/05/20/%E6%88%9B%E7%BA%B3%E5%8A%A8%E6%9C%BA%E4%BF%A1-1/" title="戛纳动机信"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/05/20/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95(%E4%B8%80)/" title="排序算法(一)"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
