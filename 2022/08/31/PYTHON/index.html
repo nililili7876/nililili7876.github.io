@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
-  
-  
-  <title>PYTHON_入门学习 | 7876</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-12-07%20220027.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-12-07%20220027.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nililili7876.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
   <meta name="description" content="PYTHON_入门学习 b站搜python出来的第一个：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1wD4y1o7AS?p&#x3D;25&amp;spm_id_from&#x3D;pageDriver&amp;vd_source&#x3D;ec0ffac623909fb11a02d9651bce5ea8 一般推荐，有点拖，但是一节很短看起来不累">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PYTHON_入门学习">
@@ -66,349 +68,253 @@
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.rpumcn2ei0w.png">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://nililili7876.cn/2022/08/31/PYTHON/index.html">
-  
-    <link rel="alternate" href="/atom.xml" title="Bienvenue en Planète 7876" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-  
-    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
-  
-  
-  
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
+<link rel="canonical" href="http://nililili7876.cn/2022/08/31/PYTHON/">
 
 
-<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="" target="_blank">
-          <img class="img-circle img-rotate" src="/images/111.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">7876</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">一个努力学习的美女</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nantes, France</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
 
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="Search" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+  <title>PYTHON_入门学习 | Bienvenue en Planète 7876</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bienvenue en Planète 7876</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
 
 
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav ">
-        
-        
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">Home</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">Archives</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">Categories</span>
-          </a>
-        </li>
-        
-        
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">Tags</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-repository">
-          <a href="/repository">
-            
-            <i class="icon icon-project"></i>
-            
-            <span class="menu-title">Repository</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">Links</span>
-          </a>
-        </li>
-        
-      </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
-        
-        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
-        
-        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
-        
-    </ul>
 
-    </nav>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>Tags<span class="badge">37</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>Categories<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>Archives<span class="badge">35</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
   </div>
-</header>
-
-  
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-      <div class="widget">
-    <h3 class="widget-title">Board</h3>
-    <div class="widget-body">
-        <div id="board">
-            <div class="content">
-                ../images/222.png
-            </div>
-        </div>
-    </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/">NANTE_EI2|1</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/ALGOA/">ALGOA</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/INDUR/">INDUR</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/PFONC/">PFONC</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/PYTHON/">PYTHON</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/">NANTE_第一年</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/ALGORITHM/">ALGORITHM</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/ANG/">ANG</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/CCUBE/">CCUBE</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/MATHS/">MATHS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/PRO20/">PRO20</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/SSTEM/">SSTEM</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SWJTU/">SWJTU</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SWJTU/ALGORITHM/">ALGORITHM</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%8C%BA/">学习区</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%8C%BA/%E6%9A%91%E5%81%87%E7%9A%84%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/">暑假的乱七八糟</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%8C%BA/">生活区</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%8C%BA/Voyage/">Voyage</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%8C%BA/%E6%9D%82%E8%B0%88/">杂谈</a><span class="category-list-count">2</span></li></ul></li></ul>
     </div>
   </div>
 
+</div>
+    </header>
 
     
-      
-  <div class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/ALGORITHM/" style="font-size: 14px;">ALGORITHM</a> <a href="/tags/BBC-6mintues/" style="font-size: 13px;">BBC_6mintues</a> <a href="/tags/CNN/" style="font-size: 13px;">CNN</a> <a href="/tags/Curryfication/" style="font-size: 13px;">Curryfication</a> <a href="/tags/DNN/" style="font-size: 13px;">DNN</a> <a href="/tags/DS/" style="font-size: 13px;">DS</a> <a href="/tags/KMP/" style="font-size: 13px;">KMP</a> <a href="/tags/MATLAB/" style="font-size: 13px;">MATLAB</a> <a href="/tags/Paris/" style="font-size: 13px;">Paris</a> <a href="/tags/Recursivite/" style="font-size: 13px;">Récursivité</a> <a href="/tags/SAT/" style="font-size: 13px;">SAT</a> <a href="/tags/SOFTSKILLS/" style="font-size: 13px;">SOFTSKILLS</a> <a href="/tags/SysML/" style="font-size: 13px;">SysML</a> <a href="/tags/fibonacci/" style="font-size: 13px;">fibonacci</a> <a href="/tags/flod/" style="font-size: 13px;">flod</a> <a href="/tags/haskell/" style="font-size: 13.33px;">haskell</a> <a href="/tags/lameda/" style="font-size: 13px;">lameda</a> <a href="/tags/lidar/" style="font-size: 13px;">lidar</a> <a href="/tags/map/" style="font-size: 13px;">map</a> <a href="/tags/metaverse/" style="font-size: 13px;">metaverse</a> <a href="/tags/palindromique/" style="font-size: 13px;">palindromique</a> <a href="/tags/python/" style="font-size: 13.67px;">python</a> <a href="/tags/string/" style="font-size: 13px;">string</a> <a href="/tags/%E5%85%A8%E6%8E%92%E5%88%97/" style="font-size: 13px;">全排列</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 13px;">函数式编程</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 13px;">分治</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 13px;">回溯</a> <a href="/tags/%E5%9B%BE%E7%81%B5%E6%9C%BA/" style="font-size: 13px;">图灵机</a> <a href="/tags/%E5%BE%AA%E7%8E%AF%E4%B8%8D%E5%8F%98%E9%87%8F/" style="font-size: 13px;">循环不变量</a> <a href="/tags/%E6%8C%87%E9%92%88%E4%B8%8E%E5%BC%95%E7%94%A8/" style="font-size: 13px;">指针与引用</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13px;">排序</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 13.33px;">时间复杂度</a> <a href="/tags/%E6%9C%9F%E6%9C%9B/" style="font-size: 13px;">期望</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 13px;">机器学习</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88/" style="font-size: 13px;">模型融合</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">算法基础</a>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Archive</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">7</span></li></ul>
-    </div>
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
   </div>
 
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
-        
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/NANTE-EI2-1/">NANTE_EI2|1</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/NANTE-EI2-1/INDUR/">INDUR</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/09/16/INDUR_MOOC/" class="title">INDUR_MOOC</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-09-16T15:19:45.052Z" itemprop="datePublished">2022-09-16</time>
-              </p>
-            </div>
-          </li>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
           
-          <li>
+
+          <div class="content post posts-expand">
             
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/NANTE-EI2-1/">NANTE_EI2|1</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/NANTE-EI2-1/PYTHON/">PYTHON</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/09/16/PYTHON_CM2/" class="title">PYTHON_CM2</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-09-16T15:19:20.684Z" itemprop="datePublished">2022-09-16</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/NANTE-EI2-1/">NANTE_EI2|1</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/NANTE-EI2-1/ALGOA/">ALGOA</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/09/16/ALGOA_CM4&5/" class="title">ALGOA_CM4&amp;5</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-09-16T15:18:51.479Z" itemprop="datePublished">2022-09-16</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/NANTE-EI2-1/">NANTE_EI2|1</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/NANTE-EI2-1/ALGOA/">ALGOA</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/09/16/ALGOA_CM3/" class="title">ALGOA_CM3</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-09-16T15:18:51.468Z" itemprop="datePublished">2022-09-16</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/NANTE-EI2-1/">NANTE_EI2|1</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/NANTE-EI2-1/PFONC/">PFONC</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/09/16/PFONC_CM4&5/" class="title">PFONC_CM4&amp;5</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-09-16T15:18:25.930Z" itemprop="datePublished">2022-09-16</time>
-              </p>
-            </div>
-          </li>
-          
-      </ul>
-    </div>
-  </div>
-  
 
     
-  </div>
-</aside>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://nililili7876.cn/2022/08/31/PYTHON/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2021120417470915.png">
+      <meta itemprop="name" content="7876">
+      <meta itemprop="description" content="别怕别想别后退">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bienvenue en Planète 7876">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PYTHON_入门学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-08-31 05:01:57 / Modified: 05:03:53" itemprop="dateCreated datePublished" datetime="2022-08-31T05:01:57+02:00">2022-08-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8C%BA/" itemprop="url" rel="index"><span itemprop="name">学习区</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8C%BA/%E6%9A%91%E5%81%87%E7%9A%84%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/" itemprop="url" rel="index"><span itemprop="name">暑假的乱七八糟</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/08/31/PYTHON/" class="post-meta-item leancloud_visitors" data-flag-title="PYTHON_入门学习" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-PYTHON" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <span class="post-meta-item">
     
-    <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      PYTHON_入门学习
-    </h1>
-  
-
-      
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/08/31/PYTHON/" class="article-date">
-	  <time datetime="2022-08-31T03:01:57.002Z" itemprop="datePublished">2022-08-31</time>
-	</a>
-</span>
-        
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%8C%BA/">学习区</a>►<a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%8C%BA/%E6%9A%91%E5%81%87%E7%9A%84%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/">暑假的乱七八糟</a>
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/08/31/PYTHON/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/31/PYTHON/" itemprop="commentCount"></span>
+    </a>
   </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>9.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>9 mins.</span>
+            </span>
 
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/python/" rel="tag">python</a>
-  </span>
+        </div>
+      </header>
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-        
-	<span class="article-read hidden-xs">
-	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
-	    <span id="busuanzi_container_page_pv">
-			<span id="busuanzi_value_page_pv">0</span>
-		</span>
-	</span>
-
-
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/08/31/PYTHON/#comments" class="article-comment-link">Comments</a></span>
-        
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3.9k(words)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 16(minutes)</span>
-	
-
-      </div>
-    </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
       
         <h1 id="centrepython_入门学习centre"><a class="markdownIt-Anchor" href="#centrepython_入门学习centre"></a> <centre>PYTHON_入门学习<centre></h1>
 <p>b站搜python出来的第一个：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wD4y1o7AS?p=25&amp;spm_id_from=pageDriver&amp;vd_source=ec0ffac623909fb11a02d9651bce5ea8">https://www.bilibili.com/video/BV1wD4y1o7AS?p=25&amp;spm_id_from=pageDriver&amp;vd_source=ec0ffac623909fb11a02d9651bce5ea8</a></p>
@@ -602,7 +508,7 @@
 <h2 id="chap_4-函数"><a class="markdownIt-Anchor" href="#chap_4-函数"></a> CHAP_4: 函数</h2>
 <h3 id="创建和调用"><a class="markdownIt-Anchor" href="#创建和调用"></a> <strong>创建和调用</strong></h3>
 <p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.1c11ldrql58g.png" alt="yaimage" /></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span>(<span class="params">a,b</span>):</span></span><br><span class="line">	<span class="keyword">return</span> (a*a-b*b)</span><br><span class="line"><span class="built_in">print</span>(calc(<span class="number">10</span>,<span class="number">20</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">calc</span>(<span class="params">a,b</span>):</span><br><span class="line">	<span class="keyword">return</span> (a*a-b*b)</span><br><span class="line"><span class="built_in">print</span>(calc(<span class="number">10</span>,<span class="number">20</span>))</span><br></pre></td></tr></table></figure>
 <p>注意冒号和空格</p>
 <h3 id="参数"><a class="markdownIt-Anchor" href="#参数"></a> 参数</h3>
 <p><strong>参数的默认值</strong>：def fun(a,b=10):#表示说可以传1个参数，传两个就该啥啥</p>
@@ -611,18 +517,18 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#位置实参</span></span><br><span class="line">calc(<span class="number">10</span>,<span class="number">20</span>)</span><br><span class="line"><span class="comment">#关键字实参</span></span><br><span class="line">calc(b=<span class="number">10</span>,a=<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong></p>
 <p>不可变对象(int，字符串，元组)在函数体的修改不会影响实参的值，可变对象（列表，字典，集合）会影响</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">a,b</span>):</span></span><br><span class="line">	<span class="built_in">print</span>(a)</span><br><span class="line">	<span class="built_in">print</span>(b)</span><br><span class="line">	a=<span class="number">10</span></span><br><span class="line">    b.append(<span class="number">10</span>)</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">	<span class="built_in">print</span>(b)</span><br><span class="line">a = <span class="number">11</span></span><br><span class="line">b = [<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">fun(a,b)<span class="comment">#a不会变，b会</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun</span>(<span class="params">a,b</span>):</span><br><span class="line">	<span class="built_in">print</span>(a)</span><br><span class="line">	<span class="built_in">print</span>(b)</span><br><span class="line">	a=<span class="number">10</span></span><br><span class="line">    b.append(<span class="number">10</span>)</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">	<span class="built_in">print</span>(b)</span><br><span class="line">a = <span class="number">11</span></span><br><span class="line">b = [<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">fun(a,b)<span class="comment">#a不会变，b会</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br></pre></td></tr></table></figure>
 <p><strong>个数可变的参数</strong></p>
 <p>位置参数：*,结果是元组</p>
 <p>关键字参数：**，结果是字典</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">*args</span>):</span></span><br><span class="line">	<span class="built_in">print</span>(args)</span><br><span class="line">fun(<span class="number">10</span>)</span><br><span class="line">fun(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">**args</span>)</span></span><br><span class="line"><span class="function">	<span class="title">print</span>(<span class="params">args</span>)</span></span><br><span class="line"><span class="function"><span class="title">fun</span>(<span class="params">a=<span class="number">10</span>,b=<span class="number">20</span>,c=<span class="number">30</span></span>)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun</span>(<span class="params">*args</span>):</span><br><span class="line">	<span class="built_in">print</span>(args)</span><br><span class="line">fun(<span class="number">10</span>)</span><br><span class="line">fun(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun</span>(<span class="params">**args</span>)</span><br><span class="line">	<span class="built_in">print</span>(args)</span><br><span class="line">fun(a=<span class="number">10</span>,b=<span class="number">20</span>,c=<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
 <p>注意：可变的参数只能有1个，但可变的位置参数和可变的关键字参数能一起存在</p>
 <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.pm175k8lq00.png" alt="yaimage" style="zoom:80%;" />
 <p>函数支持参数时，调用能用*这样子搞</p>
 <h3 id="返回值"><a class="markdownIt-Anchor" href="#返回值"></a> <strong>返回值</strong></h3>
 <p>多个时以元组形式返回</p>
 <h3 id="例题斐波那契数列"><a class="markdownIt-Anchor" href="#例题斐波那契数列"></a> 例题：斐波那契数列</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fabo</span>(<span class="params">i</span>):</span></span><br><span class="line">	<span class="keyword">if</span> i &lt;= <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	<span class="keyword">elif</span> i == <span class="number">1</span> <span class="keyword">or</span> i == <span class="number">2</span>:<span class="comment">#注意or，写成|愣了好久</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> fabo(i-<span class="number">1</span>)+fabo(i-<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(fabo(<span class="number">6</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fabo</span>(<span class="params">i</span>):</span><br><span class="line">	<span class="keyword">if</span> i &lt;= <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	<span class="keyword">elif</span> i == <span class="number">1</span> <span class="keyword">or</span> i == <span class="number">2</span>:<span class="comment">#注意or，写成|愣了好久</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> fabo(i-<span class="number">1</span>)+fabo(i-<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(fabo(<span class="number">6</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="chap_5-类与对象"><a class="markdownIt-Anchor" href="#chap_5-类与对象"></a> CHAP_5: 类与对象</h2>
 <p>面向过程与面向对象</p>
 <p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.64l4z8lpdpo0.png" alt="yaimage" /></p>
@@ -642,18 +548,18 @@
 <p>其实stu1由3部分组成，name，age和类指针（指向了Student类）</p>
 <h4 id="动态绑定"><a class="markdownIt-Anchor" href="#动态绑定"></a> 动态绑定</h4>
 <p>直接使用对象名添加属性并赋值，也可以给他添加方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span>()</span></span><br><span class="line"><span class="function">	<span class="title">print</span>(<span class="params"><span class="string">&#x27;&#x27;</span></span>)</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">stu1</span>.<span class="title">gender</span> = &#x27;男&#x27;</span></span><br><span class="line"><span class="function"><span class="title">stu1</span>.<span class="title">show</span> = <span class="title">show</span></span></span><br><span class="line"><span class="function"><span class="title">stu1</span>.<span class="title">show</span>()</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">show</span>()</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">stu1.gender = <span class="string">&#x27;男&#x27;</span></span><br><span class="line">stu1.show = show</span><br><span class="line">stu1.show()</span><br></pre></td></tr></table></figure>
 <p>好任性啊感觉</p>
 <h3 id="封装-继承与多态"><a class="markdownIt-Anchor" href="#封装-继承与多态"></a> 封装、继承与多态</h3>
 <h4 id="封装"><a class="markdownIt-Anchor" href="#封装"></a> 封装</h4>
 <p>私有属性没有专有修饰符，在前面打两个下划线表示私有属性</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">	<span class="title">def</span> <span class="title">__init__</span>(<span class="params">self,name,age</span>):</span></span><br><span class="line">		self.name=name</span><br><span class="line">		self.__age=age<span class="comment">#可以在类里面使用但不能在外面使用</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">		<span class="built_in">print</span>(self.name,self.__age)</span><br><span class="line">stu1 = Student(<span class="string">&#x27;张三&#x27;</span>，<span class="number">20</span>)</span><br><span class="line">stu1.show()</span><br><span class="line"><span class="built_in">print</span>(stu1.__age)<span class="comment">#就不行</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,name,age</span>):</span><br><span class="line">		self.name=name</span><br><span class="line">		self.__age=age<span class="comment">#可以在类里面使用但不能在外面使用</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">show</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(self.name,self.__age)</span><br><span class="line">stu1 = Student(<span class="string">&#x27;张三&#x27;</span>，<span class="number">20</span>)</span><br><span class="line">stu1.show()</span><br><span class="line"><span class="built_in">print</span>(stu1.__age)<span class="comment">#就不行</span></span><br></pre></td></tr></table></figure>
 <p>硬要使用也是可以的，用dir(stu1)去读然后有个啥就可以用了，不过说不推荐</p>
 <h4 id="继承"><a class="markdownIt-Anchor" href="#继承"></a> 继承</h4>
 <p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.45i5nuts2ws0.png" alt="yaimage" /></p>
 <p>python支持多继承，如果一个类没有继承任何类，则默认继承object类</p>
 <p><strong>子类的构造函数(init)必须调用父类的构造函数：super().<em>init</em>_（）</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HaoStudent</span>(<span class="params">Student</span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name,age,score</span>):</span></span><br><span class="line">		<span class="built_in">super</span>().__init__(name,age)</span><br><span class="line">		self.score=score</span><br><span class="line">stu2 = HaoStudent(<span class="string">&#x27;张一&#x27;</span>,<span class="number">20</span>,<span class="number">98</span>)</span><br><span class="line">stu2.show()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">HaoStudent</span>(<span class="title class_ inherited__">Student</span>):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,name,age,score</span>):</span><br><span class="line">		<span class="built_in">super</span>().__init__(name,age)</span><br><span class="line">		self.score=score</span><br><span class="line">stu2 = HaoStudent(<span class="string">&#x27;张一&#x27;</span>,<span class="number">20</span>,<span class="number">98</span>)</span><br><span class="line">stu2.show()</span><br></pre></td></tr></table></figure>
 <p><strong>方法重写</strong>：调用+重写–&gt;super().xxx()，然后后面加就成</p>
 <p><strong>OBJECT类</strong>：所有类的父类</p>
 <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.3p8ounx87vs0.png" alt="yaimage" style="zoom:50%;" />
@@ -661,14 +567,14 @@
 <p>没懂</p>
 <h3 id="特殊属性与特殊方法"><a class="markdownIt-Anchor" href="#特殊属性与特殊方法"></a> <strong>特殊属性与特殊方法</strong></h3>
 <p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.31jzpp5297s0.png" alt="yaimage" /></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">	<span class="title">def</span> <span class="title">__init__</span>(<span class="params">self,name,age</span>):</span></span><br><span class="line">		self.name=name</span><br><span class="line">		self.__age=age<span class="comment">#可以在类里面使用但不能在外面使用</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.name)</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__add__</span>(<span class="params">self,other</span>):</span></span><br><span class="line">		<span class="keyword">return</span> self.name+other.name</span><br><span class="line">stu1 = Student(<span class="string">&#x27;张二&#x27;</span>，<span class="number">20</span>)</span><br><span class="line">stu2 = Student(<span class="string">&#x27;张四&#x27;</span>，<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(stu1))</span><br><span class="line"><span class="built_in">print</span>(stu1.__add__(stu2))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,name,age</span>):</span><br><span class="line">		self.name=name</span><br><span class="line">		self.__age=age<span class="comment">#可以在类里面使用但不能在外面使用</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.name)</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__add__</span>(<span class="params">self,other</span>):</span><br><span class="line">		<span class="keyword">return</span> self.name+other.name</span><br><span class="line">stu1 = Student(<span class="string">&#x27;张二&#x27;</span>，<span class="number">20</span>)</span><br><span class="line">stu2 = Student(<span class="string">&#x27;张四&#x27;</span>，<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(stu1))</span><br><span class="line"><span class="built_in">print</span>(stu1.__add__(stu2))</span><br></pre></td></tr></table></figure>
 <p>new那个不太懂，不太想懂</p>
 <p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.71yw3ckb1pw0.png" alt="yaimage" /></p>
 <h3 id="赋值-浅拷贝-深拷贝"><a class="markdownIt-Anchor" href="#赋值-浅拷贝-深拷贝"></a> 赋值、浅拷贝、深拷贝</h3>
 <p>赋值：只是形成两个变量，实际还是指向同一个对象</p>
 <p>浅拷贝：包含的子对象内容不拷贝，源对象与拷贝对象引用同一个子对象</p>
 <img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.2hj1e1i46ie0.png" alt="yaimage" style="zoom:50%;" />
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CPU</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Disk</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,cpu,disk</span>):</span></span><br><span class="line">		self.cpu = cpu</span><br><span class="line">		self.disk = disk</span><br><span class="line"></span><br><span class="line"><span class="comment">#赋值--&gt;内存地址是一致的</span></span><br><span class="line">cpu1 = CPU()</span><br><span class="line">cpu2 = cpu1</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(cpu1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(cpu2))</span><br><span class="line"></span><br><span class="line"><span class="comment">#浅拷贝--&gt;computer不一样但cpu和disk是一样的</span></span><br><span class="line">disk = Disk()</span><br><span class="line">computer = Computer(cpu1,disk)</span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">computer2 = copy.copy(computer)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(computer),<span class="built_in">id</span>(computer.cpu),<span class="built_in">id</span>(computer.disk))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(computer2),<span class="built_in">id</span>(computer2.cpu),<span class="built_in">id</span>(computer2.disk))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#深拷贝--&gt;computer,cpu,disk都不一样</span></span><br><span class="line">computer3 = copy.deepcopy(computer)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(computer),<span class="built_in">id</span>(computer.cpu),<span class="built_in">id</span>(computer.disk))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(computer3),<span class="built_in">id</span>(computer3.cpu),<span class="built_in">id</span>(computer3.disk))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CPU</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Disk</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Computer</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,cpu,disk</span>):</span><br><span class="line">		self.cpu = cpu</span><br><span class="line">		self.disk = disk</span><br><span class="line"></span><br><span class="line"><span class="comment">#赋值--&gt;内存地址是一致的</span></span><br><span class="line">cpu1 = CPU()</span><br><span class="line">cpu2 = cpu1</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(cpu1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(cpu2))</span><br><span class="line"></span><br><span class="line"><span class="comment">#浅拷贝--&gt;computer不一样但cpu和disk是一样的</span></span><br><span class="line">disk = Disk()</span><br><span class="line">computer = Computer(cpu1,disk)</span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">computer2 = copy.copy(computer)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(computer),<span class="built_in">id</span>(computer.cpu),<span class="built_in">id</span>(computer.disk))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(computer2),<span class="built_in">id</span>(computer2.cpu),<span class="built_in">id</span>(computer2.disk))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#深拷贝--&gt;computer,cpu,disk都不一样</span></span><br><span class="line">computer3 = copy.deepcopy(computer)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(computer),<span class="built_in">id</span>(computer.cpu),<span class="built_in">id</span>(computer.disk))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(computer3),<span class="built_in">id</span>(computer3.cpu),<span class="built_in">id</span>(computer3.disk))</span><br></pre></td></tr></table></figure>
 <p>深拷贝：递归拷贝对象中包含的子对象，源对象与拷贝对象所有的子对象也不相同</p>
 <p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/yaimage.c4i9gaft6xs.png" alt="yaimage" /></p>
 <h2 id="chap_6-文件模块化编程"><a class="markdownIt-Anchor" href="#chap_6-文件模块化编程"></a> CHAP_6: 文件，模块化编程</h2>
@@ -691,175 +597,179 @@
 <p>主程序：就是这下面的内容只有在运行这个py文件时才运行，调用时不运行</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ = <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>()</span><br></pre></td></tr></table></figure>
 
-      
     </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
+
     
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://nililili7876.cn/2022/08/31/PYTHON/" title="PYTHON_入门学习" target="_blank" rel="external">http://nililili7876.cn/2022/08/31/PYTHON/</a>
-    </li>
     
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          </div>
+
+        
 
 
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/111.jpg" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="" target="_blank"><span class="text-dark">7876</span><small class="ml-1x">一个努力学习的美女</small></a></h3>
-        <div>别怕别想别回退</div>
-      </div>
-    </figure>
-  </div>
-</div>
-
-
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/01/Ekya/" rel="prev" title="Ekya">
+      <i class="fa fa-chevron-left"></i> Ekya
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/01/HASK/" rel="next" title="HASK_入门学习">
+      HASK_入门学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
+      </footer>
+    
   </article>
   
-    
-  <section id="comments">
-  	
-      <div id="vcomments"></div>
-    
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-  
-  <ul class="pager pull-left">
-    
-    <li class="prev">
-      <a href="/2022/09/01/HASK/" title="HASK_入门学习"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
-    
-    <li class="next">
-      <a href="/2022/08/01/Ekya/" title="Ekya"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-    
-  </ul>
   
   
-  
-  <div class="bar-right">
-    
-  </div>
-  </div>
-</nav>
-  
 
 
-</main>
 
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
-        
-        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
-        
-        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
-        
-    </ul>
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
 
-    <div class="copyright">
-    	
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
-        </div>
-    </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
 </script>
 
-<script src="/js/plugin.min.js"></script>
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#centrepython_%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0centre"><span class="nav-number">1.</span> <span class="nav-text"> PYTHON_入门学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chap_0"><span class="nav-number">1.1.</span> <span class="nav-text"> CHAP_0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.2.</span> <span class="nav-text"> 变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.3.</span> <span class="nav-text"> 注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">1.1.4.</span> <span class="nav-text"> input()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print"><span class="nav-number">1.1.5.</span> <span class="nav-text"> print</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.6.</span> <span class="nav-text"> 运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pycharm"><span class="nav-number">1.1.7.</span> <span class="nav-text"> pycharm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chap_1"><span class="nav-number">1.2.</span> <span class="nav-text"> CHAP_1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 选择结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#range"><span class="nav-number">1.2.2.1.</span> <span class="nav-text"> range()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while"><span class="nav-number">1.2.2.2.</span> <span class="nav-text"> while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-in"><span class="nav-number">1.2.2.3.</span> <span class="nav-text"> for-in</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break-%E5%92%8C-continue"><span class="nav-number">1.2.3.</span> <span class="nav-text"> break 和 continue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#else"><span class="nav-number">1.2.3.1.</span> <span class="nav-text"> else</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.2.3.2.</span> <span class="nav-text"> 嵌套循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chap_2-listdicttuplesetstr"><span class="nav-number">1.3.</span> <span class="nav-text"> CHAP_2: list,dict,tuple,set,str</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0"><span class="nav-number">1.3.1.1.</span> <span class="nav-text"> 获取元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="nav-number">1.3.1.2.</span> <span class="nav-text"> 增删改查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E5%85%B8"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0-2"><span class="nav-number">1.3.2.1.</span> <span class="nav-text"> 获取元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5-2"><span class="nav-number">1.3.2.2.</span> <span class="nav-text"> 增删改查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">1.3.3.</span> <span class="nav-text"> 集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5-3"><span class="nav-number">1.3.3.1.</span> <span class="nav-text"> 增删改查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.3.2.</span> <span class="nav-text"> 数据操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%BB%84"><span class="nav-number">1.3.4.</span> <span class="nav-text"> 元组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0-3"><span class="nav-number">1.3.4.1.</span> <span class="nav-text"> 获取元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5"><span class="nav-number">1.3.4.2.</span> <span class="nav-text"> 查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%B0%8F%E7%BB%93"><span class="nav-number">1.3.5.</span> <span class="nav-text"> 4种数据结构的小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chap_3-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.4.</span> <span class="nav-text"> CHAP_3: 字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chap_4-%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.</span> <span class="nav-text"> CHAP_4: 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E8%B0%83%E7%94%A8"><span class="nav-number">1.5.1.</span> <span class="nav-text"> 创建和调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">1.5.2.</span> <span class="nav-text"> 参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">1.5.3.</span> <span class="nav-text"> 返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97"><span class="nav-number">1.5.4.</span> <span class="nav-text"> 例题：斐波那契数列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chap_5-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.6.</span> <span class="nav-text"> CHAP_5: 类与对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.6.1.</span> <span class="nav-text"> 类与对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.6.1.1.</span> <span class="nav-text"> 类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.6.1.2.</span> <span class="nav-text"> 对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A"><span class="nav-number">1.6.1.3.</span> <span class="nav-text"> 动态绑定</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85-%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81"><span class="nav-number">1.6.2.</span> <span class="nav-text"> 封装、继承与多态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-number">1.6.2.1.</span> <span class="nav-text"> 封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">1.6.2.2.</span> <span class="nav-text"> 继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-number">1.6.2.3.</span> <span class="nav-text"> 多态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%89%B9%E6%AE%8A%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.3.</span> <span class="nav-text"> 特殊属性与特殊方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC-%E6%B5%85%E6%8B%B7%E8%B4%9D-%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="nav-number">1.6.4.</span> <span class="nav-text"> 赋值、浅拷贝、深拷贝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chap_6-%E6%96%87%E4%BB%B6%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B"><span class="nav-number">1.7.</span> <span class="nav-text"> CHAP_6: 文件，模块化编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">1.7.1.</span> <span class="nav-text"> 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B"><span class="nav-number">1.7.2.</span> <span class="nav-text"> 模块化编程</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="7876"
+      src="https://raw.githubusercontent.com/nililili7876/blog_pic/main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2021120417470915.png">
+  <p class="site-author-name" itemprop="name">7876</p>
+  <div class="site-description" itemprop="description">别怕别想别后退</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/lilili_7876" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;lilili_7876" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
 
 
-<script src="/js/application.js"></script>
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://littlewuuu.com/" title="http:&#x2F;&#x2F;littlewuuu.com&#x2F;" rel="noopener" target="_blank">WZL</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
+      </div>
+    </main>
 
-<script src="/js/insight.js"></script>
+    <footer class="footer">
+      <div class="footer-inner">
+        
 
+        
 
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">7876</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">175k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">2:39</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
 
-
-
-
-   
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-
-   
-    
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/valine"></script>
-  <script type="text/javascript">
-  var GUEST = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link';
-  meta = meta.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#vcomments',
-    verify: false,
-    notify: false,
-    appId: '',
-    appKey: '',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: meta,
-    pageSize: '10' || 10,
-    visitor: false
-  });
-  </script>
-
-     
+        
 
 
 
@@ -867,22 +777,140 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
         }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.6/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '91j0YOhNsJ3dVCsvMn06SGEM-MdYXbMMI',
+      appKey     : 'YET3dXX87AXEbAsskLm60b0j',
+      placeholder: "yeah!",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : 'https://91j0YOhN.api.lncldglobal.com'
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
