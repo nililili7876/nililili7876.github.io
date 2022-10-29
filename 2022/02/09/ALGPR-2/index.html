@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ALGPR-2 | Bienvenue en Planète 7876</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="序第二周的算法课都讲了什么T.T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ALGPR-2">
+<meta property="og:url" content="http://nililili7876.cn/2022/02/09/ALGPR-2/index.html">
+<meta property="og:site_name" content="Bienvenue en Planète 7876">
+<meta property="og:description" content="序第二周的算法课都讲了什么T.T">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220210110243.webp">
+<meta property="og:image" content="https://git.poker/nililili7876/blog_pic/blob/main/images/ya20220210110621.webp?raw=true">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220210112853.webp">
+<meta property="og:image" content="https://git.poker/nililili7876/blog_pic/blob/main/images/ya20220210113415.webp?raw=true">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220210114750.webp">
+<meta property="article:published_time" content="2022-02-09T15:04:05.000Z">
+<meta property="article:modified_time" content="2022-09-17T18:41:03.020Z">
+<meta property="article:author" content="7876">
+<meta property="article:tag" content="Récursivité">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220210110243.webp">
+  
+    <link rel="alternate" href="/atom.xml" title="Bienvenue en Planète 7876" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Bienvenue en Planète 7876</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nililili7876.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ALGPR-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/09/ALGPR-2/" class="article-date">
+  <time class="dt-published" datetime="2022-02-09T15:04:05.000Z" itemprop="datePublished">2022-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/">NANTE_第一年</a>►<a class="article-category-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/ALGORITHM/">ALGORITHM</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ALGPR-2
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>第二周的算法课都讲了什么T.T</p>
+<span id="more"></span>
+<h1 id="TD2"><a href="#TD2" class="headerlink" title="TD2"></a>TD2</h1><p>尝试在课上直接记blog的第一天</p>
+<h2 id="Recursivite"><a href="#Recursivite" class="headerlink" title="Récursivité"></a>Récursivité</h2><h3 id="calcule-la-puissance-d’un-nombre"><a href="#calcule-la-puissance-d’un-nombre" class="headerlink" title="calcule la puissance d’un nombre"></a>calcule la puissance d’un nombre</h3><p>principe_1: calcul récursif pour n != 0,et puissance(x,0)=1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">entier puissance(entier x,entier n):</span><br><span class="line">Début</span><br><span class="line">	si (n = 0) alors retourner 1//结束递归的跳出条件</span><br><span class="line">	sinon retourner x * pusissance(x,n-1)//递归</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>principe_2: par la méthod “diviser pour régner”,et puissance(x,0)=1,et puissance(x,1)=x div étant la division entiere</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Début</span><br><span class="line">	//结束递归的跳出条件</span><br><span class="line">	si (n = 0) </span><br><span class="line">		alors retourner 1</span><br><span class="line">	finsi</span><br><span class="line">	si (n = 1) </span><br><span class="line">		alors retourner x</span><br><span class="line">	finsi</span><br><span class="line">	</span><br><span class="line">	//本质还是在所递归，有减少一些递归的次数</span><br><span class="line">	entier y = puiss2(x, (n div 2))</span><br><span class="line">	si (n mod 2 = 0 ) </span><br><span class="line">		alors retourner y*y</span><br><span class="line">	sinon</span><br><span class="line">		alors retourner x*y*y</span><br><span class="line">	finsi</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>——&gt;<strong>堆栈！</strong></p>
+<h3 id="L’ordre-inverse"><a href="#L’ordre-inverse" class="headerlink" title="L’ordre inversé"></a>L’ordre inversé</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">affiche_1(vecteur&lt;entier&gt; w)</span><br><span class="line">Début</span><br><span class="line">	pour i de 0 à taille(w) -1 faire</span><br><span class="line">		écrire(w[i]+&#x27;&#x27;)</span><br><span class="line">	fin_pour</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">affiche_2(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut &lt; taille(w)) alors</span><br><span class="line">		écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">		affiche_2(w,debut+1)</span><br><span class="line">    fin_si</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">entier debut = taille(w) -1</span><br><span class="line">affiche_inv(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut = -1) exit(0) fin_si</span><br><span class="line">	écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">	affiche_inv(w,debut-1)</span><br><span class="line">Fin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//可以初始化为0，先递归再输出[妙！]</span><br><span class="line">affiche_inv(vecteur&lt;entier&gt; w,int debut)</span><br><span class="line">Début</span><br><span class="line">	si(debut &lt; taille(w)) alors</span><br><span class="line">		affiche_inv(w,debut-1)</span><br><span class="line">		écrire(w[debut]+&#x27;&#x27;)</span><br><span class="line">	fin_si</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<h3 id="String的palidrome"><a href="#String的palidrome" class="headerlink" title="String的palidrome"></a>String的palidrome</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Algorithm palindrome</span><br><span class="line">	booléen &lt;- palindrome(string s,int decal)</span><br><span class="line">	</span><br><span class="line">Début</span><br><span class="line">	si(decal &lt; (taille(s)-1)/2)</span><br><span class="line">		si(s[decal] != s[taille(s)-1-decal]) </span><br><span class="line">			retourner FAUX </span><br><span class="line">		sinon</span><br><span class="line">			palindrome(s,decal+1)</span><br><span class="line">		sinon </span><br><span class="line">			retourner VRAI</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>—&gt;用<strong>stack</strong>来实现</p>
+<h2 id="Reine-et-pions-八皇后！"><a href="#Reine-et-pions-八皇后！" class="headerlink" title="Reine et pions(八皇后！)"></a>Reine et pions(八皇后！)</h2><p>题有点怪</p>
+<p>先写题</p>
+<p>On considère un échiquier de huit cases sur huit comportant huit pions et une reine. Les positions des pions et de la reine sont données dans un fichier sous un format que vous devez définir(selon la structure de données que vous choisissez). La reine peut se déplacer sur les lignes(diagonales; verticale et horizontale) sur lesquelles elle se trouve. On souhaite savoir combien de pions sont en prise(i.e. pouvant êrte pris par la reine). Si deux pions ou plus sont sur la même ligne(diagonale, verticale , horizontale), seul le premier est en prise.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">DFS</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> res[<span class="number">9</span>]</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> step)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> i,j;</span><br><span class="line">	<span class="keyword">if</span>(step &gt; <span class="number">8</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++) cout&lt;&lt;res[i];</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//尝试每一种可能 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">     &#123;</span><br><span class="line">         继续下一步 <span class="built_in">dfs</span>(step + <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> ;   </span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="CM2"><a href="#CM2" class="headerlink" title="CM2"></a>CM2</h1><h2 id="Gestion-de-la-memoire-内存管理"><a href="#Gestion-de-la-memoire-内存管理" class="headerlink" title="Gestion de la mémoire//内存管理"></a>Gestion de la mémoire//内存管理</h2><p>Possible de stocker un lien vers une case mémoire</p>
+<p>Utile pour :</p>
+<p>​            Structures de données (<strong>listes chainées, arbres</strong>)</p>
+<p>​            Passage de paramètres：传递参数<br>​            Allocation de mémoire：配置、地址分配</p>
+<p>像是在讲指针的样子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">utilisation &#x27;lien&#x27; :</span><br><span class="line">ExempleLienEntier</span><br><span class="line">variables</span><br><span class="line">	lien entier lienEnt//声明一个lien</span><br><span class="line">	entier ent</span><br><span class="line">Début</span><br><span class="line">	lienEnt ← lien(ent)</span><br><span class="line">	contenu(lienEnt) ← 5</span><br><span class="line">	reçoit la valeur 5//接受</span><br><span class="line">	afficher(ent)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>关于lien和contenu</p>
+<ul>
+<li>lien:创造或声明链接</li>
+<li>contenu：访问链接的内容</li>
+</ul>
+<h2 id="Structures-de-donnees-composees"><a href="#Structures-de-donnees-composees" class="headerlink" title="Structures de données composées"></a>Structures de données composées</h2><ul>
+<li>Stockage de plusieurs données dans une seule structure pour：Structurer les données，Faciliter les traitements</li>
+<li>Données de même type : listes et arbres//树和表<br>Données de type quelconque : enregistrements(记录登记)</li>
+</ul>
+<h3 id="Enregistrements"><a href="#Enregistrements" class="headerlink" title="Enregistrements"></a>Enregistrements</h3><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220210110243.webp" alt="img" style="zoom:80%;" /></p>
+<p>应该是结构体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">types</span><br><span class="line">	article : Enregistrement</span><br><span class="line">		entier : référence</span><br><span class="line">		réel : prix</span><br><span class="line">		chaine de caractère : libellé</span><br><span class="line">		entier : quantité</span><br><span class="line">	Fin enregistrement</span><br><span class="line">vectArticles : tableau d’article</span><br><span class="line"></span><br><span class="line">variables</span><br><span class="line">article artCour // article courant</span><br><span class="line">entier valeurStock</span><br><span class="line"></span><br><span class="line">artCour.prix &lt;-- lire ()</span><br><span class="line">artCour.libellé &lt;-- lire ()</span><br><span class="line">artCour.quantité &lt;-- lire ()</span><br><span class="line">valeurStock &lt;-- artCour.prix * artCour.quantité</span><br><span class="line">écrire (&quot;La valeur du stock de &quot;, artCour.libellé, &quot; est de : &quot;,valeurStock, &quot; euros&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="Structures-lineaires"><a href="#Structures-lineaires" class="headerlink" title="Structures linéaires"></a>Structures linéaires</h3><h4 id="Listes"><a href="#Listes" class="headerlink" title="Listes"></a>Listes</h4><h5 id="Definition"><a href="#Definition" class="headerlink" title="Définition"></a>Définition</h5><p>Ensemble d’éléments de même type liés par une relation de séquentialité</p>
+<p><img src="https://git.poker/nililili7876/blog_pic/blob/main/images/ya20220210110621.webp?raw=true" alt="ya20220210110621" style="zoom:80%;" /></p>
+<p>注意一下名字： prédécesseur， successeur</p>
+<p>一些关于表的基本操作:插入、删除、测试表是否为空、测表长</p>
+<h5 id="Tableaux表"><a href="#Tableaux表" class="headerlink" title="Tableaux表"></a>Tableaux表</h5><p>Accès direct à un élément à l’aide de son indice(下标)</p>
+<p>目标算法: Somme(求和), Tris(排序), Présence d’élément(?)</p>
+<p>Exemple de définition de types composés </p>
+<ul>
+<li>tabEnt : Tableau d’entiers </li>
+<li>matReels : Tableau de dimension 2 de réels </li>
+<li>tab4DEnt : tableau d’entiers de dimension 4</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//检查是否正序</span><br><span class="line">variables</span><br><span class="line">	tabEnt tab</span><br><span class="line">	entier n</span><br><span class="line">	booléen trie</span><br><span class="line"></span><br><span class="line">&#123;n, tab&#125; &lt;- lire ()</span><br><span class="line">trie &lt;- VRAI</span><br><span class="line">pour i &lt;- 0 à n-2 faire</span><br><span class="line">	si ( tab[i] &gt; tab[i+1] ) alors</span><br><span class="line">    	trie FAUX</span><br><span class="line">    fin si</span><br><span class="line">fin pour</span><br><span class="line">si ( non trie ) alors</span><br><span class="line">	écrire (&quot;le tableau n’est pas trié&quot;)</span><br><span class="line">fin si</span><br><span class="line"></span><br><span class="line">//一般函数</span><br><span class="line">variables</span><br><span class="line">	vectArticles tabArt//?结构体的vector？</span><br><span class="line">	réel valStock</span><br><span class="line">	entier n</span><br><span class="line">Début</span><br><span class="line">&#123;n, tabArt&#125; &lt;-- lire (&quot;data.txt&quot;)</span><br><span class="line">valStock &lt;-- 0</span><br><span class="line">pour i 0 à n-1 faire</span><br><span class="line">	valStock valStock + tabArt[i].prix * tabArt[i].quantité</span><br><span class="line">fin pour</span><br><span class="line">écrire (&quot;La valeur du stock des &quot;, n, &quot; articles est de : &quot;,valStock, &quot; euros&quot;)</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>所以说就是表的元素可以是结构体的意思？</p>
+<h5 id="Liste-chainee链表"><a href="#Liste-chainee链表" class="headerlink" title="Liste chainée链表"></a>Liste chainée链表</h5><h6 id="单向-successeur"><a href="#单向-successeur" class="headerlink" title="单向 successeur"></a>单向 successeur</h6><p>链表的定义(值与指向下一元素的指针)：</p>
+<p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220210112853.webp" alt="ya20220210112853"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">type</span><br><span class="line">	elementEntier : Enregistrement</span><br><span class="line">		entier valeur,</span><br><span class="line">		lien elementEntier suivant, // lien vers l’élément suivant</span><br><span class="line">	Fin enregistrement</span><br><span class="line"></span><br><span class="line">variables</span><br><span class="line">	elementEntier elementUn, elementDeux, ..., elementSix</span><br><span class="line">...</span><br><span class="line">	elementUn.valeur 12</span><br><span class="line">	elementUn.suivant lien(elementDeux)</span><br><span class="line">	elementDeux.valeur 99</span><br><span class="line">	elementDeux.suivant lien(elementTrois)</span><br><span class="line">	...</span><br><span class="line">	elementCinq.suivant lien(elementSix)</span><br><span class="line">	elementSix.valeur 16</span><br><span class="line">	elementSix.suivant VIDE</span><br></pre></td></tr></table></figure>
+<h6 id="双向"><a href="#双向" class="headerlink" title="双向"></a>双向</h6><p>要同时定义前置和后置指针</p>
+<p><img src="https://git.poker/nililili7876/blog_pic/blob/main/images/ya20220210113415.webp?raw=true" alt="ya20220210113415"></p>
+<p>Calcul de la longueur d’une liste（递归）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fonction : longueur calculLongueur(lienDébutListe)</span><br><span class="line">paramètres : lien elementEntier lienDébutListe</span><br><span class="line">résultats : entier longueur</span><br><span class="line">Début</span><br><span class="line"> si ( lienDébutListe est VIDE ) alors</span><br><span class="line">  	longueur 0</span><br><span class="line"> sinon</span><br><span class="line">  	longueur 1 + calculLongueur(lienD´ebutListe-&gt;suivant)</span><br><span class="line"> fin si</span><br><span class="line"> retourner longueur</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>Recherche d’un élément dans une liste（递归）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">fonction : présence chercherElement(lienDébutListe, val)</span><br><span class="line">	paramètres : lien élémentEntier lienDébutListe,</span><br><span class="line">				entier val</span><br><span class="line">	résultats : booléen présence</span><br><span class="line">Début</span><br><span class="line">	si ( lienDébutListe est VIDE ) alors//链表为空退出</span><br><span class="line">		présence FAUX</span><br><span class="line">	sinon</span><br><span class="line">  		si ( lienDébutListe-&gt;valeur = val ) alors</span><br><span class="line"> 			présence VRAI</span><br><span class="line">		sinon</span><br><span class="line"> 			présence chercherElement(lienDébutListe-&gt;suivant, val)</span><br><span class="line">		fin_si</span><br><span class="line">	fin_si</span><br><span class="line"> retourner présence</span><br><span class="line">Fin</span><br></pre></td></tr></table></figure>
+<p>就是链表本质就是结构体+数组吗？</p>
+<h5 id="Liste-chainee和tableau时间复杂度的比较"><a href="#Liste-chainee和tableau时间复杂度的比较" class="headerlink" title="Liste chainée和tableau时间复杂度的比较"></a>Liste chainée和tableau时间复杂度的比较</h5><p><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/images/ya20220210114750.webp" alt="ya20220210114750" style="zoom:80%;" /></p>
+<p>查找，添加/删除头(位)</p>
+<h4 id="Piles"><a href="#Piles" class="headerlink" title="Piles"></a>Piles</h4><p>存储结构讲表与链表，然后栈、队列是特殊的线性表（？）</p>
+<p>LIFO:栈，先入后出</p>
+<p>基本操作： ajoute(push),delete(pop),Test de pile vide</p>
+<h4 id="File-d’attente"><a href="#File-d’attente" class="headerlink" title="File d’attente"></a>File d’attente</h4><p>FIFO：队列，先入先出</p>
+<h3 id="Structures-arborescentes"><a href="#Structures-arborescentes" class="headerlink" title="Structures arborescentes"></a>Structures arborescentes</h3><p>​    Extension du concept de liste avec plusieurs successeurs pour un élément(一个节点后面可以接多个节点)</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总有地上的菜鸡，敢于直面大佬的开源</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nililili7876.cn/2022/02/09/ALGPR-2/" data-id="cl9tstt6m000ta0up7pef4e9b" data-title="ALGPR-2" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Recursivite/" rel="tag">Récursivité</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/21/ALGPR-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ALGPR-3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/08/ALGPR-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ALGPR-1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/">NANTE_EI2|1</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/ALGOA/">ALGOA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/INDUR/">INDUR</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/PFONC/">PFONC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-EI2-1/PYTHON/">PYTHON</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/">NANTE_第一年</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/ALGORITHM/">ALGORITHM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/ANG/">ANG</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/CCUBE/">CCUBE</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/MATHS/">MATHS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/PRO20/">PRO20</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NANTE-%E7%AC%AC%E4%B8%80%E5%B9%B4/SSTEM/">SSTEM</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/SWJTU/">SWJTU</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/SWJTU/ALGORITHM/">ALGORITHM</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%8C%BA/">学习区</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%8C%BA/%E6%9A%91%E5%81%87%E7%9A%84%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/">暑假的乱七八糟</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%8C%BA/">生活区</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%8C%BA/Voyage/">Voyage</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%8C%BA/%E6%9D%82%E8%B0%88/">杂谈</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ALGORITHM/" rel="tag">ALGORITHM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BBC-6mintues/" rel="tag">BBC_6mintues</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CNN/" rel="tag">CNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Curryfication/" rel="tag">Curryfication</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DNN/" rel="tag">DNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DS/" rel="tag">DS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/" rel="tag">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/" rel="tag">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Paris/" rel="tag">Paris</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Recursivite/" rel="tag">Récursivité</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SAT/" rel="tag">SAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SOFTSKILLS/" rel="tag">SOFTSKILLS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SysML/" rel="tag">SysML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fibonacci/" rel="tag">fibonacci</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flod/" rel="tag">flod</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/haskell/" rel="tag">haskell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lameda/" rel="tag">lameda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lidar/" rel="tag">lidar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metaverse/" rel="tag">metaverse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/palindromique/" rel="tag">palindromique</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/" rel="tag">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E6%8E%92%E5%88%97/" rel="tag">全排列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E6%B2%BB/" rel="tag">分治</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E7%81%B5%E6%9C%BA/" rel="tag">图灵机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AA%E7%8E%AF%E4%B8%8D%E5%8F%98%E9%87%8F/" rel="tag">循环不变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E9%92%88%E4%B8%8E%E5%BC%95%E7%94%A8/" rel="tag">指针与引用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="tag">时间复杂度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%9B/" rel="tag">期望</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88/" rel="tag">模型融合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" rel="tag">算法基础</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ALGORITHM/" style="font-size: 20px;">ALGORITHM</a> <a href="/tags/BBC-6mintues/" style="font-size: 10px;">BBC_6mintues</a> <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/Curryfication/" style="font-size: 10px;">Curryfication</a> <a href="/tags/DNN/" style="font-size: 10px;">DNN</a> <a href="/tags/DS/" style="font-size: 10px;">DS</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/MATLAB/" style="font-size: 10px;">MATLAB</a> <a href="/tags/Paris/" style="font-size: 10px;">Paris</a> <a href="/tags/Recursivite/" style="font-size: 10px;">Récursivité</a> <a href="/tags/SAT/" style="font-size: 10px;">SAT</a> <a href="/tags/SOFTSKILLS/" style="font-size: 10px;">SOFTSKILLS</a> <a href="/tags/SysML/" style="font-size: 10px;">SysML</a> <a href="/tags/fibonacci/" style="font-size: 10px;">fibonacci</a> <a href="/tags/flod/" style="font-size: 10px;">flod</a> <a href="/tags/haskell/" style="font-size: 15px;">haskell</a> <a href="/tags/lameda/" style="font-size: 10px;">lameda</a> <a href="/tags/lidar/" style="font-size: 10px;">lidar</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/metaverse/" style="font-size: 10px;">metaverse</a> <a href="/tags/palindromique/" style="font-size: 10px;">palindromique</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/%E5%85%A8%E6%8E%92%E5%88%97/" style="font-size: 10px;">全排列</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 10px;">分治</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 10px;">回溯</a> <a href="/tags/%E5%9B%BE%E7%81%B5%E6%9C%BA/" style="font-size: 10px;">图灵机</a> <a href="/tags/%E5%BE%AA%E7%8E%AF%E4%B8%8D%E5%8F%98%E9%87%8F/" style="font-size: 10px;">循环不变量</a> <a href="/tags/%E6%8C%87%E9%92%88%E4%B8%8E%E5%BC%95%E7%94%A8/" style="font-size: 10px;">指针与引用</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" style="font-size: 15px;">时间复杂度</a> <a href="/tags/%E6%9C%9F%E6%9C%9B/" style="font-size: 10px;">期望</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">机器学习</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88/" style="font-size: 10px;">模型融合</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">算法基础</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/29/PAPY_CMS/">PAPY_CM1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/29/PAPY_TPS/">PAPY_CM1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/16/INDUR_MOOC/">INDUR_MOOC</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/16/PAPY_CM2/">PAPY_CM2</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/16/ALGOA_CM4&5/">ALGOA_CM4&amp;5</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 7876<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>
