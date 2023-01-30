@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>统计学习TP1 - Bienvenue en Planète 7876</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Icaurs - Hexo Theme"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Icaurs - Hexo Theme"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="对应TP2&amp;amp;3&amp;amp;4 plot &amp;amp; numy &amp;amp; pandas  scipy.stats"><meta property="og:type" content="blog"><meta property="og:title" content="111"><meta property="og:url" content="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/20221029/ya%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220917210647.jpg"><meta property="og:site_name" content="Bienvenue en Planète 7876"><meta property="og:description" content="对应TP2&amp;amp;3&amp;amp;4 plot &amp;amp; numy &amp;amp; pandas  scipy.stats"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205110909577.png"><meta property="og:image" content="https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205141624149.png"><meta property="og:image" content="https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205212002971.png"><meta property="og:image" content="https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205211902890.png"><meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2018/10/image0020619.gif"><meta property="article:published_time" content="2023-01-30T20:27:19.901Z"><meta property="article:modified_time" content="2023-01-30T20:45:45.214Z"><meta property="article:author" content="7876"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205110909577.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/20221029/ya微信图片_20220917210647.jpg"},"headline":"统计学习TP1","image":["https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205110909577.png","https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205141624149.png","https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205212002971.png","https://cdn.staticaly.com/home/nl7876/.config/Typora/typora-user-images/image-20221205211902890.png","https://www.runoob.com/wp-content/uploads/2018/10/image0020619.gif"],"datePublished":"2023-01-30T20:27:19.901Z","dateModified":"2023-01-30T20:45:45.214Z","author":{"@type":"Person","name":7876},"publisher":{"@type":"Organization","name":"Bienvenue en Planète 7876","logo":{"@type":"ImageObject","url":"https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/20221029/ya39f1ada59d3fa9d65440760f6b18c21.jpg"}},"description":"对应TP2&amp;3&amp;4 plot &amp; numy &amp; pandas  scipy.stats"}</script><link rel="canonical" href="http://nililili7876.cn/2023/01/30/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0_TP0_Plot&amp;Numpy/"><link rel="icon" href="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/20221029/ya39f1ada59d3fa9d65440760f6b18c21.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/20221029/ya39f1ada59d3fa9d65440760f6b18c21.jpg" alt="Bienvenue en Planète 7876" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com">GitHub</a><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2023-01-30T20:27:19.901Z" title="30/01/2023 21:27:19">2023-01-30</time></span><span class="level-item">Updated&nbsp;<time dateTime="2023-01-30T20:45:45.214Z" title="30/01/2023 21:45:45">2023-01-30</time></span><span class="level-item"><a class="link-muted" href="/categories/NANTES/">NANTES</a><span> / </span><a class="link-muted" href="/categories/NANTES/EI2/">EI2</a><span> / </span><a class="link-muted" href="/categories/NANTES/EI2/EI2-2/">EI2_2</a><span> / </span><a class="link-muted" href="/categories/NANTES/EI2/EI2-2/Stasc/">Stasc</a></span><span class="level-item">18 minutes read (About 2670 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">统计学习TP1</h1><div class="content"><p>对应TP2&amp;3&amp;4</p>
+<p>plot &amp; numy &amp; pandas  scipy.stats</p>
+<span id="more"></span>
+<h1 id="plot"><a class="markdownIt-Anchor" href="#plot"></a> Plot</h1>
+<h2 id="1-curves"><a class="markdownIt-Anchor" href="#1-curves"></a> 1. curves</h2>
+<p>用到的库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br></pre></td></tr></table></figure>
+<p>在运行时可能会出现[&lt;matplotlib.lines.Line2D at 0x7fdafd5e7eb8&gt;]这种输出，在最后一行加上分号解决</p>
+<p>输出字符串+r&quot;…&quot;就是latex格式==&gt;标题图例xy轴标签啥的然后后面还可+str(变量)</p>
+<h3 id="11-plt-vs-subplots"><a class="markdownIt-Anchor" href="#11-plt-vs-subplots"></a> 1.1 plt VS subplots</h3>
+<p>A plot is mainly made of two objects: a figure and a set of axes.</p>
+<ul>
+<li>Roughly speaking, the figure is the big box in which everything is put (it is the top level container). For instance, a figure is characterized by a size, a title and a facecolor.</li>
+<li><strong>The axes are the plots themselves[图本身]</strong>.There can be several plots inside a figure (also called subplots) and they are, for example, characterized by ticks, limits on x and y, a legend and a title. The axes contain the curves plotted.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots()  # Create a figure with a single Axes object</span><br><span class="line"></span><br><span class="line"># This is similar to:</span><br><span class="line"># fig = plt.figure()</span><br><span class="line"># ax = fig.add_subplot(1, 1, 1)  # 1 row, 1 column, first item</span><br><span class="line"></span><br><span class="line">ax.plot(x, y1)  # Create a curve in ax</span><br><span class="line">ax.plot(x,y1+1); #能画出向y平移的第二条线</span><br><span class="line"># fig.show()  # Show the figure (in Spyder only)</span><br></pre></td></tr></table></figure>
+<h3 id="12-subplots"><a class="markdownIt-Anchor" href="#12-subplots"></a> 1.2 subplots</h3>
+<ul>
+<li>fig,axs = plt.subplots(2)==&gt;ax[0].plot(x1,y1)   或者 ax1.plot(x,y)<strong>#注意是1</strong></li>
+<li>fig,axs = plt.subplots(2,2)==&gt;ax[0,0].plot(x1,y1)   或者 ax1.plot(x,y)#注意是1</li>
+<li>遍历每个子图可以：for ax in fig.get_axes()</li>
+<li>subplots里面可以加sharex=True这种</li>
+</ul>
+<h3 id="13-plot"><a class="markdownIt-Anchor" href="#13-plot"></a> 1.3 plot</h3>
+<ul>
+<li>linestyle:‘-’,‘:’</li>
+<li>color</li>
+<li>linewidth</li>
+<li>marker: ‘.’,‘,’,‘1’,‘s’</li>
+<li>markersize</li>
+</ul>
+<h3 id="14-gridlabelstitle-and-legend"><a class="markdownIt-Anchor" href="#14-gridlabelstitle-and-legend"></a> 1.4 grid，labels，title and legend</h3>
+<p>grid: 网格,<code>ax.grid()</code></p>
+<p>labels: <code>ax.set_xlabel('x')</code></p>
+<p>title: <code>ax.set_title('标题')</code></p>
+<p>legend:加图例，有两种方法</p>
+<ul>
+<li>
+<p>在ax.plot里面加参数label=“第一个图”</p>
+</li>
+<li>
+<p>ax.legend((“sin”, “cos”), loc=“lower left”)</p>
+</li>
+<li>
+<p>loc参数：默认0(‘best’)</p>
+<p><img src="/home/nl7876/.config/Typora/typora-user-images/image-20221205110909577.png" alt="image-20221205110909577" /></p>
+</li>
+<li>
+<p>fontsize:图例的字体大小，int或者{‘xx-small’, ‘x-small’, ‘small’, ‘medium’, ‘large’, ‘x-large’, ‘xx-large’}</p>
+</li>
+<li>
+<p>markerscale:图例标记的相对大小</p>
+</li>
+<li>
+<p>bbox_to_anchor：用于与<em>loc</em>一起定位图例的框，二元组或者四元组</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loc=<span class="string">&#x27;best&#x27;</span>, bbox_to_anchor=(<span class="number">0.5</span>, <span class="number">0.</span>, <span class="number">0.5</span>, <span class="number">0.5</span>)<span class="comment">#图右下角的最佳位置</span></span><br><span class="line">loc=<span class="string">&#x27;upper right&#x27;</span>, bbox_to_anchor=(<span class="number">0.5</span>, <span class="number">0.5</span>)<span class="comment">#图正中心</span></span><br><span class="line">loc=<span class="string">&quot;upper center&quot;</span>, bbox_to_anchor=(<span class="number">0.5</span>, <span class="number">1.3</span>)<span class="comment">#图例的上方中心在X轴的一半，在曲线框的上方0.3处。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>ncol: 图例列数</p>
+</li>
+</ul>
+<h3 id="14-limits-and-ticks"><a class="markdownIt-Anchor" href="#14-limits-and-ticks"></a> 1.4 Limits and ticks</h3>
+<p><strong>limits:</strong> x,y轴范围, ax.set_xlim(0.0, 2*pi)</p>
+<p>**x,y名字：**ax.set_xlabel(“x”)，ax.set_ylabel(“y”)</p>
+<p><strong>Spines</strong>改变spines[记录数据区域边界的线]的位置和颜色，例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ax.spines[<span class="string">&#x27;right&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)  <span class="comment"># Erase right axis</span></span><br><span class="line">ax.spines[<span class="string">&#x27;top&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)  <span class="comment"># Erase upper axis</span></span><br><span class="line">ax.spines[<span class="string">&#x27;bottom&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))  <span class="comment"># Set x axis at y=0</span></span><br><span class="line">ax.spines[<span class="string">&#x27;left&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))  <span class="comment"># Set y axis at x=0</span></span><br></pre></td></tr></table></figure>
+<p><strong>ticks: 刻度</strong></p>
+<ul>
+<li>
+<p><strong>ax.set_yticks</strong>，传一个数组或者列表：</p>
+<ul>
+<li><code>ax.set_yticks(linspace(-1, 1, 9, endpoint=True));</code></li>
+<li><code>ax.set_xticks([t*pi/2 for t in range(5)])  </code></li>
+</ul>
+</li>
+<li>
+<p><strong>ax.set_xticklabels:设置每个刻度的名字：</strong>``````ax.set_xticklabels([r’<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>’, r’<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pi/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">2</span></span></span></span>’, r’<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span></span></span></span>’, r’<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">3\pi/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord">/</span><span class="mord">2</span></span></span></span>’, r’<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span></span></span></span>’],fontsize=14)  # Set xlabels```</p>
+</li>
+<li>
+<p>设置刻度的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ax.xaxis.set_ticks_position(&#x27;bottom&#x27;)  # Set ticks below the x axis</span><br><span class="line">ax.yaxis.set_ticks_position(&#x27;left&#x27;)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>设置主/次刻度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ax.xaxis.set_major_locator(MultipleLocator(pi/<span class="number">2</span>))</span><br><span class="line">ax.xaxis.set_major_formatter(FormatStrFormatter(<span class="string">&#x27;%0.2f&#x27;</span>))</span><br><span class="line">ax.xaxis.set_minor_locator(MultipleLocator(pi/<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">ax.yaxis.set_major_locator(MultipleLocator(<span class="number">0.5</span>))</span><br><span class="line">ax.yaxis.set_minor_locator(MultipleLocator(<span class="number">0.25</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#让最后次要的刻度虚线显示</span></span><br><span class="line">ax.grid(which=<span class="string">&quot;minor&quot;</span>, linestyle=<span class="string">&quot;:&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>里面传递的一些参数</p>
+<p><img src="/home/nl7876/.config/Typora/typora-user-images/image-20221205141624149.png" alt="image-20221205141624149" /></p>
+</li>
+</ul>
+<p><strong>非线性轴</strong>: axis.set_yscale(“log”)</p>
+<h3 id="15-fill-between-curves"><a class="markdownIt-Anchor" href="#15-fill-between-curves"></a> 1.5 Fill between curves</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ax.fill_between(x, y1, y2, color=<span class="string">&quot;blue&quot;</span>, alpha=<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="16-adding-text"><a class="markdownIt-Anchor" href="#16-adding-text"></a> 1.6 Adding text</h3>
+<p>1.text,主要参数：</p>
+<ul>
+<li>先传位置x,y</li>
+<li>文本内容[+r可以写latex格式]</li>
+<li>color</li>
+<li>fontsize, fontweight</li>
+</ul>
+<p>也可以传图形</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bboxprops = <span class="built_in">dict</span>(boxstyle=<span class="string">&quot;rarrow&quot;</span>, facecolor=(<span class="number">0.8</span>,<span class="number">0.9</span>,<span class="number">0.9</span>), edgecolor=<span class="string">&quot;b&quot;</span>, linewidth=<span class="number">2</span>)</span><br><span class="line">ax.text(<span class="number">1.5</span>, -<span class="number">0.5</span>, <span class="string">&quot;Time&quot;</span>, horizontalalignment=<span class="string">&quot;center&quot;</span>, verticalalignment=<span class="string">&quot;center&quot;</span>,fontsize=<span class="number">16</span>, color=<span class="string">&quot;green&quot;</span>, bbox=bboxprops);<span class="comment">#画箭头</span></span><br></pre></td></tr></table></figure>
+<p>2.annotate</p>
+<p>搬个例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arrowprops = <span class="built_in">dict</span>(facecolor=<span class="string">&#x27;blue&#x27;</span>, width=<span class="number">2</span>, headwidth=<span class="number">7</span>, shrink=<span class="number">0.05</span>)</span><br><span class="line">ax.annotate(<span class="string">&#x27;Local min&#x27;</span>, xy=(<span class="number">3</span>*pi/<span class="number">2</span>, -<span class="number">1</span>), xytext=(<span class="number">2</span>, -<span class="number">0.5</span>), fontsize=<span class="number">14</span>,horizontalalignment=<span class="string">&#x27;right&#x27;</span>, verticalalignment=<span class="string">&#x27;top&#x27;</span>, arrowprops=arrowprops);</span><br></pre></td></tr></table></figure>
+<h2 id="2-其他"><a class="markdownIt-Anchor" href="#2-其他"></a> 2. 其他</h2>
+<h3 id="21-image"><a class="markdownIt-Anchor" href="#21-image"></a> 2.1 image</h3>
+<p>matplotlib库下面的image库，generally nicknamed <code>mpimg</code></p>
+<p><a target="_blank" rel="noopener" href="http://python-imaging.github.io/">Pillow</a>库支持加载图像数据。matplotlib 本身只支持 PNG 图像。如果本机读取失败，下面显示的命令将返回到 Pillow。</p>
+<ul>
+<li>图片显示</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> mpimg</span><br><span class="line">%matplotlib inline</span><br><span class="line">img = mpimg.imread(<span class="string">&#x27;111.jpg&#x27;</span>)<span class="comment">#这里img读出来是数组类型的</span></span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">ax.imshow(img);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>RGB通道分离</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line">ax = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, color <span class="keyword">in</span> <span class="built_in">enumerate</span>([<span class="string">&#x27;Reds&#x27;</span>, <span class="string">&#x27;Greens&#x27;</span>, <span class="string">&#x27;Blues&#x27;</span>]):<span class="comment">#这里enumerate很灵性噢</span></span><br><span class="line">    ax.append(fig.add_subplot(<span class="number">2</span>, <span class="number">2</span>, i+<span class="number">1</span>))</span><br><span class="line">    axim = ax[-<span class="number">1</span>].imshow(img[:, :, i], cmap=color)</span><br><span class="line">    fig.colorbar(axim)<span class="comment">#加颜色条</span></span><br><span class="line">    ax[i].set_title(color)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="22-scatter"><a class="markdownIt-Anchor" href="#22-scatter"></a> 2.2 Scatter</h3>
+<p>画点,ax.scatter(x, y, c=color, s=size, alpha=0.5),常用参数说明</p>
+<ul>
+<li>x,y坐标</li>
+<li>c：颜色</li>
+<li>marker: 默认‘o’, 可以是*(‘v’, ‘^’, ‘&lt;’, ‘&gt;’, ‘8’, ‘s’, ‘p’, ‘*’, ‘h’, ‘H’, ‘D’, ‘d’, ‘P’, ‘X’)*,详见：<a target="_blank" rel="noopener" href="https://matplotlib.org/2.0.2/api/markers_api.html#matplotlib.markers.MarkerStyle">https://matplotlib.org/2.0.2/api/markers_api.html#matplotlib.markers.MarkerStyle</a></li>
+<li>alpha：透明度</li>
+<li>s：size</li>
+</ul>
+<p>一个很秀的写法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = random.randn(<span class="number">200</span>)</span><br><span class="line">y = random.randn(<span class="number">200</span>)</span><br><span class="line">label = <span class="number">2</span>*x+y &gt; <span class="number">0</span></span><br><span class="line">fig, ax = plt.subplots()</span><br><span class="line">ax.scatter(x, y, c=label, alpha=<span class="number">0.5</span>)  <span class="comment"># alpha tunes transparency</span></span><br><span class="line">ax.grid();</span><br></pre></td></tr></table></figure>
+<p><img src="/home/nl7876/.config/Typora/typora-user-images/image-20221205212002971.png" alt="image-20221205212002971" /></p>
+<h3 id="23-stem"><a class="markdownIt-Anchor" href="#23-stem"></a> 2.3 Stem</h3>
+<p>绵棒图，和plot差不多，效果这样子</p>
+<p><img src="/home/nl7876/.config/Typora/typora-user-images/image-20221205211902890.png" alt="image-20221205211902890" /></p>
+<h3 id="24-histogram-vs-bar"><a class="markdownIt-Anchor" href="#24-histogram-vs-bar"></a> 2.4 Histogram VS Bar</h3>
+<p>概念上</p>
+<p>**直方图（Histogram）**是一种可视化在连续间隔，或者是特定时间段内数据分布情况的图表，经常被用在统计学领域。简单来说，<strong>直方图描述的是一组数据的频次分布直方图有助于我们知道数据的分布情况，诸如众数、中位数的大致位置、数据是否存在缺口或者异常值</strong>。</p>
+<p>比较：</p>
+<ul>
+<li>直方图展示数据的分布，柱状图比较数据的大小。</li>
+<li><strong>直方图X轴为定量数据，柱状图X轴为分类数据。</strong></li>
+<li>直方图柱子无间隔，柱状图柱子有间隔</li>
+<li>直方图柱子宽度可不一，柱状图柱子宽度须一致</li>
+</ul>
+<p>python上</p>
+<ul>
+<li>
+<p>hist</p>
+<figure class="highlight plaintext"><figcaption><span>bins</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - x: 一组数</span><br><span class="line">  - bins: 默认是10，可以是数，也可以是一个不等的序列</span><br><span class="line">  - density:默认Flase表示y是频次，True是y是频率/小数</span><br><span class="line"></span><br><span class="line">- bar</span><br><span class="line"></span><br><span class="line">  ```ax.bar(index, means, width=0.9, edgecolor=&quot;blue&quot;, alpha=0.2, yerr=std)```</span><br><span class="line"></span><br><span class="line">  - 传X和Y</span><br><span class="line">  - 然后下面可以贴名字,比如：ax.set_xticklabels(names, fontsize=14)，然后上面的X是arange(len(names))这种</span><br><span class="line"></span><br><span class="line">### 2.5 Pie</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>labels = ‘Frogs’, ‘Hogs’, ‘Dogs’, ‘Logs’<br />
+sizes = [15, 30, 45, 10]<br />
+colors = [‘yellowgreen’, ‘gold’, ‘lightskyblue’, ‘lightcoral’]<br />
+explode = 0, 0.1, 0, 0  # only “explode” the 2nd slice (i.e. ‘Hogs’)#偏移，空出来那里</p>
+<p>ax.pie(sizes, explode=explode, labels=labels, colors=colors,<br />
+autopct=‘%1.1f%%’, shadow=True, startangle=90)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">参数说明：</span><br><span class="line"></span><br><span class="line">- x：一维数组</span><br><span class="line">- explode: 是一个len(x)数组，它指定**偏移**每个楔形的半径的分数</span><br><span class="line">- colors:颜色</span><br><span class="line">- labels:标签</span><br><span class="line">- autopct:放在扇形里面的东西，可以是字符串或者函数。不太懂</span><br><span class="line"></span><br><span class="line">这里的效果：</span><br><span class="line"></span><br><span class="line">![image-20221205212602648](/home/nl7876/.config/Typora/typora-user-images/image-20221205212602648.png)</span><br><span class="line"></span><br><span class="line">### 2.6 3D</span><br><span class="line"></span><br><span class="line">projection=&#x27;3d&#x27; + plot_surface</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line"># Polynomial</span><br><span class="line">x = arange(-5, 5, 0.25)</span><br><span class="line">y = arange(-5, 5, 0.25)</span><br><span class="line">X, Y = meshgrid(x, y)#从两个向量中返回两个矩阵，X是x重复len(Y)行，Y是y重复len(X)列</span><br><span class="line">Z = X + Y**2</span><br><span class="line"># Initialize 3D plot</span><br><span class="line">fig = plt.figure(figsize=(10, 8))</span><br><span class="line">ax = fig.add_subplot(1, 1, 1, projection=&#x27;3d&#x27;)</span><br><span class="line"></span><br><span class="line"># Plot</span><br><span class="line">surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=cm.coolwarm, linewidth=0)</span><br></pre></td></tr></table></figure>
+<h1 id="numpy"><a class="markdownIt-Anchor" href="#numpy"></a> Numpy</h1>
+<h2 id="1-创建array"><a class="markdownIt-Anchor" href="#1-创建array"></a> 1. 创建array：</h2>
+<ul>
+<li>从列表：<code>a = np.array(l)</code>，可以加上dtype指定类型</li>
+<li>np里面的一些函数: <code>np.arange(15)</code>,<code>np.zeros((3,4))</code>,<code>np.ones((2,10))</code>：全1的矩阵,<code>np.eye(3)</code>:单位矩阵，<code>np.diag([1,2,3])</code>:对角矩阵，<code>np.linspace(0,1,6)</code>:注意与arange区分，那个是地点终点步长，这个是起点终点和个数</li>
+</ul>
+<h2 id="2array的属性"><a class="markdownIt-Anchor" href="#2array的属性"></a> 2.array的属性</h2>
+<p>a.dim:维数/行，a.shape,a.size:总数,a.dtype:类型</p>
+<h2 id="3修改形状"><a class="markdownIt-Anchor" href="#3修改形状"></a> 3.修改形状</h2>
+<ul>
+<li>reshape: m = np.arange(12); m.reshape(4, 3)
+<ul>
+<li>-1: 提供新形状的满足标准是“新形状应与原始形状兼容”,自动补全的未知形状==&gt;比如m.reshape(-1, 1)就是把原来的变成列向量</li>
+</ul>
+</li>
+<li>ravel:变成一维数组</li>
+</ul>
+<h2 id="4重复与连接"><a class="markdownIt-Anchor" href="#4重复与连接"></a> 4.重复与连接</h2>
+<p>np.tile(m,(2,3)): 把m的行重复两次，列重复3次</p>
+<p>np.concatenate((m,n)): 连接m和n，默认接着行，加axis=1表示横着列连接</p>
+<p>对于二维数组，连接也可以用np.vastack[竖折]和np.hstack[横着]</p>
+<h2 id="5索引和切片"><a class="markdownIt-Anchor" href="#5索引和切片"></a> 5.索引和切片</h2>
+<p>正常取位置：m[3,2]或者m[3] [2]，m[3,:]:第三行, m[:,3]:第三列,m[[1,1,2],[0,1,2]]:取(1,0),(1,1)和(2,2)</p>
+<p>根据条件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">np.logical_and(<span class="number">3</span> &lt; m, m &lt; <span class="number">9</span>) <span class="comment">#会得到一个布尔矩阵</span></span><br><span class="line">m(np.logical_and(<span class="number">3</span> &lt; m, m &lt; <span class="number">9</span>)) <span class="comment">#筛选出符合条件的</span></span><br><span class="line"><span class="comment">#单个条件直接写：</span></span><br><span class="line">m[m%<span class="number">2</span> == <span class="number">1</span>]<span class="comment">#得到奇数</span></span><br><span class="line"><span class="comment">#还可以更高级</span></span><br><span class="line">m[m%<span class="number">2</span> == <span class="number">1</span>] -= <span class="number">1</span><span class="comment">#让奇数自减</span></span><br></pre></td></tr></table></figure>
+<h2 id="6copy和view"><a class="markdownIt-Anchor" href="#6copy和view"></a> 6.copy和view</h2>
+<p>b = a.copy()和c = a.view(),我看着效果差不多</p>
+<h2 id="7-基本计算"><a class="markdownIt-Anchor" href="#7-基本计算"></a> 7. 基本计算</h2>
+<p>可以对array做加减乘乘方这些基本操作，不管几维都可以</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">m ** <span class="number">2</span></span><br><span class="line">m * <span class="number">2</span></span><br><span class="line">m + <span class="number">2</span></span><br><span class="line">m - <span class="number">2</span></span><br><span class="line">m - n</span><br><span class="line">m &lt; <span class="number">2</span> <span class="comment">#会得到一个布尔矩阵</span></span><br></pre></td></tr></table></figure>
+<h2 id="8-broadcasting"><a class="markdownIt-Anchor" href="#8-broadcasting"></a> 8. Broadcasting</h2>
+<p>广播(Broadcast)是 numpy 对不同形状(shape)的数组进行数值计算的方式， 对数组的算术运算通常在相应的元素上进行。当运算中的 2 个数组的形状不同时，numpy 将自动触发广播机制。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2018/10/image0020619.gif" alt="img" /></p>
+<h2 id="9-numpy里面的一些数学函数"><a class="markdownIt-Anchor" href="#9-numpy里面的一些数学函数"></a> 9. numpy里面的一些数学函数</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a.sum()#和</span><br><span class="line">a.prod()#连乘</span><br><span class="line">a.cumsum()#每个位置是前面的和</span><br><span class="line">a.mean()</span><br><span class="line">a.sort()</span><br><span class="line">a.argmin()#返回沿轴的最小值的索引</span><br><span class="line">#多维里面加参数可以算行和列</span><br><span class="line">a.mean(axis=0)#算每列的均值</span><br><span class="line">a.sum(axis=1)#按行求和</span><br></pre></td></tr></table></figure>
+<p>还有np带的好多,np.cos，np.exp，np.fmax(np.sin(x),np.cos(x))等等</p>
+<p>然后还有很多线性代数的函数</p>
+<ul>
+<li>a.dot(b)：算a和b内积</li>
+<li>np.outer(a,b): 算a和b外积</li>
+<li>A.T：转置</li>
+<li>np.linalg.eigvalsh(A)：特征值</li>
+<li>A.trace()：迹</li>
+<li>np.linalg.inv(A)：逆</li>
+</ul>
+<p>然后是一些逻辑判断的函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.any(C &lt; -1, axis=0)</span><br><span class="line">np.all(C &gt; -5, axis=1)</span><br><span class="line">indx, indy = np.where(C &lt; -1)#返回的是下标</span><br></pre></td></tr></table></figure>
+<h1 id="scipy"><a class="markdownIt-Anchor" href="#scipy"></a> Scipy</h1>
+<p>Scipy is a collection of mudules for various mathematical purposes. Leveraging the Numpy package, Scipy offers a broad and powerful environment for solving scientific problems. Roughly speaking, Scipy is to Python what toolboxes are to Matlab.</p>
+<ul>
+<li>An important feature of the <a target="_blank" rel="noopener" href="http://docs.scipy.org/doc/scipy/reference/special.html#module-scipy.special">scipy.special</a> module is the definition of numerous mathematical functions, called <em>special functions</em>. Available functions include Airy, elliptic, Bessel, gamma, beta, hypergeometric, parabolic cylinder, Mathieu, spheroidal wave, Struve, and Kelvin. ==&gt; 很多数学函数的包</li>
+<li>The <a target="_blank" rel="noopener" href="http://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg">scipy.linalg</a> module is crafted for linear algebra. It subsumes[包括] all the functions in numpy.linalg and adds other more advanced ones.
+<ul>
+<li>比如说可以解线性方程: <code>x = linalg.solve(C, b)</code></li>
+<li>然后还有一些特殊矩阵的构造器：对角线矩阵、循环矩阵、Hadamard 矩阵、Toeplitz 矩阵……</li>
+</ul>
+</li>
+<li>The <a target="_blank" rel="noopener" href="http://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize">scipy.optimize</a> module offers several common but efficient routines for constrained and unconstrained optimization, as well as curve fitting and root finding.
+<ul>
+<li>optimize.minimize</li>
+<li>optimize.curve_fit</li>
+<li>optimize.fsolve</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="http://docs.scipy.org/doc/scipy/reference/interpolate.html#module-scipy.interpolate">scipy.interpolate</a> provides functions for uni and multivariate data interpolation. Here, we only focus on unidimensional interpolation</li>
+<li>In the <a target="_blank" rel="noopener" href="http://docs.scipy.org/doc/scipy/reference/integrate.html#module-scipy.integrate">scipy.integrate</a> module, one can find several methods (trapezoidal, Simpson, Romberg, etc) for integrating uni, bi and trivariate functions.</li>
+</ul>
+<h1 id="文件管理"><a class="markdownIt-Anchor" href="#文件管理"></a> 文件管理</h1>
+<p>open的参数</p>
+<ul>
+<li><code>r</code>: read only;</li>
+<li><code>w</code>: write only;</li>
+<li><code>a</code>: append;</li>
+<li><code>r+</code>: read and write;</li>
+<li><code>[rwa]b</code>: (read, write, append) binary.</li>
+</ul>
+<p>在jupyter中可以这样子写来加载文件:<code>!cat an_example.txt</code></p>
+<p>打开后然后读：f.read(),f.readline(),f.readlines(),一种常见的遍历每行的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;an_example.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> it, line <span class="keyword">in</span> <span class="built_in">enumerate</span>(f):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Line&quot;</span>, it, <span class="string">&quot;:&quot;</span>, line)</span><br></pre></td></tr></table></figure>
+</div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2023/01/30/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0_TP1&amp;2_Classification/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">统计学习TP2:Classification</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2023/01/30/%E5%8D%9A%E5%BC%88%E8%AE%BA3/"><span class="level-item">博弈论(三)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'http://nililili7876.cn/2023/01/30/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0_TP0_Plot&Numpy/';
+            this.page.identifier = '2023/01/30/统计学习_TP0_Plot&Numpy/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + '你来了啊' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/20221029/ya微信图片_202112041747093.77tsun4ckc80.jpg" alt="7876"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">7876</p><p class="is-size-6 is-block">一个平平无奇的美女罢了</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Nantes France</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">59</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">27</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">31</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#plot"><span class="level-left"><span class="level-item">1</span><span class="level-item"> Plot</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-curves"><span class="level-left"><span class="level-item">1.1</span><span class="level-item"> 1. curves</span></span></a></li><li><a class="level is-mobile" href="#2-其他"><span class="level-left"><span class="level-item">1.2</span><span class="level-item"> 2. 其他</span></span></a></li></ul></li><li><a class="level is-mobile" href="#numpy"><span class="level-left"><span class="level-item">2</span><span class="level-item"> Numpy</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-创建array"><span class="level-left"><span class="level-item">2.1</span><span class="level-item"> 1. 创建array：</span></span></a></li><li><a class="level is-mobile" href="#2array的属性"><span class="level-left"><span class="level-item">2.2</span><span class="level-item"> 2.array的属性</span></span></a></li><li><a class="level is-mobile" href="#3修改形状"><span class="level-left"><span class="level-item">2.3</span><span class="level-item"> 3.修改形状</span></span></a></li><li><a class="level is-mobile" href="#4重复与连接"><span class="level-left"><span class="level-item">2.4</span><span class="level-item"> 4.重复与连接</span></span></a></li><li><a class="level is-mobile" href="#5索引和切片"><span class="level-left"><span class="level-item">2.5</span><span class="level-item"> 5.索引和切片</span></span></a></li><li><a class="level is-mobile" href="#6copy和view"><span class="level-left"><span class="level-item">2.6</span><span class="level-item"> 6.copy和view</span></span></a></li><li><a class="level is-mobile" href="#7-基本计算"><span class="level-left"><span class="level-item">2.7</span><span class="level-item"> 7. 基本计算</span></span></a></li><li><a class="level is-mobile" href="#8-broadcasting"><span class="level-left"><span class="level-item">2.8</span><span class="level-item"> 8. Broadcasting</span></span></a></li><li><a class="level is-mobile" href="#9-numpy里面的一些数学函数"><span class="level-left"><span class="level-item">2.9</span><span class="level-item"> 9. numpy里面的一些数学函数</span></span></a></li></ul></li><li><a class="level is-mobile" href="#scipy"><span class="level-left"><span class="level-item">3</span><span class="level-item"> Scipy</span></span></a></li><li><a class="level is-mobile" href="#文件管理"><span class="level-left"><span class="level-item">4</span><span class="level-item"> 文件管理</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://cdn.staticaly.com/gh/nililili7876/blog_pic@main/20221029/ya39f1ada59d3fa9d65440760f6b18c21.jpg" alt="Bienvenue en Planète 7876" height="28"></a><p class="is-size-7"><span>&copy; 2023 7876</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
